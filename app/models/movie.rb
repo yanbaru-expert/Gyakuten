@@ -16,7 +16,7 @@ class Movie < ApplicationRecord
   PROGRAMMING = ["Basic", "git", "Ruby", "Ruby on Rails", "AWS"].freeze
 
   def self.count_level(page)
-    page ? ((page.to_i * PER_PAGE) - (PER_PAGE - 1)) : 1
+    (self.page(page).current_page - 1) * PER_PAGE + 1
   end
 
   def self.disp_programming(page)
@@ -49,5 +49,9 @@ class Movie < ApplicationRecord
 
   def self.disp_lives(page)
     Movie.where(genre: "Live").order("id DESC").page(page).per(PER_PAGE)
+  end
+
+  def self.disp_marketings(page)
+    Movie.where(genre: "Marketing").order("id DESC").page(page).per(PER_PAGE)
   end
 end
