@@ -20,7 +20,6 @@ Rails.application.routes.draw do
   end
 
   resources :movies, only: [:index]
-  resources :marketings, only: :index
   resources :users_webs
   resources :words
   resources :contents

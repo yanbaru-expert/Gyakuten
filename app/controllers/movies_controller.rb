@@ -26,6 +26,8 @@ class MoviesController < ApplicationController
       when "writings"
         Movie.disp_writings(params[:page])
 
+      when "marketings"
+        Movie.disp_marketings(params[:page])
       # params[:content_name]がない場合は動画教材ページを表示する
       else
         Movie.disp_programming(params[:page])
