@@ -19,18 +19,17 @@ Rails.application.routes.draw do
     put "users" => "devise/registrations#update", :as => "user_registration"
   end
 
-  resources :movies, only: [:index]
-  resources :marketings, only: :index
   resources :users_webs
   resources :words
   resources :contents
-  resources :texts
-  resources :lines
+  resources :movies, only: :index
+  resources :marketings, only: :index
+  resources :texts, only: [:index, :show]
   resources :moneys
   resources :salons, only: :index
   resources :designs
   resources :questions, only: [:index, :show, :create, :edit, :update]
   resources :questions do
-    resource :solutions, only: [:create]
+  resources :solutions, only: [:create]
   end
 end
