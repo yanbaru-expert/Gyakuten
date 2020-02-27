@@ -12,7 +12,7 @@
 
   <body>
     <section id="nav">
-      <% color = controller.controller_name == "lines" ? "bg-success" : "bg-danger" %>
+      <% color = params[:genre] == "line" ? "bg-success" : "bg-danger" %>
       <nav class="navbar navbar-expand-lg navbar-dark <%= color %>">
         <%= link_to "Gyakuten", movies_path(content_name: "movies"), class: "navbar-brand" %>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -26,10 +26,13 @@
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <%= link_to "動画教材", movies_path(content_name: "movies"), class: "nav-item nav-link active text-danger" %>
-                <%= link_to "テキスト教材", texts_path, class: "nav-item nav-link active text-danger" %>
+                <%= link_to "テキスト教材", texts_path(genre: "programming"), class: "nav-item nav-link active text-danger" %>
                 <%= link_to "ライブコーディング", movies_path(content_name: "lives"), class: "nav-item nav-link active text-danger" %>
                 <%= link_to "質問集", questions_path, class: "nav-item nav-link active text-danger" %>
               </div>
+            </li>
+            <li class="nav-item">
+              <%= link_to "AWS講座", texts_path(genre: "aws"), class: "nav-item nav-link active" %>
             </li>
             <li class="nav-item">
               <%= link_to "PHP講座", movies_path(content_name: "phps"), class: "nav-item nav-link active" %>
@@ -47,7 +50,7 @@
               <%= link_to "ライティング講座", movies_path(content_name: "writings"), class: "nav-item nav-link active" %>
             </li>
             <li class="nav-item">
-              <%= link_to "LINE@", lines_path, class: "nav-item nav-link active" %>
+              <%= link_to "LINE@", texts_path(genre: "line"), class: "nav-item nav-link active" %>
             </li>
             <li class="nav-item">
               <% if user_signed_in? %>

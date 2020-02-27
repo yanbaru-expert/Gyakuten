@@ -1,9 +1,17 @@
-<% content_for(:title) { @text.title } %>
-<% content_for(:description) { @text.description } %>
-<% content_for(:twitter_image) { @text.twitter_image } %>
-<section id="text-contents">
-  <h2><%= @text.title %></h2>
-  <%= markdown(@text.contents).html_safe %>
-  <%= social_share_button_tag(@text.title, :allow_sites => %w(twitter)) %>
-  <%= social_share_button_tag(@text.title, :url => text_path(@text), :allow_sites => %w(facebook)) %>
-</section>
+<% if params[:genre] == "programming" %>
+  <% content_for(:title) { @text.title } %>
+  <% content_for(:description) { @text.description } %>
+  <% content_for(:twitter_image) { @text.twitter_image } %>
+<% end %>
+<% if params[:genre] == "line" %>
+  <section id="line-contents">
+    <div>
+      <%= markdown(@text.contents).html_safe %>
+    </div>
+  </section>
+<% else %>
+  <section id="text-contents">
+    <h2><%= @text.title %></h2>
+    <%= markdown(@text.contents).html_safe %>
+  </section>
+<% end %>

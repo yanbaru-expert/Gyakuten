@@ -9,31 +9,91 @@
   <!-- 追加箇所 -->
   <%= render 'shared/take_of_rails' %>
 
-  <h2 class="text-center">Text</h2>
-  <div class="table-container">
-    <table class="table table-striped">
-      <thead class="bg-danger text-white">
-      <tr>
-        <th class="w-1">No.</th>
-        <th class="w-2">ジャンル</th>
-        <th class="w-5">内容</th>
-      </tr>
-      </thead>
-      <tbody>
-      <% @texts.each.with_index(1) do |text, i| %>
+  <% case params[:genre] %>
+  <% when "programming" %>
+    <h2 class="text-center">Railsテキスト教材</h2>
+    <div class="table-container">
+      <table class="table table-striped">
+        <thead class="bg-danger text-white">
         <tr>
-          <td>
-            <%= i %>
-          </td>
-          <td>
-            <%= text.genre %>
-          </td>
-          <td>
-            <%= link_to text.title, text_path(text.id), {:target => "_blank"} %>
-          </td>
+          <th class="w-1">No.</th>
+          <% if params[:genre] != "aws" %>
+            <th class="w-2">ジャンル</th>
+          <% end %>
+          <th class="w-5">内容</th>
         </tr>
-      <% end %>
-      </tbody>
-    </table>
-  </div>
+        </thead>
+        <tbody>
+        <% @texts.each.with_index(1) do |text, i| %>
+          <tr>
+            <td>
+              <%= i %>
+            </td>
+            <td>
+              <%= text.genre %>
+            </td>
+            <td>
+              <%= link_to text.title, text_path(text.id, genre: params[:genre]), {:target => "_blank"} %>
+            </td>
+          </tr>
+        <% end %>
+        </tbody>
+      </table>
+    </div>
+  <% when "aws" %>
+    <div class="text-center">
+      <h2 >AWS講座</h2>
+    </div>
+    <p>注意！！！：AWSのEC2やRDSは有料サービスとなります。無駄な料金を請求されないためにも、不要なインスタンスは停止・削除をしてください。</p>
+    <div class="table-container">
+      <table class="table table-striped">
+        <thead class="bg-danger text-white">
+        <tr>
+          <th class="w-1">No.</th>
+          <th class="w-5">内容</th>
+        </tr>
+        </thead>
+        <tbody>
+        <% @texts.each.with_index(1) do |text, i| %>
+          <tr>
+            <td>
+              <%= i %>
+            </td>
+            <td>
+              <%= link_to text.title, text_path(text.id, genre: params[:genre]), {:target => "_blank"} %>
+            </td>
+          </tr>
+        <% end %>
+        </tbody>
+      </table>
+    </div>
+  <% when "line" %>
+    <h2 class="text-center text-success">LINE@</h2>
+    <div class="table-container">
+      <table class="table table-striped">
+        <thead class="bg-success text-white">
+        <tr>
+          <th class="w-1">No.</th>
+          <th class="w-2">ジャンル</th>
+          <th class="w-5">内容</th>
+        </tr>
+        </thead>
+        <tbody>
+        <% @texts.each.with_index(1) do |text, i| %>
+          <tr>
+            <td>
+              <%= i %>
+            </td>
+            <td>
+              <%= text.genre %>
+            </td>
+            <td>
+              <%= link_to text.title, text_path(text.id, genre: params[:genre]), target: "_blank" %>
+            </td>
+          </tr>
+        <% end %>
+        </tbody>
+      </table>
+    </div>
+  <% end%>
 </section>
