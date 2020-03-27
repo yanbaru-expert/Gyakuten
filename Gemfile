@@ -17,7 +17,7 @@ gem "jquery-rails"
 gem "kaminari" # pagination
 gem "meta-tags" # 検索エンジン最適化（SEO）プラグイン
 gem "pg", ">= 0.18", "< 2.0"
-gem "puma", "~> 3.11"
+gem "puma", "~> 3.12"
 gem "rails", "~> 5.2.0"
 gem "rails-ujs"
 gem "redcarpet", "~> 2.3.0" # markdown
