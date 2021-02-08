@@ -7,7 +7,7 @@ gem "active_admin_import"
 gem "acts_as_list" # 並び替え
 gem "bootsnap", ">= 1.1.0", require: false
 gem "bootstrap", "~> 4.4.1"
-gem "carrierwave", "~> 2.0"
+gem "carrierwave", "~> 2.1"
 gem "config"
 gem "devise"
 gem "devise-bootstrap-views"
