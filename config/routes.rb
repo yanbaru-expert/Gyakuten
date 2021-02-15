@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'static_pages/home'
   root to: "texts#index"
   devise_for :users, controllers: {
     registrations: "users/registrations",
