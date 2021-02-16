@@ -11,6 +11,30 @@
   }
 }
 
+.administor {
+  position: relative;
+  height: 500px;
+
+  .administor_img {
+    position: absolute;
+    width: 30%;
+    height: auto;
+  }
+
+  .administor_unit {
+    width: 70%;
+    position: absolute;
+    top: 25%;
+    right: 0;
+
+    .administor_txt {
+      display: inline-block;
+      text-align: left;
+    }
+  }
+}
+
+
 .footer {
   margin-top: auto;
   height: 100px;
