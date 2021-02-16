@@ -19,6 +19,7 @@
 
 $base-color: #5D99FF;
 $line-color: #28a745;
+$static-color: linear-gradient(to right, #0040ab, #1184cf, #0789d1);
 
 // 全体
 body {
@@ -73,6 +74,10 @@ h4 {
   &:hover {
     background-color: $line-color;
   }
+}
+
+.static-bg-color {
+  background: $static-color;
 }
 
 // フォント色
