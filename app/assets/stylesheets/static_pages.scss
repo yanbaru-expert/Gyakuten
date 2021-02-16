@@ -1,3 +1,16 @@
+.heading {
+  position: relative;
+  height: 500px;
+
+  .owner_icon {
+    position: absolute;
+    width: 250px;
+    height: auto;
+    right: 0;
+    top: 0;
+  }
+}
+
 .footer {
   margin-top: auto;
   height: 100px;
