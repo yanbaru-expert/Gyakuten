@@ -1,44 +1,46 @@
 <div class="home_container">
   <section class="heading">
-    <div class="row">
-      <div>
-        <h2>進化し続ける教材</h2>
-        <p>コンテンツ随時追加</p>
-        <%= link_to "教材一覧を見る", texts_path, class: 'btn static-bg-color' %>
+    <div class="heading-inner">
+      <div class="row">
+        <div>
+          <h2>進化し続ける教材</h2>
+          <p>コンテンツ随時追加</p>
+          <%= link_to "教材一覧を見る", texts_path, class: 'btn static-bg-color' %>
+        </div>
       </div>
-    </div>
-    <div class="row">
-      <div class="mx-auto">
-        <ul>
-          <li>Ruby/Rails</li>
-          <li>PHP/Laravel</li>
-          <li>AWS</li>
-          <li>HTML/CSS/JS/Vue/Angular</li>
-        </ul>
+      <div class="row">
+        <div class="mx-auto">
+          <ul>
+            <li>Ruby/Rails</li>
+            <li>PHP/Laravel</li>
+            <li>AWS</li>
+            <li>HTML/CSS/JS/Vue/Angular</li>
+          </ul>
+        </div>
       </div>
+      <img src="/assets/kamizatosan_chara_01.png" class="owner_icon">
     </div>
-    <img src="/assets/kamizatosan_chara_01.png" class="owner_icon">
   </section>
   <section class="about">
-    <h2>やんばるCODE教材とは？</h2>
+    <h2 class="unit-title">やんばるCODE教材とは？</h2>
     <div class="row">
       <%= render "about_item" %>
     </div>
   </section>
-  <section class="teaching-list">
-    <h2>教材一覧</h2>
+  <section class="teaching-list static-bg-color color-width">
+    <h2 class="util-title">教材一覧</h2>
     <div class="row">
       <%= render "teaching_item" %>
     </div>
   </section>
   <section class="features">
-    <h2>教材の特徴</h2>
+    <h2 class="unit-title">教材の特徴</h2>
     <div class="row">
       <%= render "feature_item" %>
     </div>
   </section>
-  <section class="services">
-    <h2>関連サービス</h2>
+  <section class="services static-bg-color color-width">
+    <h2 class="util-title">関連サービス</h2>
     <div>こちらの教材は以下の講座で利用されています</div>
     <div class="row">
       <div class="col-6">
@@ -55,8 +57,8 @@
       </div>
     </div>
   </section>
-  <section class="developer">
-    <h2>開発者</h2>
+  <section class="developer static-bg-color color-width">
+    <h2 class="util-title">開発者</h2>
     <div>こちらの教材は以下のエンジニアが開発/監修しています</div>
     <div class="row">
       <div class="col-6">
@@ -74,7 +76,7 @@
     </div>
   </section>
   <section class="administor">
-    <h2>運営者</h2>
+    <h2 class="unit-title">運営者</h2>
     <img src="/assets/kamizatosan_chara_01.png" class="administor_img">
     <div class="administor_unit">
       <div class="administor_txt">
@@ -86,6 +88,6 @@
     </div>
   </section>
   <section class="faq">
-    <h2>よくある質問</h2>
+    <h2 class="unit-title">よくある質問</h2>
   </section>
 </div>

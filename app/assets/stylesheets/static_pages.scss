@@ -13,6 +13,44 @@ $static-color: linear-gradient(to right, #0040ab, #1184cf, #0789d1);
   padding: 0 calc(50vw - 50%);
 }
 
+section {
+  height: 500px;
+}
+
+.unit-title {
+  text-align: center;
+  position: relative;
+
+  &::after {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 10px;
+    background: $static-color;
+    border-radius: 10px;
+    position: absolute;
+    bottom: 0;
+    left: 10px;
+  }
+}
+
+.util-title {
+  text-align: center;
+  position: relative;
+
+  &::after {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 10px;
+    background: #fff;
+    border-radius: 10px;
+    position: absolute;
+    bottom: 0;
+    left: 10px;
+  }
+}
+
 .heading {
 
   .heading-inner{
