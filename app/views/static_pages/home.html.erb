@@ -1,6 +1,6 @@
 <div class="home_container">
-  <section class="heading">
-    <div class="heading-inner">
+  <section id="heading" class="contents">
+    <div id="heading-inner">
       <div class="row">
         <div>
           <h2>進化し続ける教材</h2>
@@ -21,26 +21,26 @@
       <img src="/assets/kamizatosan_chara_01.png" class="owner_icon">
     </div>
   </section>
-  <section class="about">
+  <section id="about" class="contents">
     <h2 class="unit-title">やんばるCODE教材とは？</h2>
-    <div class="row">
+    <div class="about_contents">
       <%= render "about_item" %>
     </div>
   </section>
-  <section class="teaching-list static-bg-color color-width">
-    <h2 class="util-title">教材一覧</h2>
+  <section id="teaching-list" class="contents static-bg-color color-width">
+    <h2 class="contents-title">教材一覧</h2>
     <div class="row">
       <%= render "teaching_item" %>
     </div>
   </section>
-  <section class="features">
+  <section id="features" class="contents">
     <h2 class="unit-title">教材の特徴</h2>
     <div class="row">
       <%= render "feature_item" %>
     </div>
   </section>
-  <section class="services static-bg-color color-width">
-    <h2 class="util-title">関連サービス</h2>
+  <section id="services" class="contents static-bg-color color-width">
+    <h2 class="contents-title">関連サービス</h2>
     <div>こちらの教材は以下の講座で利用されています</div>
     <div class="row">
       <div class="col-6">
@@ -57,8 +57,8 @@
       </div>
     </div>
   </section>
-  <section class="developer static-bg-color color-width">
-    <h2 class="util-title">開発者</h2>
+  <section id="developer" class="contents static-bg-color color-width">
+    <h2 class="contents-title">開発者</h2>
     <div>こちらの教材は以下のエンジニアが開発/監修しています</div>
     <div class="row">
       <div class="col-6">
@@ -75,9 +75,9 @@
       </div>
     </div>
   </section>
-  <section class="administor">
+  <section id="administor" class="contents">
     <h2 class="unit-title">運営者</h2>
-    <img src="/assets/kamizatosan_chara_01.png" class="administor_img">
+    <img src="/assets/kamizatosan_chara_01.png" id="administor_img">
     <div class="administor_unit">
       <div class="administor_txt">
         <h3>かみざとよしと</h3>
@@ -87,7 +87,7 @@
       </div>
     </div>
   </section>
-  <section class="faq">
+  <section id="faq" class="contents">
     <h2 class="unit-title">よくある質問</h2>
   </section>
 </div>
