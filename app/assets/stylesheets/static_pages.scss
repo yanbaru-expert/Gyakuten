@@ -91,11 +91,8 @@ section {
 }
 
 
-.footer {
+.footer_contents {
   margin-top: auto;
-  height: 100px;
-
-  .footer_contents {
-    display: flex;
-  }
+  display: flex;
+  height: 150px;
 }

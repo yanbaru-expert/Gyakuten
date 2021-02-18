@@ -1,8 +1,8 @@
-<% if controller.controller_name == "static_pages" %>
-  <%= render partial: "staticfooter" %>
-<% else %>
-  <footer class="fixed-bottom <%= base_color %>">
+<footer class="fixed-bottom <%= base_color %>">
+  <% if controller.controller_name == "static_pages" %>
+    <%= render partial: "staticfooter" %>
+  <% else %>
     <%= link_to "ブログ", "http://utina.yoshitokamizato.com/", class: "text-white", target: "_blank", rel: "noopener" %>
     <%= link_to "Youtube", "https://www.youtube.com/channel/UCwrDvYey9uKGBeh_l5IF-ag", class: "text-white", target: "_blank", rel: "noopener" %>
-  </footer>
-<% end %>
+  <% end %>
+</footer>
