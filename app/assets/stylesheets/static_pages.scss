@@ -1,3 +1,7 @@
+/*
+トップページ共通
+*/
+
 // カラー
 $static-color: linear-gradient(to right, #0040ab, #1184cf, #0789d1);
 
@@ -13,6 +17,18 @@ $static-color: linear-gradient(to right, #0040ab, #1184cf, #0789d1);
   padding: 0 calc(50vw - 50%);
 }
 
+// 擬似要素のライン
+.pseudo-element-line {
+  content: "";
+  display: block;
+  height: 10px;
+  border-radius: 10px;
+  position: absolute;
+  bottom: 0;
+  left: 10px;
+}
+
+// 各コンテンツの高さを調整
 .home_container {
   @extend .color-width;
   overflow: auto;
@@ -25,21 +41,15 @@ $static-color: linear-gradient(to right, #0040ab, #1184cf, #0789d1);
   }
 }
 
-
+// セクションタイトル下部のライン
 .unit-title {
   text-align: center;
   position: relative;
 
   &::after {
-    content: "";
-    display: block;
+    @extend .pseudo-element-line;
     width: 80px;
-    height: 10px;
     background: $static-color;
-    border-radius: 10px;
-    position: absolute;
-    bottom: 0;
-    left: 10px;
   }
 }
 
@@ -48,18 +58,14 @@ $static-color: linear-gradient(to right, #0040ab, #1184cf, #0789d1);
   position: relative;
 
   &::after {
-    content: "";
-    display: block;
+    @extend .pseudo-element-line;
     width: 80px;
-    height: 10px;
     background: #fff;
-    border-radius: 10px;
-    position: absolute;
-    bottom: 0;
-    left: 10px;
   }
 }
 
+
+// ファーストビュー
 #heading {
 
   #heading-inner{
@@ -76,14 +82,15 @@ $static-color: linear-gradient(to right, #0040ab, #1184cf, #0789d1);
   }
 }
 
+// やんばるCODEについて
 .about_contents {
   height: auto;
   display: flex;
 }
 
+// 運営者
 #administor {
   position: relative;
-  height: 500px;
 
   #administor_img {
     position: absolute;
