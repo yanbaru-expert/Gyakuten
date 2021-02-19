@@ -32,6 +32,12 @@ body {
   padding-bottom: 30px;
 }
 
+// トップページレイアウト
+.static-base-container {
+  @extend .container-fluid;
+  padding: 0;
+}
+
 a:hover {
   text-decoration: none;
 }

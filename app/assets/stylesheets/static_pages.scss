@@ -13,9 +13,18 @@ $static-color: linear-gradient(to right, #0040ab, #1184cf, #0789d1);
   padding: 0 calc(50vw - 50%);
 }
 
-.contents {
-  height: 500px;
+.home_container {
+  @extend .color-width;
+  overflow: auto;
+  scroll-snap-type: y proximity;
+  height: 100vh;
+
+  .contents {
+    scroll-snap-align: start;
+    height: 100vh;
+  }
 }
+
 
 .unit-title {
   text-align: center;
@@ -99,5 +108,5 @@ $static-color: linear-gradient(to right, #0040ab, #1184cf, #0789d1);
 .footer_contents {
   margin-top: auto;
   display: flex;
-  height: 150px;
+  height: 300px;
 }

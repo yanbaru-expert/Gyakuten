@@ -13,7 +13,7 @@
   <body>
     <%= render "layouts/navbar" %>
     <%= render "shared/flash_message" %>
-    <div class="base-container <%= max_width %>">
+    <div class="base-container <%= max_width %> <%= static_layouts %>">
       <%= yield %>
     </div>
     <%= render "layouts/footer" %>
