@@ -1,3 +1,16 @@
-// Place all the styles related to the static_pages controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+/*
+共通
+*/
+
+// カラー
+$static-color: linear-gradient(to right, #0040ab, #1184cf, #0789d1);
+
+// 背景色
+.static-bg-color {
+  background: $static-color;
+}
+
+// フォント色
+.static-color {
+  color: #fff;
+}
