@@ -28,6 +28,13 @@ $static-color: linear-gradient(to right, #0040ab, #1184cf, #0789d1);
   align-items: $align;
 }
 
+#home-container {
+
+  .contents {
+    min-height: 100vh;
+  }
+}
+
 /* ----------------------------------------------------------------
   heading
 -----------------------------------------------------------------*/
@@ -46,6 +53,8 @@ $static-color: linear-gradient(to right, #0040ab, #1184cf, #0789d1);
   about
 -----------------------------------------------------------------*/
 #about {
+  @include flexCentering();
+  flex-direction: column;
 
   .about-list {
     display: flex;
@@ -57,7 +66,6 @@ $static-color: linear-gradient(to right, #0040ab, #1184cf, #0789d1);
   teachinglist
 -----------------------------------------------------------------*/
 .teachinglist-list {
-  margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
 
