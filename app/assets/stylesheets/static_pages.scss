@@ -41,3 +41,14 @@ $static-color: linear-gradient(to right, #0040ab, #1184cf, #0789d1);
     right: 0;
   }
 }
+
+/* ----------------------------------------------------------------
+  about
+-----------------------------------------------------------------*/
+#about {
+
+  .about-list {
+    display: flex;
+    justify-content: space-between;
+  }
+}
