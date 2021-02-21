@@ -28,6 +28,12 @@ $static-color: linear-gradient(to right, #0040ab, #1184cf, #0789d1);
   align-items: $align;
 }
 
+// 要素の横並び
+.flex-side {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 #home-container {
 
   .contents {
@@ -66,10 +72,20 @@ $static-color: linear-gradient(to right, #0040ab, #1184cf, #0789d1);
   teachinglist
 -----------------------------------------------------------------*/
 .teachinglist-list {
-  display: flex;
-  flex-wrap: wrap;
+  @extend .flex-side;
 
   .teachinglist-item {
+    width: 30%;
+  }
+}
+
+/* ----------------------------------------------------------------
+  features
+-----------------------------------------------------------------*/
+.features-list {
+  @extend .flex-side;
+
+  .features-item {
     width: 30%;
   }
 }
