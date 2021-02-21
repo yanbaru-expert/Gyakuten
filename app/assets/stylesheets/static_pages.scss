@@ -1,7 +1,6 @@
 /* ----------------------------------------------------------------
   共通
 -----------------------------------------------------------------*/
-
 // カラー
 $static-color: linear-gradient(to right, #0040ab, #1184cf, #0789d1);
 
@@ -16,8 +15,19 @@ $static-color: linear-gradient(to right, #0040ab, #1184cf, #0789d1);
 }
 
 // 全幅表示
-@mixin color-width {
+@mixin colorWidth {
   width: 100vw;
   margin: 0 calc(50% - 50vw);
   padding: 0 calc(50vh - 50%);
 }
+
+// flexの中央寄せ
+@mixin flexCentering($justify: center, $align: center) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+/* ----------------------------------------------------------------
+  heading
+-----------------------------------------------------------------*/
