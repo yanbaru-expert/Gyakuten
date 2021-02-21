@@ -52,3 +52,16 @@ $static-color: linear-gradient(to right, #0040ab, #1184cf, #0789d1);
     justify-content: space-between;
   }
 }
+
+/* ----------------------------------------------------------------
+  teachinglist
+-----------------------------------------------------------------*/
+.teachinglist-list {
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+
+  .teachinglist-item {
+    width: 30%;
+  }
+}
