@@ -89,3 +89,14 @@ $static-color: linear-gradient(to right, #0040ab, #1184cf, #0789d1);
     width: 30%;
   }
 }
+
+/* ----------------------------------------------------------------
+  services
+-----------------------------------------------------------------*/
+.services-list {
+  @extend .flex-side;
+
+  .services-item {
+    width: 50%;
+  }
+}
