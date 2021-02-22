@@ -112,3 +112,20 @@ services
     width: 50%;
   }
 }
+
+/* ----------------------------------------------------------------
+  administor
+-----------------------------------------------------------------*/
+.administor-inner {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+
+  .administor-icon {
+    position: absolute;
+    width: 250px;
+    top: 0;
+    left: 0;
+  }
+
+}
