@@ -18,11 +18,6 @@ ul {
   list-style: none;
 }
 
-a {
-  color: $static-color;
-  text-decoration: none;
-}
-
 // 全幅表示
 @mixin colorWidth {
   width: 100vw;
@@ -187,5 +182,14 @@ services
   .footer-contents {
     display: flex;
     justify-content: space-around;
+    color: #fff;
+
+    .footer-list {
+      padding: 0;
+    }
+
+    a {
+      color: inherit;
+    }
   }
 }
