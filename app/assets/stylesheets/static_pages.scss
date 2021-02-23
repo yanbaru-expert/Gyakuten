@@ -1,6 +1,19 @@
 /* ----------------------------------------------------------------
   共通
 -----------------------------------------------------------------*/
+$breakpoints: (
+  'sm': 'screen and (max-width: 689px)',
+  'md': 'screen and (max-width: 767px)',
+  'lg': 'screen and (max-width: 999px)',
+  'xl': 'screen and (max-width: 1199px)',
+) !default;
+
+@mixin mq($breakpoint: md) {
+  @media #{map-get($breakpoints, $breakpoint)} {
+    @content;
+  }
+}
+
 // カラー
 $static-color: linear-gradient(to right, #0040ab, #1184cf, #0789d1);
 
@@ -52,6 +65,7 @@ ul {
 .util-title {
   font-size: 2rem;
   font-weight: bold;
+  white-space: nowrap;
 
   .util-title-inner {
 
@@ -119,6 +133,34 @@ ul {
 
         &:nth-child(3n) {
           margin-right: 0;
+        }
+
+        // タブレット
+        @include mq() {
+          margin: 0 20px 20px 0;
+          width: calc(50% - 20px / 2);
+
+          &:nth-child(2n) {
+            margin-right: 0;
+          }
+
+          &:nth-child(3n) {
+            margin-right: 20px;
+          }
+
+          &:nth-child(6) {
+            margin-right: 0;
+          }
+        }
+
+        // スマホ
+        @include mq(sm) {
+          width: 100%;
+          margin-right: 0;
+
+          &:nth-child(3n) {
+            margin-right: 0;
+          }
         }
       }
 
