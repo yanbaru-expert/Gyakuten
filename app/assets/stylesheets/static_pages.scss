@@ -102,11 +102,26 @@ ul {
 #teachinglist {
   @include colorWidth();
 
-  .teachinglist-list {
-    @extend .flex-side;
+  .teachinglist-content {
 
-    .teachinglist-item {
-      width: 30%;
+    .teachinglist-list {
+      @extend .flex-side;
+
+      .teachinglist-item {
+        box-sizing: border-box;
+        border-radius: 25px;
+        margin: 0 50px 50px 0;
+        padding: 20px;
+        width: calc(33.33333333% - 100px / 3);
+        text-align: center;
+        color: black;
+        background: #fff;
+
+        &:nth-child(3n) {
+          margin-right: 0;
+        }
+      }
+
     }
   }
 }
@@ -121,7 +136,6 @@ ul {
     width: 30%;
   }
 }
-
 
 /* ----------------------------------------------------------------
 services
