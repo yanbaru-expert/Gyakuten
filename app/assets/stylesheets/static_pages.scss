@@ -14,6 +14,15 @@ $static-color: linear-gradient(to right, #0040ab, #1184cf, #0789d1);
   color: #fff;
 }
 
+ul {
+  list-style: none;
+}
+
+a {
+  color: $static-color;
+  text-decoration: none;
+}
+
 // 全幅表示
 @mixin colorWidth {
   width: 100vw;
@@ -34,12 +43,13 @@ $static-color: linear-gradient(to right, #0040ab, #1184cf, #0789d1);
   flex-wrap: wrap;
 }
 
+
 #home-container {
 
   .contents {
-    min-height: 100vh;
     @include flexCentering();
     flex-direction: column;
+    min-height: 100vh;
   }
 }
 
@@ -94,11 +104,15 @@ $static-color: linear-gradient(to right, #0040ab, #1184cf, #0789d1);
 /* ----------------------------------------------------------------
   teachinglist
 -----------------------------------------------------------------*/
-.teachinglist-list {
-  @extend .flex-side;
+#teachinglist {
+  @include colorWidth();
 
-  .teachinglist-item {
-    width: 30%;
+  .teachinglist-list {
+    @extend .flex-side;
+
+    .teachinglist-item {
+      width: 30%;
+    }
   }
 }
 
@@ -117,22 +131,30 @@ $static-color: linear-gradient(to right, #0040ab, #1184cf, #0789d1);
 /* ----------------------------------------------------------------
 services
 -----------------------------------------------------------------*/
-.services-list {
-  @extend .flex-side;
+#services {
+  @include colorWidth();
 
-  .services-item {
-    width: 50%;
+  .services-list {
+    @extend .flex-side;
+
+    .services-item {
+      width: 50%;
+    }
   }
 }
 
 /* ----------------------------------------------------------------
   developer
 -----------------------------------------------------------------*/
-.developer-list {
-  @extend .flex-side;
+#developer {
+  @include colorWidth();
 
-  .developer-item {
-    width: 50%;
+  .developer-list {
+    @extend .flex-side;
+
+    .developer-item {
+      width: 50%;
+    }
   }
 }
 
