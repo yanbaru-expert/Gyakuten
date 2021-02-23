@@ -46,7 +46,7 @@ ul {
 }
 
 // flex-item
-@mixin flexItem($color: black, $backgroung: #fff) {
+@mixin flexItem($color: black, $backgroung: #fff, $width: calc(33.33333333% - 100px / 3)) {
   box-sizing: border-box;
   border-radius: 25px;
   margin: 0 50px 50px 0;
@@ -54,12 +54,41 @@ ul {
   text-align: center;
   color: $color;
   background: $backgroung;
+  width: $width;
+}
+// タブレット用のスペース
+@mixin flexItemSpaceTab {
+  margin: 0 20px 20px 0;
+  width: calc(50% - 20px / 2);
+
+  &:nth-child(2n) {
+    margin-right: 0;
+  }
+
+  &:nth-child(3n) {
+    margin-right: 20px;
+  }
+
+  &:nth-child(6) {
+    margin-right: 0;
+  }
+}
+
+// スマホ用のスペース
+@mixin flexItemSpaceSp {
+  width: 100%;
+  margin-right: 0;
+
+  &:nth-child(3n) {
+    margin-right: 0;
+  }
 }
 
 // 要素の横並び
 .flex-side {
   display: flex;
   flex-wrap: wrap;
+  margin-top: 20px;
 }
 
 
@@ -134,7 +163,6 @@ ul {
 
       .teachinglist-item {
         @include flexItem();
-        width: calc(33.33333333% - 100px / 3);
 
         &:nth-child(3n) {
           margin-right: 0;
@@ -142,30 +170,12 @@ ul {
 
         // タブレット
         @include mq() {
-          margin: 0 20px 20px 0;
-          width: calc(50% - 20px / 2);
-
-          &:nth-child(2n) {
-            margin-right: 0;
-          }
-
-          &:nth-child(3n) {
-            margin-right: 20px;
-          }
-
-          &:nth-child(6) {
-            margin-right: 0;
-          }
+          @include flexItemSpaceTab();
         }
 
         // スマホ
         @include mq(sm) {
-          width: 100%;
-          margin-right: 0;
-
-          &:nth-child(3n) {
-            margin-right: 0;
-          }
+          @include flexItemSpaceSp()
         }
       }
 
@@ -176,11 +186,29 @@ ul {
 /* ----------------------------------------------------------------
   features
 -----------------------------------------------------------------*/
-.features-list {
-  @extend .flex-side;
+#features {
+  @include colorWidth();
 
-  .features-item {
-    width: 30%;
+  .features-list {
+    @extend .flex-side;
+
+    .features-item {
+      @include flexItem(#fff, $static-color);
+
+      &:nth-child(3n) {
+        margin-right: 0;
+      }
+
+      // タブレット
+      @include mq() {
+        @include flexItemSpaceTab();
+      }
+
+      // スマホ
+      @include mq(sm) {
+        @include flexItemSpaceSp()
+      }
+    }
   }
 }
 
