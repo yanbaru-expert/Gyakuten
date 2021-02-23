@@ -45,6 +45,17 @@ ul {
   align-items: $align;
 }
 
+// flex-item
+@mixin flexItem($color: black, $backgroung: #fff) {
+  box-sizing: border-box;
+  border-radius: 25px;
+  margin: 0 50px 50px 0;
+  padding: 20px;
+  text-align: center;
+  color: $color;
+  background: $backgroung;
+}
+
 // 要素の横並び
 .flex-side {
   display: flex;
@@ -122,14 +133,8 @@ ul {
       @extend .flex-side;
 
       .teachinglist-item {
-        box-sizing: border-box;
-        border-radius: 25px;
-        margin: 0 50px 50px 0;
-        padding: 20px;
+        @include flexItem();
         width: calc(33.33333333% - 100px / 3);
-        text-align: center;
-        color: black;
-        background: #fff;
 
         &:nth-child(3n) {
           margin-right: 0;
