@@ -38,20 +38,45 @@ $static-color: linear-gradient(to right, #0040ab, #1184cf, #0789d1);
 
   .contents {
     min-height: 100vh;
+    @include flexCentering();
+    flex-direction: column;
+  }
+}
+
+// 各セクションタイトル
+.util-title {
+  font-size: 2rem;
+  font-weight: bold;
+
+  .util-title-inner {
+
+    &::after {
+      content: "";
+      display: block;
+      height: 10px;
+      border-radius: 10px;
+      margin: 5px auto 0;
+      width: 50px;
+      background: $static-color;
+    }
   }
 }
 
 /* ----------------------------------------------------------------
   heading
 -----------------------------------------------------------------*/
-.heading-inner {
-  position: relative;
+#heading {
+  min-height: 100vh;
 
-  .owner_icon {
-    position: absolute;
-    width: 250px;
-    top: 0;
-    right: 0;
+  .heading-inner {
+    position: relative;
+
+    .owner_icon {
+      position: absolute;
+      width: 250px;
+      top: 0;
+      right: 0;
+    }
   }
 }
 
@@ -59,8 +84,6 @@ $static-color: linear-gradient(to right, #0040ab, #1184cf, #0789d1);
   about
 -----------------------------------------------------------------*/
 #about {
-  @include flexCentering();
-  flex-direction: column;
 
   .about-list {
     display: flex;
@@ -116,18 +139,21 @@ services
 /* ----------------------------------------------------------------
   administor
 -----------------------------------------------------------------*/
-.administor-inner {
-  position: relative;
-  display: flex;
-  justify-content: space-between;
+#administor {
+  min-height: 100vh;
 
-  .administor-icon {
-    position: absolute;
-    width: 250px;
-    top: 0;
-    left: 0;
+  .administor-inner {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+
+    .administor-icon {
+      position: absolute;
+      width: 250px;
+      top: 0;
+      left: 0;
+    }
   }
-
 }
 
 /* ----------------------------------------------------------------
