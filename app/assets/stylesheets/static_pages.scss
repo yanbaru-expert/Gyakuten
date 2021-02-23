@@ -129,3 +129,15 @@ services
   }
 
 }
+
+/* ----------------------------------------------------------------
+  footer
+-----------------------------------------------------------------*/
+.static-footer {
+  height: 300px;
+
+  .footer-contents {
+    display: flex;
+    justify-content: space-around;
+  }
+}

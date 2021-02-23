@@ -1,4 +1,8 @@
-<footer class="fixed-bottom <%= base_color %>">
-  <%= link_to "ブログ", "http://utina.yoshitokamizato.com/", class: "text-white", target: "_blank", rel: "noopener" %>
-  <%= link_to "Youtube", "https://www.youtube.com/channel/UCwrDvYey9uKGBeh_l5IF-ag", class: "text-white", target: "_blank", rel: "noopener" %>
-</footer>
+<% if controller.controller_name == "static_pages" %>
+  <%= render partial: "static_footer" %>
+<% else %>
+  <footer class="fixed-bottom <%= base_color %>">
+    <%= link_to "ブログ", "http://utina.yoshitokamizato.com/", class: "text-white", target: "_blank", rel: "noopener" %>
+    <%= link_to "Youtube", "https://www.youtube.com/channel/UCwrDvYey9uKGBeh_l5IF-ag", class: "text-white", target: "_blank", rel: "noopener" %>
+  </footer>
+<% end %>
