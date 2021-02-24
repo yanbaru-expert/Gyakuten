@@ -19,10 +19,21 @@ ActiveAdmin.register Movie do
       input :position
       input :text
       input :genre
-      input :title
-      input :url
+      input :title, as: :string
+      input :url, as: :string
       input :desc
     end
     f.actions
+  end
+
+  csv do
+    column :id
+    column :position
+    column :genre_id
+    column(:genre) { |movie| movie.genre.title }
+    column :text_id
+    column :title
+    column :url
+    column :desc
   end
 end
