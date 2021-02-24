@@ -50,6 +50,7 @@ ja:
       money:
       movie:
         desc: 説明
+        text: 表示させるテキスト教材
       program:
         name: プログラム名
       slack_member:
