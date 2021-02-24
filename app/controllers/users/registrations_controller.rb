@@ -12,45 +12,45 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # POST /resource
   def create
     build_resource(sign_up_params)
-    if Rails.env.production?
-      # SlackAPIで入力された Slack メンバー ID が存在し，削除済みでないかを確認
-      # 問題がない場合は自動で承認済み扱いとする
-      Rails.application.credentials.dig(:slack, :oauth_token).each_key do |slack_name|
-        client = AutoSlackApproval.new(slack_name: slack_name, slack_id: resource.slack_id)
-        resource.flag = client.approval?
-        if resource.flag
-          resource.slack_name = slack_name.to_s
-          break
-        end
-      end
-    else
-      # 本番環境以外では任意の Slack_id を受け付ける
-      resource.flag = true
+    slack_name = resource.slack_name
+    slack_id = resource.slack_id
+
+    unless User.permit_slack_name(slack_name)
+      flash[:alert] = "選択された Slack のワークスペースは存在しません"
+      render :new and return
     end
-    if resource.flag
-      # 以下は元ソース通り
-      resource.save!
-      yield resource if block_given?
-      if resource.persisted?
-        if resource.active_for_authentication?
-          set_flash_message! :notice, :signed_up
-          sign_up(resource_name, resource)
-          respond_with resource, location: after_sign_up_path_for(resource)
-        else
-          set_flash_message! :notice, :"signed_up_but_#{resource.inactive_message}"
-          expire_data_after_sign_in!
-          respond_with resource, location: after_inactive_sign_up_path_for(resource)
-        end
-        # 以下は元ソース通り
+
+    resource.flag = if Rails.env.production?
+                      # Slack メンバー ID が存在し，削除済みでないかどうかを確認
+                      # 問題がない場合は承認する
+                      AutoSlackApproval.new(slack_name: slack_name, slack_id: slack_id).approval?
+                    else
+                      # 本番環境以外では任意の Slack_id を受け付ける
+                      true
+                    end
+
+    unless resource.flag
+      flash[:alert] = "入力された Slack メンバー ID は存在しません"
+      render :new and return
+    end
+
+    # 以下は元ソース通り
+    resource.save
+    yield resource if block_given?
+    if resource.persisted?
+      if resource.active_for_authentication?
+        set_flash_message! :notice, :signed_up
+        sign_up(resource_name, resource)
+        respond_with resource, location: after_sign_up_path_for(resource)
       else
-        clean_up_passwords resource
-        set_minimum_password_length
-        respond_with resource
+        set_flash_message! :notice, :"signed_up_but_#{resource.inactive_message}"
+        expire_data_after_sign_in!
+        respond_with resource, location: after_inactive_sign_up_path_for(resource)
       end
     else
-      # 問題がある場合の対処
-      flash[:alert] = "入力された Slack メンバー ID は存在しません"
-      render :new
+      clean_up_passwords resource
+      set_minimum_password_length
+      respond_with resource
     end
   end
 

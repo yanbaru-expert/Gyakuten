@@ -15,7 +15,7 @@
 #  reset_password_sent_at :datetime
 #  reset_password_token   :string
 #  sign_in_count          :integer          default(0), not null
-#  slack_name             :string
+#  slack_name             :integer
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
 #  slack_id               :string           not null
@@ -38,4 +38,23 @@ class User < ApplicationRecord
   has_many :complete_challenges, dependent: :destroy
   has_many :read_through_texts, through: :read_texts, source: :text
   has_many :watched_through_movies, through: :watched_movies, source: :movie
+
+  def self.permit_slack_name(slack_name)
+    self.selectable_slack_name_options.values.include?(slack_name)
+  end
+
+  scope :selectable_slack_name_options, -> {
+    options = self.slack_names_i18n
+    options.delete("other")
+    options.invert
+  }
+
+  enum slack_name: {
+    other: 0,
+    yanbaru_expert_ruby: 2,
+    yanbaru_expert_ruby_light: 3,
+    yanbaru_expert_php: 5,
+    yanbaru_code: 1,
+    yanbaru_code_offline: 4,
+  }
 end

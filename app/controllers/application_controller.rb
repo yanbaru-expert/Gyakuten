@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
   protected
 
     def configure_permitted_parameters
-      devise_parameter_sanitizer.permit :sign_up, keys: [:slack_id]
+      devise_parameter_sanitizer.permit :sign_up, keys: [:slack_name, :slack_id]
     end
 
     def sign_out_user
