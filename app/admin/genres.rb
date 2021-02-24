@@ -6,6 +6,7 @@ ActiveAdmin.register Genre do
     selectable_column
     column :position
     column :title
+    column :color
     actions
   end
 
