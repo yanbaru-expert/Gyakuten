@@ -44,7 +44,7 @@ ActiveAdmin.register Text do
     column :id
     column :position
     column :genre_id
-    column(:genre) { |text| text.genre.title }
+    column(:genre) {|text| text.genre.title }
     column :title
     column :contents
     column :description
