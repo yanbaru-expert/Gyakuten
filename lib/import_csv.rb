@@ -1,10 +1,11 @@
 require "csv"
 
 class ImportCsv
-  def self.execute(model:)
+  def self.execute(model:, file_name: nil)
     model_name = model.to_s.classify
     table_name = model_name.tableize
-    path = Rails.root.join("db/csv_data/#{table_name.singularize}.csv")
+    file_name ||= table_name.singularize
+    path = Rails.root.join("db/csv_data/#{file_name}.csv")
 
     list = []
     CSV.foreach(path, headers: true) do |row|
