@@ -1,6 +1,6 @@
 class YoutubeUrlFormatter
-  SRC_REGEX = /src\s*=\s*"([^"]*)"/
-  YOUTUBE_ID_REGEX = %r{\A(?:http(?:s)?://)?(?:www\.)?(?:m\.)?(?:youtu\.be/|youtube\.com/(?:(?:watch)?\?(?:.*&)?v(?:i)?=|(?:embed|v|vi|user)/))([^?&"'>]+)(&t=.*)?\z}
+  SRC_REGEX = /src\s*=\s*"([^"]*)"/.freeze
+  YOUTUBE_ID_REGEX = %r{\A(?:http(?:s)?://)?(?:www\.)?(?:m\.)?(?:youtu\.be/|youtube\.com/(?:(?:watch)?\?(?:.*&)?v(?:i)?=|(?:embed|v|vi|user)/))([^?&"'>]+)(&t=.*)?\z}.freeze
 
   def self.format(url)
     src_match = SRC_REGEX.match(url)

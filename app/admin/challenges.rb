@@ -23,16 +23,17 @@ ActiveAdmin.register Challenge do
     end
   end
 
-  form do |_f|
-    inputs  do
+  form do |f|
+    f.object.position ||= Challenge.maximum(:position) + 1
+    f.semantic_errors
+    f.inputs do
       input :position
       input :theme
       input :title
       input :question
       input :hint
-      input :image, as: :file
+      input :image
     end
-
-    actions
+    f.actions
   end
 end

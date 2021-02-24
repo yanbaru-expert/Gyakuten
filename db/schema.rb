@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_20_121529) do
+ActiveRecord::Schema.define(version: 2021_02_23_233258) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -66,6 +66,14 @@ ActiveRecord::Schema.define(version: 2021_02_20_121529) do
     t.index ["user_id"], name: "index_complete_challenges_on_user_id"
   end
 
+  create_table "genres", force: :cascade do |t|
+    t.string "title", null: false
+    t.string "color"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "position"
+  end
+
   create_table "lines", force: :cascade do |t|
     t.string "genre"
     t.string "title"
@@ -88,7 +96,7 @@ ActiveRecord::Schema.define(version: 2021_02_20_121529) do
     t.text "desc"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "genre"
+    t.integer "genre_id"
     t.integer "position"
     t.integer "text_id"
   end
@@ -99,7 +107,8 @@ ActiveRecord::Schema.define(version: 2021_02_20_121529) do
     t.text "solution"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "genre"
+    t.integer "genre_id"
+    t.integer "position"
   end
 
   create_table "read_texts", force: :cascade do |t|
@@ -111,7 +120,7 @@ ActiveRecord::Schema.define(version: 2021_02_20_121529) do
   end
 
   create_table "texts", force: :cascade do |t|
-    t.string "genre"
+    t.integer "genre_id"
     t.text "title"
     t.text "contents"
     t.datetime "created_at", null: false
@@ -168,4 +177,7 @@ ActiveRecord::Schema.define(version: 2021_02_20_121529) do
 
   add_foreign_key "complete_challenges", "challenges"
   add_foreign_key "complete_challenges", "users"
+  add_foreign_key "movies", "genres"
+  add_foreign_key "questions", "genres"
+  add_foreign_key "texts", "genres"
 end

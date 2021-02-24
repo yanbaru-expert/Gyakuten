@@ -10,7 +10,6 @@ module ErrorCollection
     config.time_zone = "Tokyo"
     config.i18n.default_locale = :ja
     config.paths.add "lib/autoloads", eager_load: true
-    ActiveStorage::Service.url_expires_in = 7.days
     config.generators do |g|
       g.test_framework :rspec,
                        view_specs: false,

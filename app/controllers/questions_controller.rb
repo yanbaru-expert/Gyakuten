@@ -4,10 +4,11 @@ class QuestionsController < ApplicationController
   def index
     if user_signed_in?
       @q = Question.ransack(params[:q])
-      @questions = @q.result.order(:genre).order(id: :desc)
-      @all_questions = Question.order(:genre).select(:genre).distinct
+      @questions = @q.result.includes(:genre).order("genres.position ASC").order(id: :desc)
+      genre_ids = Question.select(:genre_id).distinct.pluck(:genre_id)
+      @existence_genres = Genre.where(id: genre_ids).order(position: :asc)
     else
-      @questions = Question.order(:genre).order(id: :desc)
+      @questions = Question.includes(:genre).order("genres.position ASC").order(id: :desc)
     end
   end
 

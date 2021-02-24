@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
   before_action :authenticate_user!
   before_action :configure_permitted_parameters, if: :devise_controller?
   before_action :sign_out_user, if: :user_signed_in?
+  before_action :set_genres
 
   protected
 
@@ -28,5 +29,9 @@ class ApplicationController < ActionController::Base
       authenticate_or_request_with_http_basic do |username, password|
         username == ENV["BASIC_AUTH_USER"] && password == ENV["BASIC_AUTH_PASSWORD"]
       end
+    end
+
+    def set_genres
+      @convert_title_list = Genre.pluck(:id, :title).to_h
     end
 end

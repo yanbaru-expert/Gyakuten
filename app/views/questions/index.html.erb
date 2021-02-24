@@ -11,17 +11,8 @@
         <th class="w-100">タイトル</th>
       </tr>
       </thead>
-      <tbody>
-      <% @questions.each do |question| %>
-        <tr>
-          <td class="text-nowrap align-middle">
-            <%= question.genre %>
-          </td>
-          <td class="break-word">
-            <%= link_to question.title, question %>
-          </td>
-        </tr>
-      <% end %>
+      <tbody id="search-tbody">
+        <%= render @questions %>
       </tbody>
     </table>
   </div>

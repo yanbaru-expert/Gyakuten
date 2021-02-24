@@ -24,6 +24,7 @@ ja:
       program: プログラム
       slack_member: Slackメンバー
       challenge: チャレンジ問題
+      genre: ジャンル
     attributes:
       admin_user:
       error:
@@ -70,8 +71,10 @@ ja:
     password_confirmation: 確認用パスワード
     position: 順番
     genre: ジャンル
+    thema: テーマ
     title: タイトル
     image: 画像
+    color: 色
     description: Twitterカードの説明
     content: 内容
     contents: 内容

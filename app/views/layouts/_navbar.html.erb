@@ -32,11 +32,11 @@
             フロント
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <%= link_to "HTML&CSS", texts_path(genre: "HTML&CSS"), class: "dropdown-item" %>
-            <%= link_to "JavaScript", texts_path(genre: "JavaScript"), class: "dropdown-item" %>
-            <%= link_to "TypeScript", texts_path(genre: "TypeScript"), class: "dropdown-item" %>
-            <%= link_to "Angular", texts_path(genre: "Angular"), class: "dropdown-item" %>
-            <%= link_to "Vue", texts_path(genre: "Vue"), class: "dropdown-item" %>
+            <%= link_to display_name("HTML&CSS"), texts_path(genre: "HTML&CSS"), class: "dropdown-item" %>
+            <%= link_to display_name("JavaScript"), texts_path(genre: "JavaScript"), class: "dropdown-item" %>
+            <%= link_to display_name("TypeScript"), texts_path(genre: "TypeScript"), class: "dropdown-item" %>
+            <%= link_to display_name("Angular"), texts_path(genre: "Angular"), class: "dropdown-item" %>
+            <%= link_to display_name("Vue"), texts_path(genre: "Vue"), class: "dropdown-item" %>
           </div>
         </li>
         <% if user_signed_in? %>
@@ -45,15 +45,15 @@
               勉強会
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <%= link_to Settings.genre.Talk.display_name, movies_path(genre: "Talk"), class: "dropdown-item" %>
-              <%= link_to Settings.genre.Live.display_name, movies_path(genre: "Live"), class: "dropdown-item" %>
+              <%= link_to display_name("Talk"), movies_path(genre: "Talk"), class: "dropdown-item" %>
+              <%= link_to display_name("Live"), movies_path(genre: "Live"), class: "dropdown-item" %>
             </div>
           </li>
         <% else %>
           <li class="nav-item"><span class="nav-item nav-link disabled">勉強会</span></li>
         <% end %>
         <li class="nav-item">
-          <%= link_to Settings.genre.Money.display_name, movies_path(genre: "Money"), class: "nav-item nav-link #{user_signed_in? ? 'active' : 'disabled'}" %>
+          <%= link_to display_name("Money"), movies_path(genre: "Money"), class: "nav-item nav-link #{user_signed_in? ? 'active' : 'disabled'}" %>
         </li>
         <li class="nav-item">
           <%= link_to "LINE", lines_path, class: "nav-item nav-link active" %>

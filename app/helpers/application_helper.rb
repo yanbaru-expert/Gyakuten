@@ -34,4 +34,8 @@ module ApplicationHelper
   def add_disabled
     " disabled" unless user_signed_in?
   end
+
+  def display_name(genre)
+    @convert_title_list[Genre::CONVERT_LIST[genre]]
+  end
 end

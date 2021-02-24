@@ -2,46 +2,4 @@ ogp:
   site_name: "やんばるエキスパート教材"
   twitter_site: "@yoshito410kam"
   default_description: "やんばるエキスパートの教材です"
-genre:
-  Basic:
-    display_name: "Basic"
-    color_code: "#007bff"
-  Git:
-    display_name: "Git"
-    color_code: "#343a40"
-  Ruby:
-    display_name: "Ruby"
-    color_code: "#dc3545"
-  Ruby on Rails:
-    display_name: "Ruby on Rails"
-    color_code: "#dc3545"
-  PHP:
-    display_name: "PHP"
-    color_code: "#6f42c1"
-  HTML&CSS:
-    display_name: "HTML&CSS"
-    color_code: "#ffc107"
-  JavaScript:
-    display_name: "JavaScript"
-    color_code: "#e6dc00"
-  TypeScript:
-    display_name: "TypeScript"
-    color_code: "#777777"
-  Vue:
-    display_name: "Vue"
-    color_code: "#42b983"
-  Angular:
-    display_name: "Angular"
-    color_code: "#dd0031"
-  Money:
-    display_name: "マネタイズ講座"
-    color_code: "#4169e1"
-  Talk:
-    display_name: "全ての勉強会"
-    color_code: "#fd7e14"
-  Live:
-    display_name: "プログラミング勉強会"
-    color_code: "#f08080"
-  AWS:
-    display_name: "AWS"
-    color_code: "#ec7211"
+

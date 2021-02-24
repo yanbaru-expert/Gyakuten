@@ -8,7 +8,7 @@
     <div class="info_box">
       <p class="p-2 text-center">アカウントをお持ちの方は <%= link_to "ログイン", new_user_session_path %> をお願いします。</p>
     </div>
-<% end %>
+  <% end %>
   <%= render 'shared/search_text' %>
   <div class="row">
     <% @texts.each do |text| %>
@@ -31,7 +31,7 @@
               <p class="card-text text-title">
                 <%= text.title %>
               </p>
-              <p><%= "【#{text.genre}】" %></p>
+              <p><%= "【#{text.genre.title}】" %></p>
             </div>
           <% end %>
         </div>
