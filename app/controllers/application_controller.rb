@@ -21,7 +21,6 @@ class ApplicationController < ActionController::Base
 
   private
 
-
     def heroku_staging?
       request.url.include?("gyakuten-app-staging.herokuapp.com")
     end

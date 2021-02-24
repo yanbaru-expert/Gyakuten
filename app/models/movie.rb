@@ -19,7 +19,7 @@
 
 class Movie < ApplicationRecord
   include GenreSearch
-  YOUTUBE_REGEX = %r{\Ahttps://www.youtube.com/embed/[^?&"'>]+\z}
+  YOUTUBE_REGEX = %r{\Ahttps://www.youtube.com/embed/[^?&"'>]+\z}.freeze
   acts_as_list
 
   validates :title, presence: true

@@ -27,10 +27,10 @@ class Genre < ApplicationRecord
     "Talk" => 14,
     "Live" => 15,
     "Invisible" => 16,
-  }
+  }.freeze
 
   acts_as_list
-  COLOR_REGEX = /\A#[0-9a-f]{6}\z/
+  COLOR_REGEX = /\A#[0-9a-f]{6}\z/.freeze
   validates :title, presence: true
   validates :color, format: { with: COLOR_REGEX }
 

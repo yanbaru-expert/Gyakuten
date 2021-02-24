@@ -18,9 +18,9 @@ class ConvertGenreToGenreId < ActiveRecord::Migration[5.2]
       "Live" => 15,
       "Other" => 16,
     }
-    genre_list.keys.each do |genre|
-      Movie.where(genre: genre).update(genre: genre_list[genre])
-      Text.where(genre: genre).update(genre: genre_list[genre])
+    genre_list.each_key do |genre|
+      Movie.where(genre: genre).update!(genre: genre_list[genre])
+      Text.where(genre: genre).update!(genre: genre_list[genre])
     end
   end
 end

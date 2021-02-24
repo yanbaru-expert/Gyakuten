@@ -18,7 +18,7 @@ class ConvertGenreToGenreIdInQuestions < ActiveRecord::Migration[5.2]
       "Live" => 15,
       "Other" => 16,
     }
-    genre_list.keys.each do |genre|
+    genre_list.each_key do |genre|
       Question.where(genre: genre).update(genre: genre_list[genre])
     end
   end
