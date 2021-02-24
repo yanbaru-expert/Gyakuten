@@ -15,7 +15,7 @@
 #  reset_password_sent_at :datetime
 #  reset_password_token   :string
 #  sign_in_count          :integer          default(0), not null
-#  slack_name             :string
+#  slack_name             :integer
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
 #  slack_id               :string           not null
