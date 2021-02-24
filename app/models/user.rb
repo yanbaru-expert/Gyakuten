@@ -51,11 +51,11 @@ class User < ApplicationRecord
   }
 
   enum slack_name: {
-    other: 0,
     yanbaru_expert_ruby: 2,
     yanbaru_expert_ruby_light: 3,
     yanbaru_expert_php: 5,
     yanbaru_code: 1,
     yanbaru_code_offline: 4,
+    other: 0,
   }
 end

@@ -32,7 +32,8 @@ ja:
       user:
         name: 名前
         remember_me: 次回から自動的にログイン
-        slack_id: Slack メンバー ID
+        slack_id: SlackメンバーID
+        slack_name: Slackワークスペース名
         flag: 利用フラグ
       question:
         body: 内容
