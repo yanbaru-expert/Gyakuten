@@ -39,4 +39,15 @@ ActiveAdmin.register Text do
     end
     f.actions
   end
+
+  csv do
+    column :id
+    column :position
+    column :genre_id
+    column(:genre) { |text| text.genre.title }
+    column :title
+    column :contents
+    column :description
+    column :image
+  end
 end
