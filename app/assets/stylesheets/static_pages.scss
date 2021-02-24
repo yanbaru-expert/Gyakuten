@@ -1,15 +1,29 @@
 /* ----------------------------------------------------------------
   共通
 -----------------------------------------------------------------*/
-$breakpoints: (
+// min-width
+$breakpoint-up: (
+  'sm': 'screen and (min-width: 690px)',
+  'md': 'screen and (min-width: 768px)',
+  'lg': 'screen and (min-width: 1000px)',
+  'xl': 'screen and (min-width: 1200px)',
+) !default;
+
+// max-width
+$breakpoint-down: (
   'sm': 'screen and (max-width: 689px)',
   'md': 'screen and (max-width: 767px)',
   'lg': 'screen and (max-width: 999px)',
   'xl': 'screen and (max-width: 1199px)',
 ) !default;
 
-@mixin mq($breakpoint: md) {
-  @media #{map-get($breakpoints, $breakpoint)} {
+@mixin mq-up($breakpoint: md) {
+  @media #{map-get($breakpoint-up, $breakpoint)} {
+    @content;
+  }
+}
+@mixin mq-down($breakpoint: md) {
+  @media #{map-get($breakpoint-down, $breakpoint)} {
     @content;
   }
 }
@@ -169,12 +183,12 @@ ul {
         }
 
         // タブレット
-        @include mq() {
+        @include mq-down() {
           @include flexItemSpaceTab();
         }
 
         // スマホ
-        @include mq(sm) {
+        @include mq-down(sm) {
           @include flexItemSpaceSp();
         }
       }
@@ -201,12 +215,12 @@ ul {
         }
 
         // タブレット
-        @include mq() {
+        @include mq-down() {
           @include flexItemSpaceTab();
         }
 
         // スマホ
-        @include mq(sm) {
+        @include mq-down(sm) {
           @include flexItemSpaceSp();
           min-width: 200px;
         }
@@ -240,7 +254,7 @@ services
         margin-right: 0;
       }
 
-      @include mq(sm) {
+      @include mq-down(sm) {
         @include flexItemSpaceSp();
         min-width: 200px;
       }
@@ -262,13 +276,34 @@ services
 #developer {
   @include colorWidth();
 
-  .developer-list {
-    @extend .flex-side;
-
-    .developer-item {
-      width: 50%;
-    }
+  .util-intro {
+    margin-top: 30px;
+    white-space: nowrap;
   }
+  .developer-content {
+    @include mq-up(sm) {
+      min-width: 800px;
+    }
+
+    .developer-list {
+      @extend .flex-side;
+      justify-content: space-between;
+
+      .developer-item {
+        @include flexItem();
+        width: calc(50% - 100px / 2);
+
+        &:nth-child(2n){
+          margin-right: 0;
+        }
+
+        @include mq-down(sm) {
+          @include flexItemSpaceSp();
+          min-width: 200px;
+          }
+        }
+      }
+    }
 }
 
 /* ----------------------------------------------------------------
