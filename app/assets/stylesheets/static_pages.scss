@@ -323,6 +323,23 @@ services
       top: 0;
       left: 0;
     }
+
+  }
+}
+
+.administor-sns {
+  display: flex;
+
+  .sns-item {
+    position: relative;
+
+    .sns-link {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
   }
 }
 
