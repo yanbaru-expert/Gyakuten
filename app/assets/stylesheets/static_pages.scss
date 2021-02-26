@@ -116,6 +116,17 @@ ul {
 }
 
 // 各セクションタイトル
+// タイトル下部線
+@mixin titlelUnderline($height: 10px, $background: $static-color) {
+  content: "";
+  display: block;
+  border-radius: 10px;
+  margin: 5px auto 0;
+  width: 50%;
+  height: $height;
+  background: $background;
+}
+
 .util-title {
   font-size: 2rem;
   font-weight: bold;
@@ -124,13 +135,23 @@ ul {
   .util-title-inner {
 
     &::after {
-      content: "";
-      display: block;
-      height: 10px;
-      border-radius: 10px;
-      margin: 5px auto 0;
-      width: 50px;
-      background: $static-color;
+      @include titlelUnderline();
+    }
+  }
+
+  .util-title-color {
+    &::after {
+      @include titlelUnderline(10px, #fff);
+    }
+  }
+}
+
+.sub-title {
+
+  .sub-title-inner {
+
+    &::after {
+      @include titlelUnderline(5px, $static-color);
     }
   }
 }
@@ -226,6 +247,12 @@ ul {
         }
       }
     }
+  }
+}
+
+.features-item-title-inner {
+  &::after {
+    @include titlelUnderline(5px, #fff);
   }
 }
 
