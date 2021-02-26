@@ -41,10 +41,6 @@ $static-color: linear-gradient(to right, #0040ab, #1184cf, #0789d1);
   color: #fff;
 }
 
-ul {
-  list-style: none;
-}
-
 // 全幅表示
 @mixin colorWidth {
   width: 100vw;
@@ -180,10 +176,51 @@ ul {
 #about {
 
   .about-list {
+    @include colorWidth();
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
+    margin-top: 30px;
+
+    .about-item {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: calc(22em * (1.41421356237 - 1) / 2);
+      width: 22em;
+      height: 22em;
+      font-size: 1vw;
+      background: $static-color;
+      color: #fff;
+      border-radius: 50%;
+    }
+
+    @include mq-down() {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      .about-item {
+        width: 300px;
+        height: 300px;
+        border-radius: 50%;
+        margin-bottom: 50px;
+
+        .about-item-text {
+          font-size: 1rem;
+        }
+      }
+    }
+
   }
 }
+
+.about-item-title {
+  font-size: 2rem;
+  padding-bottom: 10px;
+}
+
 
 /* ----------------------------------------------------------------
   teachinglist
