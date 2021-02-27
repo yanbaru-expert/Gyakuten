@@ -156,18 +156,53 @@ $static-color: linear-gradient(to right, #0040ab, #1184cf, #0789d1);
   heading
 -----------------------------------------------------------------*/
 #heading {
+  position: relative;
+  overflow: hidden;
+  @include colorWidth();
+  @include flexCentering();
   min-height: 100vh;
+  background: $static-color;
+  margin-top: -100px;
+  flex-direction: column;
 
-  .heading-inner {
-    position: relative;
-
-    .owner_icon {
-      position: absolute;
-      width: 250px;
-      top: 0;
-      right: 0;
-    }
+  .owner_icon {
+    position: absolute;
+    width: 250px;
+    bottom: 45%;
+    right: 15%;
+    z-index: 1000;
   }
+
+  // 背景の三角形
+  &::after {
+    position: absolute;
+    content: "";
+    display: block;
+    top: 0;
+    right: 0;
+    border-top: 20vh solid #fff;
+    border-left: 100vw solid #fff;
+    border-right: 0 solid transparent;
+    border-bottom: 50vh solid transparent;
+  }
+}
+
+.heading-inner {
+  position: relative;
+  width: 100vw;
+  height: 50vh;
+  z-index: 1000;
+
+  .heading-lead {
+    position: absolute;
+    top: 35%;
+    left: 30%;
+  }
+}
+
+.heading-about {
+  color: #fff;
+  height: 50vh;
 }
 
 /* ----------------------------------------------------------------
