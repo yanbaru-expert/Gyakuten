@@ -144,6 +144,10 @@ $static-color: linear-gradient(to right, #0040ab, #1184cf, #0789d1);
       @include titlelUnderline(10px, #fff);
     }
   }
+
+  @include mq-down(sm) {
+    font-size: 1.7rem;
+  }
 }
 
 .sub-title {
@@ -249,22 +253,24 @@ $static-color: linear-gradient(to right, #0040ab, #1184cf, #0789d1);
     .heading-lead {
       width: 100%;
       left: 10%;
+
+      .heading-lead-title {
+        font-size: 2rem;
+      }
+
+      .heading-lead-text {
+        font-size: 1.2rem;
+      }
     }
 
     .btn-teaching {
       background: #fff;
       color: black;
     }
-
-    .heading-about {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
   }
 
   .heading-about {
-
+    font-size: 1.3rem;
   }
 
   .owner_icon {
@@ -408,7 +414,10 @@ services
 
   .util-intro {
     margin-top: 50px;
-    white-space: nowrap;
+
+    .util-text {
+      min-width: 300px;
+    }
   }
 
   .services-list {
@@ -449,7 +458,7 @@ services
 
   .util-intro {
     margin-top: 30px;
-    white-space: nowrap;
+    min-width: 300px;
   }
   .developer-content {
     @include mq-up(sm) {
@@ -482,34 +491,34 @@ services
 -----------------------------------------------------------------*/
 #administor {
   @include colorWidth();
+}
 
-  .administor-inner {
-    position: relative;
-    display: flex;
-    justify-content: space-between;
+.administor-inner {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
 
-    .administor-icon {
-      position: absolute;
-      width: 250px;
-      top: 0;
-      right: 0;
-      margin-right: 50px;
+  .administor-icon {
+    position: absolute;
+    width: 250px;
+    top: 0;
+    right: 0;
+    margin-right: 50px;
+  }
+
+  .administor-info {
+    position: absolute;
+    top: 100px;
+    left: 0;
+
+    .administor-name {
+      font-size: 1.5rem;
+      font-weight: bold;
     }
-
-    .administor-info {
-      position: absolute;
-      top: 100px;
-      left: 0;
-
-      .administor-name {
-        font-size: 1.5rem;
-        font-weight: bold;
-      }
-    }
-
   }
 }
 
+// snsアイコン
 .administor-sns {
   display: flex;
 
@@ -522,6 +531,26 @@ services
       left: 0;
       width: 100%;
       height: 100%;
+    }
+  }
+}
+
+// スマホ表示
+@include mq-down(sm) {
+  .administor-inner {
+    width: 100vw;
+    height: 50vh;
+
+    .administor-info {
+      top: 50px;
+    }
+
+    .administor-sns {
+      flex-wrap: wrap;
+    }
+
+    .administor-icon {
+      display: none;
     }
   }
 }
@@ -590,6 +619,7 @@ services
 -----------------------------------------------------------------*/
 .static-footer {
   height: 300px;
+  padding: 1.2rem;
 
   .footer-contents {
     display: flex;
@@ -606,6 +636,25 @@ services
 
     ul {
       list-style: none;
+    }
+  }
+}
+
+@include mq-down(sm) {
+  .static-footer {
+    min-height: 400px;
+
+    .footer-contents {
+      flex-wrap: wrap;
+
+      .footer-list {
+        width: 100%;
+      }
+
+      a {
+        font-size: 17px;
+        padding: 0;
+      }
     }
   }
 }
