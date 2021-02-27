@@ -560,8 +560,8 @@ services
 -----------------------------------------------------------------*/
 // 質問全体
 .faq-list {
-  @include colorWidth();
-  max-width: 800px;
+  width: 100%;
+  margin: 90px auto 0;
 
   .faq-item {
     background: $static-color;
@@ -580,7 +580,7 @@ services
   cursor: pointer;
   position: relative;
   display: flex;
-  padding: 40px 80px 30px 40px;
+  padding: 30px 0 10px 40px;
 
   &::after {
     content: "";
@@ -599,7 +599,7 @@ services
   .faq-answer-inner {
     position: relative;
     display: flex;
-    padding: 16px 40px 38px;
+    padding: 20px 40px;
 
     &::before {
       content: "";
