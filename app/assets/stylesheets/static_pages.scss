@@ -174,16 +174,18 @@ $static-color: linear-gradient(to right, #0040ab, #1184cf, #0789d1);
   }
 
   // 背景の三角形
-  &::after {
-    position: absolute;
-    content: "";
-    display: block;
-    top: 0;
-    right: 0;
-    border-top: 20vh solid #fff;
-    border-left: 100vw solid #fff;
-    border-right: 0 solid transparent;
-    border-bottom: 50vh solid transparent;
+  @include mq-up(sm) {
+    &::after {
+      position: absolute;
+      content: "";
+      display: block;
+      top: 0;
+      right: 0;
+      border-top: 20vh solid #fff;
+      border-left: 100vw solid #fff;
+      border-right: 0 solid transparent;
+      border-bottom: 50vh solid transparent;
+    }
   }
 }
 
@@ -196,13 +198,67 @@ $static-color: linear-gradient(to right, #0040ab, #1184cf, #0789d1);
   .heading-lead {
     position: absolute;
     top: 35%;
-    left: 30%;
+    left: 20%;
+
+    .heading-lead-title {
+      font-size: 3rem;
+      font-weight: bold;
+      padding-bottom: 0;
+      margin-bottom: 0;
+    }
+
+    .heading-lead-text {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
   }
 }
 
 .heading-about {
   color: #fff;
   height: 50vh;
+}
+
+// ボタン
+.btn-teaching {
+  display: inline-block;
+  padding: 10px 40px;
+  text-decoration: none;
+  border-radius: 25px;
+  color: #fff;
+  background: $static-color;
+  border-bottom: solid 3px #2b66f1;
+
+  &:hover{
+    opacity: 0.8;
+    color: #fff;
+  }
+}
+
+// スマホ表示
+@include mq-down(sm) {
+  .heading-inner {
+    background: #fff;
+
+    .heading-lead {
+      width: 100%;
+      left: 15%;
+    }
+
+    .btn-teaching {
+      display: flex;
+      justify-content: center;
+      width: 80%;
+    }
+  }
+
+  .heading-about {
+
+  }
+
+  .owner_icon {
+    display: none;
+  }
 }
 
 /* ----------------------------------------------------------------
