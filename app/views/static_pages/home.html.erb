@@ -224,30 +224,7 @@
       <span class="util-title-inner">よくある質問</span>
     </h2>
     <dl class="faq-list static-color">
-      <div class="faq-item js-faq">
-        <dt class="faq-question">
-          <p class="faq-item-title">Q</p>
-          <p class="faq-question-text">初心者から始めても大丈夫ですか？</p>
-        </dt>
-        <dd class="faq-answer js-answer">
-          <div class="faq-answer-inner">
-            <p class="faq-item-title">A</p>
-            <p class="faq-answer-text">問題ありません！初心者用の教材を用意しています。また、やんばるエキスパートでは教材に対する疑問点は適宜メンターに質問できます。なので初心者の方でも安心して取り組めます。</p>
-          </div>
-        </dd>
-      </div>
-      <div class="faq-item">
-        <dt class="faq-question">
-          <p class="faq-item-title">Q</p>
-          <p class="faq-question-text">教材について質問できますか？</p>
-        </dt>
-        <dd class="faq-answer">
-          <div class="faq-answer-inner">
-            <p class="faq-item-title">A</p>
-            <p class="faq-answer-text">やんばるエキスパートにて可能です</p>
-          </div>
-        </dd>
-      </div>
+      <%= render partial: "faq", collection: @faqs %>
     </dl>
   </section>
 </div>
