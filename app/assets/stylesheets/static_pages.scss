@@ -591,35 +591,15 @@ services
   position: relative;
   display: flex;
   padding: 30px 0 10px 40px;
-
-  @include mq-down() {
-    padding: 30px 20px;
-  }
-}
-
-.faq-question-text {
-  position: relative;
-  width: 85%;
-
-  &::after {
-    font-family: "Font Awesome 5 Free";
-    content: "\f107";
-    font-size: 2em;
-    position: absolute;
-    top: -10px;
-    right: 0%;
-
-    @include mq-down() {
-      top: 50%;
-      left: 40%;
-    }
-  }
 }
 
 // 回答部分
 .faq-answer {
-  max-height: 0;
-  overflow: hidden;
+  display: none;
+
+  &:active {
+    display: block;
+  }
 
   .faq-answer-inner {
     position: relative;
@@ -637,8 +617,53 @@ services
       background: #fff;
       border: 0 solid #fff;
     }
+
+    @include mq-down(lg) {
+      padding: 20px 30px;
+    }
   }
 }
+
+// 矢印部分
+.faq-question-text {
+  position: relative;
+  width: 90%;
+
+  &::after {
+    position: absolute;
+    top: 30%;
+    right:10px;
+    display: block;
+    content: "";
+    width: 15px;
+    height: 15px;
+    border-top: solid 3px #fff;
+    border-right: solid 3px #fff;
+    transform: translate(0, -50%) rotate(135deg);
+    transform-origin: center;
+
+    @include mq-down(lg) {
+      top: 100%;
+      right: 60%;
+    }
+  }
+
+  &:active::after {
+    transform:translate(0, -50%) rotate(-45deg);
+  }
+
+}
+
+@include mq-down(lg) {
+  .faq-list {
+    margin: 0;
+
+    .faq-question {
+      padding: 20px 30px;
+    }
+  }
+}
+
 /* ----------------------------------------------------------------
   footer
 -----------------------------------------------------------------*/
