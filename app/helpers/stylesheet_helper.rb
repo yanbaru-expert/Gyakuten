@@ -1,7 +1,10 @@
 module StylesheetHelper
   def base_color
-    controller_name == "lines" ? "line-bg-color" : "base-bg-color"
-    controller_name == "static_pages" ? "static-bg-color" : "base-bg-color"
+    case controller_name
+    when "lines" then "line-bg-color"
+    when "static_pages" then "static-bg-color"
+    else "base-bg-color"
+    end
   end
 
   def max_width
