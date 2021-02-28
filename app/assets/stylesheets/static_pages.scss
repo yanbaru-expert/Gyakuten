@@ -5,7 +5,7 @@
 $breakpoint-up: (
   'sm': 'screen and (min-width: 690px)',
   'md': 'screen and (min-width: 768px)',
-  'lg': 'screen and (min-width: 1000px)',
+  'lg': 'screen and (min-width: 1025px)',
   'xl': 'screen and (min-width: 1200px)',
 ) !default;
 
@@ -13,7 +13,7 @@ $breakpoint-up: (
 $breakpoint-down: (
   'sm': 'screen and (max-width: 689px)',
   'md': 'screen and (max-width: 767px)',
-  'lg': 'screen and (max-width: 999px)',
+  'lg': 'screen and (max-width: 1024px)',
   'xl': 'screen and (max-width: 1199px)',
 ) !default;
 
@@ -303,7 +303,8 @@ $static-color: linear-gradient(to right, #0040ab, #1184cf, #0789d1);
       border-radius: 50%;
     }
 
-    @include mq-down() {
+    // スマホ用
+    @include mq-down(lg) {
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -327,6 +328,11 @@ $static-color: linear-gradient(to right, #0040ab, #1184cf, #0789d1);
 .about-item-title {
   font-size: 2rem;
   padding-bottom: 10px;
+
+  @include mq-down(lg) {
+    font-size: 1.5rem;
+    padding-bottom: 0;
+  }
 }
 
 @include mq-down(sm) {
@@ -354,7 +360,7 @@ $static-color: linear-gradient(to right, #0040ab, #1184cf, #0789d1);
         }
 
         // タブレット
-        @include mq-down() {
+        @include mq-down(lg) {
           @include flexItemSpaceTab();
         }
 
@@ -386,7 +392,7 @@ $static-color: linear-gradient(to right, #0040ab, #1184cf, #0789d1);
         }
 
         // タブレット
-        @include mq-down() {
+        @include mq-down(lg) {
           @include flexItemSpaceTab();
         }
 
@@ -446,6 +452,10 @@ services
         width: 100%;
         height: 100%;
       }
+    }
+
+    @include mq-up(sm) {
+      min-width: 800px;
     }
   }
 }
@@ -582,6 +592,9 @@ services
   display: flex;
   padding: 30px 0 10px 40px;
 
+  @include mq-down() {
+    padding: 30px 20px;
+  }
 }
 
 .faq-question-text {
@@ -595,6 +608,11 @@ services
     position: absolute;
     top: -10px;
     right: 0%;
+
+    @include mq-down() {
+      top: 50%;
+      left: 40%;
+    }
   }
 }
 
