@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   before_action :basic_auth, if: :heroku_staging?
-  before_action :authenticate_user!, except: [:home]
+  before_action :authenticate_user!
   before_action :configure_permitted_parameters, if: :devise_controller?
   before_action :sign_out_user, if: :user_signed_in?
   before_action :set_genres
