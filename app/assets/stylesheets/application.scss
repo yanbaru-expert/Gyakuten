@@ -24,17 +24,13 @@ $line-color: #28a745;
 // 全体
 body {
   padding-top: 56px;
-  padding-bottom: 50px;
+  padding-bottom: 0;
 }
 
 .base-container {
   @extend .container-fluid;
   padding-top: 7%;
   padding-bottom: 30px;
-}
-
-body {
-  padding-bottom: 0;
 }
 
 a:hover {
