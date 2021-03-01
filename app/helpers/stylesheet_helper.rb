@@ -10,7 +10,9 @@ module StylesheetHelper
   def max_width
     if devise_controller?
       "mw-sm"
-    elsif controller_name.in?(%w[my_pages movies]) || (controller_name.in?(%w[texts challenges]) && action_name == "index")
+    elsif controller_name.in?(%w[my_pages movies]) ||
+      (controller_name.in?(%w[texts challenges]) && action_name == "index") ||
+      controller_name == "static_pages"
       "mw-xl"
     else
       "mw-md"
