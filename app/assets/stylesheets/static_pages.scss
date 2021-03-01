@@ -4,7 +4,7 @@
 // min-width
 $breakpoint-up: (
   'sm': 'screen and (min-width: 690px)',
-  'md': 'screen and (min-width: 768px)',
+  'md': 'screen and (min-width: 868px)',
   'lg': 'screen and (min-width: 1025px)',
   'xl': 'screen and (min-width: 1200px)',
 ) !default;
@@ -12,7 +12,7 @@ $breakpoint-up: (
 // max-width
 $breakpoint-down: (
   'sm': 'screen and (max-width: 689px)',
-  'md': 'screen and (max-width: 767px)',
+  'md': 'screen and (max-width: 867px)',
   'lg': 'screen and (max-width: 1024px)',
   'xl': 'screen and (max-width: 1199px)',
 ) !default;
@@ -272,7 +272,10 @@ $static-color: linear-gradient(to right, #0040ab, #1184cf, #0789d1);
   .heading-about {
     font-size: 1.3rem;
   }
+}
 
+// タブレットサイズ
+@include mq-down() {
   .owner_icon {
     display: none;
   }
