@@ -4,16 +4,16 @@
 // min-width
 $breakpoint-up: (
   'sm': 'screen and (min-width: 690px)',
-  'md': 'screen and (min-width: 868px)',
-  'lg': 'screen and (min-width: 1025px)',
+  'md': 'screen and (min-width: 778px)',
+  'lg': 'screen and (min-width: 965px)',
   'xl': 'screen and (min-width: 1200px)',
 ) !default;
 
 // max-width
 $breakpoint-down: (
   'sm': 'screen and (max-width: 689px)',
-  'md': 'screen and (max-width: 867px)',
-  'lg': 'screen and (max-width: 1024px)',
+  'md': 'screen and (max-width: 777px)',
+  'lg': 'screen and (max-width: 964px)',
   'xl': 'screen and (max-width: 1199px)',
 ) !default;
 
@@ -98,7 +98,7 @@ $static-color: linear-gradient(to right, #0040ab, #1184cf, #0789d1);
 .flex-side {
   display: flex;
   flex-wrap: wrap;
-  margin-top: 20px;
+  margin: 20px;
 }
 
 
@@ -275,7 +275,7 @@ $static-color: linear-gradient(to right, #0040ab, #1184cf, #0789d1);
 }
 
 // タブレットサイズ
-@include mq-down() {
+@include mq-down(lg) {
   .owner_icon {
     display: none;
   }
@@ -443,7 +443,7 @@ services
         margin-right: 0;
       }
 
-      @include mq-down(sm) {
+      @include mq-down() {
         @include flexItemSpaceSp();
         min-width: 200px;
       }
@@ -457,7 +457,7 @@ services
       }
     }
 
-    @include mq-up(sm) {
+    @include mq-up(lg) {
       min-width: 800px;
     }
   }
@@ -473,30 +473,29 @@ services
     margin-top: 30px;
     min-width: 300px;
   }
-  .developer-content {
-    @include mq-up(sm) {
-      min-width: 800px;
+}
+
+.developer-list {
+  @extend .flex-side;
+  justify-content: space-between;
+
+  .developer-item {
+    @include flexItem();
+    width: calc(50% - 100px / 2);
+
+    &:nth-child(2n){
+      margin-right: 0;
     }
-
-    .developer-list {
-      @extend .flex-side;
-      justify-content: space-between;
-
-      .developer-item {
-        @include flexItem();
-        width: calc(50% - 100px / 2);
-
-        &:nth-child(2n){
-          margin-right: 0;
-        }
-
-        @include mq-down(sm) {
-          @include flexItemSpaceSp();
-          min-width: 200px;
-          }
-        }
-      }
+    @include mq-down() {
+      @include flexItemSpaceSp();
+      min-width: 200px;
     }
+  }
+
+  @include mq-up() {
+    min-width: 750px;
+  }
+
 }
 
 /* ----------------------------------------------------------------
@@ -523,6 +522,15 @@ services
     position: absolute;
     top: 100px;
     left: 0;
+
+
+    @include mq-down(lg) {
+      left: -25vw;
+    }
+
+    @include mq-down(sm) {
+      left: 10vw;
+    }
 
     .administor-name {
       font-size: 1.5rem;
@@ -554,17 +562,16 @@ services
     width: 100vw;
     height: 50vh;
 
-    .administor-info {
-      top: 50px;
-    }
-
     .administor-sns {
       flex-wrap: wrap;
     }
 
-    .administor-icon {
-      display: none;
-    }
+  }
+}
+
+@include mq-down(lg) {
+  .administor-icon {
+    display: none;
   }
 }
 
@@ -678,6 +685,7 @@ services
     display: flex;
     justify-content: space-around;
     color: #fff;
+    min-width: 800px;
 
     .footer-list {
       padding: 0;
@@ -694,12 +702,13 @@ services
 }
 
 // スマホ表示
-@include mq-down(sm) {
+@include mq-down() {
   .static-footer {
     min-height: 400px;
 
     .footer-contents {
       flex-wrap: wrap;
+      min-width: 0;
 
       .footer-list {
         width: 100%;
