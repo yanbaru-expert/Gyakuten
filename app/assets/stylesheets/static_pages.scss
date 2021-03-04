@@ -3,18 +3,24 @@
 -----------------------------------------------------------------*/
 // min-width
 $breakpoint-up: (
+  'xxs': 'screen and (min-width: 485px)',
+  'xs': 'screen and (min-width: 587px)',
   'sm': 'screen and (min-width: 690px)',
   'md': 'screen and (min-width: 778px)',
   'lg': 'screen and (min-width: 965px)',
-  'xl': 'screen and (min-width: 1200px)',
+  'xl': 'screen and (min-width: 1025px)',
+  'xxl': 'screen and (min-width: 1245px)',
 ) !default;
 
 // max-width
 $breakpoint-down: (
+  'xxs': 'screen and (max-width: 484px)',
+  'xs': 'screen and (max-width: 586px)',
   'sm': 'screen and (max-width: 689px)',
   'md': 'screen and (max-width: 777px)',
   'lg': 'screen and (max-width: 964px)',
-  'xl': 'screen and (max-width: 1199px)',
+  'xl': 'screen and (max-width: 1024px)',
+  'xxl': 'screen and (max-width: 1244px)',
 ) !default;
 
 @mixin mq-up($breakpoint: md) {
