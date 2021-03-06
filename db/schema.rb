@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_04_225931) do
+ActiveRecord::Schema.define(version: 2021_03_06_222521) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -71,9 +71,9 @@ ActiveRecord::Schema.define(version: 2021_03_04_225931) do
     t.string "answer"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "position"
   end
 
-<<<<<<< HEAD
   create_table "genres", force: :cascade do |t|
     t.string "name", null: false
     t.string "color"
@@ -84,8 +84,6 @@ ActiveRecord::Schema.define(version: 2021_03_04_225931) do
     t.index ["code_name"], name: "index_genres_on_code_name", unique: true
   end
 
-=======
->>>>>>> 80ca8a4 (faq モデルとテーブルを作成)
   create_table "lines", force: :cascade do |t|
     t.string "genre"
     t.string "title"
