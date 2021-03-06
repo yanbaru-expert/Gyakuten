@@ -306,7 +306,7 @@ $static-color: linear-gradient(to right, #0040ab, #1184cf, #0789d1);
       padding: calc(22em * (1.41421356237 - 1) / 2);
       width: 22em;
       height: 22em;
-      font-size: 1vw;
+      font-size: 1.5vmin;
       background: $static-color;
       color: #fff;
       border-radius: 50%;
@@ -337,6 +337,7 @@ $static-color: linear-gradient(to right, #0040ab, #1184cf, #0789d1);
 .about-item-title {
   font-size: 2rem;
   padding-bottom: 10px;
+  word-break: keep-all;
 
   @include mq-down(lg) {
     font-size: 1.5rem;
@@ -361,26 +362,35 @@ $static-color: linear-gradient(to right, #0040ab, #1184cf, #0789d1);
     .teachinglist-list {
       @extend .flex-side;
 
-      .teachinglist-item {
-        @include flexItem();
-
-        &:nth-child(3n) {
-          margin-right: 0;
-        }
-
-        // タブレット
-        @include mq-down(lg) {
-          @include flexItemSpaceTab();
-        }
-
-        // スマホ
-        @include mq-down(sm) {
-          @include flexItemSpaceSp();
-        }
-      }
     }
   }
 }
+
+.teachinglist-item {
+  @include flexItem();
+
+  &:nth-child(3n) {
+    margin-right: 0;
+  }
+
+  @include mq-down(xl) {
+    @include flexItemSpaceTab();
+  }
+
+  @include mq-down() {
+    @include flexItemSpaceSp();
+  }
+}
+
+.teaching-item-text {
+  font-size: 2vmin;
+  word-break: keep-all;
+
+  @include mq-down() {
+    font-size: 3vmin;
+  }
+}
+
 
 /* ----------------------------------------------------------------
   features
@@ -393,24 +403,34 @@ $static-color: linear-gradient(to right, #0040ab, #1184cf, #0789d1);
     .features-list {
       @extend .flex-side;
 
-      .features-item {
-        @include flexItem(#fff, $static-color, );
+    }
+  }
+}
 
-        &:nth-child(3n) {
-          margin-right: 0;
-        }
+.features-item {
+  @include flexItem(#fff, $static-color, );
 
-        // タブレット
-        @include mq-down(lg) {
-          @include flexItemSpaceTab();
-        }
+  &:nth-child(3n) {
+    margin-right: 0;
+  }
 
-        // スマホ
-        @include mq-down(sm) {
-          @include flexItemSpaceSp();
-          min-width: 200px;
-        }
-      }
+  // タブレット
+  @include mq-down(xl) {
+    @include flexItemSpaceTab();
+  }
+
+  // スマホ
+  @include mq-down() {
+    @include flexItemSpaceSp();
+    min-width: 200px;
+  }
+
+  .features-item-text {
+    font-size: 2vmin;
+    word-break: keep-all;
+
+    @include mq-down() {
+      font-size: 3vmin;
     }
   }
 }
@@ -492,6 +512,11 @@ services
     &:nth-child(2n){
       margin-right: 0;
     }
+
+    .developer-item-text {
+      word-break: keep-all;
+    }
+
     @include mq-down() {
       @include flexItemSpaceSp();
       min-width: 200px;
@@ -529,13 +554,24 @@ services
     top: 100px;
     left: 0;
 
+    @include mq-down(md) {
+      left: -25vw;
+    }
 
     @include mq-down(lg) {
-      left: -25vw;
+      left: -20vw;
     }
 
     @include mq-down(sm) {
       left: 10vw;
+    }
+
+    @include mq-down(xs) {
+      left: 7vw;
+    }
+
+    @include mq-down(xxs) {
+      left: 2vw;
     }
 
     .administor-name {
@@ -607,6 +643,10 @@ services
   position: relative;
   display: flex;
   padding: 30px 0 10px 40px;
+
+  @include mq-down() {
+    padding-bottom: 25px;
+    }
 }
 
 // 回答部分
@@ -633,10 +673,6 @@ services
       background: #fff;
       border: 0 solid #fff;
     }
-
-    @include mq-down(lg) {
-      padding: 20px 30px;
-    }
   }
 }
 
@@ -658,9 +694,9 @@ services
     transform: translate(0, -50%) rotate(135deg);
     transform-origin: center;
 
-    @include mq-down(lg) {
-      top: 100%;
-      right: 60%;
+    @include mq-down() {
+      top: 45px;
+      right: 55%;
     }
   }
 
@@ -673,10 +709,6 @@ services
 @include mq-down(lg) {
   .faq-list {
     margin: 0;
-
-    .faq-question {
-      padding: 20px 30px;
-    }
   }
 }
 
