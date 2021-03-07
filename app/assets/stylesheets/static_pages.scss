@@ -297,6 +297,7 @@ $static-color: linear-gradient(to right, #0040ab, #1184cf, #0789d1);
     display: flex;
     justify-content: space-around;
     margin-top: 30px;
+    max-width: 1140px;
 
     .about-item {
       display: flex;
@@ -310,6 +311,10 @@ $static-color: linear-gradient(to right, #0040ab, #1184cf, #0789d1);
       background: $static-color;
       color: #fff;
       border-radius: 50%;
+
+      @include mq-up(xxl) {
+        font-size: 1rem;
+      }
     }
 
     // スマホ用
@@ -358,7 +363,11 @@ $static-color: linear-gradient(to right, #0040ab, #1184cf, #0789d1);
   @include colorWidth();
 
   .teachinglist-content {
-    min-width: 100vw;
+    max-width: 1140px;
+
+    @include mq-down(lg) {
+      min-width: 85vw;
+    }
 
     .teachinglist-list {
       @extend .flex-side;
@@ -384,7 +393,7 @@ $static-color: linear-gradient(to right, #0040ab, #1184cf, #0789d1);
 }
 
 .teaching-item-text {
-  font-size: 2vmin;
+  font-size: 1.5vmin;
   word-break: keep-all;
 
   @include mq-down() {
@@ -400,7 +409,11 @@ $static-color: linear-gradient(to right, #0040ab, #1184cf, #0789d1);
   @include colorWidth();
 
   .features-content {
-    min-width: 100vw;
+    max-width: 1140px;
+
+    @include mq-down(lg) {
+      min-width: 85vw;
+    }
 
     .features-list {
       @extend .flex-side;
@@ -428,7 +441,7 @@ $static-color: linear-gradient(to right, #0040ab, #1184cf, #0789d1);
   }
 
   .features-item-text {
-    font-size: 2vmin;
+    font-size: 1.5vmin;
     word-break: keep-all;
 
     @include mq-down() {
@@ -453,12 +466,20 @@ services
     margin-top: 50px;
 
     .util-text {
-      min-width: 300px;
+      min-width: 350px;
     }
   }
 
   .services-content {
-    min-width: 100vw;
+    max-width: 960px;
+
+    @include mq-down(lg) {
+      min-width: 90vw;
+    }
+
+    @include mq-down() {
+      min-width: 85vw;
+    }
 
     .services-list {
       @extend .flex-side;
@@ -508,7 +529,11 @@ services
 }
 
 .developer-content {
-  min-width: 100vw;
+  max-width: 960px;
+
+  @include mq-down(lg) {
+    min-width: 85vw;
+  }
 
   .developer-list {
     @extend .flex-side;
@@ -532,7 +557,7 @@ services
       }
     }
 
-    @include mq-up() {
+    @include mq-up(lg) {
       min-width: 750px;
     }
   }
@@ -634,6 +659,7 @@ services
 .faq-list {
   width: 100%;
   margin: 90px auto 0;
+  max-width: 1140px;
 
   .faq-item {
     background: $static-color;

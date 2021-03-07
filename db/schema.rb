@@ -155,8 +155,8 @@ ActiveRecord::Schema.define(version: 2021_03_06_222521) do
     t.inet "last_sign_in_ip"
     t.boolean "flag", default: false
     t.string "slack_id", null: false
-    t.datetime "approval_at", default: "2021-02-14 01:46:33"
-    t.string "slack_name"
+    t.datetime "approval_at", default: "2021-03-01 20:36:36"
+    t.integer "slack_name"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
     t.index ["slack_id"], name: "index_users_on_slack_id", unique: true
