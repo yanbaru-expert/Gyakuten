@@ -8,8 +8,8 @@ $breakpoint-up: (
   'sm': 'screen and (min-width: 690px)',
   'md': 'screen and (min-width: 778px)',
   'lg': 'screen and (min-width: 965px)',
-  'xl': 'screen and (min-width: 1025px)',
-  'xxl': 'screen and (min-width: 1245px)',
+  'xl': 'screen and (min-width: 1081px)',
+  'xxl': 'screen and (min-width: 1332px)',
 ) !default;
 
 // max-width
@@ -19,8 +19,8 @@ $breakpoint-down: (
   'sm': 'screen and (max-width: 689px)',
   'md': 'screen and (max-width: 777px)',
   'lg': 'screen and (max-width: 964px)',
-  'xl': 'screen and (max-width: 1024px)',
-  'xxl': 'screen and (max-width: 1244px)',
+  'xl': 'screen and (max-width: 1080px)',
+  'xxl': 'screen and (max-width: 1331px)',
 ) !default;
 
 @mixin mq-up($breakpoint: md) {
@@ -304,9 +304,9 @@ $static-color: linear-gradient(to right, #0040ab, #1184cf, #0789d1);
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      padding: calc(22em * (1.41421356237 - 1) / 2);
-      width: 22em;
-      height: 22em;
+      padding: calc(19em * (1.41421356237 - 1) / 2);
+      width: 19em;
+      height: 19em;
       font-size: 1vw;
       background: $static-color;
       color: #fff;
@@ -318,7 +318,7 @@ $static-color: linear-gradient(to right, #0040ab, #1184cf, #0789d1);
     }
 
     // スマホ用
-    @include mq-down(lg) {
+    @include mq-down(xl) {
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -760,6 +760,8 @@ services
     justify-content: space-around;
     color: #fff;
     min-width: 800px;
+    width: 90vw;
+    max-width: 1160px;
 
     .footer-list {
       padding: 0;
