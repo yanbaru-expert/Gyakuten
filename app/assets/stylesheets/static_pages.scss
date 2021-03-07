@@ -306,7 +306,7 @@ $static-color: linear-gradient(to right, #0040ab, #1184cf, #0789d1);
       padding: calc(22em * (1.41421356237 - 1) / 2);
       width: 22em;
       height: 22em;
-      font-size: 1.5vmin;
+      font-size: 1vw;
       background: $static-color;
       color: #fff;
       border-radius: 50%;
@@ -358,6 +358,7 @@ $static-color: linear-gradient(to right, #0040ab, #1184cf, #0789d1);
   @include colorWidth();
 
   .teachinglist-content {
+    min-width: 100vw;
 
     .teachinglist-list {
       @extend .flex-side;
@@ -399,6 +400,7 @@ $static-color: linear-gradient(to right, #0040ab, #1184cf, #0789d1);
   @include colorWidth();
 
   .features-content {
+    min-width: 100vw;
 
     .features-list {
       @extend .flex-side;
@@ -455,36 +457,40 @@ services
     }
   }
 
-  .services-list {
-    @extend .flex-side;
-    margin-top: 0;
-    justify-content: space-between;
+  .services-content {
+    min-width: 100vw;
 
-    .services-item {
-      @include flexItem();
-      width: calc(50% - 100px / 2);
-      position: relative;
+    .services-list {
+      @extend .flex-side;
+      margin-top: 0;
+      justify-content: space-between;
 
-      &:nth-child(2n){
-        margin-right: 0;
+      .services-item {
+        @include flexItem();
+        width: calc(50% - 100px / 2);
+        position: relative;
+
+        &:nth-child(2n){
+          margin-right: 0;
+        }
+
+        @include mq-down() {
+          @include flexItemSpaceSp();
+          min-width: 200px;
+        }
+
+        .service-link {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+        }
       }
 
-      @include mq-down() {
-        @include flexItemSpaceSp();
-        min-width: 200px;
+      @include mq-up(lg) {
+        min-width: 800px;
       }
-
-      .service-link {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-      }
-    }
-
-    @include mq-up(lg) {
-      min-width: 800px;
     }
   }
 }
@@ -501,33 +507,37 @@ services
   }
 }
 
-.developer-list {
-  @extend .flex-side;
-  justify-content: space-between;
+.developer-content {
+  min-width: 100vw;
 
-  .developer-item {
-    @include flexItem();
-    width: calc(50% - 100px / 2);
+  .developer-list {
+    @extend .flex-side;
+    justify-content: space-between;
 
-    &:nth-child(2n){
-      margin-right: 0;
+    .developer-item {
+      @include flexItem();
+      width: calc(50% - 100px / 2);
+
+      &:nth-child(2n){
+        margin-right: 0;
+      }
+
+      .developer-item-text {
+        word-break: keep-all;
+      }
+
+      @include mq-down() {
+        @include flexItemSpaceSp();
+        min-width: 200px;
+      }
     }
 
-    .developer-item-text {
-      word-break: keep-all;
-    }
-
-    @include mq-down() {
-      @include flexItemSpaceSp();
-      min-width: 200px;
+    @include mq-up() {
+      min-width: 750px;
     }
   }
-
-  @include mq-up() {
-    min-width: 750px;
-  }
-
 }
+
 
 /* ----------------------------------------------------------------
   administor
