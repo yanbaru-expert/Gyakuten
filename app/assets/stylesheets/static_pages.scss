@@ -582,7 +582,7 @@ services
     width: 250px;
     top: 0;
     right: 0;
-    margin-right: 50px;
+    margin-right: 150px;
   }
 
   .administor-info {
@@ -590,29 +590,27 @@ services
     top: 100px;
     left: 0;
 
-    @include mq-down(md) {
-      left: -25vw;
-    }
-
     @include mq-down(lg) {
-      left: -20vw;
-    }
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, 50%);
 
-    @include mq-down(sm) {
-      left: 10vw;
-    }
-
-    @include mq-down(xs) {
-      left: 7vw;
-    }
-
-    @include mq-down(xxs) {
-      left: 2vw;
+      @include mq-down(sm) {
+        transform: translate(-50%, -35%);
+      }
     }
 
     .administor-name {
       font-size: 1.5rem;
       font-weight: bold;
+
+      @include mq-down(lg) {
+        text-align: center;
+      }
+    }
+
+    .administor-text {
+      min-width: 250px;
     }
   }
 }
@@ -620,6 +618,7 @@ services
 // snsアイコン
 .administor-sns {
   display: flex;
+  justify-content: center;
 
   .sns-item {
     position: relative;
@@ -633,17 +632,17 @@ services
     }
   }
 }
+@include mq-down(xs) {
+  .administor-sns {
+    flex-wrap: wrap;
+  }
+}
 
 // スマホ表示
 @include mq-down(sm) {
   .administor-inner {
     width: 100vw;
     height: 50vh;
-
-    .administor-sns {
-      flex-wrap: wrap;
-    }
-
   }
 }
 
