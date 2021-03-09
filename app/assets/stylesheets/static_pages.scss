@@ -188,7 +188,7 @@ $static-color: linear-gradient(to right, #0040ab, #1184cf, #0789d1);
   }
 
   // 背景の三角形
-  @include mq-up(sm) {
+  @include mq-up(lg) {
     &::after {
       position: absolute;
       content: "";
@@ -252,13 +252,15 @@ $static-color: linear-gradient(to right, #0040ab, #1184cf, #0789d1);
 }
 
 // スマホ表示
-@include mq-down(sm) {
+@include mq-down(lg) {
   .heading-inner {
     color: #fff;
 
     .heading-lead {
-      width: 100%;
-      left: 10%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -20%);
+      min-width: 260px;
 
       .heading-lead-title {
         font-size: 2rem;
@@ -330,6 +332,7 @@ $static-color: linear-gradient(to right, #0040ab, #1184cf, #0789d1);
         height: 300px;
         border-radius: 50%;
         margin-bottom: 50px;
+        margin-right: 0;
       }
     }
 
