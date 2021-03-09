@@ -291,9 +291,9 @@ $static-color: linear-gradient(to right, #0040ab, #1184cf, #0789d1);
   about
 -----------------------------------------------------------------*/
 #about {
+  @include colorWidth();
 
   .about-list {
-    @include colorWidth();
     display: flex;
     justify-content: space-around;
     margin-top: 30px;
@@ -307,13 +307,14 @@ $static-color: linear-gradient(to right, #0040ab, #1184cf, #0789d1);
       padding: calc(19em * (1.41421356237 - 1) / 2);
       width: 19em;
       height: 19em;
-      font-size: 1vw;
+      font-size: 1rem;
       background: $static-color;
       color: #fff;
       border-radius: 50%;
+      margin-right: 2vw;
 
-      @include mq-up(xxl) {
-        font-size: 1rem;
+      &:nth-child(3n) {
+        margin-right: 0;
       }
     }
 
@@ -329,10 +330,6 @@ $static-color: linear-gradient(to right, #0040ab, #1184cf, #0789d1);
         height: 300px;
         border-radius: 50%;
         margin-bottom: 50px;
-
-        .about-item-text {
-          font-size: 1rem;
-        }
       }
     }
 
@@ -345,7 +342,6 @@ $static-color: linear-gradient(to right, #0040ab, #1184cf, #0789d1);
   word-break: keep-all;
 
   @include mq-down(lg) {
-    font-size: 1.5rem;
     padding-bottom: 0;
   }
 }
