@@ -363,6 +363,8 @@ $static-color: linear-gradient(to right, #0040ab, #1184cf, #0789d1);
 
   .teachinglist-content {
     max-width: 1140px;
+    min-width: 45vh;
+    margin: 20px;
 
     @include mq-down(lg) {
       min-width: 85vw;
@@ -370,7 +372,6 @@ $static-color: linear-gradient(to right, #0040ab, #1184cf, #0789d1);
 
     .teachinglist-list {
       @extend .flex-side;
-
     }
   }
 }
@@ -392,12 +393,7 @@ $static-color: linear-gradient(to right, #0040ab, #1184cf, #0789d1);
 }
 
 .teaching-item-text {
-  font-size: 1.5vmin;
   word-break: keep-all;
-
-  @include mq-down() {
-    font-size: 3vmin;
-  }
 }
 
 
@@ -409,6 +405,8 @@ $static-color: linear-gradient(to right, #0040ab, #1184cf, #0789d1);
 
   .features-content {
     max-width: 1140px;
+    min-width: 53vh;
+    margin: 20px;
 
     @include mq-down(lg) {
       min-width: 85vw;
@@ -438,15 +436,10 @@ $static-color: linear-gradient(to right, #0040ab, #1184cf, #0789d1);
     @include flexItemSpaceSp();
     min-width: 200px;
   }
+}
 
-  .features-item-text {
-    font-size: 1.5vmin;
-    word-break: keep-all;
-
-    @include mq-down() {
-      font-size: 3vmin;
-    }
-  }
+.features-item-text {
+  word-break: keep-all;
 }
 
 .features-item-title-inner {
