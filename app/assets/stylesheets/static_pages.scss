@@ -47,13 +47,6 @@ $static-color: linear-gradient(to right, #0040ab, #1184cf, #0789d1);
   color: #fff;
 }
 
-// 全幅表示
-@mixin colorWidth {
-  width: 100vw;
-  margin: 0 calc(50% - 50vw);
-  padding: 0 calc(50vh - 50%);
-}
-
 // flexの中央寄せ
 @mixin flexCentering($justify: center, $align: center) {
   display: flex;
@@ -106,7 +99,6 @@ $static-color: linear-gradient(to right, #0040ab, #1184cf, #0789d1);
   flex-wrap: wrap;
   margin: 20px;
 }
-
 
 #home-container {
 
@@ -172,7 +164,6 @@ $static-color: linear-gradient(to right, #0040ab, #1184cf, #0789d1);
 #heading {
   position: relative;
   overflow: hidden;
-  @include colorWidth();
   @include flexCentering();
   min-height: 100vh;
   background: $static-color;
@@ -293,7 +284,6 @@ $static-color: linear-gradient(to right, #0040ab, #1184cf, #0789d1);
   about
 -----------------------------------------------------------------*/
 #about {
-  @include colorWidth();
 
   .about-list {
     display: flex;
@@ -349,17 +339,10 @@ $static-color: linear-gradient(to right, #0040ab, #1184cf, #0789d1);
   }
 }
 
-@include mq-down(sm) {
-  #about {
-    @include colorWidth();
-  }
-}
-
 /* ----------------------------------------------------------------
   teachinglist
 -----------------------------------------------------------------*/
 #teachinglist {
-  @include colorWidth();
 
   .teachinglist-content {
     max-width: 1140px;
@@ -401,7 +384,6 @@ $static-color: linear-gradient(to right, #0040ab, #1184cf, #0789d1);
   features
 -----------------------------------------------------------------*/
 #features {
-  @include colorWidth();
 
   .features-content {
     max-width: 1140px;
@@ -452,7 +434,6 @@ $static-color: linear-gradient(to right, #0040ab, #1184cf, #0789d1);
 services
 -----------------------------------------------------------------*/
 #services {
-  @include colorWidth();
 
   .util-intro {
     margin-top: 30px;
@@ -513,7 +494,6 @@ services
   developer
 -----------------------------------------------------------------*/
 #developer {
-  @include colorWidth();
 
   .util-intro {
     margin-top: 30px;
@@ -560,10 +540,6 @@ services
 /* ----------------------------------------------------------------
   administor
 -----------------------------------------------------------------*/
-#administor {
-  @include colorWidth();
-}
-
 .administor-inner {
   position: relative;
   display: flex;
