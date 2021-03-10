@@ -110,6 +110,10 @@ $static-color: linear-gradient(to right, #0040ab, #1184cf, #0789d1);
     @include mq-down(sm) {
       overflow: hidden;
     }
+
+    @include mq-down(lg) {
+      min-height: 60vh;
+    }
   }
 }
 
@@ -608,7 +612,7 @@ services
 @include mq-down(sm) {
   .administor-inner {
     width: 100vw;
-    height: 50vh;
+    height: 400px;
   }
 }
 
