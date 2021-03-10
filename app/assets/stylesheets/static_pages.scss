@@ -366,7 +366,7 @@ $static-color: linear-gradient(to right, #0040ab, #1184cf, #0789d1);
     margin-right: 0;
   }
 
-  @include mq-down(xl) {
+  @include mq-down(lg) {
     @include flexItemSpaceTab();
   }
 
@@ -387,7 +387,6 @@ $static-color: linear-gradient(to right, #0040ab, #1184cf, #0789d1);
 
   .features-content {
     max-width: 1140px;
-    min-width: 53vh;
     margin: 20px;
 
     @include mq-down(lg) {
@@ -396,7 +395,6 @@ $static-color: linear-gradient(to right, #0040ab, #1184cf, #0789d1);
 
     .features-list {
       @extend .flex-side;
-
     }
   }
 }
@@ -409,7 +407,7 @@ $static-color: linear-gradient(to right, #0040ab, #1184cf, #0789d1);
   }
 
   // タブレット
-  @include mq-down(xl) {
+  @include mq-down(lg) {
     @include flexItemSpaceTab();
   }
 
