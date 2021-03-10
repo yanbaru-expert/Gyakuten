@@ -626,13 +626,14 @@ services
 // 質問全体
 .faq-list {
   width: 100%;
-  margin: 90px auto 0;
+  padding: 0;
   max-width: 1140px;
 
   .faq-item {
     background: $static-color;
     border-radius: 50px;
-    margin-top: 30px;
+    width: 90%;
+    margin: 30px auto;
   }
   .faq-item-title {
     flex: 0 0 35px;
@@ -648,18 +649,44 @@ services
   display: flex;
   padding: 30px 0 10px 40px;
 
+  &::after {
+    content: "";
+    position: absolute;
+    top: 38%;
+    right:40px;
+    transition: all 0.2s ease-in-out;
+    display: block;
+    width: 15px;
+    height: 15px;
+    border-top: solid 3px #fff;
+    border-right: solid 3px #fff;
+    -webkit-transform: rotate(135deg);
+    transform: rotate(135deg);
+
+    @include mq-down(xs) {
+      top: 70%;
+      right: 45%;
+    }
+  }
+
+  &.open::after {
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    top: 45%;
+
+    @include mq-down(xs) {
+      top: 70%;
+    }
+  }
+
   @include mq-down() {
     padding-bottom: 25px;
-    }
+  }
 }
 
 // 回答部分
 .faq-answer {
   display: none;
-
-  &:active {
-    display: block;
-  }
 
   .faq-answer-inner {
     position: relative;
@@ -678,36 +705,6 @@ services
       border: 0 solid #fff;
     }
   }
-}
-
-// 矢印部分
-.faq-question-text {
-  position: relative;
-  width: 90%;
-
-  &::after {
-    position: absolute;
-    top: 30%;
-    right:10px;
-    display: block;
-    content: "";
-    width: 15px;
-    height: 15px;
-    border-top: solid 3px #fff;
-    border-right: solid 3px #fff;
-    transform: translate(0, -50%) rotate(135deg);
-    transform-origin: center;
-
-    @include mq-down() {
-      top: 45px;
-      right: 55%;
-    }
-  }
-
-  &:active::after {
-    transform:translate(0, -50%) rotate(-45deg);
-  }
-
 }
 
 @include mq-down(lg) {
