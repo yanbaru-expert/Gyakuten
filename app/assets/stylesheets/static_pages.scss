@@ -696,6 +696,10 @@ $static-color: linear-gradient(to right, #353ADA, #5A9DFB);
     @include mq-down() {
       padding-bottom: 25px;
     }
+
+    @include mq-down(xxs) {
+      padding-left: 15px;
+    }
   }
 
   // 回答部分
