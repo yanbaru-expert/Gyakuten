@@ -126,8 +126,14 @@ $static-color: linear-gradient(to right, #353ADA, #5A9DFB);
       overflow: hidden;
     }
 
-    @include mq-down(lg) {
+    @include mq-down() {
       min-height: 60vh;
+    }
+  }
+
+  @include mq-down() {
+    #administor {
+      justify-content: normal;
     }
   }
 
@@ -548,6 +554,7 @@ $static-color: linear-gradient(to right, #353ADA, #5A9DFB);
     position: relative;
     display: flex;
     justify-content: space-between;
+    height: 400px;
 
     .administor-icon {
       position: absolute;
@@ -560,15 +567,15 @@ $static-color: linear-gradient(to right, #353ADA, #5A9DFB);
     .administor-info {
       position: absolute;
       top: 100px;
-      left: 0;
+      left: -30px;
 
-      @include mq-down(lg) {
-        top: 50%;
+      @include mq-down() {
+        top: 0;
         left: 50%;
         transform: translate(-50%, 50%);
 
-        @include mq-down(sm) {
-          transform: translate(-50%, -35%);
+        @include mq-down(xs) {
+          top: -50px;
         }
       }
 
@@ -576,7 +583,7 @@ $static-color: linear-gradient(to right, #353ADA, #5A9DFB);
         font-size: 1.5rem;
         font-weight: bold;
 
-        @include mq-down(lg) {
+        @include mq-down() {
           text-align: center;
         }
       }
@@ -605,13 +612,13 @@ $static-color: linear-gradient(to right, #353ADA, #5A9DFB);
     }
   }
 
+  // スマホ表示
   @include mq-down(xs) {
     .administor-sns {
       flex-wrap: wrap;
     }
   }
 
-  // スマホ表示
   @include mq-down(sm) {
     .administor-inner {
       width: 100vw;
@@ -619,7 +626,8 @@ $static-color: linear-gradient(to right, #353ADA, #5A9DFB);
     }
   }
 
-  @include mq-down(lg) {
+  // タブレットサイズ
+  @include mq-down() {
     .administor-icon {
       display: none;
     }
@@ -719,7 +727,6 @@ $static-color: linear-gradient(to right, #353ADA, #5A9DFB);
     }
   }
 }
-
 /* ----------------------------------------------------------------
   footer
 -----------------------------------------------------------------*/
