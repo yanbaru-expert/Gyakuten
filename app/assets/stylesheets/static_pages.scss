@@ -107,6 +107,19 @@ $static-color: linear-gradient(to right, #353ADA, #5A9DFB);
   background: $background;
 }
 
+// 改行指定
+@include mq-down(xxs) {
+  .sp {
+    display: block;
+  }
+}
+
+@include mq-up(xxs) {
+  .sp {
+    display: none;
+  }
+}
+
 #home-container {
 
   // 要素の横並び
@@ -129,11 +142,9 @@ $static-color: linear-gradient(to right, #353ADA, #5A9DFB);
     @include mq-down() {
       min-height: 60vh;
     }
-  }
 
-  @include mq-down() {
-    #administor {
-      justify-content: normal;
+    @include mq-down(lg) {
+      min-height: 80vh;
     }
   }
 
@@ -143,7 +154,6 @@ $static-color: linear-gradient(to right, #353ADA, #5A9DFB);
     white-space: nowrap;
 
     .util-title-inner {
-
       &::after {
         @include titlelUnderline();
       }
@@ -163,7 +173,6 @@ $static-color: linear-gradient(to right, #353ADA, #5A9DFB);
   .sub-title {
 
     .sub-title-inner {
-
       &::after {
         @include titlelUnderline(5px, $static-color);
       }
@@ -456,14 +465,7 @@ $static-color: linear-gradient(to right, #353ADA, #5A9DFB);
 
     .services-content {
       max-width: 960px;
-
-      @include mq-down(lg) {
-        min-width: 90vw;
-      }
-
-      @include mq-down() {
-        min-width: 85vw;
-      }
+      margin: 20px;
 
       .services-list {
         @extend .flex-side;
@@ -504,7 +506,6 @@ $static-color: linear-gradient(to right, #353ADA, #5A9DFB);
     developer
   -----------------------------------------------------------------*/
   #developer {
-
     .util-intro {
       margin-top: 30px;
       min-width: 300px;
@@ -513,9 +514,10 @@ $static-color: linear-gradient(to right, #353ADA, #5A9DFB);
 
   .developer-content {
     max-width: 960px;
+    margin: 20px;
 
     @include mq-down(lg) {
-      min-width: 85vw;
+      min-width: 90vw;
     }
 
     .developer-list {
@@ -541,11 +543,10 @@ $static-color: linear-gradient(to right, #353ADA, #5A9DFB);
       }
 
       @include mq-up(lg) {
-        min-width: 750px;
+        min-width: 850px;
       }
     }
   }
-
 
   /* ----------------------------------------------------------------
     administor
@@ -628,6 +629,10 @@ $static-color: linear-gradient(to right, #353ADA, #5A9DFB);
 
   // タブレットサイズ
   @include mq-down() {
+    #administor {
+      justify-content: normal;
+    }
+
     .administor-icon {
       display: none;
     }
