@@ -129,7 +129,6 @@ $static-color: linear-gradient(to right, #353ADA, #5A9DFB);
     margin: 20px;
   }
 
-
   .contents {
     @include flexCentering();
     flex-direction: column;
@@ -141,10 +140,6 @@ $static-color: linear-gradient(to right, #353ADA, #5A9DFB);
 
     @include mq-down() {
       min-height: 60vh;
-    }
-
-    @include mq-down(lg) {
-      min-height: 80vh;
     }
   }
 
@@ -170,8 +165,20 @@ $static-color: linear-gradient(to right, #353ADA, #5A9DFB);
     }
   }
 
-  .sub-title {
+  .util-intro {
+    margin-top: 30px;
+    margin-bottom: 20px;
 
+    .util-text {
+      @include mq-down(xxs) {
+        width: 90%;
+        margin: auto;
+        text-align: center;
+      }
+    }
+  }
+
+  .sub-title {
     .sub-title-inner {
       &::after {
         @include titlelUnderline(5px, $static-color);
@@ -454,15 +461,6 @@ $static-color: linear-gradient(to right, #353ADA, #5A9DFB);
   -----------------------------------------------------------------*/
   #services {
 
-    .util-intro {
-      margin-top: 30px;
-      margin-bottom: 20px;
-
-      .util-text {
-        min-width: 350px;
-      }
-    }
-
     .services-content {
       max-width: 960px;
       margin: 20px;
@@ -505,13 +503,6 @@ $static-color: linear-gradient(to right, #353ADA, #5A9DFB);
   /* ----------------------------------------------------------------
     developer
   -----------------------------------------------------------------*/
-  #developer {
-    .util-intro {
-      margin-top: 30px;
-      min-width: 300px;
-    }
-  }
-
   .developer-content {
     max-width: 960px;
     margin: 20px;
