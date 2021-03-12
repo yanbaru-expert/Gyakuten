@@ -6,7 +6,7 @@ $breakpoint-up: (
         'xxs': 'screen and (min-width: 485px)',
         'xs': 'screen and (min-width: 587px)',
         'sm': 'screen and (min-width: 690px)',
-        'md': 'screen and (min-width: 778px)',
+        'md': 'screen and (min-width: 766px)',
         'lg': 'screen and (min-width: 965px)',
         'xl': 'screen and (min-width: 1081px)',
         'xxl': 'screen and (min-width: 1332px)',
@@ -17,7 +17,7 @@ $breakpoint-down: (
         'xxs': 'screen and (max-width: 484px)',
         'xs': 'screen and (max-width: 586px)',
         'sm': 'screen and (max-width: 689px)',
-        'md': 'screen and (max-width: 777px)',
+        'md': 'screen and (max-width: 767px)',
         'lg': 'screen and (max-width: 964px)',
         'xl': 'screen and (max-width: 1080px)',
         'xxl': 'screen and (max-width: 1331px)',
@@ -201,13 +201,21 @@ $static-color: linear-gradient(to right, #353ADA, #5A9DFB);
     .owner_icon {
       position: absolute;
       width: 250px;
-      bottom: 45%;
+      bottom: 50%;
       right: 15%;
       z-index: 1000;
+
+      @include mq-down() {
+        display: none;
+      }
+
+      @include mq-down(xl) {
+        right: 5%;
+      }
     }
 
     // 背景の三角形
-    @include mq-up(lg) {
+    @include mq-up() {
       &::after {
         position: absolute;
         content: "";
@@ -224,14 +232,17 @@ $static-color: linear-gradient(to right, #353ADA, #5A9DFB);
 
   .heading-inner {
     position: relative;
-    width: 100vw;
+    width: 50%;
     height: 50vh;
     z-index: 1000;
 
     .heading-lead {
       position: absolute;
-      top: 35%;
-      left: 20%;
+      top: 25%;
+
+      @include mq-down(xxl) {
+        left: -20%;
+      }
 
       .heading-lead-title {
         font-size: 2.5rem;
@@ -271,7 +282,7 @@ $static-color: linear-gradient(to right, #353ADA, #5A9DFB);
   }
 
   // スマホ表示
-  @include mq-down(lg) {
+  @include mq-down() {
     .heading-inner {
       color: #fff;
 
@@ -298,13 +309,6 @@ $static-color: linear-gradient(to right, #353ADA, #5A9DFB);
 
     .heading-about {
       font-size: 1.3rem;
-    }
-  }
-
-  // タブレットサイズ
-  @include mq-down(lg) {
-    .owner_icon {
-      display: none;
     }
   }
 
