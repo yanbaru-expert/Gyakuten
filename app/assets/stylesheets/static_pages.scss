@@ -108,13 +108,13 @@ $static-color: linear-gradient(to right, #353ADA, #5A9DFB);
 }
 
 // 改行指定
-@include mq-down(xxs) {
+@include mq-down() {
   .sp {
     display: block;
   }
 }
 
-@include mq-up(xxs) {
+@include mq-up() {
   .sp {
     display: none;
   }
@@ -162,6 +162,10 @@ $static-color: linear-gradient(to right, #353ADA, #5A9DFB);
 
     @include mq-down(sm) {
       font-size: 1.7rem;
+    }
+
+    @include mq-down() {
+      margin-top: 100px;
     }
   }
 
@@ -417,7 +421,7 @@ $static-color: linear-gradient(to right, #353ADA, #5A9DFB);
       @include flexItemSpaceTab();
     }
 
-    @include mq-down() {
+    @include mq-down(xs) {
       @include flexItemSpaceSp();
     }
   }
@@ -459,7 +463,7 @@ $static-color: linear-gradient(to right, #353ADA, #5A9DFB);
     }
 
     // スマホ
-    @include mq-down() {
+    @include mq-down(xs) {
       @include flexItemSpaceSp();
       min-width: 200px;
     }
@@ -491,14 +495,14 @@ $static-color: linear-gradient(to right, #353ADA, #5A9DFB);
 
         .services-item {
           @include flexItem();
-          width: calc(50% - 100px / 2);
+          width: calc(50% - 50px / 2);
           position: relative;
 
           &:nth-child(2n) {
             margin-right: 0;
           }
 
-          @include mq-down() {
+          @include mq-down(xs) {
             @include flexItemSpaceSp();
             min-width: 200px;
           }
@@ -536,17 +540,13 @@ $static-color: linear-gradient(to right, #353ADA, #5A9DFB);
 
       .developer-item {
         @include flexItem();
-        width: calc(50% - 100px / 2);
+        width: calc(50% - 50px / 2);
 
         &:nth-child(2n) {
           margin-right: 0;
         }
 
-        .developer-item-text {
-          word-break: keep-all;
-        }
-
-        @include mq-down() {
+        @include mq-down(xs) {
           @include flexItemSpaceSp();
           min-width: 200px;
         }
