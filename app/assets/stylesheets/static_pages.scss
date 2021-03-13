@@ -340,10 +340,26 @@ $static-color: linear-gradient(to right, #353ADA, #5A9DFB);
         &:nth-child(3n) {
           margin-right: 0;
         }
+
+        @include mq-down(lg) {
+          padding: calc(15em * (1.41421356237 - 1) / 2);
+          width: 15em;
+          height: 15em;
+
+          .about-item-text {
+            width: 131%;
+          }
+        }
+
+        @include mq-down() {
+          .about-item-text {
+            width: 100%;
+          }
+        }
       }
 
       // スマホ用
-      @include mq-down(xl) {
+      @include mq-down() {
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -357,7 +373,6 @@ $static-color: linear-gradient(to right, #353ADA, #5A9DFB);
           margin-right: 0;
         }
       }
-
     }
   }
 
@@ -679,7 +694,11 @@ $static-color: linear-gradient(to right, #353ADA, #5A9DFB);
 
       @include mq-down(xs) {
         top: 70%;
-        right: 45%;
+        right: 50%;
+      }
+
+      @include mq-down(xxs) {
+        right: 47%;
       }
     }
 
