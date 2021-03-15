@@ -632,7 +632,6 @@ $static-color: linear-gradient(to right, #353ADA, #5A9DFB);
 
   @include mq-down(sm) {
     .administor-inner {
-      width: 100vw;
       height: 400px;
     }
   }
@@ -641,11 +640,23 @@ $static-color: linear-gradient(to right, #353ADA, #5A9DFB);
   @include mq-down() {
     #administor {
       justify-content: normal;
+
+      .administor-title {
+        margin-bottom: 250px;
+      }
+
+      .administor-item {
+        height: 300px;
+        background-color: $static-color;
+
+        .administor-icon {
+          width: 200px;
+          top: -240px;
+          right: -230px;
+        }
+      }
     }
 
-    .administor-icon {
-      display: none;
-    }
   }
 
   /* ----------------------------------------------------------------
