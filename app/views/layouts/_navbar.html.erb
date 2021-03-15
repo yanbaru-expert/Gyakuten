@@ -1,7 +1,7 @@
 <header class="fixed-top <%= base_color %>">
   <nav class="navbar navbar-expand-lg mw-lg navbar-dark header-nav">
     <% if controller.controller_name == "static_pages" %>
-      <%= link_to image_tag("yanbaru_logo.png"), root_path %>
+      <%= link_to image_tag("yanbaru_logo.png"), root_path, class: "yanbaru-logo" %>
     <% else %>
       <%= link_to "やんばるエキスパート", root_path, class: "navbar-brand" %>
     <% end %>

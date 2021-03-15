@@ -14,6 +14,7 @@ $breakpoint-up: (
 
 // max-width
 $breakpoint-down: (
+        'xls': 'screen and (max-width: 374px)',
         'xxs': 'screen and (max-width: 484px)',
         'xs': 'screen and (max-width: 586px)',
         'sm': 'screen and (max-width: 689px)',
@@ -120,7 +121,20 @@ $static-color: linear-gradient(to right, #353ADA, #5A9DFB);
   }
 }
 
+.yanbaru-logo {
+  @include  mq-down(xls) {
+    padding-top: 80px;
+  }
+
+  @include mq-down(xxs) {
+    width: 0;
+  }
+}
+
 #home-container {
+  @include mq-down(xls) {
+    margin-top: 70px;
+  }
 
   // 要素の横並び
   .flex-side {
