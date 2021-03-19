@@ -44,26 +44,29 @@
             デザイン講座
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <%= link_to display_name("design_tool"), movies_path(genre: "design_tool"), class: "dropdown-item" %>
-            <%= link_to display_name("design_matter"), movies_path(genre: "design_matter"), class: "dropdown-item" %>
-            <%= link_to display_name("design_usage"), movies_path(genre: "design_usage"), class: "dropdown-item" %>
+            <%= link_to display_name("design_tool"), movies_path(genre: "design_tool"), class: "dropdown-item#{add_disabled}" %>
+            <%= link_to display_name("design_matter"), movies_path(genre: "design_matter"), class: "dropdown-item#{add_disabled}" %>
+            <%= link_to display_name("design_usage"), movies_path(genre: "design_usage"), class: "dropdown-item#{add_disabled}" %>
           </div>
         </li>
-        <% if user_signed_in? %>
-          <li class="nav-item active dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              勉強会
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <%= link_to display_name("talk"), movies_path(genre: "talk"), class: "dropdown-item" %>
-              <%= link_to display_name("live"), movies_path(genre: "live"), class: "dropdown-item" %>
-            </div>
-          </li>
-        <% else %>
-          <li class="nav-item"><span class="nav-item nav-link disabled">勉強会</span></li>
-        <% end %>
-        <li class="nav-item">
-          <%= link_to display_name("money"), movies_path(genre: "money"), class: "nav-item nav-link #{user_signed_in? ? 'active' : 'disabled'}" %>
+        <li class="nav-item active dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            勉強会
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <%= link_to display_name("talk"), movies_path(genre: "talk"), class: "dropdown-item#{add_disabled}" %>
+            <%= link_to display_name("live"), movies_path(genre: "live"), class: "dropdown-item#{add_disabled}" %>
+          </div>
+        </li>
+        <li class="nav-item active dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            マネタイズ講座
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <%= link_to display_name("money_marketing"), movies_path(genre: "money_marketing"), class: "dropdown-item#{add_disabled}" %>
+            <%= link_to display_name("money_lstep"), movies_path(genre: "money_lstep"), class: "dropdown-item#{add_disabled}" %>
+            <%= link_to display_name("money_insta"), movies_path(genre: "money_insta"), class: "dropdown-item#{add_disabled}" %>
+          </div>
         </li>
         <li class="nav-item">
           <%= link_to "LINE", lines_path, class: "nav-item nav-link active" %>

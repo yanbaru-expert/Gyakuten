@@ -42,7 +42,7 @@ class Movie < ApplicationRecord
 
   # 作成時にジャンルごとに整頓する機能
   after_create do
-    movies = Movie.general_group + Movie.live_group + Movie.search_order_created_at("money")
+    movies = Movie.general_group + Movie.live_group + Movie.money_group
     movies.each.with_index(1) do |movie, index|
       movie.insert_at(index) if movie.position != index
     end
