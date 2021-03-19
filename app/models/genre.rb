@@ -19,8 +19,9 @@ class Genre < ApplicationRecord
   COLOR_REGEX = /\A#[0-9a-f]{6}\z/.freeze
   FRONT = %w[html js ts react vue angular].freeze
   RUBY = %w[basic git ruby rails].freeze
-  IN_GENERAL = %w[money talk live invisible].freeze
   LIVE = %w[talk live].freeze
+  MONEY = %w[money_marketing money_lstep money_insta]
+  IN_GENERAL = (MONEY + LIVE + ["invisible"]).freeze
 
   validates :name, presence: true
   validates :color, format: { with: COLOR_REGEX }
