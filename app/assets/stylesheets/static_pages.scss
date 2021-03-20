@@ -147,7 +147,7 @@ $static-color: linear-gradient(to right, #353ADA, #5A9DFB);
   .contents {
     @include flexCentering();
     flex-direction: column;
-    min-height: 100vh;
+    min-height: 80vh;
 
     @include mq-down(sm) {
       overflow: hidden;
