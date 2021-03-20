@@ -3,6 +3,7 @@
 -----------------------------------------------------------------*/
 // min-width
 $breakpoint-up: (
+        'xls': 'screen and (max-width: 376px)',
         'xxs': 'screen and (min-width: 485px)',
         'xs': 'screen and (min-width: 587px)',
         'sm': 'screen and (min-width: 690px)',
@@ -14,7 +15,7 @@ $breakpoint-up: (
 
 // max-width
 $breakpoint-down: (
-        'xls': 'screen and (max-width: 374px)',
+        'xls': 'screen and (max-width: 377px)',
         'xxs': 'screen and (max-width: 484px)',
         'xs': 'screen and (max-width: 586px)',
         'sm': 'screen and (max-width: 689px)',
@@ -216,22 +217,6 @@ $static-color: linear-gradient(to right, #353ADA, #5A9DFB);
     margin-top: -100px;
     flex-direction: column;
 
-    .owner_icon {
-      position: absolute;
-      width: 250px;
-      bottom: 50%;
-      right: 15%;
-      z-index: 1000;
-
-      @include mq-down() {
-        display: none;
-      }
-
-      @include mq-down(xl) {
-        right: 5%;
-      }
-    }
-
     // 背景の三角形
     @include mq-up() {
       &::after {
@@ -248,11 +233,33 @@ $static-color: linear-gradient(to right, #353ADA, #5A9DFB);
     }
   }
 
+  .owner_icon {
+    position: absolute;
+    width: 250px;
+    bottom: 50%;
+    right: 15%;
+    z-index: 1000;
+
+    @include mq-down() {
+      width: 200px;
+      left: 20%;
+      top: 10%;
+    }
+
+    @include mq-down(xl) {
+      right: 5%;
+    }
+  }
+
   .heading-inner {
     position: relative;
     width: 50%;
     height: 50vh;
     z-index: 1000;
+
+    @include mq-down() {
+      height: 100vh;
+    }
 
     .heading-lead {
       position: absolute;
@@ -305,7 +312,7 @@ $static-color: linear-gradient(to right, #353ADA, #5A9DFB);
       color: #fff;
 
       .heading-lead {
-        top: 50%;
+        top: 70%;
         left: 50%;
         transform: translate(-50%, -20%);
         min-width: 260px;
