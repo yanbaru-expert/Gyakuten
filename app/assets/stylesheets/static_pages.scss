@@ -235,19 +235,15 @@ $static-color: linear-gradient(to right, #353ADA, #5A9DFB);
 
   .owner_icon {
     position: absolute;
-    width: 250px;
-    bottom: 50%;
-    right: 15%;
+    width: 375px;
+    top: 5%;
+    left: 55%;
     z-index: 1000;
 
     @include mq-down() {
       width: 200px;
       left: 20%;
       top: 10%;
-    }
-
-    @include mq-down(xl) {
-      right: 5%;
     }
   }
 
