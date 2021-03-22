@@ -635,6 +635,17 @@ $static-color: linear-gradient(to right, #353ADA, #5A9DFB);
     }
   }
 
+  // SNSアイコンの幅
+  @include mq-up(xs) {
+    .fa-fw {
+      text-align: start;
+    }
+
+    .fc {
+      text-align: end;
+    }
+  }
+
   // スマホ表示
   @include mq-down(xs) {
     .administor-sns {
