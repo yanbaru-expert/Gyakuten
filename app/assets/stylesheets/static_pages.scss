@@ -237,9 +237,8 @@ $static-color: linear-gradient(to right, #353ADA, #5A9DFB);
     z-index: 1000;
 
     @include mq-down() {
-      width: 200px;
-      top: 10%;
-      left: 15%;
+      width: 230px;
+      left: 12%;
     }
   }
 
