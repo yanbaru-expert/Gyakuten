@@ -689,8 +689,12 @@ $static-color: linear-gradient(to right, #353ADA, #5A9DFB);
 
     .faq-item-title {
       flex: 0 0 35px;
-      font-size: 18px;
+      font-size: 22px;
       font-weight: bold;
+    }
+
+    .faq-text {
+      font-size: 22px;
     }
   }
 
@@ -763,6 +767,10 @@ $static-color: linear-gradient(to right, #353ADA, #5A9DFB);
         left: 40px;
         background: #fff;
         border: 0 solid #fff;
+      }
+
+      @include mq-down(xxs) {
+        padding-left: 15px;
       }
     }
   }
