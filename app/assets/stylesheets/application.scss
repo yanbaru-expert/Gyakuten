@@ -1,11 +1,12 @@
 /*
  *= require_tree .
  *= require_self
- *= require font-awesome
  */
 
 @import "bootstrap/functions";
 @import "bootstrap";
+@import 'font-awesome-sprockets';
+@import 'font-awesome';
 
 // 最大横幅
 
