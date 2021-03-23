@@ -705,7 +705,10 @@ $static-color: linear-gradient(to right, #353ADA, #5A9DFB);
     }
 
     .faq-text {
+      padding-right: 10px;
       font-size: 22px;
+      text-align: justify;
+      text-justify: inter-ideograph;
     }
   }
 
@@ -766,7 +769,8 @@ $static-color: linear-gradient(to right, #353ADA, #5A9DFB);
     .faq-answer-inner {
       position: relative;
       display: flex;
-      padding: 20px 40px;
+      // padding: 20px 40px;
+      padding: 20px 5px 20px 40px;
 
       &::before {
         content: "";
