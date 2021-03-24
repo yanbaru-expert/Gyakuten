@@ -593,13 +593,9 @@ $static-color: linear-gradient(to right, #353ADA, #5A9DFB);
       left: -30px;
 
       @include mq-down() {
-        top: 0;
+        top: -10%;
         left: 50%;
         transform: translate(-50%, 50%);
-
-        @include mq-down(xs) {
-          top: -50px;
-        }
       }
 
       .administor-name {
@@ -612,7 +608,7 @@ $static-color: linear-gradient(to right, #353ADA, #5A9DFB);
       }
 
       .administor-text {
-        min-width: 250px;
+        min-width: 260px;
       }
     }
   }
@@ -648,6 +644,18 @@ $static-color: linear-gradient(to right, #353ADA, #5A9DFB);
 
   // スマホ表示
   @include mq-down(xs) {
+    #administor {
+      height: 1020px;
+
+      .administor-info {
+        top: -30%;
+      }
+    }
+
+    .administor-text {
+      margin-bottom: 50px;
+    }
+
     .administor-sns {
       flex-wrap: wrap;
     }
