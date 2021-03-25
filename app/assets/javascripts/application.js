@@ -58,9 +58,11 @@ document.addEventListener('turbolinks:load', () => {
             input.addEventListener('input', filterQuestions)
         }
     }
+
+    // よくある質問の回答の開閉
     $('.faq-question').click(function () {
-        $(".faq-question").not(this).removeClass("open");
-        $(".faq-question").not(this).next().slideUp(300);
+        $(this).not(this).removeClass("open");
+        $(this).not(this).next().slideUp(300);
         $(this).toggleClass("open");
         $(this).next().slideToggle(300);
     });
