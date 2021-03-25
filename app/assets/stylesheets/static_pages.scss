@@ -235,11 +235,6 @@ $static-color: linear-gradient(to right, #353ADA, #5A9DFB);
     top: 5%;
     left: 55%;
     z-index: 1000;
-
-    @include mq-down() {
-      width: 230px;
-      left: 12%;
-    }
   }
 
   .heading-inner {
@@ -302,9 +297,10 @@ $static-color: linear-gradient(to right, #353ADA, #5A9DFB);
   @include mq-down() {
     .heading-inner {
       color: #fff;
+      height: 90vh;
 
       .heading-lead {
-        top: 70%;
+        top: 85%;
         left: 50%;
         transform: translate(-50%, -20%);
         min-width: 260px;
@@ -326,7 +322,20 @@ $static-color: linear-gradient(to right, #353ADA, #5A9DFB);
 
     .heading-about {
       font-size: 1.3rem;
+      margin-right: 0;
     }
+
+    .heading-icon {
+      position: relative;
+      width: 300px;
+
+      .owner_icon {
+        width: 230px;
+        top: -500px;
+        left: 5%;
+      }
+    }
+
   }
 
   /* ----------------------------------------------------------------
