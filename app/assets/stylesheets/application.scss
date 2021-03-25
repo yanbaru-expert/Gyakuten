@@ -18,8 +18,8 @@
 
 // カラー
 
-$base-color: #5D99FF;
-$line-color: #28a745;
+$base-color: linear-gradient(to right, #353ADA, #5A9DFB);
+$line-color: linear-gradient(to right, #1D7B32, #31CD53);
 
 // 全体
 body {
@@ -29,10 +29,7 @@ body {
 
 .base-container {
   @extend .container-fluid;
-  padding-top: 7%;
-  padding-bottom: 30px;
-  padding-right: 0;
-  padding-left: 0;
+  padding: 30px 0;
 }
 
 a:hover {
@@ -63,19 +60,11 @@ h4 {
 // 背景色
 
 .base-bg-color {
-  background-color: $base-color;
-
-  &:hover {
-    background-color: $base-color;
-  }
+  background: $base-color;
 }
 
 .line-bg-color {
-  background-color: $line-color;
-
-  &:hover {
-    background-color: $line-color;
-  }
+  background: $line-color;
 }
 
 // フォント色

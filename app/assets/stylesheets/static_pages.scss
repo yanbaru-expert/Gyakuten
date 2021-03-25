@@ -38,17 +38,7 @@ $breakpoint-down: (
 }
 
 // カラー
-$static-color: linear-gradient(to right, #353ADA, #5A9DFB);
-
-// 背景色
-.static-bg-color {
-  background: $static-color;
-}
-
-// フォント色
-.static-color {
-  color: #fff;
-}
+$base-color: linear-gradient(to right, #353ADA, #5A9DFB);
 
 // flexの中央寄せ
 @mixin flexCentering($justify: center, $align: center) {
@@ -99,7 +89,7 @@ $static-color: linear-gradient(to right, #353ADA, #5A9DFB);
 
 // 各セクションタイトル
 // タイトル下部線
-@mixin titlelUnderline($height: 10px, $background: $static-color) {
+@mixin titlelUnderline($height: 10px, $background: $base-color) {
   content: "";
   display: block;
   border-radius: 10px;
@@ -196,7 +186,7 @@ $static-color: linear-gradient(to right, #353ADA, #5A9DFB);
   .sub-title {
     .sub-title-inner {
       &::after {
-        @include titlelUnderline(5px, $static-color);
+        @include titlelUnderline(5px, $base-color);
       }
     }
   }
@@ -209,7 +199,7 @@ $static-color: linear-gradient(to right, #353ADA, #5A9DFB);
     overflow: hidden;
     @include flexCentering();
     min-height: 100vh;
-    background: $static-color;
+    background: $base-color;
     margin-top: -100px;
     flex-direction: column;
 
@@ -284,7 +274,7 @@ $static-color: linear-gradient(to right, #353ADA, #5A9DFB);
     text-decoration: none;
     border-radius: 25px;
     color: #fff;
-    background: $static-color;
+    background: $base-color;
     border-bottom: solid 3px #2b66f1;
 
     &:hover {
@@ -360,7 +350,7 @@ $static-color: linear-gradient(to right, #353ADA, #5A9DFB);
         width: 19em;
         height: 19em;
         font-size: 1rem;
-        background: $static-color;
+        background: $base-color;
         color: #fff;
         border-radius: 50%;
         margin-right: 2vw;
@@ -475,7 +465,7 @@ $static-color: linear-gradient(to right, #353ADA, #5A9DFB);
   }
 
   .features-item {
-    @include flexItem(#fff, $static-color,);
+    @include flexItem(#fff, $base-color,);
 
     &:nth-child(3n) {
       margin-right: 0;
@@ -690,7 +680,7 @@ $static-color: linear-gradient(to right, #353ADA, #5A9DFB);
 
       .administor-item {
         height: 300px;
-        background-color: $static-color;
+        background-color: $base-color;
 
         .administor-icon {
           width: 200px;
@@ -712,7 +702,7 @@ $static-color: linear-gradient(to right, #353ADA, #5A9DFB);
     max-width: 1140px;
 
     .faq-item {
-      background: $static-color;
+      background: $base-color;
       border-radius: 50px;
       width: 90%;
       margin: 30px auto;

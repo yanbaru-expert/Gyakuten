@@ -2,7 +2,7 @@ module StylesheetHelper
   def base_color
     case controller_name
     when "lines" then "line-bg-color"
-    when "static_pages" then "static-bg-color"
+    when "static_pages" then "base-bg-color"
     else "base-bg-color"
     end
   end
