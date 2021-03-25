@@ -311,12 +311,14 @@ $static-color: linear-gradient(to right, #353ADA, #5A9DFB);
 
         .heading-lead-text {
           font-size: 1.2rem;
+          text-align: center;
         }
       }
 
       .btn-teaching {
         background: #fff;
         color: black;
+        margin-left: 12%;
       }
     }
 
