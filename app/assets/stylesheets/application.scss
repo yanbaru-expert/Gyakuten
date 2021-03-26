@@ -23,13 +23,16 @@ $line-color: linear-gradient(to right, #1D7B32, #31CD53);
 
 // 全体
 body {
+  min-height: 100vh;
+  position: relative;
   padding-top: 56px;
+  padding-bottom: 50px;
+  box-sizing: border-box;
 }
 
 .base-container {
   @extend .container-fluid;
   padding-top: 30px;
-  padding-bottom: 50px;
 }
 
 a:hover {
@@ -90,6 +93,9 @@ h4 {
 // フッター
 
 footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
   height: 50px;
   display: flex;
   justify-content: center;
