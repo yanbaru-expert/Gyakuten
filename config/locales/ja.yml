@@ -25,6 +25,7 @@ ja:
       slack_member: Slackメンバー
       challenge: チャレンジ問題
       genre: ジャンル
+      faq: よくある質問
     attributes:
       admin_user:
       error:
@@ -66,6 +67,9 @@ ja:
       genre:
         code_name: コード名
         name: 表示名
+      faq:
+        question: 質問
+        answer: 回答
   attributes:
     id: ID
     program_id: プログラムID
