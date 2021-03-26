@@ -1,7 +1,11 @@
 <section class="advertising_banner">
   <div class="cover text-center">
-    <%= link_to "http://yanbaru-expert.com/", target: :_blank, rel: "noopener" do %>
-      <%= image_tag "https://d5izmuz0mcjzz.cloudfront.net/yanbaru_expert_banner.jpg", loading: "lazy" %>
+    <% if params[:genre].in?(Genre::DESIGN) %>
+      <%= image_tag "https://d5izmuz0mcjzz.cloudfront.net/yanbaru_expert_banner_design.jpg", loading: "lazy" %>
+      <% else %>
+      <%= link_to "http://yanbaru-expert.com/", target: :_blank, rel: "noopener" do %>
+        <%= image_tag "https://d5izmuz0mcjzz.cloudfront.net/yanbaru_expert_banner.jpg", loading: "lazy" %>
+      <% end %>
     <% end %>
   </div>
 </section>
