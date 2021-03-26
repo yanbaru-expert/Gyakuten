@@ -291,9 +291,9 @@ ja:
         delimiter: ''
   support:
     array:
-      last_word_connector: "、"
-      two_words_connector: "、"
-      words_connector: "、"
+      last_word_connector: "，"
+      two_words_connector: "，"
+      words_connector: "，"
   time:
     am: 午前
     formats:

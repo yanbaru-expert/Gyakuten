@@ -33,10 +33,10 @@ ja:
       new:
         resend_confirmation_instructions: アカウント確認メール再送
       send_instructions: アカウントの有効化について数分以内にメールでご連絡します。
-      send_paranoid_instructions: メールアドレスが登録済みの場合、本人確認用のメールが数分以内に送信されます。
+      send_paranoid_instructions: メールアドレスが登録済みの場合，本人確認用のメールが数分以内に送信されます。
     failure:
       already_authenticated: すでにログインしています。
-      inactive: アカウントが有効化されていません。メールに記載された手順にしたがって、アカウントを有効化してください。
+      inactive: アカウントが有効化されていません。メールに記載された手順にしたがって，アカウントを有効化してください。
       invalid: "%{authentication_keys}またはパスワードが違います。"
       last_attempt: もう一回誤るとアカウントがロックされます。
       locked: アカウントは凍結されています。
@@ -48,10 +48,10 @@ ja:
       confirmation_instructions:
         action: メールアドレスの確認
         greeting: "%{recipient}様"
-        instruction: 以下のリンクをクリックし、メールアドレスの確認手続を完了させてください。
+        instruction: 以下のリンクをクリックし，メールアドレスの確認手続を完了させてください。
         subject: メールアドレス確認メール
       email_changed:
-        greeting: こんにちは、%{recipient}様。
+        greeting: こんにちは，%{recipient}様。
         message: あなたのメール変更（%{email}）のお知らせいたします。
         subject: メール変更完了。
       password_change:
@@ -61,15 +61,15 @@ ja:
       reset_password_instructions:
         action: パスワード変更
         greeting: "%{recipient}様"
-        instruction: パスワード再設定の依頼を受けたため、メールを送信しています。下のリンクからパスワードの再設定ができます。
-        instruction_2: パスワード再設定の依頼をしていない場合、このメールを無視してください。
-        instruction_3: パスワードの再設定は、上のリンクから新しいパスワードを登録するまで完了しません。
+        instruction: パスワード再設定の依頼を受けたため，メールを送信しています。下のリンクからパスワードの再設定ができます。
+        instruction_2: パスワード再設定の依頼をしていない場合，このメールを無視してください。
+        instruction_3: パスワードの再設定は，上のリンクから新しいパスワードを登録するまで完了しません。
         subject: パスワードの再設定について
       unlock_instructions:
         action: アカウントのロック解除
         greeting: "%{recipient}様"
         instruction: アカウントのロックを解除するには下のリンクをクリックしてください。
-        message: ログイン失敗が繰り返されたため、アカウントはロックされています。
+        message: ログイン失敗が繰り返されたため，アカウントはロックされています。
         subject: アカウントの凍結解除について
     omniauth_callbacks:
       failure: "%{kind} アカウントによる認証に失敗しました。理由：（%{reason}）"
@@ -83,9 +83,9 @@ ja:
       new:
         forgot_your_password: パスワードを忘れましたか?
         send_me_reset_password_instructions: パスワードの再設定方法を送信する
-      no_token: このページにはアクセスできません。パスワード再設定メールのリンクからアクセスされた場合には、URL をご確認ください。
+      no_token: このページにはアクセスできません。パスワード再設定メールのリンクからアクセスされた場合には，URL をご確認ください。
       send_instructions: パスワードの再設定について数分以内にメールでご連絡いたします。
-      send_paranoid_instructions: メールアドレスが登録済みの場合、パスワード再設定用のメールが数分以内に送信されます。
+      send_paranoid_instructions: メールアドレスが登録済みの場合，パスワード再設定用のメールが数分以内に送信されます。
       updated: パスワードが正しく変更されました。
       updated_not_active: パスワードが正しく変更されました。
     registrations:
@@ -102,12 +102,12 @@ ja:
       new:
         sign_up: 新規登録
       signed_up: 新規登録が完了しました。
-      signed_up_but_inactive: ログインするためには、アカウントを有効化してください。
+      signed_up_but_inactive: ログインするためには，アカウントを有効化してください。
       signed_up_but_locked: アカウントが凍結されているためログインできません。
       signed_up_but_unconfirmed: 本人確認用のメールを送信しました。メール内のリンクからアカウントを有効化させてください。
-      update_needs_confirmation: アカウント情報を変更しました。変更されたメールアドレスの本人確認のため、本人確認用メールより確認処理をおこなってください。
+      update_needs_confirmation: アカウント情報を変更しました。変更されたメールアドレスの本人確認のため，本人確認用メールより確認処理をおこなってください。
       updated: アカウント情報を変更しました。
-      updated_but_not_signed_in: あなたのアカウントは正常に更新されましたが、パスワードが変更されたため、再度ログインしてください。
+      updated_but_not_signed_in: あなたのアカウントは正常に更新されましたが，パスワードが変更されたため，再度ログインしてください。
     sessions:
       already_signed_out: 既にログアウト済みです。
       new:
@@ -128,7 +128,7 @@ ja:
       new:
         resend_unlock_instructions: アカウントの凍結解除方法を再送する
       send_instructions: アカウントの凍結解除方法を数分以内にメールでご連絡します。
-      send_paranoid_instructions: アカウントが見つかった場合、アカウントの凍結解除方法を数分以内にメールでご連絡します。
+      send_paranoid_instructions: アカウントが見つかった場合，アカウントの凍結解除方法を数分以内にメールでご連絡します。
       unlocked: アカウントを凍結解除しました。
   errors:
     messages:
