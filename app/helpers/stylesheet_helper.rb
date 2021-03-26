@@ -1,4 +1,8 @@
 module StylesheetHelper
+  def base_container
+    controller_name == "static_pages" ? "static-container": "base-container"
+  end
+
   def base_color
     controller_name == "lines" ? "line-bg-color" : "base-bg-color"
   end

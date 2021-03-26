@@ -112,15 +112,21 @@ $base-color: linear-gradient(to right, #353ADA, #5A9DFB);
   }
 }
 
+// ヘッダーロゴ
+
 .yanbaru-logo {
   @include mq-down(xxs) {
     width: 80%;
   }
 }
 
+.static-container {
+  margin-top: 7%;
+}
+
 #home-container {
   @include mq-down(xls) {
-    margin-top: 70px;
+    margin-top: 80px;
   }
 
   // 要素の横並び
@@ -288,6 +294,7 @@ $base-color: linear-gradient(to right, #353ADA, #5A9DFB);
     .heading-inner {
       color: #fff;
       height: 90vh;
+      max-height: 580px;
 
       .heading-lead {
         top: 85%;
