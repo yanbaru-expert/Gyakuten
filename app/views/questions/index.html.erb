@@ -1,7 +1,7 @@
-<% content_for(:title) { "質問集" } %>
+<% content_for(:title) { "よくある質問集" } %>
 <% content_for(:description) { "やんばるエキスパートの質問集です。" } %>
 <section id="contents">
-  <h1 class="text-center mb-4">質問集</h1>
+  <h1 class="text-center mb-4">よくある質問集</h1>
   <%= render "search_form" if user_signed_in? %>
   <div class="table-container mt-4">
     <table class="table table-striped">
@@ -11,17 +11,8 @@
         <th class="w-100">タイトル</th>
       </tr>
       </thead>
-      <tbody>
-      <% @questions.each do |question| %>
-        <tr>
-          <td class="text-nowrap align-middle">
-            <%= question.genre %>
-          </td>
-          <td class="break-word">
-            <%= link_to question.title, question %>
-          </td>
-        </tr>
-      <% end %>
+      <tbody id="search-tbody">
+        <%= render @questions %>
       </tbody>
     </table>
   </div>

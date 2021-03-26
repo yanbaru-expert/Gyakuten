@@ -4,7 +4,7 @@
   <%= @question.title %>
   <div class="catch">質問内容</div>
   <div class="markdown">
-    <%= markdown(@question.body) %>
+    <%= markdown(@question.content) %>
   </div>
   <div class="catch">回答</div>
   <% if user_signed_in? %>

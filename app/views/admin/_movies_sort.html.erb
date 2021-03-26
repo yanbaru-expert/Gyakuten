@@ -1,6 +1,6 @@
 <div class="admin-textsort-container">
   <p>ドラッグ＆ドロップで「動画教材」の並び順を変更できます</p>
-  <small>※「ライブコーディング」「対談」の並び順変更には対応しておりません</small>
+  <p>（異なるジャンル間の並び替えには対応しておりません）</p>
   <div id="movie_sort_list" class="sort-table">
     <div class="row title">
       <div class="left-column">ジャンル</div>
@@ -8,7 +8,7 @@
     </div>
     <% @movies.each do |movie| %>
       <div class="row item">
-        <div class="left-column"><%= movie.genre %></div>
+        <div class="left-column"><%= movie.genre.name %></div>
         <div class="right-column"><%= movie.title %></div>
       </div>
     <% end %>

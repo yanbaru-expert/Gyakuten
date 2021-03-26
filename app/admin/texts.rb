@@ -1,7 +1,7 @@
 ActiveAdmin.register Text do
   # ドロップダウンメニューの親成分を決定
   menu parent: "テキスト教材"
-  permit_params :genre, :title, :contents, :image, :description
+  permit_params :genre_id, :title, :content, :image, :description
   config.sort_order = "position_asc"
 
   index do
@@ -18,7 +18,7 @@ ActiveAdmin.register Text do
       row :position
       row :genre
       row :title
-      row :contents
+      row :content
       row :image do
         image_tag(text.image.url) if text.image?
       end
@@ -26,16 +26,28 @@ ActiveAdmin.register Text do
     end
   end
 
-  form do |_f|
-    inputs  do
+  form do |f|
+    f.object.position ||= Text.maximum(:position) + 1
+    f.semantic_errors
+    f.inputs do
       input :position
-      input :genre, as: :select, collection: Text::ALL_PROGRAMMING
-      input :title, as: :string
-      input :contents
-      input :image, as: :file
+      input :genre, as: :select, collection: Genre.order(:position)
+      input :title
+      input :content
+      input :image
       input :description
     end
+    f.actions
+  end
 
-    actions
+  csv do
+    column :id
+    column :position
+    column :genre_id
+    column(:genre) {|text| text.genre.name }
+    column :title
+    column :content
+    column :description
+    column :image
   end
 end

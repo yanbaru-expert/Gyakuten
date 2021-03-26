@@ -17,24 +17,53 @@
 //= require popper
 //= require bootstrap-sprockets
 
-// テキスト教材ページ - 検索フォーム内の処理
-$(document).on('turbolinks:load', function () {
-    var searchWord = function () {
-        var searchText = $(this).val().toLowerCase(), // 検索ボックスに入力された値
-            targetText;
+document.addEventListener('turbolinks:load', () => {
+    // テキスト教材ページ - 検索フォーム内の処理
+    const searchText = document.getElementById('search-text')
+    if (searchText) {
+        const cards = document.querySelectorAll('div.text-card-container')
 
-        $('p.text-title').each(function () {
-            targetText = $(this).text().toLowerCase();
-
-            // 検索対象となるリストに入力された文字列が存在するかどうかを判断
-            if (targetText.indexOf(searchText) != -1) {
-                $(this).parents('div.text-card-container').removeClass('d-none');
-            } else {
-                $(this).parents('div.text-card-container').addClass('d-none');
+        const filterCards = (e) => {
+            const value = e.target.value.toLowerCase()
+            for (const card of cards) {
+                const title = card.querySelector('p.text-title')
+                const isVisible = title.textContent.toLowerCase().includes(value)
+                card.style.display = isVisible ? "" : "none"
             }
-        });
-    };
+        }
+        searchText.addEventListener('input', filterCards)
+    }
 
-    // searchWordの実行
-    $('#search-text').on('input', searchWord);
-});
+    // 質問ページ - 検索フォーム内の処理
+    const genreCheckbox = document.getElementById('genre-checkbox')
+    if (genreCheckbox) {
+        const inputs = genreCheckbox.querySelectorAll('.custom-control-input')
+        const tableRows = document.querySelectorAll('#search-tbody tr')
+        let genreList = [...genreCheckbox.querySelectorAll('label')].map(l => l.textContent)
+        const filterQuestions = (e) => {
+            const genre = e.target.labels[0].textContent
+            if (e.target.checked) {
+                genreList.push(genre)
+            } else {
+                const index = genreList.indexOf(genre)
+                genreList.splice(index, 1)
+            }
+            for(const tr of tableRows) {
+                const trGenre = tr.querySelector('.question-title').textContent.trim()
+                const isVisible = genreList.includes(trGenre)
+                tr.style.display = isVisible ? "table-row" : "none"
+            }
+        }
+        for (const input of inputs) {
+            input.addEventListener('input', filterQuestions)
+        }
+    }
+
+    // よくある質問の回答の開閉
+    $('.faq-question').click(function () {
+        $(this).not(this).removeClass("open");
+        $(this).not(this).next().slideUp(300);
+        $(this).toggleClass("open");
+        $(this).next().slideToggle(300);
+    });
+})

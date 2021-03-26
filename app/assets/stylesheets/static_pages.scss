@@ -1,0 +1,866 @@
+/* ----------------------------------------------------------------
+  共通
+-----------------------------------------------------------------*/
+// min-width
+$breakpoint-up: (
+        'xls': 'screen and (max-width: 376px)',
+        'xxs': 'screen and (min-width: 485px)',
+        'xs': 'screen and (min-width: 587px)',
+        'sm': 'screen and (min-width: 690px)',
+        'md': 'screen and (min-width: 767px)',
+        'lg': 'screen and (min-width: 965px)',
+        'xl': 'screen and (min-width: 1081px)',
+        'xxl': 'screen and (min-width: 1332px)',
+) !default;
+
+// max-width
+$breakpoint-down: (
+        'xls': 'screen and (max-width: 377px)',
+        'xxs': 'screen and (max-width: 484px)',
+        'xs': 'screen and (max-width: 586px)',
+        'sm': 'screen and (max-width: 689px)',
+        'md': 'screen and (max-width: 766px)',
+        'lg': 'screen and (max-width: 964px)',
+        'xl': 'screen and (max-width: 1080px)',
+        'xxl': 'screen and (max-width: 1331px)',
+) !default;
+
+@mixin mq-up($breakpoint: md) {
+  @media #{map-get($breakpoint-up, $breakpoint)} {
+    @content;
+  }
+}
+
+@mixin mq-down($breakpoint: md) {
+  @media #{map-get($breakpoint-down, $breakpoint)} {
+    @content;
+  }
+}
+
+// カラー
+$base-color: linear-gradient(to right, #353ADA, #5A9DFB);
+
+// flexの中央寄せ
+@mixin flexCentering($justify: center, $align: center) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+// flex-item
+@mixin flexItem($color: black, $backgroung: #fff, $width: calc(33.33333333% - 100px / 3)) {
+  box-sizing: border-box;
+  border-radius: 25px;
+  margin: 0 50px 50px 0;
+  padding: 20px;
+  text-align: center;
+  color: $color;
+  background: $backgroung;
+  width: $width;
+}
+
+// タブレット用のスペース
+@mixin flexItemSpaceTab {
+  margin: 0 20px 20px 0;
+  width: calc(50% - 20px / 2);
+
+  &:nth-child(2n) {
+    margin-right: 0;
+  }
+
+  &:nth-child(3n) {
+    margin-right: 20px;
+  }
+
+  &:nth-child(6) {
+    margin-right: 0;
+  }
+}
+
+// スマホ用のスペース
+@mixin flexItemSpaceSp {
+  width: 100%;
+  margin-right: 0;
+
+  &:nth-child(3n) {
+    margin-right: 0;
+  }
+}
+
+// 各セクションタイトル
+// タイトル下部線
+@mixin titlelUnderline($height: 10px, $background: $base-color) {
+  content: "";
+  display: block;
+  border-radius: 10px;
+  margin: 10px auto;
+  width: 50%;
+  height: $height;
+  background: $background;
+}
+
+// 改行指定
+@include mq-down() {
+  .sp {
+    display: block;
+  }
+}
+
+@include mq-up() {
+  .sp {
+    display: none;
+  }
+}
+
+// ヘッダーロゴ
+
+.yanbaru-logo {
+  @include mq-down(xxs) {
+    width: 80%;
+  }
+}
+
+.static-container {
+  margin-top: 7%;
+}
+
+#home-container {
+  @include mq-down(xls) {
+    margin-top: 80px;
+  }
+
+  // 要素の横並び
+  .flex-side {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 20px;
+  }
+
+  .contents {
+    @include flexCentering();
+    flex-direction: column;
+    min-height: 80vh;
+
+    @include mq-down(sm) {
+      overflow: hidden;
+    }
+
+    @include mq-down() {
+      min-height: 60vh;
+    }
+  }
+
+  .util-title {
+    font-size: 2rem;
+    font-weight: bold;
+    white-space: nowrap;
+
+    .util-title-inner {
+      &::after {
+        @include titlelUnderline();
+      }
+    }
+
+    .util-title-color {
+      &::after {
+        @include titlelUnderline(10px, #fff);
+      }
+    }
+
+    @include mq-down(sm) {
+      font-size: 1.7rem;
+    }
+
+    @include mq-down() {
+      margin-top: 100px;
+    }
+  }
+
+  .util-intro {
+    margin-top: 30px;
+    margin-bottom: 20px;
+
+    .util-text {
+      @include mq-down(xxs) {
+        width: 90%;
+        margin: auto;
+        text-align: center;
+      }
+    }
+  }
+
+  .sub-title {
+    .sub-title-inner {
+      &::after {
+        @include titlelUnderline(5px, $base-color);
+      }
+    }
+  }
+
+  /* ----------------------------------------------------------------
+    heading
+  -----------------------------------------------------------------*/
+  #heading {
+    position: relative;
+    overflow: hidden;
+    @include flexCentering();
+    min-height: 100vh;
+    background: $base-color;
+    margin-top: -100px;
+    flex-direction: column;
+
+    // 背景の三角形
+    @include mq-up() {
+      &::after {
+        position: absolute;
+        content: "";
+        display: block;
+        top: 0;
+        right: 0;
+        border-top: 20vh solid #fff;
+        border-left: 100vw solid #fff;
+        border-right: 0 solid transparent;
+        border-bottom: 50vh solid transparent;
+      }
+    }
+  }
+
+  .owner_icon {
+    position: absolute;
+    width: 375px;
+    top: 5%;
+    left: 55%;
+    z-index: 1000;
+  }
+
+  .heading-inner {
+    position: relative;
+    width: 50%;
+    height: 50vh;
+    z-index: 1000;
+
+    @include mq-down() {
+      height: 100vh;
+    }
+
+    .heading-lead {
+      position: absolute;
+      top: 25%;
+
+      @include mq-down(xxl) {
+        left: -20%;
+      }
+
+      .heading-lead-title {
+        font-size: 2.5rem;
+        font-weight: bold;
+        padding-bottom: 0;
+        margin-bottom: 0;
+      }
+
+      .heading-lead-text {
+        font-size: 1.5rem;
+        font-weight: bold;
+      }
+    }
+  }
+
+  .heading-about {
+    color: #fff;
+    height: 50vh;
+    margin-top: 80px;
+    margin-right: 100px;
+    font-size: 1.5rem;
+  }
+
+  // ボタン
+  .btn-teaching {
+    display: inline-block;
+    padding: 10px 40px;
+    text-decoration: none;
+    border-radius: 25px;
+    color: #fff;
+    background: $base-color;
+    border-bottom: solid 3px #2b66f1;
+
+    &:hover {
+      opacity: 0.8;
+      color: #fff;
+    }
+  }
+
+  // スマホ表示
+  @include mq-down() {
+    .heading-inner {
+      color: #fff;
+      height: 90vh;
+      max-height: 580px;
+
+      .heading-lead {
+        top: 85%;
+        left: 50%;
+        transform: translate(-50%, -20%);
+        min-width: 260px;
+
+        .heading-lead-title {
+          font-size: 2rem;
+        }
+
+        .heading-lead-text {
+          font-size: 1.2rem;
+          text-align: center;
+        }
+      }
+
+      .btn-teaching {
+        background: #fff;
+        color: black;
+        margin-left: 12%;
+      }
+    }
+
+    .heading-about {
+      font-size: 1.3rem;
+      margin-right: 0;
+    }
+
+    .heading-icon {
+      position: relative;
+      width: 300px;
+
+      .owner_icon {
+        width: 230px;
+        top: -500px;
+        left: 5%;
+      }
+    }
+
+  }
+
+  /* ----------------------------------------------------------------
+    about
+  -----------------------------------------------------------------*/
+  #about {
+
+    .about-list {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 30px;
+      max-width: 1140px;
+
+      .about-item {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: calc(19em * (1.41421356237 - 1) / 2);
+        width: 19em;
+        height: 19em;
+        font-size: 1rem;
+        background: $base-color;
+        color: #fff;
+        border-radius: 50%;
+        margin-right: 2vw;
+
+        &:nth-child(3n) {
+          margin-right: 0;
+        }
+
+        @include mq-down(lg) {
+          padding: calc(15em * (1.41421356237 - 1) / 2);
+          width: 15em;
+          height: 15em;
+
+          .about-item-text {
+            width: 131%;
+          }
+        }
+
+        @include mq-down() {
+          .about-item-text {
+            width: 100%;
+          }
+        }
+      }
+
+      // スマホ用
+      @include mq-down() {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .about-item {
+          width: 300px;
+          height: 300px;
+          border-radius: 50%;
+          margin-bottom: 50px;
+          margin-right: 0;
+        }
+      }
+    }
+  }
+
+  .about-item-title {
+    font-size: 2rem;
+    padding-bottom: 10px;
+    word-break: keep-all;
+
+    @include mq-down(lg) {
+      padding-bottom: 0;
+    }
+  }
+
+  /* ----------------------------------------------------------------
+    teachinglist
+  -----------------------------------------------------------------*/
+  #teachinglist {
+
+    .teachinglist-content {
+      max-width: 1140px;
+      min-width: 45vh;
+      margin: 20px;
+
+      @include mq-down(lg) {
+        min-width: 85vw;
+      }
+
+      .teachinglist-list {
+        @extend .flex-side;
+      }
+    }
+  }
+
+  .teachinglist-item {
+    @include flexItem();
+
+    &:nth-child(3n) {
+      margin-right: 0;
+    }
+
+    @include mq-down(lg) {
+      @include flexItemSpaceTab();
+    }
+
+    @include mq-down(xs) {
+      @include flexItemSpaceSp();
+    }
+  }
+
+  .teaching-item-text {
+    word-break: keep-all;
+  }
+
+
+  /* ----------------------------------------------------------------
+    features
+  -----------------------------------------------------------------*/
+  #features {
+
+    .features-content {
+      max-width: 1140px;
+      margin: 20px;
+
+      @include mq-down(lg) {
+        min-width: 85vw;
+      }
+
+      .features-list {
+        @extend .flex-side;
+      }
+    }
+  }
+
+  .features-item {
+    @include flexItem(#fff, $base-color,);
+
+    &:nth-child(3n) {
+      margin-right: 0;
+    }
+
+    // タブレット
+    @include mq-down(lg) {
+      @include flexItemSpaceTab();
+    }
+
+    // スマホ
+    @include mq-down(xs) {
+      @include flexItemSpaceSp();
+      min-width: 200px;
+    }
+  }
+
+  .features-item-text {
+    word-break: keep-all;
+  }
+
+  .features-item-title-inner {
+    &::after {
+      @include titlelUnderline(5px, #fff);
+    }
+  }
+
+  /* ----------------------------------------------------------------
+  services
+  -----------------------------------------------------------------*/
+  #services {
+
+    .services-content {
+      max-width: 960px;
+      margin: 20px;
+
+      .services-list {
+        @extend .flex-side;
+        margin-top: 0;
+        justify-content: space-between;
+
+        .services-item {
+          @include flexItem();
+          width: calc(50% - 50px / 2);
+          position: relative;
+
+          &:nth-child(2n) {
+            margin-right: 0;
+          }
+
+          @include mq-down(xs) {
+            @include flexItemSpaceSp();
+            min-width: 200px;
+          }
+
+          .service-link {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+          }
+        }
+
+        @include mq-up(lg) {
+          min-width: 800px;
+        }
+      }
+    }
+  }
+
+  /* ----------------------------------------------------------------
+    developer
+  -----------------------------------------------------------------*/
+  .developer-content {
+    max-width: 960px;
+    margin: 20px;
+
+    @include mq-down(lg) {
+      min-width: 90vw;
+    }
+
+    .developer-list {
+      @extend .flex-side;
+      justify-content: space-between;
+
+      .developer-item {
+        @include flexItem();
+        width: calc(50% - 50px / 2);
+
+        &:nth-child(2n) {
+          margin-right: 0;
+        }
+
+        @include mq-down(xs) {
+          @include flexItemSpaceSp();
+          min-width: 200px;
+        }
+      }
+
+      @include mq-up(lg) {
+        min-width: 850px;
+      }
+    }
+  }
+
+  /* ----------------------------------------------------------------
+    administor
+  -----------------------------------------------------------------*/
+  .administor-inner {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    height: 400px;
+
+    .administor-icon {
+      position: absolute;
+      width: 250px;
+      top: 0;
+      right: 0;
+      margin-right: 150px;
+    }
+
+    .administor-info {
+      position: absolute;
+      top: 100px;
+      left: -30px;
+
+      @include mq-down() {
+        top: -10%;
+        left: 50%;
+        transform: translate(-50%, 50%);
+      }
+
+      .administor-name {
+        font-size: 1.5rem;
+        font-weight: bold;
+
+        @include mq-down() {
+          text-align: center;
+        }
+      }
+
+      .administor-text {
+        min-width: 260px;
+      }
+    }
+  }
+
+  // snsアイコン
+  .administor-sns {
+    display: flex;
+    justify-content: center;
+
+    .sns-item {
+      position: relative;
+
+      .sns-link {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+
+  // SNSアイコンの幅
+  @include mq-up(xs) {
+    .fa-fw {
+      text-align: start;
+    }
+
+    .fc {
+      text-align: end;
+    }
+  }
+
+  // スマホ表示
+  @include mq-down(xs) {
+    #administor {
+      height: 1020px;
+
+      .administor-info {
+        top: -30%;
+      }
+    }
+
+    .administor-text {
+      margin-bottom: 50px;
+    }
+
+    .administor-sns {
+      flex-wrap: wrap;
+    }
+  }
+
+  @include mq-down(sm) {
+    .administor-inner {
+      height: 400px;
+    }
+  }
+
+  // タブレットサイズ
+  @include mq-down() {
+    #administor {
+      justify-content: normal;
+
+      .administor-title {
+        margin-bottom: 250px;
+      }
+
+      .administor-item {
+        height: 300px;
+        background-color: $base-color;
+
+        .administor-icon {
+          width: 200px;
+          top: -240px;
+          right: -230px;
+        }
+      }
+    }
+
+  }
+
+  /* ----------------------------------------------------------------
+    faq
+  -----------------------------------------------------------------*/
+  // 質問全体
+  .faq-list {
+    width: 100%;
+    padding: 0;
+    max-width: 1140px;
+
+    .faq-item {
+      background: $base-color;
+      border-radius: 50px;
+      width: 90%;
+      margin: 30px auto;
+    }
+
+    .faq-item-title {
+      flex: 0 0 35px;
+      font-size: 22px;
+      font-weight: bold;
+    }
+
+    .faq-text {
+      padding-right: 20px;
+      font-size: 22px;
+      text-align: justify;
+      text-justify: inter-ideograph;
+    }
+  }
+
+  // 質問部分
+  .faq-question {
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    padding: 30px 0 10px 40px;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 38%;
+      right: 40px;
+      transition: all 0.2s ease-in-out;
+      display: block;
+      width: 15px;
+      height: 15px;
+      border-top: solid 3px #fff;
+      border-right: solid 3px #fff;
+      -webkit-transform: rotate(135deg);
+      transform: rotate(135deg);
+
+      @include mq-down(xs) {
+        top: 70%;
+        right: 50%;
+      }
+
+      @include mq-down(xxs) {
+        right: 47%;
+      }
+    }
+
+    &.open::after {
+      -webkit-transform: rotate(-45deg);
+      transform: rotate(-45deg);
+      top: 45%;
+
+      @include mq-down(xs) {
+        top: 80%;
+      }
+    }
+
+    @include mq-down() {
+      padding-bottom: 25px;
+    }
+
+    @include mq-down(xxs) {
+      padding-left: 15px;
+    }
+  }
+
+  // 回答部分
+  .faq-answer {
+    display: none;
+
+    .faq-answer-inner {
+      position: relative;
+      display: flex;
+      padding: 20px 5px 20px 40px;
+
+      &::before {
+        content: "";
+        display: block;
+        height: 3px;
+        position: absolute;
+        top: 0px;
+        right: 30px;
+        left: 40px;
+        background: #fff;
+        border: 0 solid #fff;
+
+        @include mq-down(xxs) {
+          right: 20px;
+          left: 15px;
+        }
+      }
+
+      @include mq-down(xxs) {
+        padding-left: 15px;
+      }
+    }
+  }
+
+  @include mq-down(lg) {
+    .faq-list {
+      margin: 0;
+    }
+  }
+}
+/* ----------------------------------------------------------------
+  footer
+-----------------------------------------------------------------*/
+.static-footer {
+  height: 300px;
+  padding: 1.2rem;
+
+  .footer-contents {
+    display: flex;
+    justify-content: space-around;
+    color: #fff;
+    min-width: 800px;
+    width: 90vw;
+    max-width: 1160px;
+
+    .footer-list {
+      padding: 0;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    ul {
+      list-style: none;
+    }
+  }
+
+  // スマホ表示
+  @include mq-down(lg) {
+    min-height: 400px;
+
+    .footer-contents {
+      flex-wrap: wrap;
+      min-width: 0;
+
+      .footer-list {
+        width: 100%;
+      }
+
+      a {
+        font-size: 17px;
+        padding: 0;
+      }
+    }
+  }
+}

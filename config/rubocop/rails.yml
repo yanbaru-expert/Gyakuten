@@ -4,9 +4,9 @@ Rails:
   Enabled: true
 
 # ActiveRecord で association を安易に delegate すると
-# N+1 を起こしまくるので、なるべく delegate 的なメソッドを使わずに
+# N+1 を起こしまくるので，なるべく delegate 的なメソッドを使わずに
 # コストが掛かっていることを自覚できるようにしておきたい。
-# メソッドでも危ういが、DSL だと更に意識から抜けるので無効に。
+# メソッドでも危ういが，DSL だと更に意識から抜けるので無効に。
 Rails/Delegate:
   Enabled: false
 

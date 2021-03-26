@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_21_051405) do
+ActiveRecord::Schema.define(version: 2021_03_06_222521) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -66,10 +66,28 @@ ActiveRecord::Schema.define(version: 2020_12_21_051405) do
     t.index ["user_id"], name: "index_complete_challenges_on_user_id"
   end
 
+  create_table "faqs", force: :cascade do |t|
+    t.string "question"
+    t.string "answer"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "position"
+  end
+
+  create_table "genres", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "color"
+    t.integer "position"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "code_name"
+    t.index ["code_name"], name: "index_genres_on_code_name", unique: true
+  end
+
   create_table "lines", force: :cascade do |t|
     t.string "genre"
     t.string "title"
-    t.text "contents"
+    t.text "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -77,29 +95,30 @@ ActiveRecord::Schema.define(version: 2020_12_21_051405) do
   create_table "money", force: :cascade do |t|
     t.string "genre"
     t.string "title"
-    t.text "contents"
+    t.text "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "movies", force: :cascade do |t|
-    t.text "title"
-    t.text "contents"
+    t.string "title"
+    t.string "url"
     t.text "desc"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "genre"
+    t.integer "genre_id"
     t.integer "position"
     t.integer "text_id"
   end
 
   create_table "questions", force: :cascade do |t|
     t.string "title"
-    t.text "body"
+    t.text "content"
     t.text "solution"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "genre"
+    t.integer "genre_id"
+    t.integer "position"
   end
 
   create_table "read_texts", force: :cascade do |t|
@@ -111,9 +130,9 @@ ActiveRecord::Schema.define(version: 2020_12_21_051405) do
   end
 
   create_table "texts", force: :cascade do |t|
-    t.string "genre"
-    t.text "title"
-    t.text "contents"
+    t.integer "genre_id"
+    t.string "title"
+    t.text "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "description"
@@ -137,7 +156,7 @@ ActiveRecord::Schema.define(version: 2020_12_21_051405) do
     t.boolean "flag", default: false
     t.string "slack_id", null: false
     t.datetime "approval_at", default: "2020-06-16 07:36:58"
-    t.string "slack_name"
+    t.integer "slack_name"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
     t.index ["slack_id"], name: "index_users_on_slack_id", unique: true
@@ -168,4 +187,7 @@ ActiveRecord::Schema.define(version: 2020_12_21_051405) do
 
   add_foreign_key "complete_challenges", "challenges"
   add_foreign_key "complete_challenges", "users"
+  add_foreign_key "movies", "genres"
+  add_foreign_key "questions", "genres"
+  add_foreign_key "texts", "genres"
 end

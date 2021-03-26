@@ -1,3 +1,8 @@
+<% content_for(:title) { "#{@genre}動画教材" } %>
+<% content_for(:description) { "やんばるエキスパートの#{@genre}動画教材です。" } %>
+<div class="contents-title text-center">
+  <h1><%= @genre %> 動画教材</h1>
+</div>
 <div class="container-fluid">
   <div class="row">
     <% @movies.each.with_index(@movies.offset_value + 1) do |movie, i| %>
@@ -5,7 +10,7 @@
         <div class="card border-dark mb-3">
           <div class="card-header p-0">
             <div class="embed-responsive embed-responsive-16by9">
-              <%= movie.contents.html_safe %>
+              <%= embed_youtube(movie.url) %>
             </div>
           </div>
           <div class="card-body text-dark movie-body">
@@ -17,7 +22,7 @@
               <% end %>
             </p>
             <p class="card-text movie-title">
-              <% if ["Basic", "Git", "Ruby", "Ruby on Rails", "Marketing"].include?(movie.genre) %>
+              <% if @code_name.nil? %>
                 Lv.<%= i %>：<%= movie.title %>
               <% else %>
                 <%= movie.title %>

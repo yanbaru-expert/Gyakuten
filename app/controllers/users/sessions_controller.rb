@@ -12,25 +12,12 @@ class Users::SessionsController < Devise::SessionsController
   def create
     self.resource = warden.authenticate!(auth_options)
     # Deviseのログイン維持期間はデフォルトの2週間で設定中
-    # 前回のチェックから1週間以上経過している場合は，再度Slackに問い合わせ，
+    # やんばるCODEの方は，前回のチェックから1週間以上経過している場合は，再度Slackに問い合わせる
     # 削除済みアカウントになっている場合は承認を取り消す
     # ただし，本番環境以外では問い合わせを行わないとする
-    if Rails.env.production? && resource.flag && Time.current > resource.approval_at + 7.days
-      if resource.slack_name.present?
-        client = AutoSlackApproval.new(slack_name: resource.slack_name.to_sym, slack_id: resource.slack_id)
-        resource.flag = client.approval?
-      else
-        Rails.application.credentials.dig(:slack, :oauth_token).each_key do |slack_name|
-          client = AutoSlackApproval.new(slack_name: slack_name, slack_id: resource.slack_id)
-          resource.flag = client.approval?
-          if resource.flag
-            resource.slack_name = slack_name.to_s
-            break
-          end
-        end
-      end
-      resource.approval_at = Time.current
-      resource.save!
+    if Rails.env.production? && resource.flag && resource.slack_name == "yanbaru_code" && Time.current > resource.approval_at + 7.days
+      client = AutoSlackApproval.new(slack_name: resource.slack_name, slack_id: resource.slack_id)
+      resource.update!(flag: client.approval?, approval_at: Time.current)
     end
     # 以上を追加
     set_flash_message!(:notice, :signed_in)

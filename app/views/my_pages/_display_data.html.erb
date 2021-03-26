@@ -1,6 +1,6 @@
-<%= display_data[:genre][:display_name] %><%= "（#{display_data[:current]}/#{display_data[:total]}）" %>
+<%= display_data[:genre] %><%= "（#{display_data[:current]}/#{display_data[:total]}）" %>
 <div class="progress mb-3" style="height: 26px;">
-  <div class="progress-bar progress-bar-striped" role="progressbar" style="width: <%= display_data[:percent] %>%; background-color: <%= display_data[:genre][:color_code] %>;" aria-valuenow="<%= display_data[:percent] %>" aria-valuemin="0" aria-valuemax="100">
+  <div class="progress-bar progress-bar-striped" role="progressbar" style="width: <%= display_data[:percent] %>%; background-color: <%= display_data[:color] %>;" aria-valuenow="<%= display_data[:percent] %>" aria-valuemin="0" aria-valuemax="100">
     <%= "#{display_data[:percent]}%" %>
   </div>
 </div>

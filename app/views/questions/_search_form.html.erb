@@ -1,7 +1,12 @@
+<div id="genre-checkbox">
+  <% @existence_genres.each do |genre| %>
+    <div class="custom-control custom-checkbox custom-control-inline">
+      <input type="checkbox" class="custom-control-input" id="genre-<%= genre.id %>" checked>
+      <label class="custom-control-label" for="genre-<%= genre.id %>"><%= genre.name %></label>
+    </div>
+  <% end %>
+</div>
 <%= search_form_for @q do |f| %>
-  <div class="form-check mb-3">
-    <%= f.collection_check_boxes :genre_in, @all_questions, :genre, :genre %>
-  </div>
   <div class="form-group">
     <div class="input-group mb-2">
       <div class="input-group-prepend">
@@ -15,7 +20,7 @@
       <div class="input-group-prepend">
         <div class="input-group-text">キーワード</div>
       </div>
-      <%= f.search_field :title_or_body_or_solution_cont, class: "form-control" %>
+      <%= f.search_field :title_or_content_or_solution_cont, class: "form-control" %>
     </div>
   </div>
   <%= f.submit "検索", class: "btn btn-primary btn-block" %>

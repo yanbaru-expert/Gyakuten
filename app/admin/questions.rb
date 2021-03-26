@@ -1,8 +1,10 @@
 ActiveAdmin.register Question do
-  permit_params :genre, :title, :body, :solution
+  permit_params :position, :genre_id, :title, :content, :solution
+  config.sort_order = "position_asc"
 
   index do
     selectable_column
+    column :position
     column :genre
     column :title
     actions
@@ -10,21 +12,24 @@ ActiveAdmin.register Question do
 
   show do
     attributes_table do
+      row :position
       row :genre
       row :title
-      row :body
+      row :content
       row :solution
     end
   end
 
-  form do |_f|
-    inputs  do
-      input :genre, as: :select, collection: Text::ALL_PROGRAMMING
+  form do |f|
+    f.object.position ||= Question.maximum(:position) + 1
+    f.semantic_errors
+    f.inputs do
+      input :position
+      input :genre, as: :select, collection: Genre.order(:position)
       input :title
-      input :body
+      input :content
       input :solution
     end
-
-    actions
+    f.actions
   end
 end

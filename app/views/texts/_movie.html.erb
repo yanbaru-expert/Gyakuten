@@ -8,7 +8,7 @@
         <div class="card border-dark mb-3">
           <div class="card-header p-0">
             <div class="embed-responsive embed-responsive-16by9">
-              <%= movie.contents.html_safe %>
+              <%= embed_youtube(movie.url) %>
             </div>
           </div>
           <div class="card-body text-dark movie-body">

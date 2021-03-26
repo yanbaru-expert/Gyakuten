@@ -2,19 +2,15 @@ class TextsController < ApplicationController
   skip_before_action :authenticate_user!
 
   def index
-    if params[:genre].nil?
-      @texts = Text.show_contents_list
-      @read_text_ids = current_user.read_texts.pluck(:text_id) if user_signed_in?
-    elsif Text::OTHER_PROGRAMMING.include?(params[:genre])
-      @texts = Text.where(genre: params[:genre]).order(:position)
-      @read_text_ids = current_user.read_texts.pluck(:text_id) if user_signed_in?
-    end
-    @genre = params[:genre] || "Rails"
+    code_name = Genre.valid_code_name(params[:genre])
+    @genre = Genre.convert_display_name(code_name)
+    @texts = Text.fetch_from(code_name)
+    @read_text_ids = current_user.read_texts.pluck(:text_id) if user_signed_in?
   end
 
   def show
     @text = Text.find(params[:id])
-    @next_text_id = Text.where.not(genre: "Other").find_by(position: @text.position + 1)
+    @next_text_id = Text.where(genre_id: @text.genre_id).find_by(position: @text.position + 1)
     if user_signed_in?
       @read_text_ids = current_user.read_texts.pluck(:text_id)
       @movies = @text.movies.order(:position)

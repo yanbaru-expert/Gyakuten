@@ -1,18 +1,18 @@
 <div class="admin-textsort-container">
-  <p>ドラッグ＆ドロップで「Railsのテキスト教材」の並び順を変更できます</p>
+  <p>ドラッグ＆ドロップで「テキスト教材」の並び順を変更できます</p>
+  <p>（異なるジャンル間の並び替えには対応しておりません）</p>
   <div id="text_sort_list" class="sort-table">
     <div class="row title">
       <div class="left-column">ジャンル</div>
       <div class="right-column">タイトル</div>
     </div>
     <% @texts.each do |text| %>
-      <div class="row item <%= 'text-brown' if @text_ids.exclude?(text.id) %>">
-        <div class="left-column"><%= text.genre %></div>
+      <div class="row item">
+        <div class="left-column"><%= text.genre.name %></div>
         <div class="right-column"><%= text.title %></div>
       </div>
     <% end %>
   </div>
-  <small>（現在表示されていない教材は文字色を薄くしております）</small>
 </div>
 
 <%# Javascriptのコードを application.js や active_admin.js に入れても動作しないため，ここに記載 %>

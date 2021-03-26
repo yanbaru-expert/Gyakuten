@@ -10,8 +10,8 @@ ActiveAdmin.register_page "TextSort" do
 
   controller do
     def index
-      @texts = Text.order(:position)
-      @text_ids = Text.all_show_contents_list.ids
+      @texts = Text.order(:position).includes(:genre)
+      @text_ids = Text.ids
     end
 
     def update

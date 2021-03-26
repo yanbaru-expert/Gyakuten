@@ -3,59 +3,64 @@
 # Table name: movies
 #
 #  id         :bigint           not null, primary key
-#  contents   :text
 #  desc       :text
-#  genre      :string
 #  position   :integer
-#  title      :text
+#  title      :string
+#  url        :string
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  genre_id   :integer
 #  text_id    :integer
+#
+# Foreign Keys
+#
+#  fk_rails_...  (genre_id => genres.id)
 #
 
 class Movie < ApplicationRecord
+  include GenreSearch
   acts_as_list
+
+  YOUTUBE_REGEX = %r{\Ahttps://www.youtube.com/embed/[^?&"'>]+\z}.freeze
+  SELECT_COLUMNS = "movies.*, genres.code_name, genres.name, genres.color"
+  PER_PAGE = 18
+
   validates :title, presence: true
-  validates :contents, presence: true
-  validates :genre, presence: true
+  validates :url, presence: true
   has_many :watched_movies, dependent: :destroy
   belongs_to :text, optional: true
+  belongs_to :genre, optional: true
 
-  # 1ページの動画表示件数を指定
-  PER_PAGE = 18
-  # ナビゲーションバーで特に指定しない動画のジャンルをまとめて格納
-  PROGRAMMING = Text::PROGRAMMING
-  LIVE = ["Salon", "Talk", "Live"].freeze
-  GENERAL = ["PHP", "Design", "Other", "Money"].freeze
-  MYPAGE_LIST = ["Basic", "Git", "Ruby", "Ruby on Rails", "Live", "Talk", "Money", "PHP"].freeze
-
-  def self.categorized_by(genre, page:)
-    case genre
-    when *GENERAL
-      self.where(genre: genre).order(:position).page(page).per(PER_PAGE)
-    when *LIVE
-      # 「ライブコーディング」「対談」は新規投稿順
-      self.where(genre: genre).order(id: :desc).page(page).per(PER_PAGE)
+  before_save do
+    format_url = YoutubeUrlFormatter.format(url)
+    if format_url.present?
+      self.url = format_url
     else
-      self.where(genre: PROGRAMMING).order(:position).page(page).per(PER_PAGE)
+      self.errors.add(:url, "YouTubeのURL以外は無効です")
     end
   end
 
-  def self.watched_movie_data(user)
-    # 読破済みのデータを取得
-    watched_movies_count_data = user.watched_through_movies.pluck(:genre).group_by(&:itself).transform_values(&:size)
-    movies_count_data = Movie.where(genre: MYPAGE_LIST).pluck(:genre).group_by(&:itself).transform_values(&:size)
-
-    MYPAGE_LIST.map do |genre|
-      total_count = movies_count_data[genre] || 0
-      current_count = watched_movies_count_data[genre] || 0
-      percent = total_count.zero? ? 0 : current_count * 100 / total_count
-      {
-        genre: Settings.genre[genre],
-        total: total_count,
-        current: current_count,
-        percent: percent,
-      }
+  # 作成時にジャンルごとに整頓する機能
+  after_create do
+    movies = Movie.general_group + Movie.live_group + Movie.money_group
+    movies.each.with_index(1) do |movie, index|
+      movie.insert_at(index) if movie.position != index
     end
+  end
+
+  def self.fetch_from(code_name, page)
+    if code_name.nil?
+      ruby_group.page(page).per(PER_PAGE).select(SELECT_COLUMNS)
+    else
+      search_group(code_name).page(page).per(PER_PAGE).select(SELECT_COLUMNS)
+    end
+  end
+
+  # 視聴済みのデータを取得
+  def self.watched_movie_data(user)
+    invisible_genre_id = Genre.find_by(code_name: "invisible")
+    watched_movies_count_data = user.watched_through_movies.where.not(genre_id: invisible_genre_id).group(:genre_id).count
+    movies_count_data = Movie.where.not(genre_id: invisible_genre_id).group(:genre_id).count
+    Genre.personal_data(watched_movies_count_data, movies_count_data)
   end
 end

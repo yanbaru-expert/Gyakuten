@@ -1,0 +1,10 @@
+ja:
+  enums:
+    user:
+      slack_name:
+        other: その他
+        yanbaru_code: やんばるCODE
+        yanbaru_expert_ruby: やんばるエキスパートRuby
+        yanbaru_expert_ruby_light: やんばるエキスパートRubyライト
+        yanbaru_code_offline: やんばるCODEオフライン
+        yanbaru_expert_php: やんばるエキスパートPHP
