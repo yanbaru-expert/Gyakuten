@@ -6,7 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= display_meta_tags(default_meta_tags(title: yield(:title), description: yield(:description), twitter_image: yield(:twitter_image))) %>
     <%= render "layouts/favicons" %>
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <% if controller_name != "static_pages" %>
+      <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <% elsif action_name == "home" %>
+      <%= stylesheet_link_tag 'static_pages', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%# ここでデザイン講座LPで使用するCSSファイルを決定 %>
+    <%# config/initializers/assets.rb に追加し忘れないように %>
+    <% end %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <body>
