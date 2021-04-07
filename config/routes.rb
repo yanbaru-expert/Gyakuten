@@ -22,4 +22,10 @@ Rails.application.routes.draw do
   resources :questions, only: [:index, :show, :create, :edit, :update] do
     resource :solutions, only: [:create]
   end
+  resource :memos do
+    collection do
+      get 'preview'
+      get 'show'
+    end
+  end
 end

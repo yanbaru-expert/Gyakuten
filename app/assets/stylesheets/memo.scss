@@ -1,0 +1,9 @@
+form {
+  margin-top: 50px;
+  .form-group {
+    .memo-area {
+      height: calc(100vh - 300px);
+      resize: none;
+    }
+  }
+}
