@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="jd-flex justify-content-around row">
+    <%= link_to "戻る", memos_path, class: "btn btn-primary btn-lg col-md-3 p-4" %>
+    <button type="button" class="btn btn-primary rounded-circle p-0" data-toggle="modal" data-target="#helpModal" style="width:5rem; height:5rem;">？</button>
+  </div>
+
+  <form>
+    <div class="form-group">
+      <textarea class="form-control memo-area" id="formControlTextarea"></textarea>
+    </div>
+  </form>
+</div>
+
+<div class="modal fade" id="helpModal" tabindex="-1" role="dialog" aria-labelledby="helpModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="helpModalLabel">モーダルタイトル</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true"></span>&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        本文をここに配置
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">閉じる</button>
+      </div>
+    </div>
+  </div>
+</div>
