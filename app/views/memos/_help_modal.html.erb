@@ -16,10 +16,12 @@
         <% @memo_examples.each.with_index(1) do |memo, index| %>
           <h3>● 例 <%= index %></h3>
           <p><%= simple_format(h memo.content) %></p>
+          <hr>
           <div class="markdown">
             <%= markdown(memo.content) %>
           </div>
           <% if memo.remark.present? %>
+            <hr>
             <p><%= memo.remark %></p>
           <% end %>
           <hr>

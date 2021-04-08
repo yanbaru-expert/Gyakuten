@@ -1,6 +1,6 @@
 <header class="fixed-top <%= base_color %>">
   <nav class="navbar navbar-expand-lg mw-lg navbar-dark header-nav">
-    <%= link_to image_tag("yanbaru_logo.png", width: "240"), root_path, class: "yanbaru-logo" %>
+    <%= link_to image_tag("https://d5izmuz0mcjzz.cloudfront.net/yanbaru_expert_logo.png", width: "240"), root_path, class: "yanbaru-logo" %>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -77,8 +77,8 @@
               マイページ
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <%= link_to "進捗管理", my_pages_path, class: "dropdown-item" %>
               <%= link_to "メモ", memos_path, class: "dropdown-item" %>
+              <%= link_to "進捗管理", my_pages_path, class: "dropdown-item" %>
               <%= link_to "アカウント編集", edit_user_registration_path, class: "dropdown-item" %>
               <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
             </div>
