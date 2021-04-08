@@ -10,5 +10,6 @@
 #  updated_at :datetime         not null
 #
 class MemoExample < ApplicationRecord
+  acts_as_list
   validates :content, presence: true
 end

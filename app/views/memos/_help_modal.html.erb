@@ -12,6 +12,16 @@
           <li>入力内容は自動で保存されます。</li>
           <li>「プレビュー」ボタンをクリックすると，マークダウン反映後のプレビューを確認できます。</li>
         </ul>
+        <% @memo_examples.each do |memo| %>
+          <p><%= simple_format(h memo.content) %></p>
+          <div class="markdown">
+            <%= markdown(memo.content) %>
+          </div>
+          <% if memo.remark.present? %>
+            <p><%= memo.remark %></p>
+          <% end %>
+          <hr>
+        <% end %>
       </div>
     </div>
   </div>
