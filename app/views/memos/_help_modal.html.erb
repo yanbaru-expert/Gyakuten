@@ -12,7 +12,9 @@
           <li>入力内容は自動で保存されます。</li>
           <li>「プレビュー」ボタンをクリックすると，マークダウン反映後のプレビューを確認できます。</li>
         </ul>
-        <% @memo_examples.each do |memo| %>
+        <hr>
+        <% @memo_examples.each.with_index(1) do |memo, index| %>
+          <h3>● 例 <%= index %></h3>
           <p><%= simple_format(h memo.content) %></p>
           <div class="markdown">
             <%= markdown(memo.content) %>
