@@ -24,7 +24,7 @@ Rails.application.routes.draw do
   end
   resource :memos, only: [:show, :update] do
     collection do
-      get 'preview'
+      get "preview"
     end
   end
 end
