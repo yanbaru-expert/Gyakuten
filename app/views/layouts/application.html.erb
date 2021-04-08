@@ -14,6 +14,7 @@
     <%# config/initializers/assets.rb に追加し忘れないように %>
     <% end %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'memo', 'data-turbolinks-track': 'reload' if controller_name == "memos" %>
   </head>
   <body>
     <%= render "layouts/navbar" %>

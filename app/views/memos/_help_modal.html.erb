@@ -1,0 +1,32 @@
+<div class="modal fade" id="memoHelpModal" tabindex="-1" aria-labelledby="memoHelpModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="memoHelpModalLabel">メモ機能の使い方</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <ul>
+          <li>入力内容は自動で保存されます。</li>
+          <li>「プレビュー」ボタンをクリックすると，マークダウン反映後のプレビューを確認できます。</li>
+        </ul>
+        <hr>
+        <% @memo_examples.each.with_index(1) do |memo, index| %>
+          <h3>● 例 <%= index %></h3>
+          <p><%= simple_format(h memo.content) %></p>
+          <hr>
+          <div class="markdown">
+            <%= markdown(memo.content) %>
+          </div>
+          <% if memo.remark.present? %>
+            <hr>
+            <p><%= memo.remark %></p>
+          <% end %>
+          <hr>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

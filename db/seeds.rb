@@ -2,6 +2,7 @@ require "import_csv"
 
 ImportCsv.execute(model: Genre)
 ImportCsv.execute(model: Faq)
+ImportCsv.execute(model: MemoExample)
 
 return unless Rails.env.development?
 

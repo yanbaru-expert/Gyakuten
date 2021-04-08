@@ -26,6 +26,7 @@ ja:
       challenge: チャレンジ問題
       genre: ジャンル
       faq: よくある質問
+      memo_example: メモの例
     attributes:
       admin_user:
       error:
@@ -70,6 +71,8 @@ ja:
       faq:
         question: 質問
         answer: 回答
+      memo_example:
+        remark: 備考
   attributes:
     id: ID
     program_id: プログラムID

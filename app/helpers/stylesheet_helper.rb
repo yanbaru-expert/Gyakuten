@@ -1,6 +1,6 @@
 module StylesheetHelper
   def base_container
-    controller_name == "static_pages" ? "static-container": "base-container"
+    controller_name == "static_pages" ? "static-container" : "base-container"
   end
 
   def base_color
@@ -10,7 +10,7 @@ module StylesheetHelper
   def max_width
     if devise_controller?
       "mw-sm"
-    elsif controller_name.in?(%w[my_pages movies])
+    elsif controller_name.in?(%w[my_pages movies memos])
       "mw-xl"
     elsif controller_name.in?(%w[texts challenges]) && action_name == "index"
       "mw-xl"

@@ -1,16 +1,16 @@
 # == Schema Information
 #
-# Table name: faqs
+# Table name: memo_examples
 #
 #  id         :bigint           not null, primary key
-#  answer     :string
+#  content    :text             not null
 #  position   :integer
-#  question   :string
+#  remark     :string
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
 require "rails_helper"
 
-RSpec.describe Faq, type: :model do
+RSpec.describe MemoExample, type: :model do
   pending "add some examples to (or delete) #{__FILE__}"
 end
