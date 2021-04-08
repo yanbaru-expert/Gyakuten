@@ -5,9 +5,16 @@ class MemosController < ApplicationController
   
   def update
     @memo = Memo.find_or_initialize_by(user_id: current_user.id)
+    @memo.update!(memo_params)
   end
 
   def preview
     
+  end
+
+  private
+
+  def memo_params
+    params.require(:memo).permit(:content)
   end
 end

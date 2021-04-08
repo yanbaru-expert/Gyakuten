@@ -19,5 +19,5 @@
 class Memo < ApplicationRecord
   belongs_to :user
   validates :user_id, uniqueness: true
-  validates :text, length: { maximum: 30000}
+  validates :content, length: { maximum: 30000 }
 end
