@@ -8,7 +8,7 @@
   <div class="form-group mb-0">
     <%# 非プレビュー時に表示 %>
     <label for="memo-area"></label>
-    <textarea class="form-control memo-area" id="memo-area"><%= @memo.content %></textarea>
+    <textarea class="form-control memo-area" id="memo-area" onkeyup="count_up(this);"><%= @memo.content %></textarea>
     <%# プレビュー時に表示 %>
     <div class="memo-preview-area d-none" id="memo-preview-area"></div>
   </div>

@@ -41,3 +41,12 @@ document.addEventListener('turbolinks:load', () => {
     memoArea.addEventListener('change', registerMemo)
     backButton.addEventListener('click', backDisplay)
 })
+
+function count_up(obj) {
+    var element = document.getElementById('memo-count');
+    element.innerHTML = obj.value.length;
+
+    if (obj.value.length > 30000) {
+        element.style.color = 'red';
+    }
+}
