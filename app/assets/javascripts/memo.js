@@ -48,5 +48,6 @@ function count_up(obj) {
 
     if (obj.value.length > 30000) {
         element.style.color = 'red';
-    }
+        alert("30,000文字以内にしてください");
+    } 
 }
