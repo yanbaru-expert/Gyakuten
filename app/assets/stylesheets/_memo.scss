@@ -12,6 +12,7 @@
   width: 100%;
 }
 
-.memo-preview-area {
-  line-height: 1.3;
+.memo-preview-area.d-none {
+  border: 2px;
+  width: 100%;
 }
