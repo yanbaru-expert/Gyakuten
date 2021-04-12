@@ -13,7 +13,9 @@
 }
 
 .memo-preview-area {
+  padding: 1rem;
   border: 1px solid #ced4da;
   border-radius: 0.25em;
   width: 100%;
+  word-break: break-all;
 }
