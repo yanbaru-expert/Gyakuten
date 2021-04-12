@@ -11,6 +11,7 @@
       @content;
     }
   }
+
   @mixin sp {
     @media (max-width: ($sp)){
       @content;
@@ -634,12 +635,12 @@
       margin: 0 auto;
       display: flex;
       justify-content: center;
+      overflow-x: scroll;
+      white-space: nowrap;
       @include sp{
         justify-content: flex-start;
         width: 100% !important;
         max-width: 960px;
-        overflow-x: scroll;
-        white-space: nowrap;
       };
       .comparison-object{
         @include frame-layouts;
@@ -1081,98 +1082,60 @@
   }
 
   .profile-wrapper{
+    @include sp{
+      padding: 0;
+    }
     .profile-container{
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      width: 900px;
-      margin: 32px auto;
+      width: calc(100% - 200px);
+      margin: 0 auto;
       @include sp{
-        width: calc(100% - 40px) !important;
+        width: 100%;
+      };
+      .even{
+        flex-direction: row-reverse;
       }
-      .profile-frame{
-        width: 350px;
-        margin: 0 22px;
-        @include sp{
-          width: 100% !important;
-          margin: auto;
-        }
-        .profile-k-container{
-          display: flex;
-          justify-content: center;
-          @include sp{
-            width: 100% !important;
-            margin: 0 auto ;
-            justify-content: flex-start;
-            flex-direction: column;
-          }
+      .profile-inner{
+        display: flex;
+        margin-bottom: 64px;
+        .profile{
           img{
+            width: 250px;
+            margin-bottom: 16px;
+            border-radius: 50%;
+            box-shadow: 5px 0 0 0 #344B56;
             @include sp{
-              margin: 0 auto;
+              width: 190px;
             }
           }
         }
-        h4{
-          font-size: 20px;
-          margin-bottom: 12px;
-        }
-        h5{
-          margin-top: 16px;
-        }
-        p{
-          margin: 0;
-          margin-bottom: 40px;
-          @include sp{
-            margin-bottom: 10px;
-            width: 100% !important;
-          }
-        }
-        img{
-          width: 192px;
-          background-size: cover;
-          border-radius: 50%;
-          box-shadow: 5px 0 0 0 #344B56;
-          @include sp{
-            margin-top: 30px;
-          }
-        }
-        .profile-text{
-          font-size: 17px;
-          text-align: left;
-          margin-top: 12px;
-          @include sp{
-            width: 100% !important;
-          }
-          span{
-            font-weight: $strength-font;
-          }
+        @media (max-width: (1080px)) {
+          flex-direction: column;
         }
       }
-      .profile-k{
-        width: 300px;
+      .message{
+        text-align: left;
+        margin-left: 40px;
+        padding-right: 16px;
+        padding-left: 16px;
         @include sp{
           width: 100% !important;
           margin: 0 auto;
+          padding: 0;
+        }
+        span{
+          font-weight: $strength-font;
         }
         h4{
-          line-height: 40px;
-          margin: 60px auto;
           @include sp{
-            width: 100% !important;
-            line-height: 30px;
-            margin: 20px auto;
-          }
-        }
-        p{
-          @include sp{
-            margin: 2px auto;
+            margin: 16px auto;
+            text-align: center;
           }
         }
       }
-      .k-frame{
-          width: 700px;
-
-        }
+      .y-message{
+        margin-left: 0;
+        margin-right: 40px;
+      }
     }
   }
 
