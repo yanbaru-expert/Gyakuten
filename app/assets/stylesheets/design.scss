@@ -1,0 +1,1458 @@
+#design-course {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Source Sans Pro', 'Helvetica Neue', sans-serif ;
+  background-color: #fcfcfc;
+  box-sizing: border-box;
+  // メディアクエリ
+  $pc: 1440px;
+  $sp: 800px;
+
+  @mixin pc {
+    @media (max-width: ($pc)){
+      @content;
+    }
+  }
+  @mixin sp {
+    @media (max-width: ($sp)){
+      @content;
+    }
+  }
+
+  // カラー変数
+  $gra-color: linear-gradient(to left, #2E3ECF,#5A9BF0);
+  $main-color: #407BFF;
+  $base-color: #FBFBFD;
+  $white-color: white;
+  $sub-color: #BACFFF;
+  $accent-color: #EFB841;
+  $text-color: #344B56;
+  // フォント
+  $title-font-size: 1.75rem;
+  $subtitle-font-size: 1.5rem;
+  $strength-font: 600;
+  $roboto-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Source Sans Pro', 'Helvetica Neue', sans-serif;
+  // レイアウト
+  @mixin wrapper-layouts{
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  @mixin frame-layouts {
+    margin: 0 auto;
+    border-radius: 10px;
+    box-shadow: 5px 4px 5px 0 rgba(60, 78, 105, 0.05);
+  }
+  // 初期設定
+  a{
+    text-decoration: none;
+    display: block;
+  }
+  img{
+    display: block;
+    margin: 0 auto;
+  }
+  p, h1, h2, h3, h4, h5, h6, a{
+    color: #344B56;
+    line-height: 1.5;
+    letter-spacing: 1.05;
+    @include sp{
+      width: calc(100% - 40px) !important;        
+    };
+  }
+  h2{
+      margin: 0 auto;
+      font-size: 2.5rem;
+
+    }
+  h3{
+    margin: 0 auto;
+    font-size: $title-font-size;
+    @include sp{
+      font-size: 22px;
+      margin-left: 0;
+      margin-right: 0;
+    };
+  }
+  h4{
+    margin: 0 auto;
+    font-size: $subtitle-font-size;
+    @include sp{
+      font-size: 18px;
+    };
+  }
+  h5{
+    margin: 0 auto;
+    font-size: 20px;
+    @include sp {
+      font-size: 16px;
+    };
+  }
+  h6{
+    margin: 0 auto;
+    font-size: 18px;
+  }
+  p{
+    @include sp {
+      font-size: 16px;
+      margin: auto;
+      width: 100%;
+    };
+  }
+
+
+  // 共通パーツ
+  .wrapper{
+    overflow: hidden;
+    @include wrapper-layouts;
+    background-color: $white-color;
+    padding-top: 84px;
+    padding-bottom: 168px;
+    @include sp{
+      padding: 42px 20px 84px 20px;
+      width: calc(100% - 40px);
+    };
+  }
+  .container{
+    width: 1300px;
+    margin: 0 auto
+  }
+  .white-frame{
+    @include frame-layouts;
+    background-color: $white-color;
+    @include sp{
+      margin-left: 0;
+      margin-right: 0;
+      width: calc(100% - 40px) !important;        
+    };
+  }
+  .gra-title{
+    margin: 32px auto 27px auto;
+    h2{
+      width: fit-content;
+      font-family: $roboto-family;
+      font-weight: 900;
+      color: $main-color;
+      background: -webkit-linear-gradient( $gra-color);
+      -webkit-background-clip: text;
+      // -webkit-text-fill-color: transparent;
+    }
+  }
+  .cta-btn{
+    h4{
+      color: $white-color;
+    }
+    a{
+      display: block;
+      width: fit-content;
+      margin: 0 auto;
+      padding: 25px 66px;
+      font-size: $title-font-size;
+      color: $white-color;
+      background-color: $accent-color;
+      border-radius: 10px;
+      box-shadow: 0 5px 0 0 #8B6105;
+      @include sp{
+        z-index: 5;
+        width: calc(100% -20px) !important;
+        max-width: 450px;
+        font-size: 19px;
+        padding: 20px 20px;
+      };
+      &:hover{
+        background-color: #F8CE74;
+        transition: .3s;
+      }
+      &:active{
+        box-shadow: none;
+        top: 5px;
+      }
+    }
+    &::before{
+      content: "＼ 4月末まで!! 20名限定／";
+      font-size: $subtitle-font-size;
+      @include sp{
+        font-size: 18px;
+      };
+    }
+  }
+  .accent-block{
+    width: 50px;
+    height: 8px;
+    margin: 6px auto;
+    border-radius: 4px;
+    background: $gra-color;
+    @include sp{
+      width: 25px;
+      height: 4px
+    };
+  }
+
+  // ヘッダー
+  #header{
+    @include wrapper-layouts;
+    background: $gra-color;
+    width: 100%;
+    .container{
+      width: calc(100% - 140px);
+      height: 87px;
+      @include sp{
+        height: 60px;
+        width: calc(100% - 40px);
+      };
+      img{
+        padding-top: 27px;
+        float: left;
+        @include sp{
+          max-width: 160px;
+          padding-top: 20px;
+        };
+        
+        @media (max-width: (360px)){
+          display: none;
+        }
+  
+      }
+      a{
+        width: 263px;
+        height: 55px;
+        margin-top: 16px;
+        background: white;
+        border-radius: 50px;
+        color: $main-color;
+        font-weight: $strength-font;
+        line-height: 55px;
+        float: right;
+        @include sp{
+          height: 26px;
+          width: 140px !important;
+          font-size: 12px;
+          line-height: 28px;
+        };
+        &::after{
+          content: "  >";
+          color: $main-color;
+        }
+      }
+    }
+  }
+
+  .fv{
+    @include wrapper-layouts;
+    img{
+      width: 100%;
+    }
+  }
+
+  .course-first-info{
+    background-color: $base-color;
+    position: relative;
+    h2{
+      @include sp{
+        margin-top: 5px;
+        font-size: 22px;
+      }
+    }
+    .ribon-title{
+      position: relative;
+      h3{
+        position: absolute;
+        top: 5px;
+        left: calc((100% - 398px)/2);
+        color: $white-color;
+        font-size: $subtitle-font-size;
+        @include sp{
+          font-size: 14px;
+          top: 3px;
+          left: 20px;
+          font-weight: 400;
+        };
+        @media (max-width: (340px)){
+          font-size: 13px;
+        }
+        
+      }
+      @include sp {
+        img{
+          max-width: 310px;
+          width: 100%;
+        }
+      };
+    }
+    p{
+      margin-top: 20px;
+      span{
+        font-weight: $strength-font;
+      }
+      @include sp{
+        width: 100% !important;
+      }
+    }
+    .white-frame{
+      width: 442px;
+      height: 179px;
+      text-align: left;
+      padding-top: 14px;
+      padding-left: 29px;
+      @include sp{
+        margin: 5px auto;
+        max-width: 430px;
+        width: 100% !important;
+        padding-left: 10px;
+      }
+      div{
+        display: flex;
+        margin-top: 20px;
+        img{
+          display: block;
+          height: 20px;
+          vertical-align: baseline;
+        }
+        p{
+          display: inline-block;
+          width: 330px;
+          margin: 0;
+        }
+      }
+    }
+    h4{
+      width: fit-content;
+      background:linear-gradient(transparent 60%, #F4DEAE 40%);
+      @include sp{
+        background: none;
+      }
+    }
+    .course-info{
+      margin: 32px auto;
+      width: 650px;
+    }
+    .chara-good{
+      position: absolute;
+      z-index: 1;
+      bottom: 170px;
+      right: 120px;
+      @include pc{
+        position: static;
+      }
+      @include sp{
+        width: 190px;
+      }
+    }
+  }
+  
+  .intro-wrapper{
+    background-color: $white-color;
+    padding-bottom: 40px;
+    position: relative;
+    @include sp{
+      width: calc(100% - 10px) !important;
+      padding-right: 5px;
+      padding-left: 5px;
+      padding-bottom: 85px;
+    }
+    h3{
+      width: 100% !important;
+      span{
+        font-size: 40px;
+        background:linear-gradient(transparent 70%, #8CB0FF 30%);
+        @include sp{
+          font-size: 24px;
+          background: none;
+          display: block;
+        }
+      }
+    }
+    p{
+      margin-top: 10px;
+      span{
+        font-weight: $strength-font;
+      }
+      @include sp{
+        text-align: left;
+      };
+    }
+    .circle-container{
+      @include pc{
+        margin: 0 auto;
+        width: 100%;
+      }
+    }
+    .circle{
+      width: 563px;
+      height: 563px;
+      border-radius: 50%;
+      background-color: $base-color;
+      position: relative;
+      margin-top: 40px;
+      margin-left: 84px;
+      @include pc{
+        margin: 0 auto;
+        margin-left: 20%;
+      }
+      @include sp{
+        margin: 0 auto;
+        width: 325px;
+        height: 325px;
+      };
+      .title-img{
+        padding-top: 82px;
+        @include sp{
+          height: 100px;
+          width: 100% !important;
+          max-width: 285px;
+          padding-top: 50px;
+        }
+      }
+      h3{
+        position: absolute;
+        top: 90px;
+        left: 0px;
+        @include sp{
+          font-size: 20px;
+          top: 60px;
+          left: calc((100% - 325px)/2);
+        };
+      }
+      .before-after{
+        display: flex;
+        .chara-img{
+          height: 280px;
+          @include sp{
+            height: 140px;
+          }
+        }
+        .before-after-p{
+          padding-top: 30px;
+          font-weight: $strength-font;
+          @include sp{
+            padding-top: 10px;
+          }
+          img{
+            vertical-align: top;
+            padding-top: 10px;
+            display: inline;
+            @include sp{
+              height: 15px;
+              padding-top: 10px;
+            }
+          }
+          p{
+            display: inline-block;
+            width: 310px;
+            margin-top: 10px;
+            text-align: left;
+            @include sp{
+              padding-right: 10px;
+              font-size: 14px;
+              margin-top: 5px;
+            
+            }
+          }
+        }
+      }
+    }
+    .ora-arrow{
+      margin-top: 100px;
+      margin-left: 250px;
+      @include pc{
+        margin-top: 50px;
+        margin-left: 0px;
+        height: 200px;
+      }
+      @include sp{
+        height: 130px;
+        margin-top: 10px;
+        margin-left: 30px;
+      }
+    }
+    .after-circle{
+      width: 690px;
+      height: 690px;
+      margin-left: 650px;
+      margin-top: -200px;
+      padding-top: 30px;
+      position: relative;
+      background-color: #F0F5FF;
+      @include pc{
+        margin: 0 auto;
+        margin-top: 180px;
+      }
+      @include sp{
+        padding-top: 10px;
+        margin: 0 auto;
+        margin-top: 150px;
+        max-width: 325px;
+        height: 295px;
+      };
+      h3{
+        position: absolute;
+        top: 150px;
+        left: 0px;
+        color: $white-color;
+        @include sp{
+          font-size: 18px;
+          top: 45px;
+          left: calc(100% - 325px);
+        };
+      }
+      .sp-title{
+        width: 100%;
+        @include sp{
+          padding-top: 20px;
+          width: calc(100% - 50px);
+        }
+      }
+      .before-after{
+        .chara-img{
+          height: 350px;
+          @include sp{
+            height: 150px
+          };
+        }
+        .before-after-p{
+          padding-top: 50px;
+          padding-left: 40px;
+          @include sp{
+            padding-left: 0;
+            padding-top: 10px;
+          }
+        }
+      }
+    }
+    .bottom-triangle{
+      position: absolute;
+      bottom: -50px;
+      width: 0;
+      border-top: 50px solid $white-color;
+      border-right: 720px solid transparent;
+      border-left: 720px solid transparent;
+    }
+  }
+
+  .strongth-wrapper{
+    background-color: #F0F5FF;
+    position: relative;
+    h3{
+      margin-top: 84px;
+      margin-bottom: 84px;
+      @include sp{
+        margin: 32px auto;
+      };
+      span{
+        font-size: 44px;
+        color: $main-color;
+        &::after{
+          content: "つ";
+          font-size: $subtitle-font-size;
+        }
+      }
+    }
+    .strongth-container{
+      width: 100%;
+      display: flex;
+      margin: 0 auto;
+      flex-wrap: wrap;
+      justify-content: center;
+      @include sp{
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        overflow-x: scroll;
+      }
+      .white-frame{
+        width: 270px;
+        min-width: 270px;
+        margin: 8px;
+        padding: 30px;
+        .point-number{
+          width: 100px;
+          height: 32px;
+          background-color: $main-color;
+          color: $white-color;
+          line-height: 32px;
+          border-radius: 16px;
+          &::before{
+            content: "Point";
+          }
+        }
+        img{
+          height: 200px;
+        }
+        p{
+          font-size: 16px;
+          text-align: left;
+          span{
+            font-weight: $strength-font;
+          }
+        }
+      }
+    }
+    .bottom-triangle{
+      position: absolute;
+      bottom: -50px;
+      width: 0;
+      border-top: 50px solid #F0F5FF;
+      border-right: 720px solid transparent;
+      border-left: 720px solid transparent;
+      @include sp{
+        display: none;
+      }
+    }
+  }
+
+  .comparison-wrapper{
+    background-color: $white-color;
+    padding-bottom: 60px;
+    .comparison-title{
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: center;
+      margin-top: 84px;
+      @include sp{
+        display: block;
+      }
+      h3{
+        width: 705px;
+        padding-top: 50px;
+        margin-right: 0;
+        span{
+          color: $main-color;
+        }
+        @include sp{
+          width: 100% !important;
+          font-size: 20px;
+          color: $main-color;
+        };
+      }
+      img{
+        margin-left: 0;
+        @include sp{
+          margin: 0 auto;
+        }
+      }
+    }
+    .comparison-container{
+      width: 960px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+      @include sp{
+        justify-content: flex-start;
+        width: 100% !important;
+        max-width: 960px;
+        overflow-x: scroll;
+        white-space: nowrap;
+      };
+      .comparison-object{
+        @include frame-layouts;
+        width: 280px !important;
+        height: fit-content;
+        @include sp{
+          width: 320px !important;
+          margin-right: 30px;
+        }
+        p{
+          height: fit-content;
+          line-height: 50px;
+          margin: 0;
+          padding-top: 10px;
+          padding-bottom: 10px;
+          @include sp{
+            width: 320px !important;
+          }
+        }
+        p:nth-last-child(odd){
+          background-color: #F0F5FF;
+        }
+        p:nth-last-child(1){
+          height: 84px;
+          line-height: 50px;
+        }
+        .yanbaru-p{
+          font-family: $roboto-family;
+          line-height: 30px !important;
+        }
+        h4{
+          height: 84px;
+          line-height: 84px;
+          background-color: $base-color;
+          @include sp{
+            width: 100% !important;
+            padding-top: 10px;
+          }
+        }
+        .yanbaru{
+          background-color: $main-color;
+          padding-top: 10px;
+          color: $white-color;
+          line-height: 35px;
+        }
+      }
+      .index{
+        text-align: right;
+        box-shadow: none;
+        margin-top: 100px;
+        @include sp{
+          margin-right: 40px;
+        };
+        p{
+          padding-right: 30px;
+          @include sp{
+            font-weight: $strength-font;
+            width: 160px !important;
+          }
+        }
+      }
+      .service{
+        font-weight: bolder;
+        width: 290px;
+        h4{
+          border-top-right-radius: 10px;
+          border-top-left-radius: 10px;
+        }
+        p:nth-child(2){
+          font-size: 34px;
+          font-family: $roboto-family;
+          font-weight: bold;
+          &::after{
+            content: "円 (税込)";
+            font-size: 16px;
+          }
+          @include sp{
+            font-size: 30px;
+          }
+        }
+      }
+      .main{
+        box-shadow: 2px 5px 4px 0 rgba(60, 60, 60, 0.3);
+      }
+    }
+  }
+
+  .cta-wrapper{
+    position: relative;
+    padding-bottom: 90px;
+    background: $gra-color;
+    @include sp{
+      padding-top: 60px;
+    }
+    a{
+      position: relative;
+      z-index: 10;
+    }
+    img{
+      z-index: 0;
+      @include sp{
+        height: 100px;
+      }
+    }
+    .cta-btn::before{
+      color: $white-color;
+    }
+    .deco1{
+      position: absolute;
+      top: 20px;
+      left: 8%;
+      @include sp{
+        height: 70px;
+        left: 10px;
+      }
+    }
+    .deco2{
+      position: absolute;
+      top: 70px;
+      left: 3%;
+      @include sp{
+        left: -50px;
+      }
+    }
+    .deco3{
+      position: absolute;
+      bottom: 50px;
+      right: 10%;
+      @include sp{
+        bottom: 5px;
+        height: 60px;
+      }
+    }
+    .deco4{
+      position: absolute;
+      bottom: -50px;
+      right: 2%;
+      @include sp{
+        bottom: 15px;
+        right: 10px;
+      }
+    }
+  }
+
+  .feature-wrapper{
+    .features{
+      display: flex;
+      justify-content: center;
+      @include sp{
+        flex-direction: column;
+      }
+      .feature-inner{
+        margin: 0 auto;
+        @include sp{
+          position: relative;
+          width: 325px;
+        }
+      }
+      h2{
+        
+        font-size: 34px;
+        padding-top: 200px;
+        margin: 0 53px;
+        @include sp{
+          width: 100% !important;
+          margin: 0 auto;
+          padding-top: 20px;
+          padding-bottom: 20px;
+        }
+      }
+      div{
+        width: 408px;
+        margin: 0 auto;
+        .feature-frame{
+          width: 408px;
+          height: 358px;
+          border-radius: 50%;
+          background-color: #F0F5FF;
+          padding-top: 50px;
+          @include sp{
+            width: 320px;
+            height: 280px;
+            margin: 0 auto;
+            padding-top: 40px;
+          }
+          img{
+            height: 210px;
+            margin-bottom: 30px;
+            @include sp{
+              margin-bottom: 0;
+            }
+          }
+          h5{
+            margin-top: 0;
+            font-weight: $strength-font;
+          }
+        }
+        .ora{
+          background-color: #FCF1D9;
+        }
+        p{
+          padding: 0 10px;
+          text-align: left;
+          span{
+            font-weight: $strength-font;
+          }
+          @include sp{
+            width: 325px !important;
+            padding-top: 15px;
+          }
+        }
+      }
+    }
+  }
+
+  .curriculum-wrapper{
+    background-color: #F0F5FF;
+    .white-frame{
+      width: 750px;
+      margin-top: 32px;
+      display: flex;
+      justify-content: space-between;
+      @include sp{
+      flex-direction: column;
+      margin-left: 10px;
+      width: 450px !important;
+      }
+      div{
+        height: 200px;
+      }
+      img{
+        margin: 0;
+        @include sp{
+          width: 100%;
+          height: fit-content;
+        }
+      }
+      h4{
+        text-align: left;
+        padding-top: 16px;
+        padding-left: 16px;
+        font-family: $roboto-family;
+      }
+      div{
+        width: 380px;
+      }
+      ul{
+        list-style: square;
+      }
+      li{
+        text-align: left;
+      }
+    }
+    .white-frame:nth-child(2n){
+      display: flex;
+      flex-direction: row-reverse;
+      @include sp{
+        flex-direction: column;
+      }
+    }
+    .sp-frame{
+      @include sp{
+        display: flex;
+        overflow-x: scroll;
+      }
+    }
+    h3{
+      margin-top: 60px;
+    }
+    .movie_container{
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 30px;
+      p{
+        margin-top: 0;
+        margin-bottom: 25px;
+        font-weight: $strength-font;
+        &::before{
+          content: "参考：";
+        }
+      }
+    }
+    iframe{
+      width: 290px;
+      margin: 10px;
+      border-radius: 10px;
+    }
+  }
+
+  .flow-wrapper{
+    padding-bottom: 0;
+    .flow-flex{
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      width: 100%;
+      margin: 40px auto;
+      @include sp{
+        width: 100%;
+        flex-direction: column;
+      }
+      .flow-container{
+        max-width: 320px;
+        width: 100%;
+        @include sp{
+          margin: 23px auto;
+        }
+        h5{
+          font-family: $roboto-family;
+          margin-top: 23px;
+          @include sp{
+            margin-bottom: 20px;
+          }
+        }
+        img{
+          height: 95px;
+        }
+        p{
+          @include sp{
+            text-align: left;
+          }
+        }
+      }
+      .blue-arrow{
+        height: 0;
+        border-left: 20px solid $main-color;
+        border-top: 10px solid transparent;
+        border-bottom: 10px solid transparent;
+        margin: 150px 40px;
+        @include sp{
+          width: fit-content;
+          margin: 30px calc((100% - 40px)/2);
+          transform: rotate(90deg);
+        }
+      }
+    }
+  }
+
+  .price-wrapper{
+    padding-bottom: 44px;
+    // position: relative;
+    @include pc{
+    }
+    .blue-circle{
+      width: 1028px;
+      height: 1028px;
+      border-radius: 50%;
+      margin: 0 auto;
+      padding-top: 74px;
+      background-color: $main-color;
+      @include pc{
+        position: relative;
+        width: 920px;
+        height: 920px;
+        padding-top: 34px;
+        margin: 0;
+        left: calc((100% - 920px)/2);
+      }
+      .gra-title{
+        h2, h5{
+          color: $white-color;
+        }
+      }
+      .white-frame{
+        width: 500px;
+        height: 560px;
+        padding-top: 44px;
+        @include pc{
+          margin: 0 auto;
+          width: calc(100% - 20px) !important;
+          max-width: 400px;
+          height: 520px;
+        }
+        .before-price{
+          font-size: 12px;
+          font-weight: 500;
+          margin-top: 22px;
+          span{
+            font-size: 29px;
+            font-family: Roboto;
+            text-decoration-line: line-through;
+          }
+        }
+        .after-price{
+          display: flex;
+          justify-content: center;
+          img{
+            height: 70px;
+            margin: 0;
+            @include pc{
+              height: 50px;
+              margin-top: 20px;
+              margin-left: 20px;
+            }
+          }
+          h1{
+            font-size: 80px;
+            font-family: Roboto;
+            height: 80px;
+            line-height: 80px;
+            margin: 0;
+            @include pc{
+              font-size: 50px;
+            }
+            &::after{
+              content: "円(税込）";
+              font-size: 20px;
+            }
+          }
+        }
+        ul{
+          list-style-image: url("design_course/blue-check-circle-fill.png");
+          margin-left: 50px;
+          text-indent: 20px;
+          @include pc{
+            text-indent: 10px;
+          };
+          li{
+            text-align: left;
+            margin-top: 5px;
+          }
+        }
+      }
+      .cta-btn{
+        margin-top: 32px;
+        color: $white-color;
+        @include pc{
+          margin: 32px auto;
+          width: 320px !important;
+        }
+        a{
+          @include pc{
+            font-size: 18px;
+          }
+        }
+      }
+    }
+  }
+
+  .profile-wrapper{
+    .profile-container{
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      width: 900px;
+      margin: 32px auto;
+      @include sp{
+        width: calc(100% - 40px) !important;
+      }
+      .profile-frame{
+        width: 350px;
+        margin: 0 22px;
+        @include sp{
+          width: 100% !important;
+          margin: auto;
+        }
+        .profile-k-container{
+          display: flex;
+          justify-content: center;
+          @include sp{
+            width: 100% !important;
+            margin: 0 auto ;
+            justify-content: flex-start;
+            flex-direction: column;
+          }
+          img{
+            @include sp{
+              margin: 0 auto;
+            }
+          }
+        }
+        h4{
+          font-size: 20px;
+          margin-bottom: 12px;
+        }
+        h5{
+          margin-top: 16px;
+        }
+        p{
+          margin: 0;
+          margin-bottom: 40px;
+          @include sp{
+            margin-bottom: 10px;
+            width: 100% !important;
+          }
+        }
+        img{
+          width: 192px;
+          background-size: cover;
+          border-radius: 50%;
+          box-shadow: 5px 0 0 0 #344B56;
+          @include sp{
+            margin-top: 30px;
+          }
+        }
+        .profile-text{
+          font-size: 17px;
+          text-align: left;
+          margin-top: 12px;
+          @include sp{
+            width: 100% !important;
+          }
+          span{
+            font-weight: $strength-font;
+          }
+        }
+      }
+      .profile-k{
+        width: 300px;
+        @include sp{
+          width: 100% !important;
+          margin: 0 auto;
+        }
+        h4{
+          line-height: 40px;
+          margin: 60px auto;
+          @include sp{
+            width: 100% !important;
+            line-height: 30px;
+            margin: 20px auto;
+          }
+        }
+        p{
+          @include sp{
+            margin: 2px auto;
+          }
+        }
+      }
+      .k-frame{
+          width: 700px;
+
+        }
+    }
+  }
+
+  .present-wrapper{
+    background-color: #F0F5FF;
+    .white-frame{
+      width: 100%;
+      max-width: 850px;
+      height: 300px;
+      margin-top: 32px;
+      @include sp{
+        width: 100% !important;
+        max-width: 375px;
+        margin: 10px auto !important;
+        height: fit-content;
+        min-height: 512px;
+        padding-bottom: 10px;
+      }
+      .present-img{
+        max-height: 240px;
+        @include sp{
+          max-width: 260px;
+        }
+      }
+      .title-container{
+        display: flex;
+        @include sp{
+          flex-direction: column;
+        }
+        .present-number{
+          display: flex;
+          background-color: $accent-color;
+          width: 252px;
+          padding: 13px 77px 12px 41px;
+          @include sp{
+            justify-content: center;
+            width: 100%;
+            height: 50px;
+            padding: 0;
+          }
+          h5{
+            font-size: 24px;
+            padding-top: 5px;
+            color: $white-color;
+            font-weight: 500;
+            @include sp{
+              font-size: 20px;
+              line-height: 20px;
+              padding-top: 15px;
+              margin-left: 20px;
+              width: fit-content !important;
+            }
+          }
+          img{
+            @include sp{
+              height: 24px;
+              margin-right: 0px;
+              padding-top: 15px;
+            }
+          }
+        }
+        h4{
+          width: 598px;
+          height: 70px;
+          line-height: 70px;
+          text-align: left;
+          padding-left: 20px;
+          background-color: $base-color;
+          @include sp{
+            padding-left: 0;
+            border-radius: 0;
+            font-size: 14px;
+            width: 100% !important;
+            text-align: center;
+          }
+        }
+        p{
+          width: 420px;
+          text-align: left;
+          padding: 37px 10px 0 20px;
+          @include sp{
+            padding: 10px;
+          }
+        }
+      }
+      .radius-left{
+        border-top-left-radius: 10px;
+        @include sp{
+          border-top-right-radius: 10px;
+        }
+      }
+      .radius-right{
+        border-top-right-radius: 10px;
+        @include sp{
+          border-top-left-radius: 10px;
+        }
+      }
+      .n2{
+        flex-direction: row-reverse;
+        @include sp{
+          flex-direction: column;
+        }
+      }
+    }
+  }
+
+  .message-wrapper{
+    position: relative;
+    padding-bottom: 100px;
+    .sp-img{
+      position: absolute;
+      top: 300px;
+      right: 250px;
+      @include pc{
+        position: static;
+        width: 120px;
+      }
+    }
+    .message-frame{
+      position: relative;
+      img{
+        width: 300px;
+        height: 58px;
+        @include sp{
+          width: 200px;
+          height: 50px;
+        }
+      }
+      h3{
+        position: absolute;
+        top: 2px;
+        left: calc((100% - 90px)/2);
+        font-weight: 500;
+        color: $white-color;
+        @include sp{
+          top: 5px;
+          width: fit-content !important;
+          font-size: 20px;
+        }
+      }
+    }
+    p{
+      font-size: 22px;
+      width: 604px;
+      margin: 30px auto;
+      @include sp{
+        width: 100% !important;
+        margin-left: 0;
+        margin-right: 0;
+        font-size: 16px;
+      }
+      span{
+        font-weight: $strength-font;
+      }
+    }
+  }
+
+  .faq-wrapper{
+    background-color: #F0F5FF;
+    .faq-list{
+      padding-left: 0;
+    }
+    .white-frame{
+      width: 798px;
+      position: relative;
+      margin-top: 12px;
+      padding-bottom: 25px;
+      @include sp{
+        width: 100% !important;
+      }
+      img{
+        position: absolute;
+        right: 30px;
+        top: 30px;
+      }
+      h5{
+        padding-top: 30px;
+        padding-left: 30px;
+        text-align: left;
+        &::before{
+          content: "Q.";
+          padding-right: 30px;
+          
+        }
+      }
+      p{
+        width: 684px;
+        margin: 10px auto;
+        text-align: left;
+      }
+    }
+  }
+
+  .faq-wrapper{
+    ul{
+      list-style: none;
+    }
+    .white-frame{
+      height: fit-content;
+      padding-bottom: 0;
+    }
+    .faq-item-title {
+      flex: 0 0 35px;
+      font-size: 22px;
+      font-weight: bold;
+      @include sp{
+        padding-left: 10px;
+      }
+    }
+    .faq-text {
+      padding-top: 5px;
+      font-weight: 700;
+      text-align: justify;
+      text-justify: inter-ideograph;
+      
+    }
+    .faq-question{
+      display: flex;
+      position: relative;
+      @media (max-width: (430px)){
+        height: 85px;
+      }
+      &::after{
+        content: "";
+        position: absolute;
+        top: 38%;
+        right: 40px;
+        transition: all 0.2s ease-in-out;
+        display: block;
+        width: 10px;
+        height: 10px;
+        border-top: solid 3px $text-color;
+        border-right: solid 3px $text-color;
+        -webkit-transform: rotate(135deg);
+        transform: rotate(135deg);
+        @media (max-width: (430px)){
+          width: 6px;
+          height: 6px;
+          top: 50px;
+          left: calc((100% - 5px)/2);
+        }
+        
+      }
+      &.open::after{
+        -webkit-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+        top: 50%;
+      }
+    }
+    
+    .faq-answer {
+      display: none;
+      .faq-answer-inner {
+        position: relative;
+        display: flex;
+        padding: 0px 5px 20px 5px;
+        .faq-item-title, .faq-text{
+          font-weight: 500;
+        }
+        &::before {
+          content: "";
+          display: block;
+          height: 3px;
+          position: absolute;
+          top: 0px;
+          right: 30px;
+          left: 40px;
+          background: #fff;
+          border: 0 solid #fff;
+          
+        }
+      }
+    
+  }
+
+  }
+
+  .footer-wrapper{
+    padding-top: 45px !important;
+    padding-bottom: 60px !important;
+    background-color: $main-color;
+  }
+}

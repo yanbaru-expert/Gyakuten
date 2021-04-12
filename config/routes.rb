@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   root to: "static_pages#home"
+  get "design", to: "static_pages#design", as: :static_pages
   devise_for :users, controllers: {
     registrations: "users/registrations",
     sessions: "users/sessions",
