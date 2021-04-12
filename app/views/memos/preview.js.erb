@@ -1,5 +1,8 @@
+
 backButton.classList.remove('d-none')
 memoPreviewArea.classList.remove('d-none')
 
 previewButton.classList.add("d-none")
 memoArea.classList.add('d-none')
+
+document.getElementById('memo-preview-area').innerHTML = '<%= j render("/memos/preview", memo: @memo) %>'

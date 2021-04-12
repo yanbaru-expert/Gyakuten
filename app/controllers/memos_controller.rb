@@ -10,6 +10,7 @@ class MemosController < ApplicationController
   end
 
   def preview
+    @memo = Memo.find_by(user_id: current_user.id)
   end
 
   private
