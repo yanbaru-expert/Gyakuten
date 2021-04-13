@@ -1412,8 +1412,101 @@
   }
 
   }
+  .contact-wrapper{
+    background: $gra-color;
+    padding-top: 80px;
+    padding-bottom: 80px;
+    @include sp{
+      width: calc(100% - 20px) !important;
+      padding: 42px 10px;
+    }
+    h2, h5{
+      color: $white-color;
+    }
+    .white-frame{
+      width: calc(100% - 200px);
+      margin: 0 auto;
+      padding: 32px 48px;
+      text-align: left;
+      @include sp{
+        padding: 10px;
+        width: calc(100% - 20px) !important;
+      }
+      .contact-flash{
+        font-weight: $strength-font;
+        @include sp{
+          font-size: 12px;
+        }
+      }
+    }
+    .form-plate{
+      display: flex;
+      justify-content: left;
+      h6{
+        width: fit-content;
+        height: fit-content;
+        padding: 8px 16px 8px 0px;
+        margin: 0;
+        @include sp{
+          width: fit-content !important;
+          font-size: 14px;
+        }
+      }
+      p{
+        width: fit-content;
+        height: 12px;
+        line-height: 10px;
+        padding:8px;
+        margin: 0;
+        margin-top: 8px;
+        font-size: 12px;
+        color: white;
+        font-weight: $strength-font;
+        background: $gra-color;
+        @include sp{
+          width: 28px !important;
+          font-size: 12px;
+        }
+      }
+    }
+    .contact_frame{
+      width: 100%;
+      height: 36px;
+      border: 1px solid #DBDBDB;
+      border-radius: 5px;
+      margin-top: 5px;
+      margin-bottom: 36px;
+      padding: 8px;
+      @include sp{
+        width: calc(100% - 20px);
+        margin-bottom: 16px;
+      }
+    }
+    .message-frame{
+      height: fit-content;
+      min-height: 90px;
+    }
+    .submit_botton{
+      font-size: 1.25rem;
+      letter-spacing: 0.1rem;
+      font-weight: $strength-font;
+      margin: 24px auto;
+      width: fit-content;
+      padding: 10px 70px;
+      height: 50px;
+      color: $main-color;
+      background-color: white;
+      border-radius: 25px;
+      border: none;
+      @include sp{
+        font-size: 1rem;
+        height: 40px;
+      }
+    }
+  }
 
   .footer-wrapper{
+    font-size: 1rem;
     padding-top: 45px !important;
     padding-bottom: 60px !important;
     background-color: $main-color;

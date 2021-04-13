@@ -9,6 +9,7 @@ if Rails.env.development? || Rails.env.production?
   ActionMailer::Base.raise_delivery_errors = true
   ActionMailer::Base.delivery_method = :smtp
   ActionMailer::Base.default_url_options = { host: host }
+  ActionMailer::Base.delivery_method = :letter_opener_web
   ActionMailer::Base.smtp_settings = {
     port: 587,
     address: "smtp.gmail.com",

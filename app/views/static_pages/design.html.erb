@@ -237,7 +237,7 @@
 
   <section class="cta-wrapper wrapper">
     <div class="cta-btn">
-      <%= render 'design_application' %>
+      <%= render partial: 'static_pages/stripe' %>
       <%= image_tag "design_course/deco1.png", class: "deco1" %>
       <%= image_tag "design_course/deco2.png", class: "deco2" %>
       <%= image_tag "design_course/deco3.png", class: "deco3" %>
@@ -402,7 +402,7 @@
           <% end %>
         </div>
       <div class="cta-btn">
-        <%= render 'design_application' %>
+        <%= render 'static_pages/stripe' %>
       </div>
     </section>
 
@@ -471,7 +471,7 @@
         </ul>
       </div>
       <div class="cta-btn">
-        <%= render 'design_application' %>
+        <%= render 'static_pages/stripe' %>
       </div>
     </div>
   </section>
@@ -631,7 +631,7 @@
       この機会に新たな挑戦に一歩踏み出してみてください。
     </p>
     <div class="cta-btn">
-      <%= render 'design_application' %>
+      <%= render 'static_pages/stripe' %>
     </div>
   </section>
 
@@ -646,7 +646,22 @@
     </ul>
   </section>
     <!-- お問い合わせ -->
-  <%= link_to 'お問い合わせ', 'https://yanbaru-expert.com/#contact', target: "_blank" %>
+  <section id="design_contact" class="contact-wrapper wrapper">
+    <div class="gra-title">
+      <h2>Contact</h2>
+      <h5>お問い合わせフォーム</h5>
+    </div>
+    <div class="white-frame">
+      <% if flash[:notice] %>
+        <p class="contact-flash"><%= flash[:notice] %></p>
+      <% end %>
+      <%= form_with url: design_contact_path, local: true do |form| %>
+      <%= render 'submit_field', form: form %>
+    </div>
+      <%= form.submit "送信する", class: "submit_botton" %>
+      <% end %>
+  </section>
+
   <section class="footer-wrapper wrapper">
     <%= image_tag "design_course/servise-name.png" %>
   </section>
