@@ -18,7 +18,6 @@ Rails.application.routes.draw do
   resources :challenges, only: [:index, :show] do
     resource :complete_challenges, only: [:create, :destroy]
   end
-  resources :lines, only: [:index, :show]
   resources :questions, only: [:index, :show, :create, :edit, :update] do
     resource :solutions, only: [:create]
   end
