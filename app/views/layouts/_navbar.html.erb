@@ -68,9 +68,6 @@
             <%= link_to display_name("money_insta"), movies_path(genre: "money_insta"), class: "dropdown-item#{add_disabled}" %>
           </div>
         </li>
-        <li class="nav-item">
-          <%= link_to "LINE", lines_path, class: "nav-item nav-link active" %>
-        </li>
         <% if user_signed_in? %>
           <li class="nav-item active dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
