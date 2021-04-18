@@ -1,8 +1,13 @@
 Rails.application.routes.draw do
   mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
+
   root to: "static_pages#home"
+  
   get "design", to: "static_pages#design", as: :static_pages
   post "/design_contact", to: "contacts#create"
+  get 'payments/new_payment', to: "payments#new_payment"
+  get 'payments/create_payment', to: "payments#create_payment"
+
   devise_for :users, controllers: {
     registrations: "users/registrations",
     sessions: "users/sessions",
