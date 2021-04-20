@@ -676,9 +676,9 @@
 <script>
   (function () {
     var stripe = Stripe('pk_live_TarpapV3tug0Vx2CphYOFECA00Ni3DM9JR');
-    var checkoutButtons = document.querySelectorAll('cta-btn');
-    checkoutButtons.forEach((checkoutButton) => {
-    checkoutButton.addEventListener('click', ()=> {
+    var checkoutButtons = document.querySelectorAll('.cta-btn');
+    checkoutButtons.forEach((checkoutButton)=> {
+      checkoutButton.addEventListener('click', ()=> {
       console.log("クリック確認");
       /*
        * When the customer clicks on the button, redirect
