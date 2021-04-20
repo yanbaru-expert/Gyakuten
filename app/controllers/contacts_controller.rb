@@ -17,7 +17,6 @@ class ContactsController < ApplicationController
 
     def contact_validation
       if params[:message].length > 1000 || params[:name].length > 20 || params[:ruby_name].length > 30
-        puts "お問い合わせ送信失敗"
         flash[:notice] = "メールの送信に失敗しました。もう一度送信をお願いします"
         redirect_to static_pages_url(anchor: "design_contact")
       end
