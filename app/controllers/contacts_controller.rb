@@ -3,8 +3,8 @@ class ContactsController < ApplicationController
 
   def create
     @contact = contact_params
-    ContactMailer.user_email(@contact).deliver_now
     ContactMailer.admin_email(@contact).deliver_now
+    ContactMailer.user_email(@contact).deliver_now
     flash[:notice] = "メールの送信に成功しました。確認メールが届きます。"
     redirect_to static_pages_url(anchor: "design_contact")
   end
