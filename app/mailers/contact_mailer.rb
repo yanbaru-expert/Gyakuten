@@ -14,10 +14,7 @@ class ContactMailer < ApplicationMailer
     @contact = contact
     @name = contact[:name].presence || contact[:email]
     subject = "「やんばるエキスパートwebデザイン講座」お問い合わせ受付"
-    receiver = ADMIN_EMAIL
-    if Rails.env.development?
-      receiver = SAMPLE_EMAIL
-    end
+    receiver = Rails.env.development? ? SAMPLE_EMAIL : ADMIN_EMAIL
     mail(to: receiver, subject: subject)
   end
 end
