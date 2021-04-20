@@ -1,9 +1,9 @@
 if Rails.env.development?
   host = "localhost:3000"
+elsif ENV["HEROKU_ENV"] == "staging"
+  host = "gyakuten-app-staging.herokuapp.com"
 elsif Rails.env.production?
   host = "www.yanbaru-code.com"
-elsif Rails.staging?
-  host = "gyakuten-app-staging.herokuapp.com"
 end
 
 if Rails.env.development? || Rails.env.production?
