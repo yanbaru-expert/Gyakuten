@@ -142,16 +142,19 @@
     h4{
       color: $white-color;
     }
-    a{
+    button{
       display: block;
       width: fit-content;
       margin: 0 auto;
       padding: 25px 66px;
       font-size: $title-font-size;
+      font-weight: $strength-font;
       color: $white-color;
       background-color: $accent-color;
+      border: 0;
       border-radius: 10px;
       box-shadow: 0 5px 0 0 #8B6105;
+      cursor: pointer;
       @include sp{
         z-index: 5;
         width: calc(100% -20px) !important;
@@ -168,9 +171,10 @@
         top: 5px;
       }
     }
-    &::before{
-      content: "＼ 4月末まで!! 20名限定／";
+    h6{
       font-size: $subtitle-font-size;
+      margin-top: 0;
+      margin-bottom: 0;
       @include sp{
         font-size: 18px;
       };
@@ -213,19 +217,22 @@
         }
   
       }
-      a{
+      button{
         width: 263px;
         height: 55px;
         margin-top: 16px;
         background: white;
         border-radius: 50px;
         color: $main-color;
+        font-size: 20px;
         font-weight: $strength-font;
         line-height: 55px;
         float: right;
         @include sp{
-          height: 26px;
+          height: 36px;
           width: 140px !important;
+          margin-bottom: auto;
+          margin-top: 10px;
           font-size: 12px;
           line-height: 28px;
         };
@@ -745,7 +752,7 @@
         height: 100px;
       }
     }
-    .cta-btn::before{
+    h6{
       color: $white-color;
     }
     .deco1{
@@ -1069,14 +1076,18 @@
         margin-top: 32px;
         color: $white-color;
         @include pc{
-          margin: 32px auto;
-          width: 320px !important;
+          margin: 0 auto;
+          min-width: 320px !important;
         }
-        a{
+        button{
           @include pc{
             font-size: 18px;
           }
         }
+      }
+      h6{
+        margin-top: 24px;
+        color: $white-color;
       }
     }
   }
