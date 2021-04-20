@@ -6,7 +6,6 @@ elsif Rails.env.production?
   host = "www.yanbaru-code.com"
 end
 
-if Rails.env.development? || Rails.env.production?
   # メール配信に失敗した場合にエラーを発生
   ActionMailer::Base.raise_delivery_errors = true
   ActionMailer::Base.delivery_method = :smtp
@@ -20,4 +19,3 @@ if Rails.env.development? || Rails.env.production?
     domain: host,
     authentication: "plain",
   }
-end
