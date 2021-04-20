@@ -6,16 +6,16 @@ elsif Rails.env.production?
   host = "www.yanbaru-code.com"
 end
 
-  # メール配信に失敗した場合にエラーを発生
-  ActionMailer::Base.raise_delivery_errors = true
-  ActionMailer::Base.delivery_method = :smtp
-  ActionMailer::Base.default_url_options = { host: host }
-  ActionMailer::Base.delivery_method = :letter_opener_web if Rails.env.development?
-  ActionMailer::Base.smtp_settings = {
-    port: 587,
-    address: "smtp.gmail.com",
-    user_name: Rails.application.credentials.gmail[:address],
-    password: Rails.application.credentials.gmail[:password],
-    domain: host,
-    authentication: "plain",
-  }
+# メール配信に失敗した場合にエラーを発生
+ActionMailer::Base.raise_delivery_errors = true
+ActionMailer::Base.delivery_method = :smtp
+ActionMailer::Base.default_url_options = { host: host }
+ActionMailer::Base.delivery_method = :letter_opener_web if Rails.env.development?
+ActionMailer::Base.smtp_settings = {
+  port: 587,
+  address: "smtp.gmail.com",
+  user_name: Rails.application.credentials.gmail[:address],
+  password: Rails.application.credentials.gmail[:password],
+  domain: host,
+  authentication: "plain",
+}

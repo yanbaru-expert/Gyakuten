@@ -10,12 +10,11 @@ class StaticPagesController < ApplicationController
   def home
     @faqs = Faq.all
   end
-  
+
   def design
     @faqs = Faq.all
     @movies = Movie.where(url: [SAMPLE_MOVIE_DESIGN_URL,
                                 SAMPLE_MOVIE_TOOL_URL,
-                                SAMPLE_MOVIE_MARKETING_URL
-                                ])
+                                SAMPLE_MOVIE_MARKETING_URL])
   end
 end
