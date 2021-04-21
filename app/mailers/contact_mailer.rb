@@ -1,5 +1,5 @@
 class ContactMailer < ApplicationMailer
-  ADMIN_EMAIL = Rails.application.credentials.owner[:email],
+  ADMIN_EMAIL = Rails.application.credentials.owner[:email]
   SAMPLE_EMAIL = "test@sample.com"
 
   def user_email(contact)
