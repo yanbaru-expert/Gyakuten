@@ -694,8 +694,10 @@
          * Instead use one of the strategies described in
          * https://stripe.com/docs/payments/checkout/fulfill-orders
          */
-        successUrl: 'https://yanbaru-expert.com/success',
-        cancelUrl: 'https://yanbaru-expert.com/canceled',
+        if (location.host === 'https://www.yanbaru-code.com/design'){
+          successUrl: 'https://www.yanbaru-code.com/design',
+          cancelUrl: 'https://yanbaru-expert.com/canceled',
+        }
       })
         .then(function (result) {
           if (result.error) {

@@ -20,14 +20,14 @@
     <%= javascript_include_tag 'memo', 'data-turbolinks-track': 'reload' if controller_name == "memos" %>
   </head>
   <body>
-    <% if action_name != "design" %>
+    <% unless action_name == "design" || "success" %>
       <%= render "layouts/navbar" %>
     <% end %>
     <%= render "shared/flash_message" %>
     <div class="<%= base_container %> <%= max_width %>">
       <%= yield %>
     </div>
-    <% if action_name != "design" %>
+    <% unless action_name == "design" || "success" %>
       <%= render "layouts/footer" %>
     <% end %>
   </body>
