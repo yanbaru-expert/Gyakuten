@@ -678,6 +678,8 @@
   (function () {
     var stripe = Stripe('pk_live_TarpapV3tug0Vx2CphYOFECA00Ni3DM9JR');
     var checkoutButtons = document.querySelectorAll('.cta-btn');
+    var success_url = gon.success_url
+    var cancel_url = gon.cancel_url
         console.log("クリック確認3");
     checkoutButtons.forEach((checkoutButton)=> {
         console.log("クリック確認2");
