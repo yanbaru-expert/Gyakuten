@@ -679,7 +679,6 @@
     var checkoutButtons = document.querySelectorAll('.cta-btn');
     checkoutButtons.forEach((checkoutButton)=> {
       checkoutButton.addEventListener('click', ()=> {
-      console.log("クリック確認");
       /*
        * When the customer clicks on the button, redirect
        * them to Checkout.
@@ -695,8 +694,11 @@
          * https://stripe.com/docs/payments/checkout/fulfill-orders
          */
         if (location.host === 'https://www.yanbaru-code.com/design'){
-          successUrl: 'https://www.yanbaru-code.com/design',
-          cancelUrl: 'https://yanbaru-expert.com/canceled',
+          successUrl: 'https://www.yanbaru-code.com/design_success',
+          cancelUrl: 'https://yanbaru-expert.com/design',
+        }else{
+          successUrl: 'https://gyakuten-app-staging.herokuapp.com/design_success',
+          cancelUrl: 'https://gyakuten-app-staging.herokuapp.com/design',
         }
       })
         .then(function (result) {
