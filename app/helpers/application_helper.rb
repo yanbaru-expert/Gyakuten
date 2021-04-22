@@ -2,20 +2,26 @@ module ApplicationHelper
   # title などを埋め込む際は，各ビューファイルに次を埋め込む
   # <% content_for(:title) { タイトル名 } %>
   def default_meta_tags(title:, description:, twitter_image:)
+    site = if request.path.in?(["/design", "/design_success"])
+             "やんばるエキスパート"
+           else
+             Settings.ogp.site_name
+           end
+
     og_title = if title.present?
-                 "やんばるエキスパート教材 | #{title}"
+                 "#{site} | #{title}"
                else
-                 "やんばるエキスパート教材"
+                 site
                end
     og_image = if twitter_image.present?
                  twitter_image
                elsif params[:genre].in?(Genre::DESIGN) || request.path.in?(["/design", "/design_success"])
-                 "https://d5izmuz0mcjzz.cloudfront.net/yanbaru_expert_banner_design.jpg"
+                 "https://d5izmuz0mcjzz.cloudfront.net/design_course/design-fv.jpg"
                else
                  "https://d5izmuz0mcjzz.cloudfront.net/yanbaru_expert_banner.jpg"
                end
     {
-      site: Settings.ogp.site_name,
+      site: site,
       title: title,
       # reverse: false,
       charset: "utf-8",
@@ -28,7 +34,7 @@ module ApplicationHelper
       og: {
         # 例えば，:site とすれば，上記の site: の情報をコピーできる
         site_name: :site,
-        title: og_title,
+        title: :title,
         description: :description,
         type: "website",
         url: request.url,
