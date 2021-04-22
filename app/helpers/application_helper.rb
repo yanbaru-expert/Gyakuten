@@ -9,7 +9,7 @@ module ApplicationHelper
                end
     og_image = if twitter_image.present?
                  twitter_image
-               elsif params[:genre].in?(Genre::DESIGN)
+               elsif params[:genre].in?(Genre::DESIGN) || request.path.in?(["/design", "/design_success"])
                  "https://d5izmuz0mcjzz.cloudfront.net/yanbaru_expert_banner_design.jpg"
                else
                  "https://d5izmuz0mcjzz.cloudfront.net/yanbaru_expert_banner.jpg"
