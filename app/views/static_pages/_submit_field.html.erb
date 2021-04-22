@@ -1,0 +1,27 @@
+<div>
+  <div class="form-plate">
+    <h6>お名前</h6>
+    <p>必須</p>
+  </div>
+  <%= form.text_field :name, class: "contact_frame",required: true, placeholder: "例）山田太郎" %>
+</div>
+<div>
+  <div class="form-plate">
+    <h6>お名前（フリガナ）</h6>
+    <p>必須</p>
+  </div>
+  <%= form.text_field :ruby_name,required: true,placeholder: "例）ヤマダタロウ", class: "contact_frame" %>
+</div>
+<div>
+  <div class="form-plate">
+    <h6>メールアドレス</h6>
+    <p>必須</p>
+  </div>
+  <%= form.email_field :email, required: true, pattern: "^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]+$",placeholder: "例）yambal-sample@gmail.com", class: "contact_frame" %>
+</div>
+<div >
+  <div class="form-plate">
+    <h6>質問など</h6>
+  </div>
+  <%= form.text_area :message, class: "contact_frame message-frame",placeholder: "ご自由にお書きください(1000文字以内)" %>
+</div>
