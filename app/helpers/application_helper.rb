@@ -34,7 +34,7 @@ module ApplicationHelper
       og: {
         # 例えば，:site とすれば，上記の site: の情報をコピーできる
         site_name: :site,
-        title: :title,
+        title: og_title,
         description: :description,
         type: "website",
         url: request.url,
