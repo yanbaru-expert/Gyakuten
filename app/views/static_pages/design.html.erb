@@ -1,4 +1,5 @@
 <!-- Load Stripe.js on your website. -->
+<%= Gon::Base.render_data %>
 <script src="https://js.stripe.com/v3"></script>
 
 <section id="design-course">
@@ -677,8 +678,11 @@
   (function () {
     var stripe = Stripe('pk_live_TarpapV3tug0Vx2CphYOFECA00Ni3DM9JR');
     var checkoutButtons = document.querySelectorAll('.cta-btn');
+        console.log("クリック確認3");
     checkoutButtons.forEach((checkoutButton)=> {
+        console.log("クリック確認2");
       checkoutButton.addEventListener('click', ()=> {
+        console.log("クリック確認1");
       /*
        * When the customer clicks on the button, redirect
        * them to Checkout.
@@ -693,8 +697,8 @@
          * Instead use one of the strategies described in
          * https://stripe.com/docs/payments/checkout/fulfill-orders
          */
-          successUrl: <%= @success_url %>,
-          cancelUrl: <%= @cancel_url %>,
+          successUrl: gon.success_url,
+          cancelUrl: gon.cancel_url,
       })
         .then(function (result) {
           if (result.error) {

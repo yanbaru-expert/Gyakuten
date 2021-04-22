@@ -28,11 +28,11 @@ class StaticPagesController < ApplicationController
 
   def success
     if Rails.env.production?
-      @success_url = PRODUCTION_SUCCESS_URL
-      @cancel_url = PRODUCTION_CANCEL_URL
+      gon.success_url = PRODUCTION_SUCCESS_URL
+      gon.cancel_url = PRODUCTION_CANCEL_URL
     else
-      @success_url = STAGING_SUCCESS_URL
-      @cancel_url = STAGING_CANCEL_URL
+      gon.success_url = STAGING_SUCCESS_URL
+      gon.cancel_url = STAGING_CANCEL_URL
     end
   end
 end
