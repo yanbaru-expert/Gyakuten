@@ -6,14 +6,6 @@ class StaticPagesController < ApplicationController
   SAMPLE_MOVIE_TOOL_URL = "https://www.youtube.com/embed/QLeskX1PQY0"
   # 【1-3】仕組み化（マーケティング）
   SAMPLE_MOVIE_MARKETING_URL = "https://www.youtube.com/embed/DYEek-SNurI"
-  # 本番環境のStripe成功URL
-  PRODUCTION_SUCCESS_URL = 'https://www.yanbaru-code.com/design_success'
-  # 本番環境のStripeキャンセルURL
-  PRODUCTION_CANCEL_URL = 'https://www.yanbaru-code.com/design'
-  # ステージング環境のStripe成功URL
-  STAGING_SUCCESS_URL = 'https://gyakuten-app-staging.herokuapp.com/design_success'
-  # ステージング環境のStripe成功URL
-  STAGING_CANCEL_URL = 'https://gyakuten-app-staging.herokuapp.com/design'
 
   def home
     @faqs = Faq.all
@@ -24,13 +16,6 @@ class StaticPagesController < ApplicationController
     @movies = Movie.where(url: [SAMPLE_MOVIE_DESIGN_URL,
                                 SAMPLE_MOVIE_TOOL_URL,
                                 SAMPLE_MOVIE_MARKETING_URL])
-    if Rails.env.production?
-      gon.success_url = PRODUCTION_SUCCESS_URL
-      gon.cancel_url = PRODUCTION_CANCEL_URL
-    else
-      gon.success_url = STAGING_SUCCESS_URL
-      gon.cancel_url = STAGING_CANCEL_URL
-    end
   end
 
   def success
