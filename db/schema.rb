@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_06_222521) do
+ActiveRecord::Schema.define(version: 2021_04_08_012953) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -92,6 +92,22 @@ ActiveRecord::Schema.define(version: 2021_03_06_222521) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "memo_examples", force: :cascade do |t|
+    t.integer "position"
+    t.text "content", null: false
+    t.string "remark"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "memos", force: :cascade do |t|
+    t.bigint "user_id"
+    t.text "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_memos_on_user_id"
+  end
+
   create_table "money", force: :cascade do |t|
     t.string "genre"
     t.string "title"
@@ -155,7 +171,7 @@ ActiveRecord::Schema.define(version: 2021_03_06_222521) do
     t.inet "last_sign_in_ip"
     t.boolean "flag", default: false
     t.string "slack_id", null: false
-    t.datetime "approval_at", default: "2021-04-05 12:24:20"
+    t.datetime "approval_at", default: "2021-03-13 21:51:12"
     t.integer "slack_name"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
@@ -187,6 +203,7 @@ ActiveRecord::Schema.define(version: 2021_03_06_222521) do
 
   add_foreign_key "complete_challenges", "challenges"
   add_foreign_key "complete_challenges", "users"
+  add_foreign_key "memos", "users"
   add_foreign_key "movies", "genres"
   add_foreign_key "questions", "genres"
   add_foreign_key "texts", "genres"

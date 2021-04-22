@@ -1,0 +1,43 @@
+id,content,remark
+1,"# 見出し1
+## 見出し2
+### 見出し3",教材内では <h1> タグに相当する「見出し1」を使用しないで下さい。
+2,"- リスト1
+- リスト2
+    - リスト1-2
+    - リスト1-2
+      - リスト1-2-1
+- リスト3",
+3,"1. 番号付きリスト1
+1. 番号付きリスト2
+  - 番号付きリスト2-1
+  - 番号付きリスト2-2
+1. 番号付きリスト3",
+4,`form_for` と `form_tag` は，Rails 5.1から `form_with` に統合されています。,
+5,"|HTTPメソッド|URL|アクション|役割|
+|---|---|---|---|
+|GET|/users|index|一覧表示|
+|GET|/users/new|new|新規投稿フォーム表示|",
+6,[やんばるエキスパート](https://www.yanbaru-code.com/),直接リンクを書くだけでもリンクになります。
+7,"```rb
+puts ""Hello, World!""
+```",
+8,"```none:Gemfile
+gem 'bootstrap', '~> 4.5.0'
+```",対応言語が存在しない場合は「none」を利用して下さい。
+9,"```zsh:ターミナル
+rails new crud_sample -d postgresql -T
+cd crud_sample
+```",
+10,"```erb:app/views/posts/_form.html.erb
+<%= form_with model: @post, local: true do |form| %>
+ <div>
+    <%= form.label :content, ""内容"" %>
+    <%= form.text_field :content %>
+  </div>
+  <div>
+    <%= form.submit ""送信"" %>
+  </div>
+<% end %>
+```",
+11,![画像名](https://d5izmuz0mcjzz.cloudfront.net/yanbaru_expert_banner.jpg),

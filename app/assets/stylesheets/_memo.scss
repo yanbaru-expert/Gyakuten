@@ -1,0 +1,21 @@
+.memo-area.form-control {
+  height: calc(100vh - 230px);
+  resize: none;
+}
+
+.memo-hint-btn {
+  border-radius: 50%;
+}
+
+.memo-btn {
+  max-width: 250px;
+  width: 100%;
+}
+
+.memo-preview-area {
+  padding: 1rem;
+  border: 1px solid #ced4da;
+  border-radius: 0.25em;
+  width: 100%;
+  word-break: break-all;
+}

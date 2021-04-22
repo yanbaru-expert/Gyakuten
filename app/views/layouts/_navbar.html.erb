@@ -1,6 +1,6 @@
 <header class="fixed-top <%= base_color %>">
   <nav class="navbar navbar-expand-lg mw-lg navbar-dark header-nav">
-    <%= link_to image_tag("yanbaru_logo.png", width: "240"), root_path, class: "yanbaru-logo" %>
+    <%= link_to image_tag("https://d5izmuz0mcjzz.cloudfront.net/yanbaru_expert_logo.png", width: "240"), root_path, class: "yanbaru-logo" %>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -68,25 +68,23 @@
             <%= link_to display_name("money_insta"), movies_path(genre: "money_insta"), class: "dropdown-item#{add_disabled}" %>
           </div>
         </li>
-        <li class="nav-item">
-          <%= link_to "LINE", lines_path, class: "nav-item nav-link active" %>
-        </li>
         <% if user_signed_in? %>
           <li class="nav-item active dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               マイページ
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <%= link_to "メモ", memos_path, class: "dropdown-item", data: { turbolinks: false } %>
               <%= link_to "進捗管理", my_pages_path, class: "dropdown-item" %>
               <%= link_to "アカウント編集", edit_user_registration_path, class: "dropdown-item" %>
               <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
             </div>
-        <% else %>
-          <li class="nav-item">
-            <%= link_to "ログイン", new_user_session_path, class: "nav-item nav-link active" %>
-          </li>
-        <% end %>
-      </ul>
-    </div>
-  </nav>
-</header>
+          <% else %>
+            <li class="nav-item">
+              <%= link_to "ログイン", new_user_session_path, class: "nav-item nav-link active" %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+    </nav>
+  </header>
