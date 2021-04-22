@@ -17,4 +17,8 @@ class StaticPagesController < ApplicationController
                                 SAMPLE_MOVIE_TOOL_URL,
                                 SAMPLE_MOVIE_MARKETING_URL])
   end
+
+  def success
+
+  end
 end

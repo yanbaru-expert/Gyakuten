@@ -5,6 +5,7 @@ Rails.application.routes.draw do
 
   get "design", to: "static_pages#design", as: :static_pages
   post "/design_contact", to: "contacts#create"
+  get "/design_success", to: "static_pages#success"
 
   devise_for :users, controllers: {
     registrations: "users/registrations",

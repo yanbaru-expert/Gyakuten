@@ -1,6 +1,3 @@
-<!-- Load Stripe.js on your website. -->
-<script src="https://js.stripe.com/v3"></script>
-
 <section id="design-course">
   <!-- ヘッダー -->
   <header id="header">
@@ -671,43 +668,3 @@
     <%= image_tag "https://d5izmuz0mcjzz.cloudfront.net/design_course/servise-name.png" %>
   </section>
 </section>
-
-
-<script>
-  (function () {
-    var stripe = Stripe('pk_live_TarpapV3tug0Vx2CphYOFECA00Ni3DM9JR');
-    var checkoutButtons = document.querySelectorAll('.cta-btn');
-    checkoutButtons.forEach((checkoutButton)=> {
-      checkoutButton.addEventListener('click', ()=> {
-      console.log("クリック確認");
-      /*
-       * When the customer clicks on the button, redirect
-       * them to Checkout.
-       */
-      stripe.redirectToCheckout({
-        lineItems: [{ price: 'price_1IdnvGGiRzWonoYFW4sxYrTM', quantity: 1 }],
-        mode: 'payment',
-        /*
-         * Do not rely on the redirect to the successUrl for fulfilling
-         * purchases, customers may not always reach the success_url after
-         * a successful payment.
-         * Instead use one of the strategies described in
-         * https://stripe.com/docs/payments/checkout/fulfill-orders
-         */
-        successUrl: 'https://yanbaru-expert.com/success',
-        cancelUrl: 'https://yanbaru-expert.com/canceled',
-      })
-        .then(function (result) {
-          if (result.error) {
-            /*
-             * If `redirectToCheckout` fails due to a browser or network
-             * error, display the localized error message to your customer.
-             */
-            var displayError = document.getElementById('error-message');
-            displayError.textContent = result.error.message;
-          }
-        });
-      });
-    })
-  })();
-</script>
