@@ -21,7 +21,7 @@ class Genre < ApplicationRecord
   RUBY = %w[basic git ruby rails].freeze
   LIVE = %w[talk live].freeze
   MONEY = %w[money_marketing money_lstep money_insta]
-  DESIGN = %w[design_tool design_matter design_usage]
+  DESIGN = %w[design_tool design_matter design_usage design_task]
   IN_GENERAL = (MONEY + LIVE + ["invisible"]).freeze
 
   validates :name, presence: true
