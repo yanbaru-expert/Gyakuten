@@ -560,11 +560,6 @@
       margin: 0 auto;
       flex-wrap: wrap;
       justify-content: center;
-      @include sp{
-        flex-wrap: nowrap;
-        justify-content: flex-start;
-        overflow-x: scroll;
-      }
       .white-frame{
         width: 270px;
         min-width: 270px;
