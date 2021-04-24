@@ -2,7 +2,7 @@ document.addEventListener('turbolinks:load', () => {
   const stripe = Stripe('pk_live_TarpapV3tug0Vx2CphYOFECA00Ni3DM9JR');
   const checkoutButtons = document.querySelectorAll('.cta-btn');
   const designCourse = document.getElementById('design-course')
-  const priceId = designCourse.dataset.priceId;
+  const priceId = designCourse.dataset.price_id;
 
   let baseUrl = '';
 
