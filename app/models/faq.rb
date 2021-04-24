@@ -14,4 +14,11 @@ class Faq < ApplicationRecord
   acts_as_list
   validates :question, presence: true
   validates :answer, presence: true
+
+  enum genre: {
+    invisible: 0,
+    all: 1,
+    top: 2,
+    design: 3,
+  }
 end
