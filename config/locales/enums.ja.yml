@@ -8,3 +8,9 @@ ja:
         yanbaru_expert_ruby_light: やんばるエキスパートRubyライト
         yanbaru_code_offline: やんばるCODEオフライン
         yanbaru_expert_php: やんばるエキスパートPHP
+    faq:
+      genre:
+        invisible: 非表示
+        always: 全表示
+        top: トップLP
+        design: デザイン講座LP
