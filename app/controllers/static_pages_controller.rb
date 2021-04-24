@@ -15,7 +15,14 @@ class StaticPagesController < ApplicationController
     @faqs = Faq.where(genre: %w[always design]).order(position: :asc)
     @movies = Movie.where(url: [SAMPLE_MOVIE_DESIGN_URL,
                                 SAMPLE_MOVIE_TOOL_URL,
-                                SAMPLE_MOVIE_MARKETING_URL])
+                                SAMPLE_MOVIE_MARKETING_URL]
+                              )
+    @price_id = ENV["DESIGN_PRICE_ID"]
+    @price = if Rails.env.production?
+               Stripe::Price.retrieve(price_id).unit_amount
+             else
+               100000
+             end
   end
 
   def success

@@ -1,7 +1,7 @@
 <% content_for(:title) { "Webデザイン講座" } %>
 <% content_for(:description) { "Webデザインで月5万円稼げるまで無期限にサポートするオンライン型のコスパ最強の講座｜さらにマーケティングや営業方法の教材によって技術だけ習得させて終わらせません。" } %>
 
-<section id="design-course" data-price_id="<%= ENV["DESIGN_PRICE_ID"] %>">
+<section id="design-course" data-price_id="<%= @price_id %>">
   <!-- ヘッダー -->
   <header id="header">
     <div class="container">
@@ -217,7 +217,7 @@
       </div>
       <div class="comparison-object service main">
         <h4 class="yanbaru">やんばる<br>エキスパート</h4>
-        <p>100,000</p>
+        <p><%= @price.to_s(:delimited) %></p>
         <p>無期限</p>
         <p>無料</p>
         <p class="yanbaru-p">月5万円稼げるまで<br>
@@ -464,7 +464,7 @@
         <h3 class="before-price">通常料金<span>150,000</span>円</h3>
         <div class="after-price">
           <%= image_tag "https://d5izmuz0mcjzz.cloudfront.net/design_course/cost-icon.png" %>
-            <h1>100,000</h1>
+            <h1><%= @price.to_s(:delimited) %></h1>
         </div>
         <ul>
           <li>売上5万円稼ぐまで案件獲得サポート</li>
