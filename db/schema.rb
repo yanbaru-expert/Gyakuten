@@ -10,8 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_24_061329) do
-
+ActiveRecord::Schema.define(version: 20_210_424_061_329) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -128,16 +127,6 @@ ActiveRecord::Schema.define(version: 2021_04_24_061329) do
     t.integer "text_id"
   end
 
-  create_table "progresses", force: :cascade do |t|
-    t.bigint "user_id"
-    t.string "materiable_type"
-    t.bigint "materiable_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["materiable_type", "materiable_id"], name: "index_progresses_on_materiable_type_and_materiable_id"
-    t.index ["user_id"], name: "index_progresses_on_user_id"
-  end
-
   create_table "questions", force: :cascade do |t|
     t.string "title"
     t.text "content"
@@ -216,7 +205,6 @@ ActiveRecord::Schema.define(version: 2021_04_24_061329) do
   add_foreign_key "complete_challenges", "users"
   add_foreign_key "memos", "users"
   add_foreign_key "movies", "genres"
-  add_foreign_key "progresses", "users"
   add_foreign_key "questions", "genres"
   add_foreign_key "texts", "genres"
 end

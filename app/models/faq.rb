@@ -17,7 +17,7 @@ class Faq < ApplicationRecord
 
   enum genre: {
     invisible: 0,
-    all: 1,
+    always: 1,
     top: 2,
     design: 3,
   }

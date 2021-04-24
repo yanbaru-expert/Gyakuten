@@ -11,6 +11,6 @@ ja:
     faq:
       genre:
         invisible: 非表示
-        all: 前表示
+        always: 全表示
         top: トップLP
         design: デザイン講座LP

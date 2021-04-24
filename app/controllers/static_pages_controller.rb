@@ -8,11 +8,11 @@ class StaticPagesController < ApplicationController
   SAMPLE_MOVIE_MARKETING_URL = "https://www.youtube.com/embed/DYEek-SNurI"
 
   def home
-    @faqs = Faq.all
+    @faqs = Faq.where(genre: %w[always top]).order(position: :asc)
   end
 
   def design
-    @faqs = Faq.all
+    @faqs = Faq.where(genre: %w[always design]).order(position: :asc)
     @movies = Movie.where(url: [SAMPLE_MOVIE_DESIGN_URL,
                                 SAMPLE_MOVIE_TOOL_URL,
                                 SAMPLE_MOVIE_MARKETING_URL])
