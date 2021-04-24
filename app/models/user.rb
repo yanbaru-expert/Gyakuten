@@ -55,6 +55,7 @@ class User < ApplicationRecord
     yanbaru_expert_ruby: 2,
     yanbaru_expert_ruby_light: 3,
     yanbaru_expert_php: 5,
+    yanberu_expert_design: 6,
     yanbaru_code: 1,
     yanbaru_code_offline: 4,
     other: 0,
