@@ -19,7 +19,7 @@ class StaticPagesController < ApplicationController
                               )
     @price_id = ENV["DESIGN_PRICE_ID"]
     @price = if Rails.env.production?
-               Stripe::Price.retrieve(price_id).unit_amount
+               Stripe::Price.retrieve(@price_id).unit_amount
              else
                100000
              end
