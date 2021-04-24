@@ -4,6 +4,7 @@
 #
 #  id         :bigint           not null, primary key
 #  answer     :string
+#  genre      :integer          default(0)
 #  position   :integer
 #  question   :string
 #  created_at :datetime         not null
