@@ -48,6 +48,8 @@ class User < ApplicationRecord
   scope :selectable_slack_name_options, -> {
     options = self.slack_names_i18n
     options.delete("other")
+    options.delete("yanbaru_code")
+    options.delete("yanbaru_code_offline")
     options.invert
   }
 
