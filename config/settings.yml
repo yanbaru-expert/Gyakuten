@@ -2,4 +2,10 @@ ogp:
   site_name: "やんばるエキスパート教材"
   twitter_site: "@yoshito410kam"
   default_description: "やんばるエキスパートの教材です"
-
+email:
+  sample: "test@sample.com"
+design:
+  movie:
+    responsive_design: "https://www.youtube.com/embed/uSQ2Kw6phs0" # 【3-2】レスポンシブデザイン
+    tool: "https://www.youtube.com/embed/QLeskX1PQY0" # 【1-1】デザインとアートの違い(現在ツール部分代用)
+    marketing: "https://www.youtube.com/embed/DYEek-SNurI" # 【1-3】仕組み化（マーケティング）
