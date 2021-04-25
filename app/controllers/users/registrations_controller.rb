@@ -22,7 +22,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
     resource.flag = if Rails.env.production?
                       # Slack メンバー ID が存在し，削除済みでないかどうかを確認
                       # 問題がない場合は承認する
-                      AutoSlackApproval.new(slack_name: slack_name, slack_id: resource.slack_id, email: resource.email).approval?
+                      AutoSlackApproval.new(resource).approval?
                     else
                       # 本番環境以外では任意の Slack_id を受け付ける
                       true
