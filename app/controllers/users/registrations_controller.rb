@@ -13,7 +13,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def create
     build_resource(sign_up_params)
     slack_name = resource.slack_name
-    slack_id = resource.slack_id
 
     unless User.permit_slack_name(slack_name)
       flash[:alert] = "選択された Slack のワークスペースは存在しません"
@@ -23,7 +22,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
     resource.flag = if Rails.env.production?
                       # Slack メンバー ID が存在し，削除済みでないかどうかを確認
                       # 問題がない場合は承認する
-                      AutoSlackApproval.new(slack_name: slack_name, slack_id: slack_id).approval?
+                      AutoSlackApproval.new(slack_name: slack_name, slack_id: resource.slack_id, email: resource.email).approval?
                     else
                       # 本番環境以外では任意の Slack_id を受け付ける
                       true
