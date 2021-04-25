@@ -16,7 +16,7 @@ class Users::SessionsController < Devise::SessionsController
     # 削除済みアカウントになっている場合は承認を取り消す
     # ただし，本番環境以外では問い合わせを行わないとする
     if Rails.env.production? && resource.flag && resource.slack_name == "yanbaru_code" && Time.current > resource.approval_at + 7.days
-      client = AutoSlackApproval.new(slack_name: resource.slack_name, slack_id: resource.slack_id)
+      client = AutoSlackApproval.new(resource)
       resource.update!(flag: client.approval?, approval_at: Time.current)
     end
     # 以上を追加
