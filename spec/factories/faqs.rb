@@ -4,7 +4,7 @@
 #
 #  id         :bigint           not null, primary key
 #  answer     :string
-#  genre      :integer          default(0)
+#  genre      :integer          default("invisible")
 #  position   :integer
 #  question   :string
 #  created_at :datetime         not null
