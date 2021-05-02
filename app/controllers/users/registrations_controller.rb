@@ -15,21 +15,15 @@ class Users::RegistrationsController < Devise::RegistrationsController
     slack_name = resource.slack_name
 
     unless User.permit_slack_name(slack_name)
-      flash[:alert] = "選択された Slack のワークスペースは存在しません"
+      flash[:alert] = "選択された Slack のワークスペースは存在しません。"
       render :new and return
     end
 
-    resource.flag = if Rails.env.production?
-                      # Slack メンバー ID が存在し，削除済みでないかどうかを確認
-                      # 問題がない場合は承認する
-                      AutoSlackApproval.new(resource).approval?
-                    else
-                      # 本番環境以外では任意の Slack_id を受け付ける
-                      true
-                    end
+    # Slack メンバー ID が存在し，削除済みでないか，メールアドレスが一致しているかを確認
+    resource.flag = AutoSlackApproval.new(resource).approval?
 
     unless resource.flag
-      flash[:alert] = "入力された Slack メンバー ID は存在しません"
+      flash[:alert] = "Slack メンバー ID もしくは メールアドレス に誤りがございます。"
       render :new and return
     end
 
