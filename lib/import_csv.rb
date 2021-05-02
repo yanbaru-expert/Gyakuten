@@ -1,6 +1,8 @@
 require "csv"
 
 class ImportCsv
+  REGEX = /\A\d+\z/
+
   def self.execute(model:, file_name: nil)
     model_name = model.to_s.classify
     table_name = model_name.tableize
@@ -9,7 +11,7 @@ class ImportCsv
 
     list = []
     CSV.foreach(path, headers: true) do |row|
-      list << row.to_h
+      list << row.to_h.transform_values {|v| v =~ REGEX ? v.to_i : v }
     end
     # 与えられたモデルに CSVデータを投入
     model_name.constantize.import!(list, on_duplicate_key_update: :all)
