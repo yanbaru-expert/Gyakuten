@@ -6,6 +6,7 @@ class AutoSlackApproval
   end
 
   def approval?
+    return true if Rails.env.development?
     client = Slack::Web::Client.new(token: Rails.application.credentials.dig(:slack, :oauth_token, @slack_name.to_sym))
     user = client.users_info(user: @slack_id).user
 
@@ -18,6 +19,6 @@ class AutoSlackApproval
 
   def exist_email?(user)
     email = user&.profile&.email
-    email.nil? ? true : @email == user&.profile&.email
+    email.nil? ? true : @email == email
   end
 end
