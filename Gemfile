@@ -37,6 +37,7 @@ gem "slack-ruby-client"
 gem "stripe"
 gem "turbolinks", "~> 5"
 gem "uglifier", ">= 1.3.0"
+gem 'mini_racer', platforms: :ruby
 
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]

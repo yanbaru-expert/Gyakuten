@@ -1,0 +1,10 @@
+2021-05-02 14:34:26.312 JST [16233] FATAL:  database files are incompatible with server
+2021-05-02 14:34:26.312 JST [16233] DETAIL:  The data directory was initialized by PostgreSQL version 12, which is not compatible with this version 13.2.
+2021-05-02 15:35:29.750 JST [20477] LOG:  starting PostgreSQL 13.2 on x86_64-apple-darwin20.3.0, compiled by Apple clang version 12.0.0 (clang-1200.0.32.29), 64-bit
+2021-05-02 15:35:29.752 JST [20477] LOG:  could not bind IPv6 address "::1": Address already in use
+2021-05-02 15:35:29.752 JST [20477] HINT:  Is another postmaster already running on port 5432? If not, wait a few seconds and retry.
+2021-05-02 15:35:29.752 JST [20477] LOG:  could not bind IPv4 address "127.0.0.1": Address already in use
+2021-05-02 15:35:29.752 JST [20477] HINT:  Is another postmaster already running on port 5432? If not, wait a few seconds and retry.
+2021-05-02 15:35:29.752 JST [20477] WARNING:  could not create listen socket for "localhost"
+2021-05-02 15:35:29.752 JST [20477] FATAL:  could not create any TCP/IP sockets
+2021-05-02 15:35:29.753 JST [20477] LOG:  database system is shut down
