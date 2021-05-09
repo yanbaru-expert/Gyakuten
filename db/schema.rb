@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_24_061329) do
+ActiveRecord::Schema.define(version: 2021_05_03_052424) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -126,6 +126,15 @@ ActiveRecord::Schema.define(version: 2021_04_24_061329) do
     t.integer "genre_id"
     t.integer "position"
     t.integer "text_id"
+  end
+
+  create_table "progresses", force: :cascade do |t|
+    t.string "progressable_type"
+    t.bigint "progressable_id"
+    t.string "path_name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["progressable_type", "progressable_id"], name: "index_progresses_on_progressable_type_and_progressable_id"
   end
 
   create_table "questions", force: :cascade do |t|

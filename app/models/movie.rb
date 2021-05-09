@@ -27,7 +27,8 @@ class Movie < ApplicationRecord
 
   validates :title, presence: true
   validates :url, presence: true
-  has_many :watched_movies, dependent: :destroy
+  has_many :progresses, as: :progressable
+  # has_many :watched_movies, dependent: :destroy
   belongs_to :text, optional: true
   belongs_to :genre, optional: true
 

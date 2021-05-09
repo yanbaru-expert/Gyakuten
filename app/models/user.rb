@@ -34,11 +34,12 @@ class User < ApplicationRecord
          :rememberable, :trackable, :validatable, :recoverable
   validates :slack_id, presence: true, uniqueness: true
   validates :slack_name, presence: true
-  has_many :watched_movies, dependent: :destroy
-  has_many :read_texts, dependent: :destroy
-  has_many :complete_challenges, dependent: :destroy
-  has_many :read_through_texts, through: :read_texts, source: :text
-  has_many :watched_through_movies, through: :watched_movies, source: :movie
+  has_many :progresses, as: :progressable
+  # has_many :watched_movies, dependent: :destroy
+  # has_many :read_texts, dependent: :destroy
+  # has_many :complete_challenges, dependent: :destroy
+  # has_many :read_through_texts, through: :read_texts, source: :text
+  # has_many :watched_through_movies, through: :watched_movies, source: :movie
   has_one :memo, dependent: :destroy
 
   def self.permit_slack_name(slack_name)

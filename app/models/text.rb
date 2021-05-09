@@ -23,8 +23,9 @@ class Text < ApplicationRecord
   include GenreSearch
   SELECT_COLUMNS = "texts.*, genres.code_name, genres.name, genres.color"
 
-  has_many :read_texts, dependent: :destroy
-  has_many :movies
+  has_many :progresses, as: :progressable
+  # has_many :read_texts, dependent: :destroy
+  # has_many :movies
   belongs_to :genre, optional: true
 
   # 作成時にジャンルごとに整頓する機能
