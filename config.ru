@@ -2,7 +2,7 @@
 
 require_relative "config/environment"
 
-if ENV["RACK_REWRITE_ENV"] == "production"
+if ENV["HEROKU_ENV"] == "production"
   require "rack/rewrite"
   use Rack::Rewrite do
     # https://github.com/jtrupiano/rack-rewrite#cname-alternative
