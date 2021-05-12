@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   root to: "static_pages#home"
 
   get "design", to: "static_pages#design", as: :static_pages
+  get "php", to: "static_pages#php_lp"
   post "/design_contact", to: "contacts#create"
   get "/design_success", to: "static_pages#success"
 

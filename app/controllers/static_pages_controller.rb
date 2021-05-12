@@ -9,12 +9,15 @@ class StaticPagesController < ApplicationController
     @movies = Movie.where(url: Settings.design.movie.to_h.values)
     @price_id = ENV["DESIGN_PRICE_ID"]
     @price = if Rails.env.production?
-               Stripe::Price.retrieve(@price_id).unit_amount
-             else
-               100000
-             end
+                Stripe::Price.retrieve(@price_id).unit_amount
+              else
+                100000
+              end
   end
 
   def success
+  end
+
+  def php_lp
   end
 end
