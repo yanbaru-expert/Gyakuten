@@ -135,6 +135,7 @@
     font-size: 1.75rem;
     color: $base-color;
     border: none;
+    cursor: pointer;
     @include sp{
       font-size: .875rem;
     }
@@ -209,6 +210,10 @@
         background-color: $accent-color1;
         border-radius: 5px;
         float: right;
+        &:hover{
+          background-color: #FCCC64;
+          transition: .3s;
+        }
       }
       @include sp{
         height: 3.875rem;
@@ -307,6 +312,10 @@
         line-height: 1.6rem;
         background-color: $accent-color1;
         border-radius: 50px;
+        &:hover{
+          background-color: #FCCC64;
+          transition: .3s;
+        }
         span{
           font-size: .5em;
         }
