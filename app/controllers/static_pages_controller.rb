@@ -9,10 +9,10 @@ class StaticPagesController < ApplicationController
     @movies = Movie.where(url: Settings.design.movie.to_h.values)
     @price_id = ENV["DESIGN_PRICE_ID"]
     @price = if Rails.env.production?
-                Stripe::Price.retrieve(@price_id).unit_amount
-              else
-                100000
-              end
+               Stripe::Price.retrieve(@price_id).unit_amount
+             else
+               100000
+             end
   end
 
   def design_success
@@ -22,10 +22,10 @@ class StaticPagesController < ApplicationController
     @faqs = Faq.where(genre: %w[invisible always design]).order(position: :asc)
     @price_id = ENV["PHP_PRICE_ID"]
     @price = if Rails.env.production?
-                Stripe::Price.retrieve(@price_id).unit_amount
-              else
-                150000
-              end
+               Stripe::Price.retrieve(@price_id).unit_amount
+             else
+               150000
+             end
   end
 
   def php_success
