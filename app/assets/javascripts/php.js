@@ -24,7 +24,7 @@ document.addEventListener('turbolinks:load', () => {
           .redirectToCheckout({
             lineItems: [{ price: priceId, quantity: 1 }],
             mode: 'payment',
-            successUrl: `${baseUrl}/design_success`,
+            successUrl: `${baseUrl}/php_success`,
             cancelUrl: `${baseUrl}/php`,
           })
           .then(function (result) {

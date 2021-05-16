@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get "php", to: "static_pages#php", as: :php
   post "/design_contact", to: "contacts#create"
   get "/design_success", to: "static_pages#design_success"
+  get "/php_success", to: "static_pages#php_success"
 
   devise_for :users, controllers: {
     registrations: "users/registrations",
