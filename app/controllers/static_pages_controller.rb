@@ -5,7 +5,7 @@ class StaticPagesController < ApplicationController
   end
 
   def design
-    @faqs = Faq.where(genre: %w[always design]).order(position: :asc)
+    @faqs = Faq.where(genre: %w[invisible always design]).order(position: :asc)
     @movies = Movie.where(url: Settings.design.movie.to_h.values)
     @price_id = ENV["DESIGN_PRICE_ID"]
     @price = if Rails.env.production?
@@ -19,5 +19,6 @@ class StaticPagesController < ApplicationController
   end
 
   def php_lp
+    @faqs = Faq.where(genre: %w[invisible always design]).order(position: :asc)
   end
 end
