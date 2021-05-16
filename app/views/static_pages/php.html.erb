@@ -2,7 +2,7 @@
 <% content_for(:description) { "初心者が独学で学ぶのは難しいにも関わらず、現場に出るためには必須なチーム開発のスキルを、 他社よりも超低価格で現役エンジニアから学ぶことができる非常にコスパの良いプログラミング学習講座。" }
   %>
 
-<section id="php-lp">
+<section id="php-course" data-price_id="<%= @price_id %>" >
 <!--
   =============================== 
             ヘッダー
@@ -11,7 +11,7 @@
   <header>
     <div class="header-wrapper wrapper">
       <%= image_tag "php_lp/header-logo.png" %>
-      <button role="link" type="button">PHP講座を申し込む</button>
+      <button class="cta-btn" role="link" type="button">PHP講座を申し込む</button>
     </div>
   </header>
 <!--
