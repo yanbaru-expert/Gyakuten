@@ -24,14 +24,14 @@
     <%= javascript_include_tag 'php', 'data-turbolinks-track': 'reload' if request.path == "/php" %>
   </head>
   <body>
-    <% unless request.path.in?(["/design", "/design_success", "/php"]) %>
+    <% unless request.path.in?(["/design", "/design_success", "/php", "/php_success"]) %>
       <%= render "layouts/navbar" %>
     <% end %>
     <%= render "shared/flash_message" %>
     <div class="<%= base_container %> <%= max_width %>">
       <%= yield %>
     </div>
-    <% unless request.path.in?(["/design", "/design_success", "/php"]) %>
+    <% unless request.path.in?(["/design", "/design_success", "/php", "/php_success" ]) %>
       <%= render "layouts/footer" %>
     <% end %>
     <% if request.path.in?(["/design", "/php"]) %>
