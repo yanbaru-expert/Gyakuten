@@ -1,0 +1,2 @@
+class DesignTaskList < ApplicationRecord
+end

@@ -1,0 +1,2 @@
+class DesignTaskCategory < ApplicationRecord
+end
