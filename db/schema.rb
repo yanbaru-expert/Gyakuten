@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_24_061329) do
+ActiveRecord::Schema.define(version: 2021_05_19_133047) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -64,6 +64,21 @@ ActiveRecord::Schema.define(version: 2021_04_24_061329) do
     t.datetime "updated_at", null: false
     t.index ["challenge_id"], name: "index_complete_challenges_on_challenge_id"
     t.index ["user_id"], name: "index_complete_challenges_on_user_id"
+  end
+
+  create_table "design_task_categories", force: :cascade do |t|
+    t.string "name"
+    t.string "img"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "design_task_lists", force: :cascade do |t|
+    t.bigint "design_task_categories_id"
+    t.text "body"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["design_task_categories_id"], name: "index_design_task_lists_on_design_task_categories_id"
   end
 
   create_table "faqs", force: :cascade do |t|
@@ -204,6 +219,7 @@ ActiveRecord::Schema.define(version: 2021_04_24_061329) do
 
   add_foreign_key "complete_challenges", "challenges"
   add_foreign_key "complete_challenges", "users"
+  add_foreign_key "design_task_lists", "design_task_categories", column: "design_task_categories_id"
   add_foreign_key "memos", "users"
   add_foreign_key "movies", "genres"
   add_foreign_key "questions", "genres"
