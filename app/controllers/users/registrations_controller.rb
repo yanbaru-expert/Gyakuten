@@ -27,6 +27,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
       render :new and return
     end
 
+    resource.approval_at = Time.current
     # 以下は元ソース通り
     resource.save
     yield resource if block_given?
