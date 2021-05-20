@@ -46,14 +46,11 @@ class User < ApplicationRecord
   end
 
   scope :selectable_slack_name_options, -> {
-    options = self.slack_names_i18n
-    options.delete("other")
-    options.delete("yanbaru_code")
-    options.delete("yanbaru_code_offline")
-    options.invert
+    self.slack_names_i18n.except(:yanbaru_code, :yanbaru_code_offline, :other).invert
   }
 
   enum slack_name: {
+    marketing: 7,
     yanbaru_expert_ruby: 2,
     yanbaru_expert_ruby_light: 3,
     yanbaru_expert_php: 5,
