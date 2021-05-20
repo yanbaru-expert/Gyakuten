@@ -7,7 +7,7 @@ gem "active_admin_import"
 gem "activerecord-import"
 gem "acts_as_list" # 並び替え
 gem "bootsnap", ">= 1.1.0", require: false
-gem "bootstrap", "~> 4.4.1"
+gem "bootstrap", "~> 4.5.1"
 gem "carrierwave", "~> 2.0"
 gem "config"
 gem "devise"
@@ -17,22 +17,19 @@ gem "enum_help"
 gem "fog-aws"
 gem "font-awesome-sass"
 gem "goldiloader"
-gem "jbuilder", "~> 2.5"
 gem "jquery-rails"
 gem "kaminari" # pagination
 gem "meta-tags" # 検索エンジン最適化（SEO）プラグイン
 gem "mini_magick"
 gem "pg", ">= 0.18", "< 2.0"
-gem "puma", "~> 3.12"
+gem "puma"
 gem "rack-rewrite", "~> 1.5.0"
-gem "rails", "~> 5.2.4"
+gem "rails", "~> 5.2"
 gem "rails-ujs"
 gem "ransack"
 gem "redcarpet" # markdown
 gem "rouge" # syntax highlight
 gem "sass-rails", "~> 5.0"
-gem "simple_form"
-gem "slack-notifier"
 gem "slack-ruby-client"
 gem "stripe"
 gem "turbolinks", "~> 5"
