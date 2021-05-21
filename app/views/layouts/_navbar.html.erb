@@ -6,6 +6,13 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
+        <li class="nav-item">
+          <% if user_signed_in? %>
+            <%= link_to display_name("mind"), movies_path(genre: "mind"), class: "nav-link active" %>
+          <% else %>
+            <span class="nav-link"><%= display_name("mind") %></span>
+          <% end %>
+        </li>
         <li class="nav-item active dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Ruby
@@ -41,7 +48,7 @@
         </li>
         <li class="nav-item active dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            デザイン講座
+            デザイン
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <%= link_to display_name("design_tool"), movies_path(genre: "design_tool"), class: "dropdown-item#{add_disabled}" %>
@@ -52,21 +59,21 @@
         </li>
         <li class="nav-item active dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            勉強会
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <%= link_to display_name("talk"), movies_path(genre: "talk"), class: "dropdown-item#{add_disabled}" %>
-            <%= link_to display_name("live"), movies_path(genre: "live"), class: "dropdown-item#{add_disabled}" %>
-          </div>
-        </li>
-        <li class="nav-item active dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            マネタイズ講座
+            マネタイズ
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <%= link_to display_name("money_marketing"), movies_path(genre: "money_marketing"), class: "dropdown-item#{add_disabled}" %>
             <%= link_to display_name("money_lstep"), movies_path(genre: "money_lstep"), class: "dropdown-item#{add_disabled}" %>
             <%= link_to display_name("money_insta"), movies_path(genre: "money_insta"), class: "dropdown-item#{add_disabled}" %>
+          </div>
+        </li>
+        <li class="nav-item active dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            勉強会
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <%= link_to display_name("talk"), movies_path(genre: "talk"), class: "dropdown-item#{add_disabled}" %>
+            <%= link_to display_name("live"), movies_path(genre: "live"), class: "dropdown-item#{add_disabled}" %>
           </div>
         </li>
         <% if user_signed_in? %>
