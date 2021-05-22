@@ -1,1 +1,3 @@
-<object><%= link_to "読破済みにする", text_read_texts_path(text_id), class: "btn btn-secondary btn-block", method: :post, data: { remote: true } %></object>
+<object><%= link_to "読破済みにする", progresses_path(materiable_id, materiable_type), class: "btn btn-secondary btn-block", method: :post, data: { remote: true } %></object>
+
+<%# <object><%= link_to "読破済みにする", text_read_texts_path(text_id), class: "btn btn-secondary btn-block", method: :post, data: { remote: true } %></object> %>

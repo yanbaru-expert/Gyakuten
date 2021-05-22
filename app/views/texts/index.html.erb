@@ -21,10 +21,10 @@
             <div class="card-body text-dark text-card-body">
               <% if user_signed_in? %>
                 <div id="read-text-<%= text.id %>">
-                  <% if @read_text_ids.include?(text.id) %>
-                    <%= render "read_text", text_id: text.id %>
+                  <% if @progresses.include?(text.id) %>
+                    <%= render "read_text", materiable_id: text.id, materiable_type: Text %>
                   <% else %>
-                    <%= render "unread_text", text_id: text.id %>
+                    <%= render "unread_text", materiable_id: text.id, materiable_type: Text %>
                   <% end %>
                 </div>
               <% end %>
