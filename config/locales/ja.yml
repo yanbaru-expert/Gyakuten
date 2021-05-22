@@ -28,6 +28,8 @@ ja:
       faq: よくある質問
       memo_example: メモの例
       progress: 進捗
+      design_task_category: デザイン課題のカテゴリ
+      design_task_list: デザイン課題のチェックリスト
     attributes:
       admin_user:
       error:
@@ -74,6 +76,10 @@ ja:
         answer: 回答
       memo_example:
         remark: 備考
+      design_task_category:
+        name: 項目名
+        img: 画像
+      design_task_list:
   attributes:
     id: ID
     program_id: プログラムID
