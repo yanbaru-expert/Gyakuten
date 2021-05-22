@@ -22,9 +22,9 @@
               <% if user_signed_in? %>
                 <div id="read-text-<%= text.id %>">
                   <% if @progresses.include?(text.id) %>
-                    <%= render "read_text", materiable_id: text.id, materiable_type: Text %>
+                    <%= render "read_text", materiable_id: text.id, materiable_type: "Text" %>
                   <% else %>
-                    <%= render "unread_text", materiable_id: text.id, materiable_type: Text %>
+                    <%= render "unread_text", materiable_id: text.id, materiable_type: "Text" %>
                   <% end %>
                 </div>
               <% end %>
