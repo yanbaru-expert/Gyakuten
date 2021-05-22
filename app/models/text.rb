@@ -26,7 +26,7 @@ class Text < ApplicationRecord
   has_many :read_texts, dependent: :destroy
   has_many :movies
   belongs_to :genre, optional: true
-  has_many :progresses, dependent: :destroy
+  has_many :progresses, dependent: :destroy, as: :materiable
 
   # 作成時にジャンルごとに整頓する機能
   after_create do
