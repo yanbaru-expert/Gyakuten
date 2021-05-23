@@ -1,0 +1,7 @@
+if(<%= params[:materiable_type] %> == Text){
+  document.getElementById('text-progress-<%= params[:materiable_id] %>').innerHTML = '<%= j render("texts/read_text", materiable_id: params[:materiable_id], materiable_type: params[:materiable_type]) %>'
+  $readModal = $('#read-modal')
+  if($readModal.length) {
+    $readModal.modal({keyboard: false}).show()
+  }
+}
