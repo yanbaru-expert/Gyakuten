@@ -1,3 +1,6 @@
 if(<%= params[:materiable_type] %> == Text){
   document.getElementById('text-progress-<%= params[:materiable_id] %>').innerHTML = '<%= j render("texts/unread_text", materiable_id: params[:materiable_id], materiable_type: params[:materiable_type]) %>'
 }
+else if(<%= params[:materiable_type] %> == Movie){
+  document.getElementById('movie-progress-<%= params[:materiable_id] %>').innerHTML = '<%= j render("movies/unwatched_movie", materiable_id: params[:materiable_id], materiable_type: params[:materiable_type]) %>'
+}

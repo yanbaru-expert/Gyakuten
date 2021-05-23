@@ -13,7 +13,7 @@
           </div>
           <div class="card-body text-dark movie-body">
             <p id="watched-movie-<%= movie.id %>">
-              <% if @watched_movie_ids.include?(movie.id) %>
+              <% if @progresses.include?(movie.id) %>
                 <%= render "movies/watched_movie", movie_id: movie.id %>
               <% else %>
                 <%= render "movies/unwatched_movie", movie_id: movie.id %>

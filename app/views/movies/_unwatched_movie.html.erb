@@ -1,1 +1,1 @@
-<%= link_to "視聴済みにする", movie_watched_movies_path(movie_id), class: "btn btn-secondary btn-block",  method: :post, data: { remote: true } %>
+<%= link_to "視聴済みにする", progresses_path(materiable_id: materiable_id, materiable_type: materiable_type), class: "btn btn-secondary btn-block",  method: :post, data: { remote: true } %>
