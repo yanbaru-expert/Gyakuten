@@ -1,6 +1,7 @@
 class ProgressesController < ApplicationController
   def create
     current_user.progresses.create!(materiable_id: params[:materiable_id], materiable_type: params[:materiable_type])
+    
   end
 
   def destroy

@@ -20,4 +20,5 @@ class Challenge < ApplicationRecord
   validates :theme, presence: true
   validates :question, presence: true
   has_many :complete_challenges, dependent: :destroy
+  has_many :progresses, dependent: :destroy, as: :materiable
 end

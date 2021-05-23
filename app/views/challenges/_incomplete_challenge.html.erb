@@ -1,1 +1,1 @@
-<object><%= link_to "完了済みにする",  challenge_complete_challenges_path(challenge_id), class: "btn btn-secondary btn-block",  method: :post, data: { remote: true } %></object>
+<object><%= link_to "完了済みにする",  progresses_path(materiable_id: materiable_id, materiable_type: materiable_type), class: "btn btn-secondary btn-block",  method: :post, data: { remote: true } %></object>

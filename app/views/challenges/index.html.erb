@@ -19,11 +19,11 @@
             </div>
             <div class="card-body text-dark text-card-body">
               <% if user_signed_in? %>
-                <div id="complete-challenge-<%= challenge.id %>">
-                  <% if @complete_challenge_ids.include?(challenge.id) %>
-                    <%= render "complete_challenge", challenge_id: challenge.id %>
+                <div id="challenge-progress-<%= challenge.id %>">
+                  <% if @progresses.include?(challenge.id) %>
+                    <%= render "complete_challenge", materiable_id: challenge.id, materiable_type: "Challenge" %>
                   <% else %>
-                    <%= render "incomplete_challenge", challenge_id: challenge.id %>
+                    <%= render "incomplete_challenge", materiable_id: challenge.id, materiable_type: "Challenge" %>
                   <% end %>
                 </div>
               <% end %>

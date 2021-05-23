@@ -4,3 +4,6 @@ if(<%= params[:materiable_type] %> == Text){
 else if(<%= params[:materiable_type] %> == Movie){
   document.getElementById('movie-progress-<%= params[:materiable_id] %>').innerHTML = '<%= j render("movies/unwatched_movie", materiable_id: params[:materiable_id], materiable_type: params[:materiable_type]) %>'
 }
+else if(<%= params[:materiable_type] %> == Challenge){
+  document.getElementById('challenge-progress-<%= params[:materiable_id] %>').innerHTML = '<%= j render("challenges/incomplete_challenge", materiable_id: params[:materiable_id], materiable_type: params[:materiable_type]) %>'
+}
