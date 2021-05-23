@@ -14,7 +14,7 @@ class TextsController < ApplicationController
     if user_signed_in?
       @progresses = current_user.progresses.pluck(:materiable_id)
       @movies = @text.movies.order(:position)
-      @watched_movie_ids = current_user.watched_movies.pluck(:movie_id)
+      @progresses = current_user.watched_movies.pluck(:movie_id)
     end
   end
 end
