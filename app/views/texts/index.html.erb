@@ -20,7 +20,7 @@
             </div>
             <div class="card-body text-dark text-card-body">
               <% if user_signed_in? %>
-                <div id="read-text-<%= text.id %>">
+                <div id="text-progress-<%= text.id %>">
                   <% if @progresses.include?(text.id) %>
                     <%= render "read_text", materiable_id: text.id, materiable_type: "Text" %>
                   <% else %>
