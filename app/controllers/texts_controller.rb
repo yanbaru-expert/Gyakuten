@@ -5,7 +5,7 @@ class TextsController < ApplicationController
     code_name = Genre.valid_code_name(params[:genre])
     @genre = Genre.convert_display_name(code_name)
     @texts = Text.fetch_from(code_name)
-    @progresses = current_user.progresses.pluck(:materiable_id) if user_signed_in?
+    @progresses = current_user.progresses.where(materiable_type: "Text").pluck(:materiable_id)
   end
 
   def show
