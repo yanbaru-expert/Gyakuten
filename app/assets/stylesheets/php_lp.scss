@@ -257,11 +257,20 @@
         background-color: $base-color;
         border-radius: 50%;
         img{
-          margin-top: 1.25rem;
-          margin-bottom: .75rem;
+          margin-top: 1.5rem;
+          margin-bottom: 1rem;
+        }
+        .point1, .point3{
+          padding-top: 1rem;
         }
         h2{
+          font-size: 1.25rem;
+          position: relative;
           span{
+            position: absolute;
+            font-size: 2em;
+            top: 4.5rem;
+            left: calc((100% - 100px)/2);
             &::after{
               content: "%";
               font-size: .75em;
@@ -276,12 +285,20 @@
           box-shadow: 0 0 20px 0 $base-color;
           img{
             width: 24px;
-            margin-top: .5rem;
+            margin-top: -.5rem;
             margin-bottom: .5rem;
           }
+        .point1, .point3{
+          padding-top: .5rem;
+        }
           h2{
-            font-size: .875rem;
+            font-size: .7rem;
+            br{
+              display: none;
+            }
             span{
+              top: 2.5rem;
+              left: calc((100% - 50px)/2);
               font-size: 1.9em;
             }
           }
@@ -290,6 +307,9 @@
           width: 90px;
           height: 90px;
           h2{
+            br{
+              display: none;
+            }
             span{
               font-size: 1.5em;
             }
@@ -967,13 +987,20 @@
     //    代表
     // ==========
     .person-inner{
-      width: 260px;
+      width: 180px;
+      margin: 0;
+      margin-right: 5rem;
+      @include sp{
+        margin-right: 0;
+        margin: 0 auto;
+      }
       img{
         width: 100%;
       }
     }
     .info-inner{
-      width: 70%;
+      width: 50%;
+      margin: 0;
       @include sp{
         margin-top: 2rem;
         width: 100%;
