@@ -366,12 +366,15 @@
       margin-top: 2.5rem;
       .performance-content{
         margin: 2rem;
+        width: 100%;
+        max-width: 320px;
         padding: 2.5rem 2rem;
         border-radius: 10px;
         box-shadow: 2px 4px 7px 0 rgba($color: #333, $alpha: .1);
         background-color: $base-color;
         .person-img{
           width: 160px;
+          border-radius: 50%;
         }
         .person-name{
           margin-top: .5rem;
@@ -391,13 +394,15 @@
           margin: 1rem auto;
         }
         .performance-inner{
-          margin-top: 1rem;
+          margin-top: 3rem;
           margin-bottom: 2rem;
           position: relative;
           h4{
+            font-size: 1rem;
+            width: 220px;
             position: absolute;
-            top: 0;
-            left: calc((100% - 176px)/2);
+            top: -1rem;
+            left: calc((100% - 200px)/2);
           }
         }
       }
@@ -411,7 +416,7 @@
           width: 100%;
           max-width: 340px;
           margin: 1rem 0;
-          padding: 2rem 1rem;
+          padding: 2rem .5rem;
         }
       }
     }
@@ -617,15 +622,27 @@
   #strong-wrapper1{
     background-color: #F6F6F6;
     padding-top: calc(4rem + 50px);
+    .flex-wrapper{
+      width: 100%;
+    }
     .flex-inner{
       margin-left: 2.25rem;
       margin-right: 2.25rem;
+      @include sp{
+        margin-left: auto;
+        margin-right: auto;
+      }
       h4{
         margin-top: 2rem;
       }
       img{
         width: 100%;
         max-width: 335px;
+        margin-top: .5rem;
+      }
+      .zoom{
+        height: 244px;
+        width: auto;
       }
     }
   }
@@ -934,6 +951,7 @@
       }
       .person-img{
         width: 160px;
+        border-radius: 50%;
       }
       .person-name{
         margin-top: .5rem;
@@ -943,9 +961,10 @@
         margin-bottom: 2rem;
         position: relative;
         h4{
+          width: 200px;
           position: absolute;
           top: 0;
-          left: calc((100% - 176px)/2);
+          left: calc((100% - 200px)/2);
         }
       }
       h6{
@@ -974,6 +993,7 @@
   }
   h4{
     margin-top: 1rem;
+    height: 40px;
   }
   h3{
     font-weight: 600;
@@ -989,7 +1009,7 @@
     .person-inner{
       width: 180px;
       margin: 0;
-      margin-right: 5rem;
+      margin-right: 3rem;
       @include sp{
         margin-right: 0;
         margin: 0 auto;
