@@ -1,20 +1,20 @@
-genre_id,title,url
-1,人生逆転サロンの活用法,https://www.youtube.com/embed/iFMNUM2Q9mg
-1,Slackの使い方,https://www.youtube.com/embed/x_KeaEUr3jo
-1,プログラミングを学習するための基礎知識,https://www.youtube.com/embed/Outcx4StSyU
-2,Gitの基本,https://www.youtube.com/embed/cdz-cs_kYto
-2,Gitを使ったクローン、プルリク、マージの流れについて解説,https://www.youtube.com/embed/JispFS6zeDw
-2,ソースコードをリモートリポジトリにプッシュするときの流れ,https://www.youtube.com/embed/FIfbOSy1Bzg
-3,Rubyで使用する主なクラスについて,https://www.youtube.com/embed/BVv2JNnkKfU
-3,putsについて,https://www.youtube.com/embed/TFrYp4J6KLY
-3,変数について,https://www.youtube.com/embed/U3yqlU7HGnk
-4,Hello World アプリの解説（実践的なコントローラの作り方）,https://www.youtube.com/embed/1jMlnGwHiXo
-4,resourcesを使わないCRUDアプリの解説,https://www.youtube.com/embed/b_NlIEAQkoo
-4,resourcesを使ったCRUDアプリの解説,https://www.youtube.com/embed/QWixLhP62M8
-4,デバッグツールの使い方,https://www.youtube.com/embed/dmkzIosRytI
-4,CSVデータインポートアプリの解説,https://www.youtube.com/embed/KqOoZQoJTG8
-4,Rakeタスクの実装,https://www.youtube.com/embed/EntRvD_KSNA
-4,Deviseを使ったログイン機能の実装,https://www.youtube.com/embed/AIUsm87NyaM
-5,Lesson 1,https://www.youtube.com/embed/qKy7X5umlqc
-5,Lesson 2,https://www.youtube.com/embed/tvzdT5_mIv0
-5,Lesson 3,https://www.youtube.com/embed/ZEh2SIKqkL0
+genre_id,position,title,url
+1,1,人生逆転サロンの活用法,https://www.youtube.com/embed/iFMNUM2Q9mg
+1,2,Slackの使い方,https://www.youtube.com/embed/x_KeaEUr3jo
+1,3,プログラミングを学習するための基礎知識,https://www.youtube.com/embed/Outcx4StSyU
+2,4,Gitの基本,https://www.youtube.com/embed/cdz-cs_kYto
+2,5,Gitを使ったクローン、プルリク、マージの流れについて解説,https://www.youtube.com/embed/JispFS6zeDw
+2,6,ソースコードをリモートリポジトリにプッシュするときの流れ,https://www.youtube.com/embed/FIfbOSy1Bzg
+3,7,Rubyで使用する主なクラスについて,https://www.youtube.com/embed/BVv2JNnkKfU
+3,8,putsについて,https://www.youtube.com/embed/TFrYp4J6KLY
+3,9,変数について,https://www.youtube.com/embed/U3yqlU7HGnk
+4,10,Hello World アプリの解説（実践的なコントローラの作り方）,https://www.youtube.com/embed/1jMlnGwHiXo
+4,11,resourcesを使わないCRUDアプリの解説,https://www.youtube.com/embed/b_NlIEAQkoo
+4,12,resourcesを使ったCRUDアプリの解説,https://www.youtube.com/embed/QWixLhP62M8
+4,13,デバッグツールの使い方,https://www.youtube.com/embed/dmkzIosRytI
+4,14,CSVデータインポートアプリの解説,https://www.youtube.com/embed/KqOoZQoJTG8
+4,15,Rakeタスクの実装,https://www.youtube.com/embed/EntRvD_KSNA
+4,16,Deviseを使ったログイン機能の実装,https://www.youtube.com/embed/AIUsm87NyaM
+5,17,Lesson 1,https://www.youtube.com/embed/qKy7X5umlqc
+5,18,Lesson 2,https://www.youtube.com/embed/tvzdT5_mIv0
+5,19,Lesson 3,https://www.youtube.com/embed/ZEh2SIKqkL0

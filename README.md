@@ -1,24 +1,17 @@
-# README
+# やんばるエキスパート教材アプリ
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## 動作環境
 
-Things you may want to cover:
+- Ruby 2.7.2
+- Rails 5.2.4.5
+- PostgreSQL
 
-* Ruby version
+## ローカル環境構築
 
-* System dependencies
+```
+git clone https://github.com/yanbaru-expert/yanbaru-expert-material-app.git
+cd yanbaru-expert-material-app
+bundle
+rails db:create db:migrate db:seed
+```
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...

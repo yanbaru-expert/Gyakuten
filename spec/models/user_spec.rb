@@ -3,7 +3,7 @@
 # Table name: users
 #
 #  id                     :bigint           not null, primary key
-#  approval_at            :datetime         default(Mon, 05 Apr 2021 21:24:20 JST +09:00)
+#  approval_at            :datetime
 #  current_sign_in_at     :datetime
 #  current_sign_in_ip     :inet
 #  email                  :string           default(""), not null

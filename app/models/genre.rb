@@ -22,7 +22,8 @@ class Genre < ApplicationRecord
   LIVE = %w[talk live].freeze
   MONEY = %w[money_marketing money_lstep money_insta]
   DESIGN = %w[design_tool design_matter design_usage design_task]
-  IN_GENERAL = (MONEY + LIVE + ["invisible"]).freeze
+  MARKETING = %w[mind]
+  IN_GENERAL = (MARKETING + MONEY + LIVE + ["invisible"]).freeze
 
   validates :name, presence: true
   validates :color, format: { with: COLOR_REGEX }
