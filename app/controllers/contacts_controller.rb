@@ -1,4 +1,5 @@
 class ContactsController < ApplicationController
+  skip_before_action :authenticate_user!
   before_action :contact_validation, only: [:create]
 
   def create

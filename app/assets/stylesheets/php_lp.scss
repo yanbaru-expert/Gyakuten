@@ -1,0 +1,1349 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+#php-course{
+  // ========================
+  //     ブレイクポイント
+  // ========================
+  $sp-size: 900px;
+  $xx-sp-size: 400px;
+  @mixin sp {
+    @media (max-width: ($sp-size)){
+      @content;
+    }
+  }  
+  @mixin xx-sp {
+    @media (max-width: ($xx-sp-size)){
+      @content;
+    }
+  }
+
+  .sp{
+    display: none;
+    @include sp{
+      display: block;
+    }
+  }
+  // ========================
+  //        基本設定
+  // ========================
+  margin: 0 auto;
+  width: 100%;
+  *{
+    margin: 0 auto;
+    text-decoration: none;
+    box-sizing: border-box;
+  }
+
+  img{
+    display: block;
+    margin: 0 auto;
+  }
+  // ========================
+  //          配色
+  // ========================
+  $main-color :#407BFF;
+  $accent-color1 :#F5B019;
+  $accent-color2 :#DB7F8E;
+  $text-color :#12376A;
+  $base-color :#FFF;
+  $base-color2 :#BACFFF;
+  $base-color3 :#F0F5FF;
+  $gra-color: linear-gradient(to left, #2E3ECF,#5A9BF0);
+
+  // ========================
+  //          フォント
+  // ========================
+  h1, h2, h3, h4, h5, h6, p, pre, a, li, button{
+    width: fit-content;
+    height: fit-content;
+    text-align: center;
+    font-weight: 500;
+    white-space: pre-line;
+    margin: 0 auto;
+    color: $text-color;
+    font-family: 'Roboto', sans-serif;
+  }
+
+  // *** title(CTA内で使用のみ) ***
+  h1{
+    font-size: 2rem;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 30px;
+    @include sp{
+      font-size: 1.25rem;
+    }
+  }
+
+  h2{
+    font-size: 2rem;
+    font-weight: 600;
+    color: $text-color;
+    span{
+      font-size: 1.5em;
+    }
+    @include sp{
+      font-size: 1.375rem;
+    }
+  }
+
+  // *** caption(caption2) ***
+  h3{
+    font-size: 1.25rem;
+  }
+
+  // *** sub-caption(caption3) ***
+  h4{
+    font-size: 1.125rem;
+    font-weight: 600;
+    letter-spacing: 5%;
+  }
+
+  h5{
+    font-size: 1.5rem;
+  }
+
+  h6{
+    font-size: 1rem;
+    font-weight: 600;
+  }
+
+  // *** main-text ***
+  p{
+    font-size: 1rem;
+    text-align: left;
+    white-space: pre-wrap;
+  }
+
+  ul{
+    padding: 0;
+  }
+
+  li{
+    list-style: none;
+    font-size: 1.25rem;
+    font-weight: 600;
+    letter-spacing: .05em;
+    text-align: left;
+    margin:  0;
+    @include sp{
+      font-size: 1rem;
+    }
+  }
+
+  button{
+    display: block;
+    font-size: 1.75rem;
+    color: $base-color;
+    border: none;
+    cursor: pointer;
+    @include sp{
+      font-size: .875rem;
+    }
+  }
+
+  .sub-text{
+    font-size: 1.25rem;
+    @include sp{
+      font-size: 1rem;
+    }
+  }
+
+  // ========================
+  //       レイアウト
+  // ========================
+
+  .wrapper{
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 80px;
+    @include sp{
+      padding: 0 20px;
+    }
+    @include xx-sp{
+      padding: 0 .5rem;
+    }
+  }
+
+  .flex-wrapper{
+    display: flex;
+    width: fit-content;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 auto;
+    @include sp{
+      flex-direction: column;
+    }
+  }
+  // ========================
+  //        共通部品
+  // ========================
+
+  // ========================
+  //        ヘッダー
+  // ========================
+  header{
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 10;
+    background: $gra-color;
+    @include sp{
+      
+    }
+    .header-wrapper{
+      width: 100%;
+      height: 5.5rem;
+      padding-top: 12px;
+      padding-bottom: 10px;
+      img{
+        display: inline-block;
+        height: 100%;
+        @include xx-sp{
+          display: none;
+        }
+      }
+      button{
+        height: 100%;
+        font-size: 1.5rem;
+        padding: .875rem 2.75rem;
+        background-color: $accent-color1;
+        border-radius: 5px;
+        float: right;
+        &:hover{
+          background-color: #FCCC64;
+          transition: .3s;
+        }
+      }
+      @include sp{
+        height: 3.875rem;
+        padding-left: 1rem;
+        button{
+          font-size: .875rem;
+          padding: 10px 1rem;
+        }
+      }
+    }
+  }
+  // ========================
+  //          FV
+  // ========================
+  .php-fv{
+    width: 100%;
+    max-width: 1440px;
+    margin-top: 5.5rem;
+    @include sp{
+      margin-top: 3.875rem;
+    }
+  }
+  // ========================
+  //         CTA
+  // ========================
+  #cta-wrapper{
+    background: $gra-color;
+    padding-top: 60px;
+    padding-bottom: 80px;
+    @include sp{
+      padding: 3rem .5rem;
+    }
+    .cta-container{
+      display: flex;
+      justify-content: center;
+      .cta-inner{
+        width: 216px;
+        height: 216px;
+        margin-left: 1.5rem;
+        margin-right: 1.5rem;
+        background-color: $base-color;
+        border-radius: 50%;
+        img{
+          margin-top: 1.5rem;
+          margin-bottom: 1rem;
+        }
+        .point1, .point3{
+          padding-top: 1rem;
+        }
+        h2{
+          font-size: 1.25rem;
+          position: relative;
+          span{
+            position: absolute;
+            font-size: 2em;
+            top: 4.5rem;
+            left: calc((100% - 100px)/2);
+            &::after{
+              content: "%";
+              font-size: .75em;
+            }
+          }
+        }
+        @include sp{
+          width: 102px;
+          height: 102px;
+          margin-left: clamp(.25rem, 1vw, 1.5rem);
+          margin-right: clamp(.25rem, 1vw, 1.5rem);
+          box-shadow: 0 0 20px 0 $base-color;
+          img{
+            width: 24px;
+            margin-top: -.5rem;
+            margin-bottom: .5rem;
+          }
+        .point1, .point3{
+          padding-top: .5rem;
+        }
+          h2{
+            font-size: .7rem;
+            br{
+              display: none;
+            }
+            span{
+              top: 2.5rem;
+              left: calc((100% - 50px)/2);
+              font-size: 1.9em;
+            }
+          }
+        }
+        @media (max-width: (350px)) {
+          width: 90px;
+          height: 90px;
+          h2{
+            br{
+              display: none;
+            }
+            span{
+              font-size: 1.5em;
+            }
+          }
+        }
+      }
+    }
+    .cta-btn{
+      margin-top: 3rem;
+      h3{
+        font-size: 1.5rem;
+        color: $base-color;
+        @include sp{
+          font-size: 1rem;
+        }
+      }
+      button{
+        margin: 0 auto;
+        padding: .75rem 6rem .9rem 6rem;
+        line-height: 1.6rem;
+        background-color: $accent-color1;
+        border-radius: 50px;
+        &:hover{
+          background-color: #FCCC64;
+          transition: .3s;
+        }
+        span{
+          font-size: .5em;
+        }
+        position: relative;
+        img{
+          position: absolute;
+          top: 40%;
+          right: 2rem;
+        }
+        @include sp{
+          width: 100%;
+          max-width: 400px;
+          padding: .5rem 0;
+          font-size: 1.375rem;
+        }
+      }
+    }
+  }
+
+  // ========================
+  //      受講生の実績
+  // ========================
+  #performance-wrapper{
+    background-color: $base-color3;
+    padding-top: 4.5rem;
+    padding-bottom: 9.5rem;
+    .flex-wrapper{
+      margin-top: 2.5rem;
+      .performance-content{
+        margin: 2rem;
+        width: 100%;
+        max-width: 320px;
+        padding: 2.5rem 2rem;
+        border-radius: 10px;
+        box-shadow: 2px 4px 7px 0 rgba($color: #333, $alpha: .1);
+        background-color: $base-color;
+        .person-img{
+          width: 160px;
+          border-radius: 50%;
+        }
+        .person-name{
+          margin-top: .5rem;
+        }
+        .frame{
+          color: $base-color;
+          margin-bottom: .5rem;
+          padding: .125rem .75rem;
+        }
+        .before{
+          background-color: $text-color;
+        }
+        .after{
+          background: $gra-color;
+        }
+        .arrow{
+          margin: 1rem auto;
+        }
+        .performance-inner{
+          margin-top: 3rem;
+          margin-bottom: 2rem;
+          position: relative;
+          h4{
+            font-size: 1rem;
+            width: 220px;
+            position: absolute;
+            top: -1rem;
+            left: calc((100% - 200px)/2);
+          }
+        }
+      }
+    }
+    @include sp{
+      padding-top: 3.5rem;
+      padding-bottom: 7rem;
+      .flex-wrapper{
+        margin: 0 auto;
+        .performance-content{
+          width: 100%;
+          max-width: 340px;
+          margin: 1rem 0;
+          padding: 2rem .5rem;
+        }
+      }
+    }
+  }
+
+  // ========================
+  //      悩み事セクション
+  // ========================
+  #trouble-wrapper{
+    background-color: #7A7777;
+    padding-top: 3.5rem;
+    padding-bottom: 7rem;
+    position: relative;
+    h2{
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: $base-color;
+      letter-spacing: .05em;
+      span{
+        font-size: 1.35em;
+        background:linear-gradient(transparent 85%, $accent-color2 15%);
+      }
+      @include sp{
+        font-size: 1.375rem;
+      }
+    }
+    .flex-wrapper{
+      margin-top: 5rem;
+      .trouble-inner{
+        width: fit-content;
+        padding: 3.5rem;
+        margin-left: 4.5rem;
+        border-radius: 10px;
+        background-color: $base-color;
+        .flex-icon{
+          display: flex;
+          width: fit-content;
+          margin-top: 1.5rem;
+          margin-left: 0;
+          img{
+            width: 1.5rem;
+            height: 1.5rem;
+            margin-right: 1rem;
+          }
+        }
+        ul{
+          li{
+            span{
+              color: $accent-color2;
+            }
+          }
+        }
+      }
+    }
+    @include sp{
+      .flex-wrapper{
+        img{
+          margin-bottom: -6.5rem;
+        }
+        .trouble-inner{
+          width: 100%;
+          z-index: 5;
+          margin-left: 0;
+          padding: 2rem;
+        }
+      }
+    }
+    .arrow-down{
+      position: absolute;
+      bottom: -50px;
+      left: 0;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 50px 48vw 0 48vw;
+      border-color: #7A7777 transparent transparent transparent;
+    }
+  }
+
+  // ========================
+  //      エンジニアメリット
+  // ========================
+  #good-wrapper{
+    padding-top: 3.5rem;
+    padding-bottom: 7rem;
+    h2{
+      font-size: 2rem;
+      font-weight: 600;
+      color: $main-color;
+      letter-spacing: .05em;
+      span{
+        font-size: 1em;
+        background:linear-gradient(transparent 85%, $accent-color1 15%);
+      }
+      @include sp{
+        font-size: 1.375rem;
+      }
+    }
+    .flex-wrapper{
+      flex-direction: row-reverse;
+      margin-top: 5rem;
+      .trouble-inner{
+        width: fit-content;
+        max-width: 570px;
+        padding: 3.5rem;
+        margin-right: 4.5rem;
+        border-radius: 10px;
+        background-color: #FBFBFD;
+        box-shadow: 0 4px 4px 0 rgba($color: #333, $alpha: .15);
+        .flex-icon{
+          display: flex;
+          width: fit-content;
+          margin-top: 1.5rem;
+          margin-left: 0;
+          img{
+            width: 1.5rem;
+            height: 1.5rem;
+            margin-right: 1rem;
+          }
+        }
+        ul{
+          li{
+            span{
+              color: $main-color;
+            }
+          }
+        }
+      }
+    }
+    @include sp{
+      padding-top: 9rem;
+      .flex-wrapper{
+        width: 100%;
+        flex-direction: column;
+        margin-top: 0;
+        img{
+          width: 90%;
+          margin-bottom: -5rem;
+        }
+        .trouble-inner{
+          width: 100%;
+          max-width: 440px;
+          z-index: 5;
+          margin-right: 0;
+          margin: 0 auto;
+          padding: 1rem;
+        }
+      }
+    }
+  }
+  // ========================
+  //      講座の強み
+  // ========================
+  #strong-main-title{
+    width: 100%;
+    padding-top: 2.125rem;
+    padding-bottom: 2.125rem;
+    color: $base-color;
+    background-color: $text-color;
+    position: relative;
+    div{
+      position: absolute;
+      bottom: -20px;
+      left: calc((100% - 10vw)/2);
+      border-style: solid;
+      border-width: 20px 5vw 0 5vw;
+      border-color: $text-color transparent transparent transparent;
+    }
+  }
+
+  // ========================
+  //  講座の強み***共通部分***
+  // ========================
+  .strong-class{
+    padding-bottom: 5.5rem;
+    h3{
+      letter-spacing: .05em;
+    }
+    .strong-number{
+      color: $base-color;
+      background-color: $text-color;
+      margin-bottom: 1rem;
+      padding: .5rem 1rem;
+      &::before{
+        content: "選ばれる強み";
+        font-weight: 600;
+      }
+    }
+    .strong-title{
+      font-weight: 600;
+      margin-bottom: 3.75rem;
+    }
+    .sub-text{
+      width: 100%;
+      max-width: 34rem;
+      margin-top: 2.5rem;
+    }
+  }
+
+  // ========================
+  //  講座の強み*** 1 ***
+  // ========================
+  #strong-wrapper1{
+    background-color: #F6F6F6;
+    padding-top: calc(4rem + 50px);
+    .flex-wrapper{
+      width: 100%;
+    }
+    .flex-inner{
+      margin-left: 2.25rem;
+      margin-right: 2.25rem;
+      @include sp{
+        margin-left: auto;
+        margin-right: auto;
+      }
+      h4{
+        margin-top: 2rem;
+      }
+      img{
+        width: 100%;
+        max-width: 335px;
+        margin-top: .5rem;
+      }
+      .zoom{
+        height: 244px;
+        width: auto;
+      }
+    }
+  }
+
+  // ========================
+  //  講座の強み*** 2 ***
+  // ========================
+  #strong-wrapper2{
+    padding-top: 3.75rem;
+    background-color: $base-color;
+    .flex-wrapper{
+      .flex-inner{
+        position: relative;
+        h4{
+          position: absolute;
+          top: 2rem;
+          left: calc((100% - 200px)/2);
+          width: 200px;
+        }
+      }
+    }
+    .plus-icon{
+      margin: auto 1rem;
+      width: 24px;
+      height: 24px;
+    }
+    @include sp{
+      .plus-icon{
+        margin: 1rem auto;
+      }
+      .flex-inner{
+        img{
+          width: 250px;
+        }
+      }
+    }
+  }
+
+  // ========================
+  //  講座の強み*** 3 ***
+  // ========================
+  #strong-wrapper3{
+    padding-top: 3.75rem;
+    background-color: $base-color3;
+    .strong-title{
+      margin-bottom: 1.125rem;
+    }
+    .triangle{
+      margin: 3rem 1.5rem;
+    }
+    @include sp{
+      .flex-wrapper{
+        .triangle{
+          transform: rotate(90deg);
+          margin: 1rem auto;
+        }
+      }
+    }
+  }
+
+  // ========================
+  //  講座の強み*** 4 ***
+  // ========================
+  #strong-wrapper4{
+    padding-top: 3.75rem;
+    background-color: $base-color;
+    .strong-title{
+      margin-bottom: 2rem;
+    }
+    .flex-inner{
+      width: 280px;
+      margin: 2rem;
+      h4{
+        margin-top: 1rem;
+      }
+      h3{
+        font-weight: 600;
+        margin-bottom: 1rem;
+      }
+      img{
+        width: 180px;
+      }
+      @include sp{
+        margin: 2rem auto;
+      }
+    }
+  }
+
+  // ========================
+  //  講座の強み*** 5 ***
+  // ========================
+  #strong-wrapper5{
+    padding-top: 3.75rem;
+    background-color: $base-color3;
+    h5{
+      margin-bottom: 1rem;
+    }
+    .flex-wrapper{
+      width: 100%;
+      .flex-inner{
+        width: 100%;
+        max-width: 335px;
+        background-color: $base-color;
+        margin: 1rem .5rem;
+        padding-bottom: 3rem;
+        position: relative;
+        img{
+          position: absolute;
+          top: 4.5rem;
+          left: calc((100% - 180px)/2);
+          z-index: 1;
+        }
+        h3{
+          width: 100%;
+          padding: 1.25rem 3.5rem;
+          color: $base-color;
+          font-weight: 600;
+          background-color: #C7CAD1;
+        }
+        h2{
+          font-size: 2.25rem;
+          margin-top: 1rem;
+          margin-bottom: 1rem;
+          position: relative;
+          z-index: 5;
+          &::before{
+            content: "¥";
+          }
+          &::after{
+            content: "（税込）";
+            font-size: .5em;
+          }
+        }
+        @include sp{
+          margin: 1rem auto;
+        }
+        .course-info{
+          display: flex;
+          justify-content: center;
+          margin: 0 auto;
+          position: relative;
+          z-index: 5;
+          .info{
+            font-weight: 600;
+          }
+          .info-right{
+            width: 130px;
+            text-align: left;
+          }
+          .info-left{
+            width: 150px;
+            text-align: right;
+          }
+        }
+      }
+      .main-inner{
+        h3{
+          background: $gra-color;
+        }
+        h2{
+          color: $main-color;
+        }
+      }
+    }
+  }
+
+  // ========================
+  //  コンテンツ内容
+  // ========================
+  #content-wrapper{
+    padding-top: 4.5rem;
+    padding-bottom: 6.5rem;
+    background-color: #F6F6F6;
+    @include sp{
+      padding-bottom: 4.5rem;
+    }
+    .content-img{
+      margin-top: 2.125rem;
+      margin-bottom: 2.125rem;
+      width: 90%;
+      max-width: 345px;
+    }
+    .flex-wrapper{
+      .flex-inner{
+        width: 30%;
+        h3{
+          width: 100%;
+          font-size: 1.5rem;
+          text-align: left;
+          font-weight: 600;
+        }
+        img{
+          width: 100%;
+          margin-top: .75rem;
+          margin-bottom: 1rem;
+        }
+        ul{
+          list-style-position: inside;
+          padding-left: 2rem;
+          li{
+            list-style-type: disc;
+            font-weight: 400;
+          }
+        }
+        ol{
+          li{
+            list-style-type: decimal;
+            font-weight: 400;
+          }
+        }
+      }
+      @include sp{
+        .flex-inner{
+          width: 100%;
+          max-width: 440px;
+          margin-top: 2rem;
+          h3{
+            font-size: 1.125rem;
+          }
+        }
+      }
+    }
+  }
+
+  // ========================
+  //  講座の流れ
+  // ========================
+#flow-wrapper{
+  padding-top: 6.5rem;
+  padding-bottom: 6.5rem;
+  background-color: $base-color;
+  @include sp{
+    padding-top: 5rem;
+    padding-bottom: 4.5rem;
+  }
+  .flex-wrapper{
+    margin-top: 1.5rem;
+    .triangle{
+      margin-left: 1rem;
+      margin-right: 1rem;
+      @include sp{
+        transform: rotate(90deg);
+        margin: 3.5rem auto;
+      }
+    }
+    .flex-inner{
+      width: 335px;
+      margin: 2rem 1rem 0 1rem;
+      padding-left: 1rem;
+      padding-right: 1rem;
+      counter-increment: flow-number 1;
+      h3{
+        font-weight: 600;
+        color: $main-color;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        &::before{
+          content: counter(flow-number);
+          background-color: $main-color;
+          color: $base-color;
+          border-radius: 50%;
+          padding: .25rem .65rem;
+          margin-right: .5rem;
+        }
+      }
+      img{
+        height: 110px;
+      }
+    }
+    @include sp{
+      .flex-inner{
+        width: 100%;
+        max-width: 350px;
+        margin: 0 auto;
+        padding: 0;
+      }
+    }
+  }
+}
+
+  // ========================
+  //    口コミ
+  // ========================
+#voice-wrapper{
+  padding-top: 6.5rem;
+  padding-bottom: 6.5rem;
+  background-color: $base-color3;
+  @include sp{
+    padding-top: 5rem;
+    padding-bottom: 4.5rem;
+  }
+  .flex-wrapper{
+    margin-top: 3rem;
+    .flex-inner{
+      width: 100%;
+      max-width: 335px;
+      background-color: $base-color;
+      border-radius: 10px;
+      margin: 2rem;
+      padding: 2.5rem 1.5rem;
+      box-shadow: 2px 4px 7px 0 rgba($color: #333, $alpha: .2);
+      @include sp{
+        max-width: 520px ;
+        margin: 2rem auto;
+        padding: 1.25rem;
+      }
+      .person-img{
+        width: 160px;
+        border-radius: 50%;
+      }
+      .person-name{
+        margin-top: .5rem;
+      }
+      .performance-inner{
+        margin-top: 1rem;
+        margin-bottom: 2rem;
+        position: relative;
+        h4{
+          width: 200px;
+          position: absolute;
+          top: 0;
+          left: calc((100% - 200px)/2);
+        }
+      }
+      h6{
+        width: 100%;
+        text-align: left;
+        margin-top: 1.5rem;
+      }
+      p{
+        width: 100%;
+        text-align: left;
+      }
+    }
+  }
+}
+
+  // ========================
+  //    代表・講師紹介
+  // ========================
+#introduction-wrapper{
+  padding-top: 6.5rem;
+  padding-bottom: 6.5rem;
+  background-color: $base-color;
+  @include sp{
+    padding-top: 5rem;
+    padding-bottom: 4.5rem;
+  }
+  h4{
+    margin-top: 1rem;
+    height: 40px;
+  }
+  h3{
+    font-weight: 600;
+  }
+  .flex-wrapper{
+    margin-top: 4rem;
+    @include sp{
+      margin: 2rem auto;
+    }
+    // ==========
+    //    代表
+    // ==========
+    .person-inner{
+      width: 180px;
+      margin: 0;
+      margin-right: 3rem;
+      @include sp{
+        margin-right: 0;
+        margin: 0 auto;
+      }
+      img{
+        width: 100%;
+      }
+    }
+    .info-inner{
+      width: 50%;
+      margin: 0;
+      @include sp{
+        margin-top: 2rem;
+        width: 100%;
+        max-width: 420px;
+      }
+      P{
+        width: 100%;
+        span{
+          font-weight: 600;
+        }
+      }
+    }
+    .flex-inner{
+      width: 75%;
+      max-width: 335px;
+      margin: 2rem;
+      img{
+        width: 172px;
+      }
+      h4{
+        font-weight: 600;
+        margin-bottom: 1rem;
+      }
+      h3{
+        font-weight: 600;
+        margin-bottom: 2rem;
+      }
+      .skill{
+        margin-top: 1rem;
+        white-space: pre-line;
+        font-weight: 300;
+        word-break: break-all;
+        &::before{
+          content: "スキル：";
+        }
+      }
+      @include sp{
+        width: 100%;
+        margin: 2rem 0;
+      }
+    }
+  }
+}
+
+  // ========================
+  //    特典
+  // ========================
+#special-wrapper{
+  padding-top: 6.5rem;
+  padding-bottom: 6.5rem;
+  background-color: $base-color3;
+  @include sp{
+    padding-top: 5rem;
+    padding-bottom: 4.5rem;
+  }
+  .grid-wrapper{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 335px);
+    grid-gap: 2.5rem;
+    justify-content: center;
+    margin: 2rem auto;
+    @include sp{
+      grid-template-columns: repeat(auto-fit, 100%);
+    }
+  }
+  .grid-inner{
+    max-width: 335px;
+    box-shadow: 0 5px 4px 0 rgba($color: #333, $alpha: .05);
+    counter-increment: special-number;
+    h4{
+      width: 100%;
+      color: $base-color;
+      font-weight: 500;
+      padding-top: 1rem;
+      padding-bottom: .5rem;
+      background-color: $accent-color1;
+      border-top-right-radius: 10px;
+      border-top-left-radius: 10px;
+      span{
+        font-size: 1.5em;
+        font-weight: 600;
+        margin-bottom: .5rem;
+        &::after{
+          content: counter(special-number);
+        }
+      }
+    }
+    .white-inner{
+      background-color: $base-color;
+      img{
+        height: 190px;
+      }
+      p{
+        padding: 1rem;
+        padding-bottom: 2rem;
+      }
+    }
+  }
+}
+
+// ========================
+//        FAQ
+// ========================
+  #faq-wrapper{
+    background-color: #F0F5FF;
+    padding-top: 6.5rem;
+    padding-bottom: 6.5rem;
+    background-color: $base-color3;
+    @include sp{
+      padding-top: 5rem;
+      padding-bottom: 4.5rem;
+    }
+    h2{
+      font-size: 2.675rem;
+      font-weight: 600;
+      color: $main-color;
+      font-size: 2rem;
+    }
+    h5{
+      width: 100%;
+      font-weight: 600;
+      @media (max-width: (560px)) {
+        font-size: 1rem;
+        margin-bottom: 2rem;
+      }
+    }
+    .faq-list {
+      width: 100%;
+      padding: 0;
+      max-width: 1000px;
+
+      .faq-item {
+        background: $base-color;
+        border-radius: 10px;
+        width: 100%;
+        max-width: 800px;
+        padding-top: 1rem;
+        padding-left: 2rem;
+        margin: 30px auto;
+        @media (max-width: (560px)) {
+          margin: 1rem auto;
+          padding-left: .5rem;
+          padding-right: .5rem;
+        }
+      }
+
+      .faq-item-title {
+        flex: 0 0 35px;
+        font-size: 22px;
+        font-weight: bold;
+      }
+
+      .faq-text {
+        width: 100%;
+        font-size: 1.25rem;
+        font-weight: 600;
+        @media (max-width: (560px)) {
+          font-size: 1rem;
+        }
+      }
+    }
+
+    // 質問部分
+    .faq-question {
+      cursor: pointer;
+      position: relative;
+      display: flex;
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 40%;
+        right: 40px;
+        transition: all 0.2s ease-in-out;
+        display: block;
+        width: 15px;
+        height: 15px;
+        border-top: solid 3px $text-color;
+        border-right: solid 3px $text-color;
+        -webkit-transform: rotate(135deg);
+        transform: rotate(135deg);
+        @media (max-width: (560px)) {
+          bottom: -20px;
+          right: 53%;
+          width: 8px;
+          height: 8px;
+        }
+      }
+
+      &.open::after {
+        -webkit-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+        bottom: 40%;
+        @media (max-width: (560px)) {
+          bottom: -20px;
+        }
+      }
+    }
+
+    // 回答部分
+    .faq-answer {
+      display: none;
+      .faq-answer-inner {
+        position: relative;
+        display: flex;
+        padding: 0 5px 20px 0;
+
+        &::before {
+          content: "";
+          display: block;
+          height: 3px;
+          position: absolute;
+          top: 0px;
+          right: 30px;
+          left: 40px;
+          background: #fff;
+          border: 0 solid #fff;
+        }
+      }
+    }
+  }
+
+// ========================
+//       お問い合わせ
+// ========================
+  #contact-wrapper{
+    background: $gra-color;
+    background-color: #F0F5FF;
+    padding-top: 6.5rem;
+    padding-bottom: 6.5rem;
+    background-color: $base-color3;
+    @include sp{
+      padding-top: 5rem;
+      padding-bottom: 4.5rem;
+    }
+    h2{
+      font-size: 2.675rem;
+      font-weight: 600;
+      color: $base-color;
+      @include sp{
+        font-size: 2rem;
+      }
+    }
+    h5{
+      color: $base-color;
+      width: 100%;
+      font-weight: 600;
+      @media (max-width: (560px)) {
+        margin-bottom: 2rem;
+        font-size: 1rem;
+      }
+    }
+    .contact-form{
+      width: 100%;
+      max-width: 800px;
+      background-color: $base-color;
+      border-radius: 10px;
+      padding: 3.25rem;
+      margin-top: 2rem;
+      @include sp{
+        padding: .5rem;
+      }
+      h6{
+        width: 100%;
+        text-align: left;
+        margin-top: 2rem;
+        margin-bottom: .5rem;
+        &::after{
+          content: "必須";
+          font-size: .75em;
+          color: $base-color;
+          background: $gra-color;
+          margin-bottom: .75rem;
+          margin-left: .5rem;
+          padding: .25rem .5rem;
+        }
+        @include sp{
+          font-size: .875rem;
+          &::after{
+            background: $main-color !important;
+          }
+        }
+      }
+      .contact_frame{
+        width: 100%;
+        font-size: 1rem;
+        padding-top: .8rem;
+        padding-bottom: .8rem;
+        padding-left: 1rem;
+        border: 1px solid rgba($color: #666, $alpha: .2);
+        border-radius: 5px;
+        @include sp{
+          font-size: .75rem;
+        }
+      }
+      .message-frame{
+        height: 8rem;
+      }
+    }
+    .submit_botton{
+      display: block;
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: $main-color;
+      margin: 2rem auto;
+      padding: 1rem 6.5rem;
+      border: none;
+      background-color: $base-color;
+      border-radius: 50px;
+      &::after{
+        content: "aaaa＞";
+        color: $accent-color1;
+      }
+    }
+  }
+
+// ========================
+//        フッター
+// ========================
+  .footer-wrapper{
+    background-color: $main-color;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+}

@@ -12,6 +12,8 @@
       <%= stylesheet_link_tag 'static_pages', media: 'all', 'data-turbolinks-track': 'reload' %>
     <% elsif action_name == "design" %>
       <%= stylesheet_link_tag 'design', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <% elsif action_name == "php" %>
+      <%= stylesheet_link_tag 'php_lp', media: 'all', 'data-turbolinks-track': 'reload' %>
 
     <%# ここでデザイン講座LPで使用するCSSファイルを決定 %>
     <%# config/initializers/assets.rb に追加し忘れないように %>
@@ -19,19 +21,20 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'memo', 'data-turbolinks-track': 'reload' if controller_name == "memos" %>
     <%= javascript_include_tag 'design', 'data-turbolinks-track': 'reload' if request.path == "/design" %>
+    <%= javascript_include_tag 'php', 'data-turbolinks-track': 'reload' if request.path == "/php" %>
   </head>
   <body>
-    <% unless request.path.in?(["/design", "/design_success"]) %>
+    <% unless request.path.in?(["/design", "/design_success", "/php", "/php_success"]) %>
       <%= render "layouts/navbar" %>
     <% end %>
     <%= render "shared/flash_message" %>
     <div class="<%= base_container %> <%= max_width %>">
       <%= yield %>
     </div>
-    <% unless request.path.in?(["/design", "/design_success"]) %>
+    <% unless request.path.in?(["/design", "/design_success", "/php", "/php_success" ]) %>
       <%= render "layouts/footer" %>
     <% end %>
-    <% if request.path == "/design" %>
+    <% if request.path.in?(["/design", "/php"]) %>
       <script src="https://js.stripe.com/v3"></script>
     <% end %>
   </body>

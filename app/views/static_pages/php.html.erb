@@ -1,0 +1,995 @@
+<% content_for(:title) { "PHP講座" } %>
+<% content_for(:description) { "初心者が独学で学ぶのは難しいにも関わらず、現場に出るためには必須なチーム開発のスキルを、 他社よりも超低価格で現役エンジニアから学ぶことができる非常にコスパの良いプログラミング学習講座。" }
+  %>
+
+<section id="php-course" data-price_id="<%= @price_id %>" >
+<!--
+  =============================== 
+            ヘッダー
+  ===============================
+-->
+  <header>
+    <div class="header-wrapper wrapper">
+      <%= image_tag "php_lp/header-logo.png" %>
+      <button class="cta-btn" role="link" type="button">PHP講座を申し込む</button>
+    </div>
+  </header>
+<!--
+  =============================== 
+              FV
+  ===============================
+-->
+  <%= image_tag "php_lp/php-fv.jpg", class: "php-fv" %>
+<!--
+  =============================== 
+              CTA
+  ===============================
+--> 
+<%= render 'static_pages/php_cta' %>
+
+
+<!--
+  =============================== 
+            体験者の実績
+  ===============================
+-->
+  <section id="performance-wrapper" class="wrapper">
+    <h2>体験者の実績</h2>
+    <div class="flex-wrapper">
+      <div class="performance-content">
+        <%= image_tag "php_lp/student1.jpg", class: "person-img" %>
+        <h4 class="person-name">Shunさん</h4>
+        <div class="performance-inner">
+          <%= image_tag "php_lp/title-deco.png" %>
+          <h4>この4ヶ月、楽しすぎて期間があっという間に過ぎていきました！</h4>
+        </div>
+        <!-- performance-inner -->
+        <h4 class="before frame">BEFORE</h4>
+        <h4>サラリーマン</h4>
+        <%= image_tag "php_lp/downward-arrow.png", class: "arrow" %>
+        <h4 class="after frame">AFTER</h4>
+        <h4>webフリーランス</h4>
+      </div>
+      <!-- performance-content -->
+      <div class="performance-content">
+        <%= image_tag "php_lp/student2.jpg", class: "person-img" %>
+        <h4 class="person-name">たかはしさん</h4>
+        <div class="performance-inner">
+          <%= image_tag "php_lp/title-deco.png" %>
+          <h4>いい意味で値段と内容がなかなかあっていない講座だと思いました！</h4>
+        </div>
+        <!-- performance-inner -->
+        <h4 class="before frame">BEFORE</h4>
+        <h4>自走力がない</h4>
+        <%= image_tag "php_lp/downward-arrow.png", class: "arrow" %>
+        <h4 class="after frame">AFTER</h4>
+        <h4>確実に自走ができるように</h4>
+      </div>
+      <!-- performance-content -->
+      <div class="performance-content">
+        <%= image_tag "php_lp/student3.jpg", class: "person-img" %>
+        <h4 class="person-name">けーすけさん</h4>
+        <div class="performance-inner">
+          <%= image_tag "php_lp/title-deco.png" %>
+          <h4>「何かをゼロから作る」という体験ができました</h4>
+        </div>
+        <!-- performance-inner -->
+        <h4 class="before frame">BEFORE</h4>
+        <h4>必死に独学</h4>
+        <%= image_tag "php_lp/downward-arrow.png", class: "arrow" %>
+        <h4 class="after frame">AFTER</h4>
+        <h4>独学では得られない
+        経験ができた</h4>
+      </div>
+      <!-- performance-content -->
+    </div>
+    <!-- flex-wrapper -->
+  </section>
+  <!-- performance-wrapper -->
+  
+  <!--
+    =============================== 
+            よくある悩み
+    ===============================
+  -->
+  <section id="trouble-wrapper" class="wrapper">
+    <h2>あなたの<span>キャリア
+    こんなお悩み</span>ありませんか？</h2>
+    <div class="flex-wrapper">
+      <%= image_tag "php_lp/chara-trouble.png" %>
+      <div class="trouble-inner">
+        <ul>
+          <div class="flex-icon">
+            <%= image_tag "php_lp/check-pink-icon.png" %>
+            <li>どんなに頑張っても<span>簡単には給料上がらない</span></li>
+          </div>
+          <div class="flex-icon">
+            <%= image_tag "php_lp/check-pink-icon.png" %>
+            <li><span>長時間労働</span>で自由な時間がほとんどない</li>
+          </div>
+          <div class="flex-icon">
+            <%= image_tag "php_lp/check-pink-icon.png" %>
+            <li>いつ自分の<span>仕事がなくなる</span>かわからない</li>
+          </div>
+          <div class="flex-icon">
+            <%= image_tag "php_lp/check-pink-icon.png" %>
+            <li><span>嫌いな上司</span>とも毎日会わないといけない</li>
+          </div>
+          <div class="flex-icon">
+            <%= image_tag "php_lp/check-pink-icon.png" %>
+            <li><span>お金や時間の制限</span>が多くストレスフル</li>
+          </div>
+        </ul>
+      </div>
+      <!-- trouble-inner -->
+    </div>
+    <!-- flex-wrapper -->
+    <div class="arrow-down sp"></div>
+  </section>
+  <!-- trouble-wrapper -->
+
+<!--
+  =============================== 
+          エンジニアメリット
+  ===============================
+-->
+  <section id="good-wrapper">
+    <h2><span>エンジニアに転職する</span>
+      メリット</h2>
+    <div class="flex-wrapper">
+      <%= image_tag "php_lp/chara-happy.png" %>
+      <div class="trouble-inner">
+        <ul>
+          <div class="flex-icon">
+            <%= image_tag "php_lp/star-icon.png" %>
+            <li>ちゃんと技術力をつければ<span>月単価50万円以上</span>も実現できる</li>
+          </div>
+          <div class="flex-icon">
+            <%= image_tag "php_lp/star-icon.png" %>
+            <li>時給が上がって<span>短時間労働</span>でも生活できる</li>
+          </div>
+          <div class="flex-icon">
+            <%= image_tag "php_lp/star-icon.png" %>
+            <li>IT系の案件全般に対応でき<span>仕事に困らない</span></li>
+          </div>
+          <div class="flex-icon">
+            <%= image_tag "php_lp/star-icon.png" %>
+            <li>仕事が多いから関わる<span>人も選べる</span></li>
+          </div>
+          <div class="flex-icon">
+            <%= image_tag "php_lp/star-icon.png" %>
+            <li>お金や時間の制限が減り<span>ストレスが激減する</span></li>
+          </div>
+        </ul>
+      </div>
+      <!-- trouble-inner -->
+    </div>
+  </section>
+  <!-- good-wrapper -->
+  
+<!--
+  =============================== 
+                CTA
+  ===============================
+-->
+  <%= render 'static_pages/php_cta' %>
+
+<!--
+    =============================== 
+              講座の強み
+    ===============================
+-->
+<h2 id="strong-main-title">やんばるエキスパートが選ばれる<span>5</span>つ強み<div></div></h2>
+
+<!--
+    =============================== 
+          講座の強み *** 1 ***
+    ===============================
+-->
+<section id="strong-wrapper1" class="wrapper strong-class">
+  <h3 class="strong-number">01</h3>
+  <h5 class="strong-title">オンラインでも挫折しない環境</h5>
+  <div class="flex-wrapper">
+    <div class="flex-inner">
+      <h4>いつでも・どこでも質問し放題！</h4>
+      <%= image_tag "php_lp/slack-img.png" %>
+    </div>
+    <!-- flex-inner -->
+    <div class="flex-inner">
+      <h4>毎週定例ミーティングで挫折を防ぐ</h4>
+      <%= image_tag "php_lp/zoom-icon.png", class: "zoom" %>
+    </div>
+    <!-- flex-inner -->
+  </div>
+  <!-- flex-wrapper -->
+  <p class="sub-text">受講生のモチベーションを維持するため、週1程度の頻度で定例ミーティング（1時間）を実施させていただきます。モチベーション維持にお役立てください。</p>
+</section>
+
+<!--
+    =============================== 
+          講座の強み *** 2 ***
+    ===============================
+-->
+<section id="strong-wrapper2" class="wrapper strong-class">
+  <h3 class="strong-number">02</h3>
+  <h5 class="strong-title">プログラミングに限らず
+  マーケティングも学べる！</h5>
+  <div class="flex-wrapper">
+    <div class="flex-inner">
+      <h4>プログラミング
+      （PHP講座）</h4>
+      <%= image_tag "php_lp/strong-point1.png" %>
+    </div>
+    <%= image_tag "php_lp/plus-icon.png", class: "plus-icon" %>
+    <!-- flex-inner -->
+    <div class="flex-inner">
+      <h4>マーケティング講座</h4>
+      <%= image_tag "php_lp/strong-point2.png" %>
+    </div>
+    <!-- flex-inner -->
+  </div>
+  <!-- flex-wrapper -->
+  <p class="sub-text">代表かみざとの「6年間の経験」と「総額200万円以上」投資して得た知識を過不足なく凝縮したコンテンツを提供。
+  エンジニアスキルだけじゃなく、マーケティングスキルも学べ、自分の付加価値をUPさせていきます。</p>
+</section>
+
+<!--
+    =============================== 
+          講座の強み *** 3 ***
+    ===============================
+-->
+<section id="strong-wrapper3" class="wrapper strong-class">
+  <h3 class="strong-number">03</h3>
+  <h5 class="strong-title">転職するまでのキャリアを
+  無期限サポート</h5>
+  <p class="sub-text">未経験からエンジニア転職を成功させるまで無期限サポートいたします。（転職が目標でない場合はご相談ください）
+  </p>
+  <div class="flex-wrapper">
+    <div class="flex-inner">
+      <%= image_tag "php_lp/strong-flow1.png" %>
+      <h4>1.受講開始</h4>
+    </div>
+    <!-- flex-inner -->
+    <%= image_tag "php_lp/bl-triangle.svg" , class: "triangle" %>
+    <div class="flex-inner">
+      <%= image_tag "php_lp/strong-flow2.png" %>
+      <h4>2.転職相談</h4>
+    </div>
+    <!-- flex-inner -->
+    <%= image_tag "php_lp/bl-triangle.svg" , class: "triangle" %>
+    <div class="flex-inner">
+      <%= image_tag "php_lp/strong-flow3.png" %>
+      <h4>3.面接対策</h4>
+    </div>
+    <!-- flex-inner -->
+    <%= image_tag "php_lp/bl-triangle.svg" , class: "triangle" %>
+    <div class="flex-inner">
+      <%= image_tag "php_lp/strong-flow4.png" %>
+      <h4>4.転職成功</h4>
+    </div>
+    <!-- flex-inner -->
+  </div>
+  <!-- flex-wrapper -->
+</section>
+
+<!--
+    =============================== 
+          講座の強み *** 4 ***
+    ===============================
+-->
+<section id="strong-wrapper4" class="wrapper strong-class">
+  <h3 class="strong-number">04</h3>
+  <h5 class="strong-title">現役エンジニアの手厚い指導</h5>
+  <div class="flex-wrapper">
+    <!-- ゆーやさん -->
+    <div class="flex-inner">
+      <%= image_tag "php_lp/yuya.png" %>
+        <h4>現役エンジニア</h4>
+        <h3>ゆーや</h3>
+        <p>プログラミングスキルを会得することで理想の人生を実現</p>
+    </div>
+
+    <!-- ゆきひろさん -->
+    <div class="flex-inner">
+      <%= image_tag "php_lp/yukihiro.png" %>
+        <h4>現役エンジニア</h4>
+        <h3>ゆきひろ</h3>
+        <p>30代・子持ちでもエンジニアになれる</p>
+    </div>
+
+    <!-- ゆーたろーさん -->
+    <div class="flex-inner">
+      <%= image_tag "php_lp/yutaro.png" %>
+        <h4>現役エンジニア</h4>
+        <h3>ゆーたろー</h3>
+        <p>僕も子育てしながらエンジニアになりました</p>
+    </div>
+
+    <!-- りょうたさん -->
+    <div class="flex-inner">
+      <%= image_tag "php_lp/ryouta.png" %>
+        <h4>現役エンジニア</h4>
+        <h3>りょうた</h3>
+        <p>受講生に近い立場からサポートします</p>
+    </div>
+
+    <!-- じーこさん -->
+    <div class="flex-inner">
+      <%= image_tag "php_lp/jico.png" %>
+        <h4>現役エンジニア</h4>
+        <h3>じーこ</h3>
+        <p>低価格で圧倒的なサポートを</p>
+    </div>
+
+    <!-- Mikiさん -->
+    <div class="flex-inner">
+      <%= image_tag "php_lp/miki.png" %>
+        <h4>現役エンジニア</h4>
+        <h3>Miki</h3>
+        <p>現役エンジニアの経験をシェアします</p>
+    </div>
+    <!-- flex-inner -->
+  </div>
+  <!-- flex-wrapper -->
+</section>
+
+<!--
+    =============================== 
+          講座の強み *** 5 ***
+    ===============================
+-->
+<section id="strong-wrapper5" class="wrapper strong-class">
+  <h3 class="strong-number">05</h3>
+  <h5 class="strong-title">圧倒的なコスパ</h5>
+  <div class="flex-wrapper">
+    <div class="flex-inner main-inner">
+      <%= image_tag "php_lp/cost-performance.png" %>
+      <h3>やんばるエキスパート</h3>
+      <h2>150,000</h2>
+      <div class="course-info">
+        <div class="infos">
+          <p class="info-left info">受講期間：</p>
+          <p class="info-left info">キャリア支援：</p>
+          <p class="info-left info">チャットサポート：</p>
+        </div>
+        <div class="infos">
+          <p class="info-right info">無期限</p>
+          <p class="info-right info">転職サポート</p>
+          <p class="info-right info">質問し放題</p>
+        </div>
+      </div>
+      <!-- course-info -->
+    </div>
+
+    <!-- flex-inner -->
+    <div class="flex-inner">
+      <h3>A社</h3>
+      <h2>339,900</h2>
+      <div class="course-info">
+        <div class="infos">
+          <p class="info-left info">受講期間：</p>
+          <p class="info-left info">キャリア支援：</p>
+          <p class="info-left info">チャットサポート：</p>
+        </div>
+        <div class="infos">
+          <p class="info-right info">16週間</p>
+          <p class="info-right info">なし</p>
+          <p class="info-right info">制限あり</p>
+        </div>
+      </div>
+      <!-- course-info -->
+    </div>
+    <!-- flex-inner -->
+    <div class="flex-inner">
+      <h3>B社</h3>
+      <h2>598,000</h2>
+      <div class="course-info">
+        <div class="infos">
+          <p class="info-left info">受講期間：</p>
+          <p class="info-left info">キャリア支援：</p>
+          <p class="info-left info">チャットサポート：</p>
+        </div>
+        <div class="infos">
+          <p class="info-right info">16週間</p>
+          <p class="info-right info">アドバイスのみ</p>
+          <p class="info-right info">制限あり</p>
+        </div>
+      </div>
+      <!-- course-info -->
+    </div>
+    <!-- flex-inner -->
+  </div>
+  <!-- flex-wrapper -->
+</section>
+
+<!--
+  =============================== 
+              CTA
+  ===============================
+-->
+<%= render 'static_pages/php_cta' %>
+
+<!--
+  =============================== 
+            講座の内容
+  ===============================
+-->
+<section id="content-wrapper" class="wrapper">
+  <h2>講座の内容</h2>
+  <%= image_tag "php_lp/content-img.png", class: "content-img" %>
+  <div class="flex-wrapper">
+    <div class="flex-inner">
+      <h3>01.講座の内容</h3>
+      <ul>
+        <li>PHP／Laravelの学習サポート</li>
+        <li>PHP／Laravelでの共同開発</li>
+        <li>現役エンジニアによるコードレビュー</li>
+        <li>やんばるCODEの教材無料提供</li>
+        <li>ポートフォリオ開発支援（約1ヶ月間）</li>
+      </ul>
+    </div>
+    <!-- flex-inner -->
+
+    <div class="flex-inner">
+      <h3>02.講座の内容</h3>
+      <ul>
+        <li>Git基礎習得（個人課題）</li>
+        <li>PHP基礎習得（個人課題）</li>
+        <li>Laravel基礎習得（個人課題）</li>
+        <li>Laravel応用習得 (個人課題）
+          [Laravel QUEST 1~7]
+        </li>
+        <li>共同開発</li>
+      </ul>
+      <%= image_tag "php_lp/github-img.png" %>
+      <p class="sub-text">課題は以下から確認できます.
+
+<%= link_to 'Github', "https://github.com/yuya-ishikawa-qa/joint_dev_task"%>
+
+※ 課題が多いと心配される方もいらっしゃるかと思いますが、全ての課題においてメンターがサポートさせていただきます。コードレビューを受けると効率よく成長できますのでご安心ください。</p>
+      </div>
+
+    <div class="flex-inner">
+      <h3>03.取得できるスキル</h3>
+      <ol>
+        <li>Git/Githubの基礎
+        （コミット、ブランチ、プッシュ、
+        マージ、コンフリクトの解消等</li>
+        <li>PHPの基礎
+        （変数、条件分岐、配列、ハッシュ、
+        オブジェクト指向等）</li>
+        <li>デザインを簡単にするライブラリ
+        （Bootstrap）の導入</li>
+        <li>PHPの基礎
+        （CRUD処理：Twitterのような投稿
+        機能が作れる）</li>
+        <li>ログイン機能実装</li>
+        <li>他サービスとの連携機能
+        （YouTubeAPIの利用）</li>
+        <li>RESTfull APIサービスの開発方法</li>
+      </ol>
+    </div>
+    <!-- flex-inner -->
+  </div>
+  <!-- flex-wrapper -->
+</section>
+
+<!--
+  =============================== 
+            講座の流れ(flow)
+  ===============================
+-->
+<section id="flow-wrapper" class="wrapper">
+  <h2>講座の流れ</h2>
+  <div class="flex-wrapper">
+    <div class="flex-inner">
+      <%= image_tag "php_lp/flow1.png" %>
+      <h3>専用コミュニティに参加</h3>
+      <p>チャットアプリの「Slack」を活用。現場でよく使われるツールであり、PC/スマホ用のアプリもあるのでコミュニケーションに便利なツールです。なお、無料で使用できます。</p>
+    </div>
+    <!-- flex-inner -->
+    <%= image_tag "php_lp/blue-triangle.svg", class: "triangle" %>
+    <div class="flex-inner">
+      <%= image_tag "php_lp/flow2.png" %>
+      <h3>PHP講座の学習スタート!</h3>
+      <p>学習では5つの課題（大体3ヶ月で終わる）を課しています。
+      PHPの基礎からLaravelの応用まで。その課題を完了後、共同開発をスタートさせ、ポートフォリオを作成していきます。</p>
+    </div>
+    <!-- flex-inner -->
+    <%= image_tag "php_lp/blue-triangle.svg", class: "triangle" %>
+    <div class="flex-inner">
+      <%= image_tag "php_lp/flow3.png" %>
+      <h3>詰まったらメンターに質問</h3>
+      <p>分からないことがあったらメンターにいつでも質問可能です！現時点で初心者であっても関係はありません。0からの成長をサポートします！</p>
+    </div>
+    <!-- flex-inner -->
+  </div>
+  <!-- flex-wrapper -->
+</section>
+
+<!--
+  =============================== 
+              CTA
+  ===============================
+-->
+<%= render 'static_pages/php_cta' %>
+
+<!--
+  =============================== 
+            体験者の声
+  ===============================
+-->
+<section id="voice-wrapper" class="wrapper">
+  <h2>体験者の声</h2>
+  <div class="flex-wrapper">
+    <div class="flex-inner">
+      <%= image_tag "php_lp/student1.jpg", class: "person-img" %>
+      <h4 class="person-name">Shunさん</h4>
+      <div class="performance-inner">
+        <%= image_tag "php_lp/title-deco.png" %>
+        <h4>経営者の夢を<br>追い続けます</h4>
+      </div>
+      <!-- performance-inner -->
+      <!-- <h6>タイトル</h6> -->
+<p>本業は静岡でサラリーマンをしています。経営者になる夢を諦めきれずに、まずは自分で稼ぐ力を身につけるべく、プログラミング学習を開始しました。
+WordPress案件を複業で数件取ったり、共同開発講座でプログラミングの真髄を味わったりなどここ数ヶ月は非常に良い経験を積むことができています。
+
+最近では、ITの力に魅了され、ITの力で地元静岡をもっと元気にしたいと思うようになりました。
+
+元をたどれば、WordPress案件でPHPを知り、もっとPHPについて詳しくなりたいと思い、ゆーやさんがサービス提供されているPHPHacksを購入したことがきっかけです。
+
+このきっかけを通して、ゆーやさんのお人柄の良さに触れ、ゆーやさんにもっとプログラミングを教えてもらいたいと思ったことが受講に至った最大の理由です。
+
+また、やんばるエキスパートは実務レベルの内容を多岐に渡って経験できる講座であると聞いていことも受講理由の一つです。
+
+様々な知識、能力を養うことができたと思っていますが、一番は自走力がついことが大きな変化だと思っています。
+
+分からないこと、エラーで躓いてしまったことなどを、仮説検証する方法を身につけることができました。
+
+あとはちょっと信じられないかもしれません、新しいエラーに出会うことが大好きになりました（笑）。エラー解決は特技の一つかもしれません。
+
+ゆーやさん、せきさんをはじめ、開発メンバーの仲間と出会えたこと、苦楽を共にしたことです。これは本当に掛け替えの無いものです。
+
+当然、チームみんなは初心者ばかりで、一人の力は大したことの無いものかもしれませんが、開発は個々人の長所を活かして、取り組むことができます。それぞれが活躍できる役割があるものです。
+
+実務においても、こうしてチームで開発することがエンジニアという職業のやりがいの一つなっているのではないかなと感じました。
+
+受講期間のこともあると思いますが、チームで１つ、個人でも一つプロダクトを作りたかったです。
+
+この4ヶ月、楽しすぎて期間があっという間に過ぎていきました。
+
+第１期生として、僭越ながら、今後の受講生にアドバイス申し上げることがあるとすれば、受講期間を充実したものにするには、弱音をはかずに、とにかく何事にも挑戦していくマインドが大事だということです。
+
+メンターの方々はいつも暖かく、そして時に厳しく指導してくださいました。本当に感謝しております。ありがとうございました。</p>
+    </div>
+    <!-- flex-inner -->
+
+    <div class="flex-inner">
+      <%= image_tag "php_lp/student2.jpg", class: "person-img" %>
+      <h4 class="person-name">たかはしさん</h4>
+      <div class="performance-inner">
+        <%= image_tag "php_lp/title-deco.png" %>
+        <h4>お世辞抜きで<br>お勧めしたい講座</h4>
+      </div>
+      <!-- performance-inner -->
+<p>大学では電気工学を専攻していて、卒業後もずっとものづくりをやってきました。
+
+
+今は海外(インドや中国等)を拠点として、ものづくりエンジニアをやっています。
+
+
+最近、身の回りのいろいろなところでソフトウェアが当たり前になってきて、ついに仕事でもソフトを導入すべき状況になってきており、ハードとソフトの両刀づかいになりたいなと思って、現在プログラミングの学習をしています！
+
+
+プログラミングの学習を(主にPHP)この講習の2か月前ほどから独学やオンライン等で受講していて、近年人気のあるPHPフレームワークであるLaravelを学びたいと思っていたときにたまたまこの講座をTwitterで見つけて受講を決めました。
+
+
+その当時はLaravelが学べる講座が大手のプログラミングスクールしかなかったのと、共同で開発できるのも面白そうだなと思い、見つけた瞬間申し込みました！
+
+
+この講座を受講することで、学習していることに対して自信がもてるようになり、また、確実に自走ができるようになりました。
+
+
+以前は、プログラミングを勉強していても、学習していることが現場で使えることなのか等も含めて分からないことだらけで自信がありませんでしたが、この講座では現役のエンジニアの方がコードレビューをしてくれるので、現場ではこういう風に書くというのが、現場のエンジニアの方を通して学ぶことができ、自分が学んでいることに自信を持てるようになりました。
+
+
+また、プログラムをかく、レビューしてもらう、という過程で、まだまだではありますが、徐々に自分で解決策を調べられるようになり、以前よりも自走できるようになってきました。
+
+
+お恥ずかしいことですが、ソフトウェアをできるようになるのはプログラミングを書けるようになればいいと思っていましたが、自分たちでWebアプリを1からアイディアからカタチにして感じたことは、実際にプログラミングを書くのは全体の半分以下？なのかなというのをこの講座を通して学びました。
+
+
+どんな仕様にするかのアイディアや要件・仕様決めであったり、それをDB・クラスの設計等の基本設計に落とし込んだりと、初学者ながらプログラミング前の設計も体系的に学べるのはこの講座の良いところです。
+
+
+また、gitを使って、メンバーで自分の作業したところをプッシュして、マージして、徐々に自分たちが作ったアプリができていくのは楽しかったですし、この感覚・環境はなかなか挫折しにくいです！笑
+
+
+正直この価格で、この内容だと安すぎるかなと思います！笑
+
+
+改善して欲しいことではありませんが、PHPの基礎的な内容は課題としてあるもの、基礎から応用に行ったときにいきなりレベルがあがるので,
+前提知識としてHTML/CSS/Bootstrap/PHPの基礎がProgateレベルでいいのでさらっとできてたほうがいいかと思います。
+
+
+いい意味で値段と内容がなかなかあっていない講座だと思いました！
+友人にプログラミングをこれから勉強したいという人がいたら、お世辞抜きでおすすめしたい講座だなと思います！
+</p>
+    </div>
+    <!-- flex-inner -->
+
+    <div class="flex-inner">
+      <%= image_tag "php_lp/student3.jpg", class: "person-img" %>
+      <h4 class="person-name">けーすけさん</h4>
+      <div class="performance-inner">
+        <%= image_tag "php_lp/title-deco.png" %>
+        <h4>「何かをゼロから作る」<br>という経験ができました </h4>
+      </div>
+      <!-- performance-inner -->
+<p>私はやんばるエキスパート受講前はprogateやドットインストールで学習後、書籍やUdemyを活用してずっと独学をしてました。
+
+
+独学なので頼るものと言えば、もちろんググったりもするのですが結局は「全ての教材にある解答欄」でした。やった形跡や記録は残るものの、実力がついているかと言えばそうでもないような感じがしてモヤモヤする日々でした。ただ、やる気だけは満々でした（笑）
+
+
+
+僕の場合転職が最初の目的だったので、抱えていた課題と言えば、ポートフォリオの作成というのが一番大きかったと思います。また、プログラミングというものをもっと根本的に理解したいとも思っていました。独学はインプットばかりになってしまいがちなので、学んでも腑に落ちないことがよくありました。
+
+
+そんな時にTwitterでよく流れてきていたので、そこでやんばるエキスパートを知りました。（当時は）8万という安さが非常に目についたのも印象に残っています。
+
+
+やんばるエキスパートの存在自体は知っていたのですが、正直なところ元々プログラミングスクールを信頼していなかったところがありました。（値段やネットの風評など）
+
+
+
+きっかけとしては、友人が「ちょ、この講座ヤベェよ、これはアツい、あと2枠だぞ、ヤベェよ」と突然連絡が入ったことがきっかけです。（笑）
+
+
+実は、同時期に勉強を始めた友人がいまして、どちらかというと「その方の見る目を信じた」という事になります。（結果的に僕の見る目も正しかった！）
+
+
+また、PHPを選んだ理由は色々ありますが、一番大きいのは需要の問題です。僕には家庭があるため大阪での転職を前提としてます。大阪での需要や言語としての汎用性に魅力があったため、PHPを受講しました。
+
+
+受講してからは何より、PHPやそのフレームワークについて根本的な動き方が理解できたのが印象的です。
+
+
+正直、必死に独学をしてましたが、本講座で役に立った知識はほんのかけら程度でした。
+
+
+インプットだけでは到達できない「何かをゼロから作る」という体験ができた事は、この上なく貴重な経験に。
+
+
+また、ポートフォリオに関しても、上記の「何かをゼロから作る」という経験をしているので、いわば自走力がついた事により、講座終了からおよそ10日間で概ねポートフォリオを作り上げることができました。
+
+
+まだまだエンジニアとしてのレベルは低いですが、レベルを自分であげれるようになったのは大きいと思います。
+</p>
+    </div>
+    <!-- flex-inner -->
+
+  </div>
+  <!-- flex-wrapper -->
+</section>
+
+<!--
+  =============================== 
+            代表・講師の紹介
+  ===============================
+-->
+<section id="introduction-wrapper" class="wrapper">
+  <h2>代表・講師紹介</h2>
+
+  <!--   代表挨拶   -->
+  <div class="flex-wrapper">
+    <div class="person-inner">
+      <%= image_tag "php_lp/kamisato.png" %>
+        <h4>代表・開発者</h4>
+        <h3>かみざと</h3>
+    </div>
+    <!-- person-inner -->
+    <div class="info-inner">
+      <p>・ITで稼ぎ自由を手に入れた人
+
+・のんびり暮らしながら稼ぐプロ
+
+・研究者5年→父が自殺し帰郷を決意→エンジニアを経て起業
+
+・3社のマーケコンサル中
+
+・みんな働き過ぎてるのでのんびりさせたい弊スクール
+
+・やんばるエキスパートは「コスパ良すぎて頭おかしい」と評判
+
+・科学的根拠に基づいた健康オタク
+
+・嫌いな言葉は「不自由」</p>
+    </div>
+    <!-- info-inner -->
+  </div>
+  <!-- flex-wrapper -->
+
+<!-- 
+=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+        講師紹介部分
+=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+-->
+<div class="flex-wrapper">
+  <!-- ゆーやさん -->
+  <div class="flex-inner">
+    <%= image_tag "php_lp/yuya.png" %>
+      <h4>エンジニア志願者専門のプログラミングコーチ 兼 ライフプランナー。</h4>
+      <h3>ゆーや</h3>
+      <h3>『プログラミングスキルを会得することで理想の人生を実現したい』</h3>
+
+<!-- 講師紹介分・挨拶(インデント注意) -->
+<p>そのような一人ひとりの夢に正面から向き合い、自走できるエンジニアとなるための最適なサポートが出来るよう伴走していくことをモットーにしている。
+
+現役のエンジニアとしても業務に従事しており、顧客レビュー、画面設計、モックアップ作成、サーバサイド開発、アプリのデプロイ、AIのAPI開発など、多岐に渡る工程に一貫して携わっている。
+
+2019年にクエストアカデミアを起業。現在経営しているエンジニアリングチームの"私立探求学園"には70名が在籍中。
+
+PHP/Laravelのスキルアップ教材 "PHPHacks"、現場準拠の共同開発力を身につける"やんばるエキスパートPHP編"の受講生はのべ150名を超える。
+
+エンジニア転職/独立に成功した受講生からの報告を頂けるのが、至上の喜びであるため、教育の世界から離れられない。理想な人生を思う存分に探求できるような学び舎を世界中に築き、地域格差、教育格差がない社会を目指して日々奮闘中。</p>
+
+<!-- 講師スキル(インデント注意) -->
+<p class="skill">
+HTML/CSS/Bootstrap/JavaScript/jQuery/Java/Spring/Tymleaf/MyBatis/Python/Numpy/Pandas/Matplotlib/scilit-learn/C/C++
+/PHP/CakePHP/Laravel/Blade/Ruby/Rails/Git/Github/MySQL/PostgreSQL/Docker/Apache/Nginx/AWS
+</p>
+  </div>
+
+  <!-- ゆきひろさん -->
+  <div class="flex-inner">
+    <%= image_tag "php_lp/yukihiro.png" %>
+      <h4>パパエンジニア</h4>
+      <h3>ゆきひろ</h3>
+      <h3>子持ちの方を応援します！</h3>
+      
+<!-- 講師紹介分・挨拶(インデント注意) -->
+<p>大阪在住のPHPエンジニアのせき ゆきひろです。大学卒業後、建材メーカーの営業職として就職しましたが、毎月課せられる営業ノルマに絶望。
+
+「人生変えるために、業界・職種を変えよう」と未経験からIT業界に飛び込み、30代でエンジニア転職に成功しました。現在はフリーランスエンジニアとして活動中。
+
+30代・子持ち・大阪在住ながらエンジニア転職し、フリーランス独立した経験をSNS等で発信中。PHP/Laravelのプログラミング講師としても活動しており、これまで指導した人数は50名以上。
+
+エンジニア転職に成功した教え子からの報告を聞くのが、１番の喜びです！</p>
+<!-- 講師スキル(インデント注意) -->
+<p class="skill">
+  HTML／CSS／PHP／Laravel／JavaScript／Vue.js／jQuery／Git／GitHub
+</p>
+  </div>
+
+  <!-- ゆーたろーさん -->
+  <div class="flex-inner">
+    <%= image_tag "php_lp/yutaro.png" %>
+      <h4>パパエンジニア</h4>
+      <h3>ゆーたろー</h3>
+      <h3>プログラミングに止まらない指導をします！</h3>
+      
+<!-- 講師紹介分・挨拶(インデント注意) -->
+<p>兵庫県在住のゆーたろーです。
+
+2019年10月からプログラミング学習をスタートし、2020年4月からWebエンジニアのキャリアをスタート。
+
+現在はバックエンドがメインの戦場です。（フロントも今後強化予定）
+
+やんばるエキスパートではプログラミングスキルだけでなく、ビジネスリテラシー、マーケティングスキルなど現代のビジネスパーソンに必須の能力も身に付けていただけるように徹底的にサポートいたします。
+
+最高の環境を用意していますので、僕たちと一緒にプログラミングを学習していきましょう！</p>
+
+<!-- 講師スキル(インデント注意) -->
+<p class="skill">
+PHP／CakePHP／Laravel／JavaScript／jQuery／Git／Docker／AWS</p>
+  </div>
+
+  <!-- りょうたさん -->
+  <div class="flex-inner">
+    <%= image_tag "php_lp/ryouta.png" %>
+      <h4>PHP講座卒業エンジニア</h4>
+      <h3>りょうた</h3>
+      <h3>初心者目線でアドバイスできます！</h3>
+      
+<!-- 講師紹介分・挨拶(インデント注意) -->
+<p>愛知県でwebエンジニアとして働いてます、りょうたです。
+
+2020年の5月にやんばるエキスパートPHPを受講した、１期の卒業生です。
+
+僕が本講座を受講して、転職成功した経験から、「こんなふうに学習するといいよ」などの学習のアドバイスや知識のない方にも分かる噛み砕いた伝え方をしていきたい！と思っております。
+(この講座でめちゃくちゃ成長できたと思っております！)
+
+メンターではありますが、受講者側でもいたので、より親身に相談に乗れるような存在になっていきたいと思っています。
+
+是非、一緒に頑張っていきましょう。</p>
+
+<!-- 講師スキル(インデント注意) -->
+<p class="skill">
+HTML／CSS／JavaScript／jQuery／PHP／Laravel／Git／Docker／AWS</p>
+  </div>
+  <!-- じーこさん -->
+  <div class="flex-inner">
+    <%= image_tag "php_lp/jico.png" %>
+      <h4>バンドマンエンジニア</h4>
+      <h3>じーこ</h3>
+      <h3>職歴なし・学歴なしの方をサポートします！</h3>
+      
+<!-- 講師紹介分・挨拶(インデント注意) -->
+<p>大阪自社開発企業で働くエンジニアのジーコです。
+
+バンドマンからエンジニア転職した、少し変わった経歴です。
+
+開発のアルバイトを4社落ちてPCサポートのコールセンターで働き始めましたが、
+
+先が見えず、「このままではダメだ」と考え、大手スクールに高額な受講料を支払いエンジニアに転職しました。
+
+僕が払った半額以下の金額で、やんばるエキスパートではエンジニアに必要な知識が習得できます！！皆さんが羨ましいです。笑
+
+職歴なし、学歴なしからエンジニアになった立場から皆さんの不安にも寄り添えるメンターです。
+
+現場での経験を踏まえて、即戦力となるエンジニアを育てたいと考えています。
+
+一緒に、仲間とプログラミングを楽しみながら学んで行きましょう！！</p>
+
+<!-- 講師スキル(インデント注意) -->
+<p class="skill">
+HTML／CSS／PHP／Laravel／JavaScript／jQuery／Vue.js／jQuery／Git／GitHub／AWS</p>
+  </div>
+  <!-- flex-inner -->
+
+  <!-- Mikiさん -->
+  <div class="flex-inner">
+    <%= image_tag "php_lp/miki.png" %>
+      <h4>PHP歴3年エンジニア</h4>
+      <h3>Miki</h3>
+      <h3>現場の活きたスキルをお伝えします！</h3>
+      
+<!-- 講師紹介分・挨拶(インデント注意) -->
+<p>関西のとあるIT企業で働くPHP歴3年のエンジニア、Mikiです。
+
+普段はPHPでスクラッチ開発をおこなっています。
+
+実務でフレームワークやGitなどを扱う機会がなく、自身の技術に不安を感じていたため、1期生としてやんばるエキスパートPHPも受講していました。
+
+日々の業務でも、エキスパートPHPでも、沢山のことを学びエンジニアとして力をつけてきました。
+
+メンターとしてその学びの中で得た知識をわかりやすい形でお伝えし、皆さんの学習をサポートしたい思っています。
+
+是非、一緒にプログラミング学んでいきましょう！</p>
+
+<!-- 講師スキル(インデント注意) -->
+<p class="skill">
+HTML/CSS/Bootstrap/JavaScript/jQuery/PHP/Laravel/Git/Github/MySQL/PostgreSQL</p>
+  </div>
+  <!-- flex-inner -->
+</div>
+<!-- flex-wrapper -->
+</section>
+
+<!--
+  =============================== 
+              特典
+  ===============================
+-->
+<section id="special-wrapper" class="wrapper">
+  <h2>受講特典</h2>
+  <div class="grid-wrapper">
+    <div class="grid-inner">
+      <h4><span>特典</span>
+        知識を増やす！
+        専用チャットコミュニティへの参加権
+      </h4>
+      <div class="white-inner">
+        <%= image_tag "php_lp/special1.png" %>
+        <p>初心者から上級者まで色んなフェーズの方々と交流が持てます。同じモチベーションの仲間と繋がったり、上級者と交流できたりと、やんばるエキスパートだからこそできるコミュニティでの交流が可能です。</p>
+      </div>
+      <!-- white-inner -->
+    </div>
+    <!-- flex-inner -->
+    <div class="grid-inner">
+      <h4><span>特典</span>
+        知識を増やす！
+        専用チャットコミュニティへの参加権
+      </h4>
+      <div class="white-inner">
+        <%= image_tag "php_lp/special2.png" %>
+        <p>初心者から上級者まで色んなフェーズの方々と交流が持てます。同じモチベーションの仲間と繋がったり、上級者と交流できたりと、やんばるエキスパートだからこそできるコミュニティでの交流が可能です。</p>
+      </div>
+      <!-- white-inner -->
+    </div>
+    <!-- flex-inner -->
+    <div class="grid-inner">
+      <h4><span>特典</span>
+        知識を増やす！
+        専用チャットコミュニティへの参加権
+      </h4>
+      <div class="white-inner">
+        <%= image_tag "php_lp/special3.png" %>
+        <p>初心者から上級者まで色んなフェーズの方々と交流が持てます。同じモチベーションの仲間と繋がったり、上級者と交流できたりと、やんばるエキスパートだからこそできるコミュニティでの交流が可能です。</p>
+      </div>
+      <!-- white-inner -->
+    </div>
+    <!-- flex-inner -->
+    <div class="grid-inner">
+      <h4><span>特典</span>
+        知識を増やす！
+        専用チャットコミュニティへの参加権
+      </h4>
+      <div class="white-inner">
+        <%= image_tag "php_lp/special4.png" %>
+        <p>初心者から上級者まで色んなフェーズの方々と交流が持てます。同じモチベーションの仲間と繋がったり、上級者と交流できたりと、やんばるエキスパートだからこそできるコミュニティでの交流が可能です。</p>
+      </div>
+      <!-- white-inner -->
+    </div>
+    <!-- flex-inner -->
+    <div class="grid-inner">
+      <h4><span>特典</span>
+        知識を増やす！
+        専用チャットコミュニティへの参加権
+      </h4>
+      <div class="white-inner">
+        <%= image_tag "php_lp/special5.png" %>
+        <p>初心者から上級者まで色んなフェーズの方々と交流が持てます。同じモチベーションの仲間と繋がったり、上級者と交流できたりと、やんばるエキスパートだからこそできるコミュニティでの交流が可能です。</p>
+      </div>
+      <!-- white-inner -->
+    </div>
+    <!-- flex-inner -->
+  </div>
+  <!-- flex-wrapper -->
+</section>
+
+<!--
+  =============================== 
+              CTA
+  ===============================
+-->
+<%= render 'static_pages/php_cta' %>
+
+<!--
+  =============================== 
+            FAQ
+  ===============================
+-->
+<section id="faq-wrapper" class="wrapper">
+  <h2>FAQ</h2>
+  <h5>よくあるご質問  </h5>
+  <ul class="faq-list">
+    <%= render partial: "faq" , collection: @faqs %>
+  </ul>
+</section>
+
+<!--
+  =============================== 
+            お問い合わせ
+  ===============================
+-->
+<section id="contact-wrapper" class="wrapper">
+  <h2>Contact</h2>
+  <h5>お問い合わせ</h5>
+  <div class="contact-form">
+    <% if flash[:notice] %>
+      <p class="contact-flash">
+        <%= flash[:notice] %>
+      </p>
+    <% end %>
+    <!-- エラー文 -->
+    <%= form_with url: design_contact_path, local: true do |form| %>
+    <%= render 'submit_field' , form: form %>
+  </div>
+  <!-- contact-form -->
+  <%= form.submit "送信する" , class: "submit_botton" %>
+  <% end %>
+  <!-- 送信ボタン -->
+</section>
+
+<!--
+  =============================== 
+            フッター
+  ===============================
+-->
+  <section class="footer-wrapper wrapper">
+    <%= image_tag "https://d5izmuz0mcjzz.cloudfront.net/design_course/servise-name.png" %>
+  </section>
+<!-- #### PHP編終了タグ #### -->
+</section>
