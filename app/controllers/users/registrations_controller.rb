@@ -28,23 +28,31 @@ class Users::RegistrationsController < Devise::RegistrationsController
     end
 
     resource.approval_at = Time.current
-    # 以下は元ソース通り
-    resource.save
-    yield resource if block_given?
-    if resource.persisted?
-      if resource.active_for_authentication?
-        set_flash_message! :notice, :signed_up
-        sign_up(resource_name, resource)
-        respond_with resource, location: after_sign_up_path_for(resource)
+
+    user = User.find_by(email: resource.email)
+    if user.nil?
+      # 以下は元ソース通り
+      resource.save
+      yield resource if block_given?
+      if resource.persisted?
+        if resource.active_for_authentication?
+          set_flash_message! :notice, :signed_up
+          sign_up(resource_name, resource)
+          respond_with resource, location: after_sign_up_path_for(resource)
+        else
+          set_flash_message! :notice, :"signed_up_but_#{resource.inactive_message}"
+          expire_data_after_sign_in!
+          respond_with resource, location: after_inactive_sign_up_path_for(resource)
+        end
       else
-        set_flash_message! :notice, :"signed_up_but_#{resource.inactive_message}"
-        expire_data_after_sign_in!
-        respond_with resource, location: after_inactive_sign_up_path_for(resource)
+        clean_up_passwords resource
+        set_minimum_password_length
+        respond_with resource
       end
     else
-      clean_up_passwords resource
-      set_minimum_password_length
-      respond_with resource
+      user.update!(resource.slice(:flag, :slack_name, :approval_at))
+      flash[:alert] = "登録中のSlack名の変更のみ受付いたしました。再度ログイン下さい。"
+      redirect_to new_user_session_path
     end
   end
 
