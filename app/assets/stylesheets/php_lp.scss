@@ -257,14 +257,15 @@
         background-color: $base-color;
         border-radius: 50%;
         img{
-          margin-top: 1.5rem;
+          margin-top: 2.5rem;
           margin-bottom: 1rem;
         }
         .point1, .point3{
           padding-top: 1rem;
         }
         h2{
-          font-size: 1.25rem;
+          font-size: 1.35rem;
+          font-weight: 600;
           position: relative;
           span{
             position: absolute;
@@ -285,14 +286,11 @@
           box-shadow: 0 0 20px 0 $base-color;
           img{
             width: 24px;
-            margin-top: -.5rem;
+            margin-top: .5rem;
             margin-bottom: .5rem;
           }
-        .point1, .point3{
-          padding-top: .5rem;
-        }
           h2{
-            font-size: .7rem;
+            font-size: .75rem;
             br{
               display: none;
             }
@@ -300,6 +298,9 @@
               top: 2.5rem;
               left: calc((100% - 50px)/2);
               font-size: 1.9em;
+              @media (max-width: (350px)){
+                left: calc((100% - 40px)/2);
+              }
             }
           }
         }
@@ -307,6 +308,7 @@
           width: 90px;
           height: 90px;
           h2{
+            font-size: .6rem;
             br{
               display: none;
             }
@@ -367,7 +369,7 @@
       .performance-content{
         margin: 2rem;
         width: 100%;
-        max-width: 320px;
+        max-width: 370px;
         padding: 2.5rem 2rem;
         border-radius: 10px;
         box-shadow: 2px 4px 7px 0 rgba($color: #333, $alpha: .1);
@@ -402,7 +404,7 @@
             width: 220px;
             position: absolute;
             top: -1rem;
-            left: calc((100% - 200px)/2);
+            left: calc((100% - 220px)/2);
           }
         }
       }
@@ -414,8 +416,8 @@
         margin: 0 auto;
         .performance-content{
           width: 100%;
-          max-width: 340px;
-          margin: 1rem 0;
+          max-width: 390px;
+          margin: 1rem auto;
           padding: 2rem .5rem;
         }
       }
@@ -486,7 +488,7 @@
     }
     .arrow-down{
       position: absolute;
-      bottom: -50px;
+      bottom: -49px;
       left: 0;
       width: 0;
       height: 0;
@@ -579,7 +581,7 @@
     position: relative;
     div{
       position: absolute;
-      bottom: -20px;
+      bottom: -19px;
       left: calc((100% - 10vw)/2);
       border-style: solid;
       border-width: 20px 5vw 0 5vw;
@@ -761,6 +763,9 @@
           color: $base-color;
           font-weight: 600;
           background-color: #C7CAD1;
+          @media (max-width: (360px)) {
+            padding: 1.25rem 1.75rem;
+          }
         }
         h2{
           font-size: 2.25rem;
@@ -816,6 +821,12 @@
     padding-top: 4.5rem;
     padding-bottom: 6.5rem;
     background-color: #F6F6F6;
+    a{
+      color: $main-color;
+      &::before{
+        content: "> ";
+      }
+    }
     @include sp{
       padding-bottom: 4.5rem;
     }
@@ -1009,7 +1020,7 @@
     .person-inner{
       width: 180px;
       margin: 0;
-      margin-right: 3rem;
+      margin-right: 4rem;
       @include sp{
         margin-right: 0;
         margin: 0 auto;
