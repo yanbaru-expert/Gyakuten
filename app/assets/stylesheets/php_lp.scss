@@ -300,6 +300,9 @@
               top: 2.5rem;
               left: calc((100% - 50px)/2);
               font-size: 1.9em;
+              @media (max-width: (350px)){
+                left: calc((100% - 40px)/2);
+              }
             }
           }
         }
@@ -486,7 +489,7 @@
     }
     .arrow-down{
       position: absolute;
-      bottom: -50px;
+      bottom: -49px;
       left: 0;
       width: 0;
       height: 0;
@@ -579,7 +582,7 @@
     position: relative;
     div{
       position: absolute;
-      bottom: -20px;
+      bottom: -19px;
       left: calc((100% - 10vw)/2);
       border-style: solid;
       border-width: 20px 5vw 0 5vw;
@@ -761,6 +764,9 @@
           color: $base-color;
           font-weight: 600;
           background-color: #C7CAD1;
+          @media (max-width: (360px)) {
+            padding: 1.25rem 1.75rem;
+          }
         }
         h2{
           font-size: 2.25rem;
@@ -816,6 +822,12 @@
     padding-top: 4.5rem;
     padding-bottom: 6.5rem;
     background-color: #F6F6F6;
+    a{
+      color: $main-color;
+      &::before{
+        content: "> ";
+      }
+    }
     @include sp{
       padding-bottom: 4.5rem;
     }
@@ -1009,7 +1021,7 @@
     .person-inner{
       width: 180px;
       margin: 0;
-      margin-right: 3rem;
+      margin-right: 4rem;
       @include sp{
         margin-right: 0;
         margin: 0 auto;
