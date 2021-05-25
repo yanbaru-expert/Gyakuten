@@ -265,6 +265,7 @@
         }
         h2{
           font-size: 1.25rem;
+          font-weight: 600;
           position: relative;
           span{
             position: absolute;
@@ -370,7 +371,7 @@
       .performance-content{
         margin: 2rem;
         width: 100%;
-        max-width: 320px;
+        max-width: 370px;
         padding: 2.5rem 2rem;
         border-radius: 10px;
         box-shadow: 2px 4px 7px 0 rgba($color: #333, $alpha: .1);
@@ -405,7 +406,7 @@
             width: 220px;
             position: absolute;
             top: -1rem;
-            left: calc((100% - 200px)/2);
+            left: calc((100% - 220px)/2);
           }
         }
       }
@@ -417,8 +418,8 @@
         margin: 0 auto;
         .performance-content{
           width: 100%;
-          max-width: 340px;
-          margin: 1rem 0;
+          max-width: 390px;
+          margin: 1rem auto;
           padding: 2rem .5rem;
         }
       }
