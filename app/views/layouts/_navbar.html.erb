@@ -30,8 +30,8 @@
             PHP
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <%= link_to "PHPテキスト教材", texts_path(genre: "php"), class: "dropdown-item" %>
-            <%= link_to "PHP動画教材", movies_path(genre: "php"), class: "dropdown-item#{add_disabled}" %>
+            <%= link_to "PHP/テキスト教材", texts_path(genre: "php"), class: "dropdown-item" %>
+            <%= link_to "PHP/動画教材", movies_path(genre: "php"), class: "dropdown-item#{add_disabled}" %>
           </div>
         </li>
         <li class="nav-item active dropdown">
@@ -51,10 +51,13 @@
             デザイン
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <%= link_to display_name("design_base"), movies_path(genre: "design_base"), class: "dropdown-item#{add_disabled}" %>
-            <%= link_to display_name("design_matter"), movies_path(genre: "design_matter"), class: "dropdown-item#{add_disabled}" %>
-            <%= link_to display_name("design_usage"), movies_path(genre: "design_usage"), class: "dropdown-item#{add_disabled}" %>
-            <%= link_to display_name("design_task"), movies_path(genre: "design_task"), class: "dropdown-item#{add_disabled}" %>
+            <%= link_to "#{display_name('design_base')}/テキスト教材", texts_path(genre: "design_base"), class: "dropdown-item" %>
+            <%= link_to "#{display_name('design_base')}/動画教材", movies_path(genre: "design_base"), class: "dropdown-item#{add_disabled}" %>
+            <%= link_to "#{display_name('design_matter')}/テキスト教材", texts_path(genre: "design_matter"), class: "dropdown-item" %>
+            <%= link_to "#{display_name('design_matter')}/動画教材", movies_path(genre: "design_matter"), class: "dropdown-item#{add_disabled}" %>
+            <%= link_to display_name('design_usage'), movies_path(genre: "design_usage"), class: "dropdown-item#{add_disabled}" %>
+            <%= link_to "#{display_name('design_task')}/テキスト教材", texts_path(genre: "design_task"), class: "dropdown-item" %>
+            <%= link_to "#{display_name('design_task')}/動画教材", movies_path(genre: "design_task"), class: "dropdown-item#{add_disabled}" %>
           </div>
         </li>
         <li class="nav-item active dropdown">
