@@ -9,10 +9,10 @@
       <%= markdown(@text.content) %>
     </div>
     <div id="read-text-<%= @text.id %>" class="mb-4">
-      <% if @read_text_ids.include?(@text.id) %>
-        <%= render "read_text", text_id: @text.id %>
+      <% if @text.completed_by(current_user) %>
+        <%= render "progresses/completed", materiable: @text %>
       <% else %>
-        <%= render "unread_text", text_id: @text.id %>
+        <%= render "progresses/incompleted", materiable: @text %>
       <% end %>
     </div>
     <div class="modal fade" id="read-modal" tabindex="-1" role="dialog" aria-labelledby="read-modal-title" aria-hidden="true">

@@ -1,9 +1,18 @@
 class ProgressesController < ApplicationController
+  before_action :set_materiable
+
   def create
-    current_user.progresses.create!(materiable_id: params[:materiable_id], materiable_type: params[:materiable_type])
+    @materiable.progresses.create!(user_id: current_user.id)
   end
 
   def destroy
-    Progress.find_by(user_id: current_user.id, materiable_id: params[:materiable_id], materiable_type: params[:materiable_type]).destroy!
+    @materiable.progresses.find_by(user_id: current_user.id).destroy!
   end
+
+  private
+
+    def set_materiable
+      return unless params[:materiable_type].in?(Progress::MATERIABLES_LIST)
+      @materiable = params[:materiable_type].constantize.find(params[:materiable_id])
+    end
 end

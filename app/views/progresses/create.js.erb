@@ -1,10 +1,5 @@
-if(<%= params[:materiable_type] %> == Text){
-  document.getElementById('text-progress-<%= params[:materiable_id] %>').innerHTML = '<%= j render("texts/read_text", materiable_id: params[:materiable_id], materiable_type: params[:materiable_type]) %>'
-  $readModal = $('#read-modal')
-  if($readModal.length) {
-    $readModal.modal({keyboard: false}).show()
-  }
-}
-else if(<%= params[:materiable_type] %> == Movie){
-  document.getElementById('movie-progress-<%= params[:materiable_id] %>').innerHTML = '<%= j render("movies/watched_movie", materiable_id: params[:materiable_id], materiable_type: params[:materiable_type]) %>'
+document.getElementById('materiable-<%= @materiable.id %>').innerHTML = '<%= j render("progresses/completed", materiable: @materiable) %>'
+$readModal = $('#read-modal')
+if($readModal.length) {
+  $readModal.modal({keyboard: false}).show()
 }

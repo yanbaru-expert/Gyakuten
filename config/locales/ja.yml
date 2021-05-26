@@ -27,6 +27,7 @@ ja:
       genre: ジャンル
       faq: よくある質問
       memo_example: メモの例
+      progress: 進捗
     attributes:
       admin_user:
       error:
@@ -304,3 +305,7 @@ ja:
       long: "%Y/%m/%d %H:%M"
       short: "%m/%d %H:%M"
     pm: 午後
+  progress_button:
+    text: 読破
+    movie: 視聴
+    challenge: 完了
