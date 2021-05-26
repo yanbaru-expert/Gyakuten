@@ -21,12 +21,10 @@ class Text < ApplicationRecord
   acts_as_list
   mount_uploader :image, ImageUploader
   include GenreSearch
+  include ProgressMateriable
   SELECT_COLUMNS = "texts.*, genres.code_name, genres.name, genres.color"
 
-  has_many :read_texts, dependent: :destroy
   has_many :movies
-  belongs_to :genre, optional: true
-  has_many :progresses, dependent: :destroy, as: :materiable
 
   # 作成時にジャンルごとに整頓する機能
   after_create do
