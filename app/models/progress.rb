@@ -22,4 +22,6 @@
 class Progress < ApplicationRecord
   belongs_to :user
   belongs_to :materiable, polymorphic: true
+
+  MATERIABLES_LIST = %w[Text Movie Challenge].freeze
 end
