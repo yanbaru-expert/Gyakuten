@@ -14,11 +14,11 @@
             </div>
           </div>
           <div class="card-body text-dark movie-body">
-            <p id="movie-progress-<%= movie.id %>">
-              <% if @progresses.include?(movie.id) %>
-                <%= render "watched_movie", materiable_id: movie.id, materiable_type: "Movie" %>
+            <p id="materiable-<%= movie.id %>">
+              <% if movie.completed_by(current_user) %>
+                <%= render "progresses/completed", materiable: movie %>
               <% else %>
-                <%= render "unwatched_movie", materiable_id: movie.id, materiable_type: "Movie" %>
+                <%= render "progresses/incompleted", materiable: movie %>
               <% end %>
             </p>
             <p class="card-text movie-title">

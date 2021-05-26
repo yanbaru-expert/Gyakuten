@@ -27,11 +27,12 @@ class Movie < ApplicationRecord
 
   validates :title, presence: true
   validates :url, presence: true
-  has_many :watched_movies, dependent: :destroy
-  has_many :progresses, dependent: :destroy, as: :materiable
-  belongs_to :text, optional: true
-  belongs_to :genre, optional: true
 
+  belongs_to :text, optional: true
+
+  include ProgressMateriable
+  SELECT_COLUMNS = "movies.*, genres.code_name, genres.name, genres.color"
+  
   before_save do
     format_url = YoutubeUrlFormatter.format(url)
     if format_url.present?
