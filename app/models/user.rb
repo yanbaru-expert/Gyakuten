@@ -37,10 +37,10 @@ class User < ApplicationRecord
   has_many :watched_movies, dependent: :destroy
   has_many :read_texts, dependent: :destroy
   has_many :complete_challenges, dependent: :destroy
-  has_many :read_through_texts, through: :read_texts, source: :text
-  has_many :watched_through_movies, through: :watched_movies, source: :movie
   has_one :memo, dependent: :destroy
-  has_many :progresses, dependent: :destroy, as: :materiable
+  has_many :progresses, dependent: :destroy
+  has_many :read_through_texts, through: :progresses, source: :materiable, source_type: 'Text'
+  has_many :watched_through_movies, through: :progresses, source: :materiable, source_type: 'Movie'
 
   def self.permit_slack_name(slack_name)
     self.selectable_slack_name_options.values.include?(slack_name)
