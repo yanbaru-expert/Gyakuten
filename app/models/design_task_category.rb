@@ -10,4 +10,5 @@
 #
 class DesignTaskCategory < ApplicationRecord
   has_many :design_task_lists, dependent: :destroy
+  mount_uploader :img, DesignTaskImageUploader
 end

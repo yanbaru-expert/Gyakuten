@@ -1,5 +1,24 @@
 <% content_for(:title) { "#{@genre}動画" } %>
 <% content_for(:description) { "やんばるエキスパートの#{@genre}動画教材です。" } %>
+<% if @genre == "デザイン課題" %>
+  <div>
+  課題提出前のセルフチェックシート
+
+    <% @task_lists.each_with_index do |task,i| %>
+      <ul>
+        <span><%= image_tag @categories[task[0].design_task_category_id-1].img.url ,width: "30" %></span>
+        <span><%= @categories[task[0].design_task_category_id-1].name %></span>
+        <% task.each_with_index do |task,j| %>
+        <li>
+          <span><%= task.body %></span>
+          <br>
+        </li>
+      <% end %>
+      </ul>
+    <% end %>
+
+  </div>
+<% end %>
 <div class="contents-title text-center">
   <h1><%= @genre %> 動画</h1>
 </div>
