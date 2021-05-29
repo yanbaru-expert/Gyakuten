@@ -12,3 +12,64 @@
     padding: 0;
   }
 }
+
+// デザイン課題チェックシート用　スタイル　↓
+
+.design-check-sheet{
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size:16px;
+  background:#fff;
+  margin:50px auto;
+  min-width: 768px;
+  width:60%;
+  justify-content: center;
+  align-items: center;
+  border:solid 1px #aaa;
+
+  .design-title{
+    font-size:16px;
+    justify-content: center;
+    align-items: center;
+    margin-bottom:80px;
+
+    .square{
+      background: #4B5DFF;
+      border-radius: 50px;
+      height:48px;
+      width:256px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: auto;
+    }
+    .big-title{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size:32px;
+      letter-spacing: 0.2em;
+      margin: auto;
+      color:#0148FF;
+    }
+  }
+  .design-check-content{
+    background:#fff;
+    padding:32px;
+
+    .design-check-box{
+      background:#fff;
+      display:flex;
+      padding:10px;
+      margin:0x;
+      border-bottom: solid 1px #aaa;
+      .design-check-imgbox{
+        width:300px;
+      }
+      .design-check-list{
+        background:#fff;
+        list-style: none;
+      }
+    }
+  }
+}
+// ここまで

@@ -1,21 +1,29 @@
 <% content_for(:title) { "#{@genre}動画" } %>
 <% content_for(:description) { "やんばるエキスパートの#{@genre}動画教材です。" } %>
 <% if @genre == "デザイン課題" %>
-  <div>
-  課題提出前のセルフチェックシート
-
+  <div class="design-check-sheet">
+    <div class="design-title">
+      <p class="square">課題提出前の</p>
+      <p class="big-title">セルフチェックシート</p>
+    </div>
+    <div class="design-check-content">
     <% @task_lists.each_with_index do |task,i| %>
-      <ul>
-        <span><%= image_tag @categories[task[0].design_task_category_id-1].img.url ,width: "30" %></span>
-        <span><%= @categories[task[0].design_task_category_id-1].name %></span>
-        <% task.each_with_index do |task,j| %>
-        <li>
-          <span><%= task.body %></span>
-          <br>
-        </li>
-      <% end %>
-      </ul>
+      <div class="design-check-box">
+        <div class="design-check-imgbox">
+          <span><%= image_tag @categories[task[0].design_task_category_id-1].img.url ,width: "30" %></span>
+          <span><%= @categories[task[0].design_task_category_id-1].name %></span>
+        </div>
+        <ul >
+          <% task.each_with_index do |task,j| %>
+              <li class="design-check-list">
+              <i class="far fa-check-square"></i>
+                <span><%= task.body %></span>
+              </li>
+          <% end %>
+        </ul>
+      </div>
     <% end %>
+    </div>
 
   </div>
 <% end %>
