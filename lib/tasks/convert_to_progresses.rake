@@ -1,6 +1,8 @@
 namespace :convert_to_progresses do
   desc "既存のReadTexts、CompleteChallenges、WachedMoviesテーブルのコンバート"
   task execute: :environment do
+    ActiveRecord::Base.connection.execute("TRUNCATE TABLE progresses RESTART IDENTITY CASCADE")
+
     ReadText.find_each do |read_text|
       Progress.create!(user_id: read_text.user_id, materiable_id: read_text.text_id, materiable_type: "Text")
     end
