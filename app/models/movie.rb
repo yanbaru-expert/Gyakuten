@@ -31,7 +31,6 @@ class Movie < ApplicationRecord
   belongs_to :text, optional: true
 
   include ProgressMateriable
-  SELECT_COLUMNS = "movies.*, genres.code_name, genres.name, genres.color"
   
   before_save do
     format_url = YoutubeUrlFormatter.format(url)
