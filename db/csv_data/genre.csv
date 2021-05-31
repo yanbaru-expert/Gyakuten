@@ -16,9 +16,9 @@ id,position,code_name,name,color
 14,19,talk,全ての勉強会,#fd7e14
 15,21,live,プログラミング勉強会,#f08080
 16,22,invisible,非表示,#000000
-17,14,design_tool,デザインツールの使い方,#50ffff
+17,14,design_base,デザイン基礎,#50ffff
 18,15,design_matter,実案件の取り方,#50ffff
 19,16,design_usage,デザイナーのマーケティング戦略,#50ffff
-22,17,design_task,デザイン課題,#50ffff
+22,17,design_task,Webデザイン課題,#50ffff
 20,18,money_lstep,Lステップ講座,#4169e1
 21,20,money_insta,インスタ講座,#4169e1
