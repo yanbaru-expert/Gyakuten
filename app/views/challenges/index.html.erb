@@ -13,13 +13,13 @@
     <% @challenges.each do |challenge| %>
       <div class="col-12 col-md-6 col-lg-4 text-card-container">
         <div class="card content-card border-dark mb-3">
-          <%= link_to challenge, { :target => "_blank" } do %>
+          <%= link_to challenge, { target: "_blank" } do %>
             <div class="card-header p-0">
               <%= image_tag challenge.image.url, loading: "lazy", alt: challenge.title, class: "img-fluid" %>
             </div>
             <div class="card-body text-dark text-card-body">
               <% if user_signed_in? %>
-                <div id="materiable-<%= challenge.id %>">
+                <div id="challenge-<%= challenge.id %>">
                   <% if challenge.completed_by(current_user) %>
                     <%= render "progresses/completed", materiable: challenge %>
                   <% else %>

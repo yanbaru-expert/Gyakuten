@@ -30,6 +30,7 @@ AdminUser.find_or_create_by!(email: admin_email) do |user|
 end
 
 ImportCsv.execute(model: Text)
+ImportCsv.image_import(model: Text)
 puts "テキスト教材の開発用初期データインポートに成功しました。"
 ImportCsv.execute(model: Movie)
 puts "動画教材の開発用初期データインポートに成功しました。"

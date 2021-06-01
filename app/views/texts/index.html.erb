@@ -20,7 +20,7 @@
             </div>
             <div class="card-body text-dark text-card-body">
               <% if user_signed_in? %>
-                <div id="materiable-<%= text.id %>">
+                <div id="text-<%= text.id %>">
                   <% if text.completed_by(current_user) %>
                     <%= render "progresses/completed", materiable: text %>
                   <% else %>

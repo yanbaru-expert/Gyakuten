@@ -1,5 +1,7 @@
-document.getElementById('materiable-<%= @materiable.id %>').innerHTML = '<%= j render("progresses/completed", materiable: @materiable) %>'
-$readModal = $('#read-modal')
-if($readModal.length) {
-  $readModal.modal({keyboard: false}).show()
-}
+<% materiable_name = @materiable.model_name.singular %>
+document.getElementById('<%= materiable_name %>-<%= @materiable.id %>').innerHTML = '<%= j render("progresses/completed", materiable: @materiable) %>'
+<% if materiable_name == "text" %>
+  if (document.getElementById('text-contents')) {
+    $('#read-modal').modal({keyboard: false}).show()
+  }
+<% end %>

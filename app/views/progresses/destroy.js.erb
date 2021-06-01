@@ -1,1 +1,2 @@
-document.getElementById('materiable-<%= @materiable.id %>').innerHTML = '<%= j render("progresses/incompleted", materiable: @materiable) %>'
+<% materiable_name = @materiable.model_name.singular %>
+document.getElementById('<%= materiable_name %>-<%= @materiable.id %>').innerHTML = '<%= j render("progresses/incompleted", materiable: @materiable) %>'

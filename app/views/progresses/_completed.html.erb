@@ -1,2 +1,2 @@
-<% name = "#{t(materiable.model_name.i18n_key, scope: :progress_button)}を解除" %>
+<% name = "#{t(materiable.model_name.i18n_key, scope: :progress_button)}済みを解除" %>
 <object><%= link_to name, progresses_path(materiable_id: materiable.id, materiable_type: materiable.model_name.name), class: "btn btn-primary btn-block", method: :delete, data: { remote: true } %></object>

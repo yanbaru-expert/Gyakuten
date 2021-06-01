@@ -14,7 +14,7 @@
             </div>
           </div>
           <div class="card-body text-dark movie-body">
-            <p id="materiable-<%= movie.id %>">
+            <p id="movie-<%= movie.id %>">
               <% if movie.completed_by(current_user) %>
                 <%= render "progresses/completed", materiable: movie %>
               <% else %>
