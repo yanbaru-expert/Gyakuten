@@ -24,7 +24,7 @@ ActiveAdmin.register Challenge do
   end
 
   form do |f|
-    f.object.position ||= Challenge.maximum(:position) + 1
+    f.object.position ||= Challenge.maximum(:position) || 0 + 1
     f.semantic_errors
     f.inputs do
       input :position
