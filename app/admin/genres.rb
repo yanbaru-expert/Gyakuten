@@ -20,7 +20,7 @@ ActiveAdmin.register Genre do
   end
 
   form do |f|
-    f.object.position ||= Genre.maximum(:position) + 1
+    f.object.position ||= Genre.maximum(:position) || 0 + 1
     f.semantic_errors
     f.inputs do
       input :position

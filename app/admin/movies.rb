@@ -13,7 +13,7 @@ ActiveAdmin.register Movie do
   end
 
   form do |f|
-    f.object.position ||= Movie.maximum(:position) + 1
+    f.object.position ||= Movie.maximum(:position) || 0 + 1
     f.semantic_errors
     f.inputs do
       input :position
