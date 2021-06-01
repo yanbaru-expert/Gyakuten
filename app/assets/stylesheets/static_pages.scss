@@ -522,7 +522,9 @@ $base-color: linear-gradient(to right, #353ADA, #5A9DFB);
 
         .services-item {
           @include flexItem();
-          width: calc(50% - 50px / 2);
+          width: 100%;
+          max-width: 500px;
+          margin: 0 auto;
           position: relative;
 
           &:nth-child(2n) {
