@@ -19,6 +19,8 @@
 
 class Movie < ApplicationRecord
   include GenreSearch
+  include ProgressMateriable
+
   acts_as_list
 
   YOUTUBE_REGEX = %r{\Ahttps://www.youtube.com/embed/[^?&"'>]+\z}.freeze
@@ -27,9 +29,7 @@ class Movie < ApplicationRecord
 
   validates :title, presence: true
   validates :url, presence: true
-  has_many :watched_movies, dependent: :destroy
   belongs_to :text, optional: true
-  belongs_to :genre, optional: true
 
   before_save do
     format_url = YoutubeUrlFormatter.format(url)

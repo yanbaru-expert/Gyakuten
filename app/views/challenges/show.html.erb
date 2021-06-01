@@ -19,11 +19,11 @@
         </div>
       </div>
     </div>
-    <div id="complete-challenge-<%= @challenge.id %>" class="mb-4">
-      <% if current_user.complete_challenges.find_by(challenge_id: @challenge.id).present? %>
-        <%= render "complete_challenge", challenge_id: @challenge.id %>
+    <div id="challenge-<%= @challenge.id %>" class="mb-4">
+      <% if @challenge.completed_by(current_user) %>
+        <%= render "complete_challenge", materiable: @challenge %>
       <% else %>
-        <%= render "incomplete_challenge", challenge_id: @challenge.id %>
+        <%= render "incomplete_challenge", materiable: @challenge %>
       <% end %>
     </div>
   <% else %>
