@@ -21,9 +21,9 @@
     </div>
     <div id="challenge-<%= @challenge.id %>" class="mb-4">
       <% if @challenge.completed_by(current_user) %>
-        <%= render "complete_challenge", materiable: @challenge %>
+        <%= render "progresses/completed", materiable: @challenge %>
       <% else %>
-        <%= render "incomplete_challenge", materiable: @challenge %>
+        <%= render "progresses/incompleted", materiable: @challenge %>
       <% end %>
     </div>
   <% else %>
