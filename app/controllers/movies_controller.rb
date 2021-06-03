@@ -21,6 +21,10 @@ class MoviesController < ApplicationController
         if(array.last.design_task_category_id == task.design_task_category_id) then
           array.push task
         else
+          # array内をDesignTask id 順になるようにソート
+          array.sort!{|a,b|
+            a.id <=> b.id
+          }
           @task_lists.push array
           array = []
           array.push task

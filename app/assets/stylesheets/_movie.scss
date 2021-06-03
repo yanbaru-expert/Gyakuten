@@ -17,17 +17,18 @@
 
 .design-check-sheet{
   font-family: 'Noto Sans JP', sans-serif;
-  font-size:16px;
-  background:#fff;
-  margin:50px auto;
-  min-width: 768px;
+  font-size:1rem;
+  background:#F0F5FE;
+  padding:50px 100px;
+  margin:0px auto;
+  min-width: 968px;
   width:60%;
   justify-content: center;
   align-items: center;
-  border:solid 1px #aaa;
+  border:solid 0px;
 
   .design-title{
-    font-size:16px;
+    font-size:1rem;
     justify-content: center;
     align-items: center;
     margin-bottom:80px;
@@ -35,18 +36,25 @@
     .square{
       background: #4B5DFF;
       border-radius: 50px;
+      color:#fff;
+      padding:8px;
       height:48px;
       width:256px;
       display: flex;
       justify-content: center;
-      align-items: center;
+      align-items: flex-end;
       margin: auto;
+      font-size:1.5rem;
+      .small{
+        font-size:1rem;
+      }
     }
     .big-title{
       display: flex;
       justify-content: center;
       align-items: center;
-      font-size:32px;
+      font-size:2rem;
+      font-weight: bold; 
       letter-spacing: 0.2em;
       margin: auto;
       color:#0148FF;
@@ -54,21 +62,36 @@
   }
   .design-check-content{
     background:#fff;
-    padding:32px;
+    padding:0px 32px;
 
     .design-check-box{
       background:#fff;
       display:flex;
-      padding:10px;
-      margin:0x;
+      padding:24px 32px;
       border-bottom: solid 1px #aaa;
       .design-check-imgbox{
-        width:300px;
+        width:250px;
+        display: flex;
+        align-items: center;
+        padding:0px;
+        .category-name{
+          font-size:1.5rem;
+          padding-left:24px;
+        }
       }
       .design-check-list{
         background:#fff;
-        list-style: none;
+        margin:0px;
+        padding:0px;
+        .list-content{
+          background: url('https://i.imgur.com/0JjXaDB.png') no-repeat 0px 0.5em;
+          list-style: none;
+          padding:12px 0px  12px 46px;
+        }
       }
+    }
+    .design-check-box:last-child{
+      border-bottom:none;
     }
   }
 }
