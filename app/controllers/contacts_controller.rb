@@ -7,16 +7,18 @@ class ContactsController < ApplicationController
     ContactMailer.admin_email(@contact).deliver_now
     ContactMailer.user_email(@contact).deliver_now
     flash[:notice] = "メールの送信に成功しました。確認メールが届きます。"
-    path = Rails.application.routes.recognize_path(request.referer)
-    if path[:action] == "design"
-      redirect_to static_pages_url(anchor: "design_contact")
-    else
-      redirect_to php_url(anchor: "php_contact")
-      return
-    end
+    after_contact_page
   end
 
   private
+    def after_contact_page
+      path = Rails.application.routes.recognize_path(request.referer)
+      if path[:action] == "design"
+        redirect_to static_pages_url(anchor: "design_contact")
+      else
+        redirect_to php_url(anchor: "php_contact")
+      end
+    end
 
     def contact_params
     path = Rails.application.routes.recognize_path(request.referer)
@@ -30,12 +32,7 @@ class ContactsController < ApplicationController
     def contact_validation
       if params[:message].length > 1000 || params[:name].length > 100 || params[:ruby_name].length > 30
         flash[:notice] = "メールの送信に失敗しました。もう一度送信をお願いします"
-        path = Rails.application.routes.recognize_path(request.referer)
-        if path[:action] == "design"
-          redirect_to static_pages_url(anchor: "design_contact")
-        else
-          redirect_to php_url(anchor: "php_contact")
-        end
+        after_contact_page
       end
     end
 end
