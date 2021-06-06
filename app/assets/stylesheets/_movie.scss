@@ -14,6 +14,8 @@
 }
 
 // デザイン課題チェックシート用　スタイル　↓
+$sp-check: 900px;
+$smart-phone: 375px;
 
 .design-check-sheet{
   font-family: 'Noto Sans JP', sans-serif;
@@ -22,16 +24,29 @@
   padding:50px 100px;
   margin:0px auto;
   min-width: 968px;
-  width:60%;
+
+  width:100%;
   justify-content: center;
   align-items: center;
   border:solid 0px;
-
+  @media (max-width: ($sp-check)){
+    min-width: 400px;
+    padding:40px 56px;
+    width:100%;
+  }
+  @media (max-width: ($smart-phone)){
+    min-width: 300px;
+    padding:15px;
+    width:100%;
+  }
   .design-title{
     font-size:1rem;
     justify-content: center;
     align-items: center;
     margin-bottom:80px;
+    @media (max-width: ($sp-check)){
+      margin-bottom:48px;
+    }
 
     .square{
       background: #4B5DFF;
@@ -45,8 +60,24 @@
       align-items: flex-end;
       margin: auto;
       font-size:1.5rem;
+      @media (max-width: ($sp-check)){
+        // font-size:1rem;
+        width:200px;
+      }
+      @media (max-width: ($smart-phone)){
+        margin-bottom:16px;
+        height:40px;
+        font-size:1rem;
+        align-items: flex-end;
+      }
       .small{
         font-size:1rem;
+        @media (max-width: ($sp-check)){
+          // font-size:0.5rem;
+        }
+        @media (max-width: ($smart-phone)){
+          font-size:0.8rem;
+        }
       }
     }
     .big-title{
@@ -58,6 +89,9 @@
       letter-spacing: 0.2em;
       margin: auto;
       color:#0148FF;
+      @media (max-width: ($sp-check)){
+        font-size:1.5rem;
+      }
     }
   }
   .design-check-content{
@@ -69,24 +103,70 @@
       display:flex;
       padding:24px 32px;
       border-bottom: solid 1px #aaa;
+      @media (max-width: ($sp-check)){
+        display:block;
+        border-bottom: none;
+        padding:24px 0px;
+      }
+      @media (max-width: ($smart-phone)){
+        padding:8px 0px;
+      }
       .design-check-imgbox{
         width:250px;
+        @media (max-width: ($sp-check)){
+          width:100%;
+        }
         display: flex;
         align-items: center;
         padding:0px;
+        img{
+          width:48px;
+          @media (max-width: ($sp-check)){
+            width:48px;
+          }
+          @media (max-width: ($smart-phone)){
+            width:24px;
+          }
+        }
         .category-name{
           font-size:1.5rem;
           padding-left:24px;
+          align-items: center;
+          @media (max-width: ($smart-phone)){
+            font-size:1.2rem;
+            padding-left:8px;
+          }
+        }
+      }
+      .design-check-imgbox:after{
+        @media (max-width: ($sp-check)){
+          content: "";
+          flex-grow: 1;
+          display: block;
+          height: 1px; /* 線の太さを変えたいときはここを変える */
+          background: #000; /* 線の色を変えたいときはここを変える */
+          margin:0 .4em; 
         }
       }
       .design-check-list{
         background:#fff;
         margin:0px;
         padding:0px;
+        @media (max-width: ($sp-check)){
+          padding:24px 24px 0px;
+        }
+        @media (max-width: ($smart-phone)){
+          padding:24px 0px 0px 24px;
+        }
         .list-content{
           background: url('https://i.imgur.com/0JjXaDB.png') no-repeat 0px 0.5em;
           list-style: none;
           padding:12px 0px  12px 46px;
+          @media (max-width: ($smart-phone)){
+            background-size: 16px 16px;
+            font-size:0.7em;
+            padding:8px 0px  8px 24px;
+          }
         }
       }
     }
