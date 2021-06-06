@@ -10,16 +10,21 @@ class ContactsController < ApplicationController
     path = Rails.application.routes.recognize_path(request.referer)
     if path[:action] == "design"
       redirect_to static_pages_url(anchor: "design_contact")
-      
     else
       redirect_to php_url(anchor: "php_contact")
+      return
     end
   end
 
   private
 
     def contact_params
-      params.permit(:name, :ruby_name, :email, :message)
+    path = Rails.application.routes.recognize_path(request.referer)
+    if path[:action] == "design"
+      params.permit(:name, :ruby_name, :email, :message).merge(course_name: "Webデザイン")
+    else
+      params.permit(:name, :ruby_name, :email, :message).merge(course_name: "PHP")
+    end
     end
 
     def contact_validation
