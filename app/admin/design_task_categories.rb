@@ -1,18 +1,24 @@
 ActiveAdmin.register DesignTaskCategory do
+  permit_params :position, :name, :image
+  config.sort_order = "position_asc"
 
-  # See permitted parameters documentation:
-  # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
-  #
-  # Uncomment all parameters which should be permitted for assignment
-  #
-  permit_params :name, :img
-  #
-  # or
-  #
-  # permit_params do
-  #   permitted = [:name, :img]
-  #   permitted << :other if params[:action] == 'create' && current_user.admin?
-  #   permitted
-  # end
-  
+  index do
+    selectable_column
+    column :position
+    column :name
+    column :created_at
+    column :updated_at
+    actions
+  end
+
+  show do
+    attributes_table do
+      row :position
+      row :name
+      row :image do
+        image_tag(design_task_category.image.url) if design_task_category.image?
+      end
+      row :description
+    end
+  end
 end

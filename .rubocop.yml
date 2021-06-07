@@ -4,7 +4,6 @@ require:
 inherit_from:
   - config/rubocop/rubocop.yml
   - config/rubocop/rails.yml
-  - config/rubocop/rspec.yml
 
 AllCops:
   TargetRubyVersion: 2.7

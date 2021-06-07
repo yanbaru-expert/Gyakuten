@@ -78,8 +78,9 @@ ja:
         remark: 備考
       design_task_category:
         name: 項目名
-        img: 画像
+        image: 画像
       design_task_list:
+        design_task_category: カテゴリ
   attributes:
     id: ID
     program_id: プログラムID
