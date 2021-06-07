@@ -1,5 +1,7 @@
 class TextsController < ApplicationController
+  include DesignTask
   skip_before_action :authenticate_user!
+  before_action :set_design_task, only: :index
 
   def index
     code_name = Genre.valid_code_name(params[:genre])

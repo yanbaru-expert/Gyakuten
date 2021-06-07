@@ -1,7 +1,7 @@
 <% content_for(:title) { "#{@genre}動画" } %>
 <% content_for(:description) { "やんばるエキスパートの#{@genre}動画教材です。" } %>
 <% if params[:genre] == "design_task" %>
-  <%= render "design_task" %>
+  <%= render "shared/design/design_task" %>
 <% end %>
 <div class="contents-title text-center">
   <h1><%= @genre %> 動画</h1>
