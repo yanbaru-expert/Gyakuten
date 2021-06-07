@@ -3,8 +3,9 @@
 # Table name: design_task_categories
 #
 #  id         :bigint           not null, primary key
-#  img        :string
+#  image      :string
 #  name       :string           not null
+#  position   :integer
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #

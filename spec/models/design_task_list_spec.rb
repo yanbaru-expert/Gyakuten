@@ -4,6 +4,7 @@
 #
 #  id                      :bigint           not null, primary key
 #  body                    :text             not null
+#  position                :integer
 #  created_at              :datetime         not null
 #  updated_at              :datetime         not null
 #  design_task_category_id :bigint           not null

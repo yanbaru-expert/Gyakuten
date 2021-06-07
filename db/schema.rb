@@ -67,13 +67,15 @@ ActiveRecord::Schema.define(version: 2021_05_22_133148) do
   end
 
   create_table "design_task_categories", force: :cascade do |t|
+    t.integer "position"
     t.string "name", null: false
-    t.string "img"
+    t.string "image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "design_task_lists", force: :cascade do |t|
+    t.integer "position"
     t.text "body", null: false
     t.bigint "design_task_category_id", null: false
     t.datetime "created_at", null: false
