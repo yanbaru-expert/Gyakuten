@@ -1,0 +1,13 @@
+<div class="design-check-box">
+  <div class="design-check-imgbox">
+    <span><%= image_tag category.image.url, width: "48" %></span>
+    <span class="category-name"><%= category.name %></span>
+  </div>
+  <ul class="design-check-list">
+    <% @tasks[category.id].each do |task| %>
+      <li class="list-content">
+        <span><%= task.body %></span>
+      </li>
+    <% end %>
+  </ul>
+</div>
