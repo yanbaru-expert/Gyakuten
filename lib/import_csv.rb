@@ -21,7 +21,12 @@ class ImportCsv
       dir_name ||= table_name.singularize
 
       model_name.constantize.order(:id).each do |object|
-        object.update!(image: open(Rails.root.join("db/fixtures/#{dir_name}/#{object.id}.jpeg")))
+        base_path = Rails.root.join("db/fixtures/#{dir_name}")
+        if Dir.glob(base_path.join("*.png")).present?
+          object.update!(image: open(base_path.join("#{object.id}.png")))
+        else
+          object.update!(image: open(base_path.join("#{object.id}.jpeg")))
+        end
       end
     end
 
