@@ -87,6 +87,9 @@
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
               <%= link_to "メモ", memos_path, class: "dropdown-item", data: { turbolinks: false } %>
               <%= link_to "進捗管理", my_pages_path, class: "dropdown-item" %>
+              <% if current_user.upload_role %>
+                <%= link_to "画像アップロード", text_images_path, class: "dropdown-item"%>
+              <% end %>
               <%= link_to "アカウント編集", edit_user_registration_path, class: "dropdown-item" %>
               <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
             </div>

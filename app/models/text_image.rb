@@ -20,4 +20,6 @@
 class TextImage < ApplicationRecord
   belongs_to :user, optional: true
   mount_uploader :image, TextImageUploader
+
+  validates :image, presence: true
 end
