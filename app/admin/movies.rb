@@ -30,7 +30,7 @@ ActiveAdmin.register Movie do
     column :id
     column :position
     column :genre_id
-    column(:genre) {|movie| movie.genre.name }
+    column(:genre) { |movie| movie.genre.name }
     column :text_id
     column :title
     column :url

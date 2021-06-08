@@ -39,12 +39,12 @@ module ApplicationHelper
         type: "website",
         url: request.url,
         image: og_image,
-        locale: "ja_JP",
+        locale: "ja_JP"
       },
       twitter: {
         card: "summary_large_image",
-        site: Settings.ogp.twitter_site,
-      },
+        site: Settings.ogp.twitter_site
+      }
     }
   end
 

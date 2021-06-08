@@ -4,11 +4,11 @@ class TextsController < ApplicationController
   def index
     code_name = Genre.valid_code_name(params[:genre])
     @genre = Genre.convert_display_name(code_name)
-    if user_signed_in?
-      @texts = Text.fetch_from(code_name).includes(:progresses)
-    else
-      @texts = Text.fetch_from(code_name)
-    end
+    @texts = if user_signed_in?
+               Text.fetch_from(code_name).includes(:progresses)
+             else
+               Text.fetch_from(code_name)
+             end
   end
 
   def show

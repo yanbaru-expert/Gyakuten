@@ -11,8 +11,9 @@ class ProgressesController < ApplicationController
 
   private
 
-    def set_materiable
-      return unless params[:materiable_type].in?(Progress::MATERIABLES_LIST)
-      @materiable = params[:materiable_type].constantize.find(params[:materiable_id])
-    end
+  def set_materiable
+    return unless params[:materiable_type].in?(Progress::MATERIABLES_LIST)
+
+    @materiable = params[:materiable_type].constantize.find(params[:materiable_id])
+  end
 end

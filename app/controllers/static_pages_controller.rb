@@ -11,12 +11,11 @@ class StaticPagesController < ApplicationController
     @price = if Rails.env.production?
                Stripe::Price.retrieve(@price_id).unit_amount
              else
-               100000
+               100_000
              end
   end
 
-  def design_success
-  end
+  def design_success; end
 
   def php
     @faqs = Faq.where(genre: %w[invisible always design]).order(position: :asc)
@@ -24,10 +23,9 @@ class StaticPagesController < ApplicationController
     @price = if Rails.env.production?
                Stripe::Price.retrieve(@price_id).unit_amount
              else
-               150000
+               150_000
              end
   end
 
-  def php_success
-  end
+  def php_success; end
 end

@@ -24,7 +24,7 @@ class Text < ApplicationRecord
   include ProgressMateriable
   SELECT_COLUMNS = "texts.*, genres.code_name, genres.name, genres.color"
 
-  has_many :movies
+  has_many :movies, dependent: :nullify
 
   # 作成時にジャンルごとに整頓する機能
   after_create do

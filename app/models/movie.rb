@@ -24,7 +24,7 @@ class Movie < ApplicationRecord
   acts_as_list
 
   YOUTUBE_REGEX = %r{\Ahttps://www.youtube.com/embed/[^?&"'>]+\z}.freeze
-  SELECT_COLUMNS = "movies.*, genres.code_name, genres.name, genres.color"
+  SELECT_COLUMNS = "movies.*, genres.code_name, genres.name, genres.color".freeze
   PER_PAGE = 18
 
   validates :title, presence: true
@@ -36,7 +36,7 @@ class Movie < ApplicationRecord
     if format_url.present?
       self.url = format_url
     else
-      self.errors.add(:url, "YouTubeのURL以外は無効です")
+      errors.add(:url, "YouTubeのURL以外は無効です")
     end
   end
 

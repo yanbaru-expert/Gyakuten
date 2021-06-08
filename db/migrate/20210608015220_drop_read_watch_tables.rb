@@ -1,7 +1,7 @@
 class DropReadWatchTables < ActiveRecord::Migration[5.2]
   def up
-    remove_index :read_texts, [:user_id, :text_id]
-    remove_index :watched_movies, [:user_id, :movie_id]
+    remove_index :read_texts, %i[user_id text_id]
+    remove_index :watched_movies, %i[user_id movie_id]
     drop_table :read_texts
     drop_table :watched_movies
     drop_table :complete_challenges
@@ -26,7 +26,7 @@ class DropReadWatchTables < ActiveRecord::Migration[5.2]
 
       t.timestamps
     end
-    add_index :watched_movies, [:user_id, :movie_id], unique: true
-    add_index :read_texts, [:user_id, :text_id], unique: true
+    add_index :watched_movies, %i[user_id movie_id], unique: true
+    add_index :read_texts, %i[user_id text_id], unique: true
   end
 end

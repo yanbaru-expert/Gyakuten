@@ -3,7 +3,7 @@ module GenreSearch
 
   included do
     scope :search_group, ->(code_name) { joins(:genre).where(genres: { code_name: code_name }).order("genres.position ASC").order(:position) }
-    scope :search_order_created_at, ->(code_name, order = :asc) {
+    scope :search_order_created_at, lambda { |code_name, order = :asc|
                                       joins(:genre).where(genres: { code_name: code_name }).order("genres.position ASC").order(created_at: order)
                                     }
 

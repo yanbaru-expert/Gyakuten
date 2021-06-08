@@ -6,6 +6,6 @@ class CreateReadTexts < ActiveRecord::Migration[5.2]
 
       t.timestamps
     end
-    add_index :read_texts, [:user_id, :text_id], unique: true
+    add_index :read_texts, %i[user_id text_id], unique: true
   end
 end
