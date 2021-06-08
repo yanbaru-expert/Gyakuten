@@ -1,0 +1,31 @@
+<h1>テキスト教材修正用 一覧ページ</h1>
+<%= link_to "新規投稿", new_special_text_path, class: "btn btn-primary btn-block" %>
+<hr>
+<h2 class="text-center">検索</h2>
+<%= search_form_for @q, url: special_texts_path do |form| %>
+  <div class="form-group">
+    <%= form.label :title_cont, "タイトル", class: "form-label" %>
+    <%= form.search_field :title_cont, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= form.label :content_cont, "内容", class: "form-label" %>
+    <%= form.search_field :content_cont, class: "form-control" %>
+  </div>
+  <%= form.submit "検索", class: "btn btn-info btn-block" %>
+<% end %>
+<hr>
+<table class="table table-bordered table-striped mt-4">
+  <thead class="table-primary">
+  <tr>
+    <th scope="col" class="text-nowrap">順序</th>
+    <th scope="col" class="text-nowrap">ジャンル</th>
+    <th scope="col" class="w-100">タイトル</th>
+    <th scope="col"></th>
+  </tr>
+  </thead>
+  <tbody>
+  <%= render partial: "special_texts/text", collection: @texts %>
+  </tbody>
+</table>
+
+<%= paginate @texts %>

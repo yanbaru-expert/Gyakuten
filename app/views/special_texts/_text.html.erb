@@ -1,0 +1,15 @@
+<tr>
+  <th scope="row" class="text-right"><%= text.position %></th>
+  <td><%= text.genre.name %></td>
+  <td class="break-word"><%= text.title %></td>
+  <td class="text-nowrap">
+    <% if text.genre_id.in?(@updatable_genre_ids) %>
+      <%= link_to edit_special_text_path(text), class: "btn btn-success" do %>
+        <i class="far fa-edit"></i> <span class="d-none d-md-inline"> 編集</span>
+      <% end %>
+      <%= link_to special_text_path(text), method: :delete, data: { confirm: "削除しますか?" }, class: "btn btn-danger" do %>
+        <i class="far fa-trash-alt"></i> <span class="d-none d-md-inline"> 削除</span>
+      <% end %>
+    <% end %>
+  </td>
+</tr>

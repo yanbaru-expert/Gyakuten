@@ -3,6 +3,7 @@
 # Table name: user_roles
 #
 #  id         :bigint           not null, primary key
+#  role       :integer          default("only_create")
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #  genre_id   :bigint           not null
@@ -22,4 +23,9 @@
 class UserRole < ApplicationRecord
   belongs_to :user
   belongs_to :genre
+
+  enum role: {
+    only_create: 0,
+    full_authority: 1
+  }
 end

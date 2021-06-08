@@ -4,6 +4,7 @@ class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
   before_action :sign_out_user, if: :user_signed_in?
   before_action :set_genres
+  before_action :set_special_genre_ids, if: :user_signed_in?
 
   protected
 
@@ -17,6 +18,10 @@ class ApplicationController < ActionController::Base
       flash.now[:alert] = "現在参加中のサロンのSlack IDで新規登録をお願いいたします。"
       sign_out(current_user)
     end
+  end
+
+  def set_special_genre_ids
+    @special_genre_ids = current_user.user_roles.pluck(:genre_id)
   end
 
   private

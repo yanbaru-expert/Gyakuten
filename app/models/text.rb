@@ -25,13 +25,11 @@ class Text < ApplicationRecord
   SELECT_COLUMNS = "texts.*, genres.code_name, genres.name, genres.color"
 
   has_many :movies, dependent: :nullify
+  belongs_to :genre
 
   # 作成時にジャンルごとに整頓する機能
   after_create do
-    texts = Text.includes(:genre).order("genres.position ASC").order(:position)
-    texts.each.with_index(1) do |text, index|
-      text.insert_at(index) if text.position != index
-    end
+    Text.position_sort!
   end
 
   def self.fetch_from(code_name)
@@ -39,6 +37,13 @@ class Text < ApplicationRecord
       ruby_group.select(SELECT_COLUMNS)
     else
       search_group(code_name).select(SELECT_COLUMNS)
+    end
+  end
+
+  def self.position_sort!
+    texts = Text.includes(:genre).order("genres.position ASC").order(:position)
+    texts.each.with_index(1) do |text, index|
+      text.insert_at!(index) if text.position != index
     end
   end
 

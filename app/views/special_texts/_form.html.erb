@@ -1,0 +1,32 @@
+<%= form_with model: @text, url: url, local: true do |form| %>
+  <% if action_name == "edit" %>
+    <div class="form-group">
+      <%= form.label :position %>
+      <%= form.select :position, @selectable_positions, {}, class: "form-control" %>
+      <small>「ジャンル」を変更した場合は「順序」の設定は無視されます</small>
+    </div>
+  <% end %>
+  <div class="form-group">
+    <%= form.label :genre_id, "ジャンル" %>
+    <%= form.select :genre_id, @selectable_genre_list, {}, class: "form-control", required: true %>
+  </div>
+  <div class="form-group">
+    <%= form.label :title %>
+    <%= form.text_field :title, class: "form-control", required: true %>
+  </div>
+  <div class="text-center mb-3">
+    <img class="image-preview d-none" alt="プレビュー画像" width="200">
+  </div>
+  <div class="custom-file mb-5">
+    <%= form.file_field :image, class: "custom-file-input image-field", accept: "image/png,image/jpeg,image/gif" %>
+    <%= form.label :image, class: "custom-file-label", data: { browse: "参照" } %>
+    <small>縦:横 = 1:2 として下さい。</small>
+  </div>
+  <div class="form-group">
+    <%= form.label :content %>
+    <%= form.text_area :content, class: "form-control", rows: 30, required: true %>
+  </div>
+  <div>
+    <%= form.submit button_value, class: "btn btn-primary btn-block" %>
+  </div>
+<% end %>

@@ -1,7 +1,4 @@
 Rails.application.routes.draw do
-  get 'text_images/index'
-  get 'text_images/create'
-  get 'text_images/destroy'
   mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
 
   root to: "static_pages#home"
@@ -40,4 +37,5 @@ Rails.application.routes.draw do
     end
   end
   resources :text_images, only: %i[index create destroy]
+  resources :special_texts, except: :show
 end
