@@ -16,6 +16,7 @@
 #  reset_password_token   :string
 #  sign_in_count          :integer          default(0), not null
 #  slack_name             :integer
+#  upload_role            :boolean          default(FALSE)
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
 #  slack_id               :string           not null
