@@ -14,12 +14,10 @@
       <%= stylesheet_link_tag 'design', media: 'all', 'data-turbolinks-track': 'reload' %>
     <% elsif action_name == "php" %>
       <%= stylesheet_link_tag 'php_lp', media: 'all', 'data-turbolinks-track': 'reload' %>
-
-    <%# ここでデザイン講座LPで使用するCSSファイルを決定 %>
-    <%# config/initializers/assets.rb に追加し忘れないように %>
     <% end %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'memo', 'data-turbolinks-track': 'reload' if controller_name == "memos" %>
+    <%= javascript_include_tag 'text_image', 'data-turbolinks-track': 'reload' if controller_name == "text_images"%>      
     <%= javascript_include_tag 'design', 'data-turbolinks-track': 'reload' if request.path == "/design" %>
     <%= javascript_include_tag 'php', 'data-turbolinks-track': 'reload' if request.path == "/php" %>
   </head>

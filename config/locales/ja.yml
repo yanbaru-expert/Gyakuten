@@ -30,6 +30,8 @@ ja:
       progress: 進捗
       design_task_category: デザイン課題のカテゴリ
       design_task_list: デザイン課題のチェックリスト
+      text_image: 画像アップロード
+      user_role: 権限
     attributes:
       admin_user:
       error:
@@ -40,6 +42,7 @@ ja:
         slack_id: SlackメンバーID
         slack_name: Slackワークスペース名
         flag: 利用フラグ
+        upload_role: 画像アップロード権限
       question:
         solution: 回答
         count: 閲覧回数

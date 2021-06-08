@@ -31,6 +31,7 @@ class Genre < ApplicationRecord
   has_many :movies, dependent: :nullify
   has_many :texts, dependent: :nullify
   has_many :questions, dependent: :nullify
+  has_many :user_roles, dependent: :destroy
 
   def self.permit_genre(code_name)
     (pluck(:code_name) - ["invisible"]).include?(code_name)
