@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_08_015220) do
+ActiveRecord::Schema.define(version: 2021_06_08_022446) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -157,6 +157,15 @@ ActiveRecord::Schema.define(version: 2021_06_08_015220) do
     t.integer "position"
   end
 
+  create_table "text_images", force: :cascade do |t|
+    t.bigint "user_id"
+    t.string "image"
+    t.string "title"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_text_images_on_user_id"
+  end
+
   create_table "texts", force: :cascade do |t|
     t.integer "genre_id"
     t.string "title"
@@ -166,6 +175,16 @@ ActiveRecord::Schema.define(version: 2021_06_08_015220) do
     t.string "description"
     t.integer "position"
     t.string "image"
+  end
+
+  create_table "user_roles", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "genre_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["genre_id"], name: "index_user_roles_on_genre_id"
+    t.index ["user_id", "genre_id"], name: "index_user_roles_on_user_id_and_genre_id", unique: true
+    t.index ["user_id"], name: "index_user_roles_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -210,5 +229,8 @@ ActiveRecord::Schema.define(version: 2021_06_08_015220) do
   add_foreign_key "movies", "genres"
   add_foreign_key "progresses", "users"
   add_foreign_key "questions", "genres"
+  add_foreign_key "text_images", "users"
   add_foreign_key "texts", "genres"
+  add_foreign_key "user_roles", "genres"
+  add_foreign_key "user_roles", "users"
 end

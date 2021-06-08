@@ -37,6 +37,7 @@ class User < ApplicationRecord
   has_one :memo, dependent: :destroy
   has_many :text_images, dependent: :nullify
   has_many :progresses, dependent: :destroy
+  has_many :user_roles, dependent: :destroy
   has_many :read_through_texts, through: :progresses, source: :materiable, source_type: "Text"
   has_many :watched_through_movies, through: :progresses, source: :materiable, source_type: "Movie"
 
