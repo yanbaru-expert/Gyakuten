@@ -1,8 +1,7 @@
-<% base_url = Rails.env.production? ? "https://d5izmuz0mcjzz.cloudfront.net" : "" %>
 <div class="text-image-copy">
   <%= image_tag text_image.image.url, width: 200 %>
   <div class="form-group mt-3">
-    <input type="text" class="copy-body form-control" value="![<%= text_image.title %>](<%= base_url + text_image.image.url %>)" readonly>
+    <input type="text" class="copy-body form-control" value="![<%= text_image.title %>](<%= text_image.image.url %>)" readonly>
     <button class="copy-button btn btn-primary btn-block">埋め込みコードをコピー</button>
     <%= link_to "削除", text_image, method: :delete, data: { confirm: "本当に削除してよろしいですか?" }, class: "btn btn-danger text-right mt-3" %>
   </div>
