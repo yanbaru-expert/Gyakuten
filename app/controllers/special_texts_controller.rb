@@ -2,7 +2,7 @@ class SpecialTextsController < ApplicationController
   PER_PAGE = 50
   before_action :ensure_correct_user
   before_action :set_updatable_genre_list, only: %i[index edit update destroy]
-  before_action :set_text, only: %i[edit update destroy]
+  before_action :set_text, only: %i[show edit update destroy]
   before_action :has_role, only: %i[edit update destroy]
 
   def index
@@ -18,11 +18,15 @@ class SpecialTextsController < ApplicationController
   def create
     if params[:text][:genre_id].to_i.in?(@special_genre_ids)
       text_params = params.require(:text).permit(:genre_id, :image, :title, :content)
-      Text.create!(text_params)
-      redirect_to special_texts_path, notice: "テキスト教材を作成しました。"
+      text = Text.create!(text_params)
+      redirect_to special_text_path(text), notice: "テキスト教材を作成しました。"
     else
       redirect_to special_texts_path, alert: "権限がありません。"
     end
+  end
+
+  def show
+    @user_role = current_user.user_roles.find_by(genre_id: @text.genre_id)
   end
 
   def edit
@@ -41,7 +45,7 @@ class SpecialTextsController < ApplicationController
                   end
     @text.update!(text_params)
     Text.position_sort!
-    redirect_to special_texts_path, notice: "テキスト教材を更新しました。"
+    redirect_to special_text_path(@text), notice: "テキスト教材を更新しました。"
   end
 
   def destroy

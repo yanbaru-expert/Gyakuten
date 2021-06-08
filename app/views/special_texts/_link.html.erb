@@ -1,0 +1,8 @@
+<hr>
+<div class="mt-5">
+  <%= link_to "一覧ページへ", special_texts_path, class: "btn btn-secondary btn-block my-2" %>
+  <%= link_to "メモ", memos_path, class: "btn btn-info btn-block my-2", target: "_blank", rel: "noopener noreferrer" %>
+  <% if current_user.upload_role %>
+    <%= link_to "画像アップロード", text_images_path, class: "btn btn-info btn-block my-2", target: "_blank", rel: "noopener noreferrer" %>
+  <% end %>
+</div>

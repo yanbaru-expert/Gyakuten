@@ -1,0 +1,32 @@
+<h1>テキスト教材修正用 詳細ページ</h1>
+<% if @user_role.role == "full_authority" %>
+  <div class="my-4">
+    <%= link_to edit_special_text_path(@text), class: "btn btn-success btn-block" do %>
+      <i class="far fa-edit"></i> <span class="d-none d-md-inline"> 編集</span>
+    <% end %>
+    <%= link_to special_text_path(@text), method: :delete, data: { confirm: "削除しますか?" }, class: "btn btn-danger btn-block" do %>
+      <i class="far fa-trash-alt"></i> <span class="d-none d-md-inline"> 削除</span>
+    <% end %>
+  </div>
+<% end %>
+<div class="card content-card border-dark mb-3">
+  <div class="card-header p-0">
+    <%= image_tag @text.image.url, loading: "lazy", alt: @text.title, class: "img-fluid" %>
+  </div>
+  <div class="card-body text-dark text-card-body">
+    <div>
+      <span class="btn btn-primary btn-block">サンプル</span>
+    </div>
+    <p class="card-text text-title">
+      <%= @text.title %>
+    </p>
+    <p>【<%= @text.genre.name %>】</p>
+  </div>
+</div>
+<hr>
+<section id="text-contents">
+  <h2><%= @text.title %></h2>
+  <div class="markdown">
+    <%= markdown(@text.content) %>
+  </div>
+</section>

@@ -37,5 +37,5 @@ Rails.application.routes.draw do
     end
   end
   resources :text_images, only: %i[index create destroy]
-  resources :special_texts, except: :show
+  resources :special_texts
 end
