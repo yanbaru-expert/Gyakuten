@@ -34,10 +34,8 @@ class User < ApplicationRecord
          :rememberable, :trackable, :validatable, :recoverable
   validates :slack_id, presence: true, uniqueness: true
   validates :slack_name, presence: true
-  has_many :watched_movies, dependent: :destroy
-  has_many :read_texts, dependent: :destroy
-  has_many :complete_challenges, dependent: :destroy
   has_one :memo, dependent: :destroy
+  has_many :text_images, dependent: :nullify
   has_many :progresses, dependent: :destroy
   has_many :read_through_texts, through: :progresses, source: :materiable, source_type: "Text"
   has_many :watched_through_movies, through: :progresses, source: :materiable, source_type: "Movie"
