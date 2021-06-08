@@ -18,8 +18,8 @@ class AutoSlackApproval
 
   private
 
-    def exist_email?(user)
-      email = user&.profile&.email
-      email.nil? ? true : @email == email
-    end
+  def exist_email?(user)
+    email = user&.profile&.email
+    email.nil? ? true : @email == email
+  end
 end

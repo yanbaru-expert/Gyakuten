@@ -39,7 +39,7 @@ class UsersWebsController < ApplicationController
 
   private
 
-    def users_web_params
-      params.require(:users_web).permit(:name, :url, :genre)
-    end
+  def users_web_params
+    params.require(:users_web).permit(:name, :url, :genre)
+  end
 end

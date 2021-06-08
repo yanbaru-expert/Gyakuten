@@ -1,5 +1,5 @@
 source "https://rubygems.org"
-git_source(:github) {|repo| "https://github.com/#{repo}.git" }
+git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby "2.7.2"
 gem "activeadmin" # management tools
@@ -36,13 +36,13 @@ gem "turbolinks", "~> 5"
 gem "uglifier", ">= 1.3.0"
 
 group :development, :test do
-  gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
+  gem "byebug", platforms: %i[mri mingw x64_mingw]
   gem "factory_bot_rails"
   gem "faker"
   gem "pry-byebug"
   gem "rspec-rails"
+  gem "rubocop-performance"
   gem "rubocop-rails"
-  gem "rubocop-rspec"
 end
 
 group :development do

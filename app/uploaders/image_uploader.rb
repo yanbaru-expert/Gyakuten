@@ -16,7 +16,7 @@ class ImageUploader < CarrierWave::Uploader::Base
   end
 
   # Provide a default URL as a default if there hasn't been a file uploaded:
-  def default_url(*args)
+  def default_url(*_args)
     # For Rails 3.1+ asset pipeline compatibility:
     # ActionController::Base.helpers.asset_path("texts/" + [version_name, "no_image.jpeg"].compact.join('_'))
     "https://d5izmuz0mcjzz.cloudfront.net/yanbaru_code.jpg"
@@ -44,8 +44,8 @@ class ImageUploader < CarrierWave::Uploader::Base
 
   protected
 
-    def secure_token
-      var = :"@#{mounted_as}_secure_token"
-      model.instance_variable_get(var) or model.instance_variable_set(var, SecureRandom.uuid)
-    end
+  def secure_token
+    var = :"@#{mounted_as}_secure_token"
+    model.instance_variable_get(var) or model.instance_variable_set(var, SecureRandom.uuid)
+  end
 end

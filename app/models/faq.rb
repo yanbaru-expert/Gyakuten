@@ -19,6 +19,6 @@ class Faq < ApplicationRecord
     invisible: 0,
     always: 1,
     top: 2,
-    design: 3,
+    design: 3
   }
 end

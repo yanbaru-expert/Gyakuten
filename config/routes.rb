@@ -11,27 +11,27 @@ Rails.application.routes.draw do
 
   devise_for :users, controllers: {
     registrations: "users/registrations",
-    sessions: "users/sessions",
+    sessions: "users/sessions"
   }
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
 
   resources :static_pages, only: :home
   resource :my_pages, only: :show
-  resources :texts, only: [:index, :show] do
-    resource :read_texts, only: [:create, :destroy]
+  resources :texts, only: %i[index show] do
+    resource :read_texts, only: %i[create destroy]
   end
   resources :movies, only: [:index] do
-    resource :watched_movies, only: [:create, :destroy]
+    resource :watched_movies, only: %i[create destroy]
   end
-  resources :challenges, only: [:index, :show] do
-    resource :complete_challenges, only: [:create, :destroy]
+  resources :challenges, only: %i[index show] do
+    resource :complete_challenges, only: %i[create destroy]
   end
-  resource :progresses, only: [:create, :destroy]
-  resources :questions, only: [:index, :show, :create, :edit, :update] do
+  resource :progresses, only: %i[create destroy]
+  resources :questions, only: %i[index show create edit update] do
     resource :solutions, only: [:create]
   end
-  resource :memos, only: [:show, :update] do
+  resource :memos, only: %i[show update] do
     collection do
       get "preview"
     end

@@ -7,7 +7,7 @@ if ENV["HEROKU_ENV"] == "production"
   use Rack::Rewrite do
     # https://github.com/jtrupiano/rack-rewrite#cname-alternative
     r301(/.*/, "https://www.yanbaru-code.com$&",
-         if: proc {|rack_env|
+         if: proc { |rack_env|
            rack_env["SERVER_NAME"] != "www.yanbaru-code.com"
          })
   end

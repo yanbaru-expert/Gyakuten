@@ -6,6 +6,6 @@ class CreateProgresses < ActiveRecord::Migration[5.2]
 
       t.timestamps
     end
-    add_index :progresses, [:user_id, :materiable_id, :materiable_type], unique: true, name: 'progresses_index'
+    add_index :progresses, %i[user_id materiable_id materiable_type], unique: true, name: "progresses_index"
   end
 end
