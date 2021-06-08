@@ -6,8 +6,6 @@ class YoutubeUrlFormatter
     src_match = SRC_REGEX.match(url)
     url = src_match[1] if src_match
     youtube_id_match = YOUTUBE_ID_REGEX.match(url)
-    if youtube_id_match
-      "https://www.youtube.com/embed/#{youtube_id_match[1]}"
-    end
+    "https://www.youtube.com/embed/#{youtube_id_match[1]}" if youtube_id_match
   end
 end

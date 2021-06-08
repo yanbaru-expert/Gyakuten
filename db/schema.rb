@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_22_133148) do
+ActiveRecord::Schema.define(version: 2021_06_08_015220) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -55,15 +55,6 @@ ActiveRecord::Schema.define(version: 2021_05_22_133148) do
     t.string "image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "complete_challenges", force: :cascade do |t|
-    t.bigint "user_id"
-    t.bigint "challenge_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["challenge_id"], name: "index_complete_challenges_on_challenge_id"
-    t.index ["user_id"], name: "index_complete_challenges_on_user_id"
   end
 
   create_table "design_task_categories", force: :cascade do |t|
@@ -166,14 +157,6 @@ ActiveRecord::Schema.define(version: 2021_05_22_133148) do
     t.integer "position"
   end
 
-  create_table "read_texts", force: :cascade do |t|
-    t.integer "user_id", null: false
-    t.integer "text_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id", "text_id"], name: "index_read_texts_on_user_id_and_text_id", unique: true
-  end
-
   create_table "texts", force: :cascade do |t|
     t.integer "genre_id"
     t.string "title"
@@ -215,14 +198,6 @@ ActiveRecord::Schema.define(version: 2021_05_22_133148) do
     t.string "genre"
   end
 
-  create_table "watched_movies", force: :cascade do |t|
-    t.integer "user_id", null: false
-    t.integer "movie_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id", "movie_id"], name: "index_watched_movies_on_user_id_and_movie_id", unique: true
-  end
-
   create_table "words", force: :cascade do |t|
     t.string "about"
     t.string "words"
@@ -230,8 +205,6 @@ ActiveRecord::Schema.define(version: 2021_05_22_133148) do
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "complete_challenges", "challenges"
-  add_foreign_key "complete_challenges", "users"
   add_foreign_key "design_task_lists", "design_task_categories"
   add_foreign_key "memos", "users"
   add_foreign_key "movies", "genres"

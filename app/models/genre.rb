@@ -20,27 +20,27 @@ class Genre < ApplicationRecord
   FRONT = %w[html js ts react vue angular].freeze
   RUBY = %w[basic git ruby rails].freeze
   LIVE = %w[talk live].freeze
-  MONEY = %w[money_marketing money_lstep money_insta]
-  DESIGN = %w[design_base design_matter design_usage design_task]
-  MARKETING = %w[mind]
+  MONEY = %w[money_marketing money_lstep money_insta].freeze
+  DESIGN = %w[design_base design_matter design_usage design_task].freeze
+  MARKETING = %w[mind].freeze
   IN_GENERAL = (MARKETING + MONEY + LIVE + ["invisible"]).freeze
 
   validates :name, presence: true
   validates :color, format: { with: COLOR_REGEX }
 
-  has_many :movies
-  has_many :texts
-  has_many :questions
+  has_many :movies, dependent: :nullify
+  has_many :texts, dependent: :nullify
+  has_many :questions, dependent: :nullify
 
   def self.permit_genre(code_name)
-    (self.pluck(:code_name) - ["invisible"]).include?(code_name)
+    (pluck(:code_name) - ["invisible"]).include?(code_name)
   end
 
   def self.valid_code_name(code_name)
     permit_genre(code_name) ? code_name : nil
   end
 
-  scope :convert_display_name, ->(code_name) {
+  scope :convert_display_name, lambda { |code_name|
     code_name.present? ? Genre.find_by(code_name: code_name).name : "Ruby/Rails"
   }
 
@@ -55,7 +55,7 @@ class Genre < ApplicationRecord
         color: genre.color,
         total: total_count,
         current: current_count,
-        percent: percent,
+        percent: percent
       }
     end
   end

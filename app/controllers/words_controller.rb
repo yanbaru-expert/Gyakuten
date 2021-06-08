@@ -30,7 +30,7 @@ class WordsController < ApplicationController
 
   private
 
-    def words_params
-      params.require(:word).permit(:about, :words)
-    end
+  def words_params
+    params.require(:word).permit(:about, :words)
+  end
 end

@@ -6,6 +6,6 @@ class CreateWatchedMovies < ActiveRecord::Migration[5.2]
 
       t.timestamps
     end
-    add_index :watched_movies, [:user_id, :movie_id], unique: true
+    add_index :watched_movies, %i[user_id movie_id], unique: true
   end
 end

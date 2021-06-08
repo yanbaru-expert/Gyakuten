@@ -18,7 +18,7 @@ if Rails.env.production?
     user_name: Rails.application.credentials.gmail[:address],
     password: Rails.application.credentials.gmail[:password],
     domain: host,
-    authentication: "plain",
+    authentication: "plain"
   }
 else
   ActionMailer::Base.delivery_method = :letter_opener_web

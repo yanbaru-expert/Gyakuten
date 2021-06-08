@@ -39,15 +39,15 @@ class User < ApplicationRecord
   has_many :complete_challenges, dependent: :destroy
   has_one :memo, dependent: :destroy
   has_many :progresses, dependent: :destroy
-  has_many :read_through_texts, through: :progresses, source: :materiable, source_type: 'Text'
-  has_many :watched_through_movies, through: :progresses, source: :materiable, source_type: 'Movie'
+  has_many :read_through_texts, through: :progresses, source: :materiable, source_type: "Text"
+  has_many :watched_through_movies, through: :progresses, source: :materiable, source_type: "Movie"
 
   def self.permit_slack_name(slack_name)
-    self.selectable_slack_name_options.values.include?(slack_name)
+    selectable_slack_name_options.values.include?(slack_name)
   end
 
-  scope :selectable_slack_name_options, -> {
-    self.slack_names_i18n.except(:yanbaru_code, :yanbaru_code_offline, :other).invert
+  scope :selectable_slack_name_options, lambda {
+    slack_names_i18n.except(:yanbaru_code, :yanbaru_code_offline, :other).invert
   }
 
   enum slack_name: {
@@ -58,6 +58,6 @@ class User < ApplicationRecord
     yanberu_expert_design: 6,
     yanbaru_code: 1,
     yanbaru_code_offline: 4,
-    other: 0,
+    other: 0
   }
 end

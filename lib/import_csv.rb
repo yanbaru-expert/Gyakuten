@@ -32,16 +32,16 @@ class ImportCsv
 
     private
 
-      def import_csv(file_name)
-        path = Rails.root.join("db/csv_data/#{file_name}.csv")
+    def import_csv(file_name)
+      path = Rails.root.join("db/csv_data/#{file_name}.csv")
 
-        list = []
-        CSV.foreach(path, headers: true) do |row|
-          attributes = row.to_h.transform_values {|v| v =~ REGEX ? v.to_i : v }
-          attributes.delete("image")
-          list << attributes
-        end
-        list
+      list = []
+      CSV.foreach(path, headers: true) do |row|
+        attributes = row.to_h.transform_values { |v| REGEX.match?(v) ? v.to_i : v }
+        attributes.delete("image")
+        list << attributes
       end
+      list
+    end
   end
 end

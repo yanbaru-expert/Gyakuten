@@ -1,5 +1,0 @@
-document.getElementById('read-text-<%= @text_id %>').innerHTML = '<%= j render("texts/read_text", text_id: @text_id) %>'
-$readModal = $('#read-modal')
-if($readModal.length) {
-    $readModal.modal({keyboard: false}).show()
-}
