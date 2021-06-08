@@ -1,5 +1,5 @@
 <div class="info_box">
-  <% if params[:genre].in?(Genre::DESIGN) %>
+  <% if @text.genre.code_name.in?(Genre::DESIGN) %>
     <p class="p-2 text-center">こちらの教材は、動画を主軸に学習を進めてください。</p>
   <% else %>
     <p class="p-2 text-center">動画教材を視聴された上で，テキスト教材を元に手を動かすようにして下さい。</p>
