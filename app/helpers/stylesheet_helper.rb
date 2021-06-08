@@ -12,7 +12,7 @@ module StylesheetHelper
       "mw-sm"
     elsif controller_name.in?(%w[my_pages movies memos])
       "mw-xl"
-    elsif controller_name.in?(%w[texts challenges]) && action_name == "index"
+    elsif controller_name.in?(%w[texts challenges special_texts]) && action_name == "index"
       "mw-xl"
     elsif controller_name == "static_pages"
       ""

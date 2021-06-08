@@ -18,52 +18,73 @@
 //= require bootstrap-sprockets
 
 document.addEventListener('turbolinks:load', () => {
-    // テキスト教材ページ - 検索フォーム内の処理
-    const searchText = document.getElementById('search-text')
-    if (searchText) {
-        const cards = document.querySelectorAll('div.text-card-container')
+  // テキスト教材ページ - 検索フォーム内の処理
+  const searchText = document.getElementById('search-text')
+  if (searchText) {
+    const cards = document.querySelectorAll('div.text-card-container')
 
-        const filterCards = (e) => {
-            const value = e.target.value.toLowerCase()
-            for (const card of cards) {
-                const title = card.querySelector('p.text-title')
-                const isVisible = title.textContent.toLowerCase().includes(value)
-                card.style.display = isVisible ? "" : "none"
-            }
-        }
-        searchText.addEventListener('input', filterCards)
+    const filterCards = (e) => {
+      const value = e.target.value.toLowerCase()
+      for (const card of cards) {
+        const title = card.querySelector('p.text-title')
+        const isVisible = title.textContent.toLowerCase().includes(value)
+        card.style.display = isVisible ? "" : "none"
+      }
     }
+    searchText.addEventListener('input', filterCards)
+  }
 
-    // 質問ページ - 検索フォーム内の処理
-    const genreCheckbox = document.getElementById('genre-checkbox')
-    if (genreCheckbox) {
-        const inputs = genreCheckbox.querySelectorAll('.custom-control-input')
-        const tableRows = document.querySelectorAll('#search-tbody tr')
-        let genreList = [...genreCheckbox.querySelectorAll('label')].map(l => l.textContent)
-        const filterQuestions = (e) => {
-            const genre = e.target.labels[0].textContent
-            if (e.target.checked) {
-                genreList.push(genre)
-            } else {
-                const index = genreList.indexOf(genre)
-                genreList.splice(index, 1)
-            }
-            for(const tr of tableRows) {
-                const trGenre = tr.querySelector('.question-title').textContent.trim()
-                const isVisible = genreList.includes(trGenre)
-                tr.style.display = isVisible ? "table-row" : "none"
-            }
-        }
-        for (const input of inputs) {
-            input.addEventListener('input', filterQuestions)
-        }
+  // 質問ページ - 検索フォーム内の処理
+  const genreCheckbox = document.getElementById('genre-checkbox')
+  if (genreCheckbox) {
+    const inputs = genreCheckbox.querySelectorAll('.custom-control-input')
+    const tableRows = document.querySelectorAll('#search-tbody tr')
+    let genreList = [...genreCheckbox.querySelectorAll('label')].map(l => l.textContent)
+    const filterQuestions = (e) => {
+      const genre = e.target.labels[0].textContent
+      if (e.target.checked) {
+        genreList.push(genre)
+      } else {
+        const index = genreList.indexOf(genre)
+        genreList.splice(index, 1)
+      }
+      for (const tr of tableRows) {
+        const trGenre = tr.querySelector('.question-title').textContent.trim()
+        const isVisible = genreList.includes(trGenre)
+        tr.style.display = isVisible ? "table-row" : "none"
+      }
     }
+    for (const input of inputs) {
+      input.addEventListener('input', filterQuestions)
+    }
+  }
 
-    // よくある質問の回答の開閉
-    $('.faq-question').click(function () {
-        $(this).not(this).removeClass("open");
-        $(this).not(this).next().slideUp(300);
-        $(this).toggleClass("open");
-        $(this).next().slideToggle(300);
+  // よくある質問の回答の開閉
+  $('.faq-question').click(function () {
+    $(this).not(this).removeClass("open");
+    $(this).not(this).next().slideUp(300);
+    $(this).toggleClass("open");
+    $(this).next().slideToggle(300);
+  });
+
+  // 画像のプレビュー機能
+
+  const imageField = document.querySelector('.image-field');
+  const imagePreview = document.querySelector('.image-preview');
+  const reader = new FileReader();
+
+  if (imageField) {
+    imageField.addEventListener('change', () => {
+      const file = imageField.files[0];
+      if (!file) {
+        imagePreview.classList.add('d-none');
+      } else {
+        reader.addEventListener('load', () => {
+          imagePreview.src = reader.result;
+          imagePreview.classList.remove('d-none');
+        });
+        reader.readAsDataURL(file);
+      }
     });
+  }
 })

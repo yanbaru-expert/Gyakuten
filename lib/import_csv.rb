@@ -19,14 +19,12 @@ class ImportCsv
       model_name = model.to_s.classify
       table_name = model_name.tableize
       dir_name ||= table_name.singularize
+      base_path = Rails.root.join("db/fixtures/#{dir_name}")
 
+      ext_name = Dir.glob(base_path.join("*.png")).present? ? "png" : "jpeg"
       model_name.constantize.order(:id).each do |object|
-        base_path = Rails.root.join("db/fixtures/#{dir_name}")
-        if Dir.glob(base_path.join("*.png")).present?
-          object.update!(image: open(base_path.join("#{object.id}.png")))
-        else
-          object.update!(image: open(base_path.join("#{object.id}.jpeg")))
-        end
+        image_file = base_path.join("#{object.id}.#{ext_name}")
+        object.update!(image: open(image_file)) if Dir.glob(image_file).present?
       end
     end
 
