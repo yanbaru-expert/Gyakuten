@@ -1,977 +1,881 @@
 <% content_for(:title) { "Webデザイン講座" } %>
-  <% content_for(:description) { "Webデザインで月5万円稼げるまで無期限にサポートするオンライン型のコスパ最強の講座｜さらにマーケティングや営業方法の教材によって技術だけ習得させて終わらせません。" }
+<% content_for(:description) { "Webデザインで月5万円稼げるまで無期限にサポートするオンライン型のコスパ最強の講座｜さらにマーケティングや営業方法の教材によって技術だけ習得させて終わらせません。" }
     %>
-
-    <section id="design-course" data-price_id="<%= @price_id %>">
-      <!-- ヘッダー -->
-      <header id="header">
-        <div class="container">
-          <%= image_tag "https://d5izmuz0mcjzz.cloudfront.net/design_course/servise-name.png" %>
-            <button class="cta-btn" role="link" type="button">
-              お申し込みはこちら
-            </button>
+<section id="design-course" data-price_id="<%= @price_id %>">
+  <!-- ヘッダー -->
+  <header id="header">
+    <div class="container">
+      <%= image_tag "https://d5izmuz0mcjzz.cloudfront.net/design_course/servise-name.png" %>
+      <button class="cta-btn" role="link" type="button">
+        お申し込みはこちら
+      </button>
+    </div>
+  </header>
+  <!-- FV -->
+  <section class="fv">
+    <%= image_tag "https://d5izmuz0mcjzz.cloudfront.net/design_course/design-fv.jpg" %>
+  </section>
+  <!-- webデザイン講座説明 -->
+  <section class="course-first-info wrapper">
+    <div class="ribon-title">
+      <%= image_tag "https://d5izmuz0mcjzz.cloudfront.net/design_course/title-ribon.png" %>
+      <h3>月5万円稼げるまでフルサポートする</h3>
+    </div>
+    <h2>Webデザイン講座</h2>
+    <div class="accent-block"></div>
+    <p>たとえば、5万円の自己投資で<br>
+      <span>月5万円稼げるスキル</span>が身につくとしたら、あなたはどうしますか？<br>
+      <br>
+      当講座はそれを実現させる<br>
+      <span>コスパ最強の頭おかしい講座</span>となっています。<br>
+      <br>
+      もし今の収入に合わせ、<span>副業で＋５万円</span>得られるとしたら...
+    </p>
+    <div class="white-frame">
+      <div>
+        <%= image_tag "https://d5izmuz0mcjzz.cloudfront.net/design_course/ora-check-circle-fill.png" %>
+        <p>月に1回旅行ができる</p>
+      </div>
+      <div>
+        <%= image_tag "https://d5izmuz0mcjzz.cloudfront.net/design_course/ora-check-circle-fill.png" %>
+        <p>気軽にハーゲンダッツが買える</p>
+      </div>
+      <div>
+        <%= image_tag "https://d5izmuz0mcjzz.cloudfront.net/design_course/ora-check-circle-fill.png" %>
+        <p>ちょっといいお寿司が食べられる</p>
+      </div>
+    </div>
+    <p>
+      きっと今よりちょっとだけ贅沢できる生活が手に入るのではないでしょうか？
+    </p>
+    <h4>
+      やんばるエキスパートなら、それが実現できます
+    </h4>
+    <p class="course-info">
+      デザイン経験ゼロの初心者を、デザインのスキル習得から案件獲得まで教え、<span>月5万稼げるまで無期限にサポートする</span>頭おかしい講座。<br>
+      <br>
+      やんばるエキスパートは、<span>"収入源の０→１"</span>という<br>
+      <span>一番しんどい部分</span>を徹底サポートします。
+    </p>
+    <%= image_tag "https://d5izmuz0mcjzz.cloudfront.net/design_course/chara-good.png" , class: "chara-good" %>
+  </section>
+  <section class="intro-wrapper wrapper">
+    <h3><span>個人がスキルで稼ぐ</span>時代の到来！</h3>
+    <p>副業が解禁になり、より一層<span>”個人が稼ぐ力”</span>が求められる時代が時代になりました。</p>
+    <div class="circle-container">
+      <div class="circle">
+        <%= image_tag "https://d5izmuz0mcjzz.cloudfront.net/design_course/gray-rectangle.png" , class: "title-img"
+              %>
+        <h3>スキルで稼ぐ時代<br>
+          こんな悩みありませんか？</h3>
+        <div class="before-after">
+          <%= image_tag "https://d5izmuz0mcjzz.cloudfront.net/design_course/chara-bad-mono.png" ,
+                  class: "chara-img" %>
+          <div class="before-after-p">
+            <div>
+              <%= image_tag "https://d5izmuz0mcjzz.cloudfront.net/design_course/bi-check-circle-fill.png" %>
+              <p>個人で稼ぐスキルをどうやって身につけるかわからない...</p>
+            </div>
+            <div>
+              <%= image_tag "https://d5izmuz0mcjzz.cloudfront.net/design_course/bi-check-circle-fill.png" %>
+              <p>副業・スキマ時間で稼ぎたいけど、なにができるんだろうか...</p>
+            </div>
+            <div>
+              <%= image_tag "https://d5izmuz0mcjzz.cloudfront.net/design_course/bi-check-circle-fill.png" %>
+              <p>もっと自由な環境で働きたい</p>
+            </div>
+          </div>
         </div>
-      </header>
-      <!-- FV -->
-      <section class="fv">
-        <%= image_tag "https://d5izmuz0mcjzz.cloudfront.net/design_course/design-fv.jpg" %>
-      </section>
-
-      <!-- webデザイン講座説明 -->
-      <section class="course-first-info wrapper">
-        <div class="ribon-title">
-          <%= image_tag "https://d5izmuz0mcjzz.cloudfront.net/design_course/title-ribon.png" %>
-            <h3>月5万円稼げるまでフルサポートする</h3>
+        <%= image_tag "https://d5izmuz0mcjzz.cloudfront.net/design_course/ora-arrow.png" , class: "ora-arrow" %>
+      </div>
+      <div class="circle after-circle">
+        <%= image_tag "https://d5izmuz0mcjzz.cloudfront.net/design_course/ora-rectangle.png" ,
+              class: "title-img sp-title" %>
+        <h3>そんな悩みは<br>
+          やんばるエキスパートで解決！</h3>
+        <div class="before-after">
+          <div class="before-after-p">
+            <div>
+              <%= image_tag "https://d5izmuz0mcjzz.cloudfront.net/design_course/blue-check-circle-fill.png" %>
+              <p>副業やフリーランスなど選択肢が広がった！</p>
+            </div>
+            <div>
+              <%= image_tag "https://d5izmuz0mcjzz.cloudfront.net/design_course/blue-check-circle-fill.png" %>
+              <p>ストレスなく自由な環境で働けるようになった</p>
+            </div>
+            <div>
+              <%= image_tag "https://d5izmuz0mcjzz.cloudfront.net/design_course/blue-check-circle-fill.png" %>
+              <p>一生モノのスキルを身につけて、将来の不安がなくなった！</p>
+            </div>
+          </div>
+          <%= image_tag "https://d5izmuz0mcjzz.cloudfront.net/design_course/chara-happy.png" , class: "chara-img"
+                  %>
         </div>
-        <h2>Webデザイン講座</h2>
-        <div class="accent-block"></div>
-        <p>たとえば、5万円の自己投資で<br>
-          <span>月5万円稼げるスキル</span>が身につくとしたら、あなたはどうしますか？<br>
+      </div>
+    </div>
+    <div class="bottom-triangle"></div>
+  </section>
+  <section class="strongth-wrapper wrapper">
+    <h3>やんばるエキスパートが選ばれる<br>
+      <span>7</span>の強み
+    </h3>
+    <div class="strongth-container">
+      <div class="white-frame">
+        <h6 class="point-number"> 01</h6>
+        <%= image_tag "https://d5izmuz0mcjzz.cloudfront.net/design_course/strong-point1.png" %>
+        <h5>実案件を意識した<br>
+          カリキュラム</h5>
+        <p>やんばるエキスパートでは、学び終えた後を大事にしています。<br>
           <br>
-          当講座はそれを実現させる<br>
-          <span>コスパ最強の頭おかしい講座</span>となっています。<br><br>
-          もし今の収入に合わせ、<span>副業で＋５万円</span>得られるとしたら...
+          つまり、ただのスキル取得にならないよう<span>「Webデザインで仕事ができるようになる」</span>ことを最終目標にしています。<br>
+          だからこそ、実際の現場に近い形でカリキュラムを学べるよう設計しています。<br>
+          <br>
+          カリキュラム成果物は<span>そのままポートフォリオ</span>としてご利用頂けます。</p>
+      </div>
+      <div class="white-frame">
+        <h6 class="point-number"> 02</h6>
+        <%= image_tag "https://d5izmuz0mcjzz.cloudfront.net/design_course/strong-point2.png" %>
+        <h5>売上5万円稼げるまで<br>
+          無期限サポート</h5>
+        <p>大事なのはスキルをつけることではなく、その<span>スキルで稼ぐ</span>ことです。<br>
+          <br>
+          やんばるエキスパートでは実践的なカリキュラムに加え、<span>”売上5万円達成するまで無期限サポート”</span>することでWebデザイナーの一歩をフルサポートします。<br>
+          <br>
+          ※条件は課題修了後、案件獲得のために週30時間以上活動および週1回進捗報告いただける方です。</p>
+      </div>
+      <div class="white-frame">
+        <h6 class="point-number"> 03</h6>
+        <%= image_tag "https://d5izmuz0mcjzz.cloudfront.net/design_course/strong-point3.png" %>
+        <h5>初心者目線の<br>
+          挫折しない環境を提供ポート</h5>
+        <p><span>「せっかくスクールに通うなら、挫折してお金を無駄にしたくない」</span>、そうお考えの方は多いのではないでしょうか？<br>
+          <br>
+          やんばるエキスパートは、<span>毎週のミーティング</span>で、頻繁にコミュニケーションがとれます。<br>
+          <br>
+          日々生まれる学習の悩みを解消し、挫折の大きな原因である<span>「1人で勉強している」という孤独感を軽減</span>し、モチベーション維持に徹底サポートします。</p>
+      </div>
+      <div class="white-frame">
+        <h6 class="point-number"> 04</h6>
+        <%= image_tag "https://d5izmuz0mcjzz.cloudfront.net/design_course/strong-point4.png" %>
+        <h5>質問し放題！<br>
+          永久サポート</h5>
+        <p>やんばるエキスパートは、<span>メンターへ質問し放題かつ受講期間無期限</span>になっています。<br>
+          <br>
+          スキル取得より<span>”個人のスキルで稼ぐ一歩を踏み出してほしい”</span>という点を重視してるので、ひとりひとりの生活環境に合せたペースで学習できるように期限を設けておりません。
         </p>
-        <div class="white-frame">
-          <div>
-            <%= image_tag "https://d5izmuz0mcjzz.cloudfront.net/design_course/ora-check-circle-fill.png" %>
-              <p>月に1回旅行ができる</p>
-          </div>
-          <div>
-            <%= image_tag "https://d5izmuz0mcjzz.cloudfront.net/design_course/ora-check-circle-fill.png" %>
-              <p>気軽にハーゲンダッツが買える</p>
-          </div>
-          <div>
-            <%= image_tag "https://d5izmuz0mcjzz.cloudfront.net/design_course/ora-check-circle-fill.png" %>
-              <p>ちょっといいお寿司が食べられる</p>
-          </div>
+      </div>
+      <div class="white-frame">
+        <h6 class="point-number"> 05</h6>
+        <%= image_tag "https://d5izmuz0mcjzz.cloudfront.net/design_course/strong-point5.png" %>
+        <h5>少人数制（20名限定）<br>
+          <br>
+           </h5>
+        <p>本気でWebデザイナーを目指す方全員に一歩踏み出すために<span>120%のフルサポートできる体制</span>にすべく少人数制にしています。</p>
+      </div>
+      <div class="white-frame">
+        <h6 class="point-number"> 06</h6>
+        <%= image_tag "https://d5izmuz0mcjzz.cloudfront.net/design_course/strong-point6.png" %>
+        <h5>プロの添削で<br>
+          一気にレベルアップ！</h5>
+        <p>学習だけではなく、Webデザインの初心者がやってしまいがちなのがデザインを避けるために<span>現役デザイナーからの添削</span>が受けられます。<br>
+          <br>
+          自分では気づけない点を現役デザイナーだからこそ、案件獲得する目線での添削を受けることで、最短で成長できます！<br>
+          <br>
+          ※対象は、LP・コーポレート課題の添削になります。</p>
+      </div>
+      <div class="white-frame">
+        <h6 class="point-number"> 07</h6>
+        <%= image_tag "https://d5izmuz0mcjzz.cloudfront.net/design_course/strong-point7.png" %>
+        <h5>オンライン講座だから<br>
+          いつでも・どこでもOK！</h5>
+        <p><span>パソコン１台とネット環境</span>があれば世界中どこからでも受講いただけます。<br>
+          <br>
+          そもそもやんばるエキスパートは<span>沖縄発祥</span>です！地方にいながらでも稼げるように考えてます。なので、受講期間中から<span>リモートで働くことを想定した</span>リアルな環境を用意しております。
+        </p>
+      </div>
+    </div>
+    <div class="bottom-triangle"></div>
+  </section>
+  <section class="comparison-wrapper wrapper">
+    <div class="comparison-title">
+      <%= image_tag "https://d5izmuz0mcjzz.cloudfront.net/design_course/chara-ok.png" %>
+      <h3><span>圧倒的なコンテンツ”</span>と指導で<span>フルサポート</span>する<br>
+        <span>コスパ最強の頭おかしい講座</span><br>
+        それがやんばるエキスパートです。
+      </h3>
+    </div>
+    <div class="gra-title">
+      <h2>Comparison</h2>
+      <h5>他社比較</h5>
+    </div>
+    <div class="comparison-container">
+      <div class="comparison-object index">
+        <p>料金</p>
+        <p>サポート期間</p>
+        <p>ツール費用</p>
+        <p>営業サポート</p>
+      </div>
+      <div class="comparison-object service main">
+        <h4 class="yanbaru">やんばる<br>
+          エキスパート</h4>
+        <p>
+          <%= @price.to_s(:delimited) %>
+        </p>
+        <p>無期限</p>
+        <p>無料</p>
+        <p class="yanbaru-p">月5万円稼げるまで<br>
+          無期限サポート</p>
+      </div>
+      <div class="comparison-object service">
+        <h4>A社</h4>
+        <p>298,000</p>
+        <p>16週間</p>
+        <p>別途月5,680円</p>
+        <p>サポートなし</p>
+      </div>
+      <div class="comparison-object service">
+        <h4>B社</h4>
+        <p>723,000</p>
+        <p>45日間</p>
+        <p>別途月5,680円</p>
+        <p>サポートなし</p>
+      </div>
+    </div>
+  </section>
+  <section class="cta-wrapper wrapper">
+    <div class="cta-btn">
+      <%= render partial: 'static_pages/stripe' %>
+      <%= image_tag "https://d5izmuz0mcjzz.cloudfront.net/design_course/deco1.png" , class: "deco1" %>
+      <%= image_tag "https://d5izmuz0mcjzz.cloudfront.net/design_course/deco2.png" , class: "deco2" %>
+      <%= image_tag "https://d5izmuz0mcjzz.cloudfront.net/design_course/deco3.png" , class: "deco3" %>
+      <%= image_tag "https://d5izmuz0mcjzz.cloudfront.net/design_course/deco4.png" , class: "deco4" %>
+    </div>
+  </section>
+  <section class="feature-wrapper wrapper">
+    <div class="gra-title">
+      <h2>Feature</h2>
+      <h5>他社との違い</h5>
+    </div>
+    <div class="features">
+      <div class="feature-inner">
+        <div class="feature-frame">
+          <%= image_tag "https://d5izmuz0mcjzz.cloudfront.net/design_course/difference1.png" %>
+          <h4>案件獲得サポート</h4>
+        </div>
+        <p><span>未経験から案件獲得したノウハウ</span>をまとめ、デザインスキル習得後の営業・案件獲得までを徹底サポートします。</p>
+      </div>
+      <h2>＋</h2>
+      <div class="feature-inner">
+        <div class="feature-frame ora">
+          <%= image_tag "https://d5izmuz0mcjzz.cloudfront.net/design_course/difference2.png" %>
+          <h4>マネタイズ戦略</h4>
+          <h5>（SNS+ビジネス構築戦略）</h5>
+        </div>
+        <p>代表かみざとの<span>6年間の経験と総額２００万円以上投資して得た知識</span>を過不足なく凝縮したコンテンツを提供。</p>
+      </div>
+    </div>
+  </section>
+  <section class="curriculum-wrapper wrapper">
+    <div class="gra-title">
+      <h2>Curriculum</h2>
+      <h5>講座の内容</h5>
+    </div>
+    <div class="sp-frame">
+      <div class="white-frame">
+        <%= image_tag "https://d5izmuz0mcjzz.cloudfront.net/design_course/curriculum1.png" %>
+        <div>
+          <h4>01 デザイン基礎知識</h4>
+          <ul>
+            <li>デザインの四原則</li>
+            <li>配色の基本</li>
+            <li>フォントの基礎</li>
+            <li>レイアウトの基礎</li>
+            <li>コーディングの知識</li>
+          </ul>
+        </div>
+      </div>
+      <div class="white-frame">
+        <%= image_tag "https://d5izmuz0mcjzz.cloudfront.net/design_course/curriculum2.png" %>
+        <div>
+          <h4>02 ツールの基本操作</h4>
+          <ul>
+            <li>Figmaの使い方</li>
+            <li>Slackの使い方</li>
+            <li>Webツール（素材サイト）</li>
+            <li>Webツール（配色・フォント）</li>
+          </ul>
+        </div>
+      </div>
+      <div class="white-frame">
+        <%= image_tag "https://d5izmuz0mcjzz.cloudfront.net/design_course/curriculum3.png" %>
+        <div>
+          <h4>03 【実践】名刺制作</h4>
+          <ul>
+            <li>Figma操作に慣れよう</li>
+            <li>名刺を修正してみよう</li>
+            <li>オリジナル名刺を作成しよう</li>
+          </ul>
+        </div>
+      </div>
+      <div class="white-frame">
+        <%= image_tag "https://d5izmuz0mcjzz.cloudfront.net/design_course/curriculum4.png" %>
+        <div>
+          <h4>04 【実践】バナー制作</h4>
+          <ul>
+            <li>バナーを理解しよう</li>
+            <li>バナーを制作しよう</li>
+            <li>課題添削</li>
+          </ul>
+        </div>
+      </div>
+      <div class="white-frame">
+        <%= image_tag "https://d5izmuz0mcjzz.cloudfront.net/design_course/curriculum5.png" %>
+        <div>
+          <h4>05 【実践】LP制作</h4>
+          <ul>
+            <li>LPとは何か？</li>
+            <li>要件定義を確認しよう</li>
+            <li>LP制作の流れ</li>
+            <li>LPを制作しよう</li>
+            <li>課題添削</li>
+          </ul>
+        </div>
+      </div>
+      <div class="white-frame">
+        <%= image_tag "https://d5izmuz0mcjzz.cloudfront.net/design_course/curriculum6.png" %>
+        <div>
+          <h4>06 【実践】コーポレート制作</h4>
+          <ul>
+            <li>コーポレート制作</li>
+            <li>要件定義を確認しよう</li>
+            <li>コーポレート制作の流れ</li>
+            <li>コーポレートを制作しよう</li>
+            <li>課題添削</li>
+          </ul>
+        </div>
+      </div>
+      <div class="white-frame">
+        <%= image_tag "https://d5izmuz0mcjzz.cloudfront.net/design_course/curriculum7.png" %>
+        <div>
+          <h4>07 【実践編】案件獲得サポート</h4>
+          <ul>
+            <li>案件獲得サポートについて</li>
+            <li>営業先リスト</li>
+            <li>営業提案の方法</li>
+            <li>面談でのポイント</li>
+            <li>ポートフォリオをつくろう</li>
+          </ul>
+        </div>
+      </div>
+      <div class="white-frame">
+        <%= image_tag "https://d5izmuz0mcjzz.cloudfront.net/design_course/curriculum8.png" %>
+        <div>
+          <h4>08 マーケティング講座</h4>
+          <ul>
+            <li>売れるLPの作り方</li>
+            <li>マーケティングの基礎</li>
+            <li>ライティング</li>
+            <li>集客戦略</li>
+            <li>仕組み化</li>
+          </ul>
+        </div>
+      </div>
+      <div class="white-frame">
+        <%= image_tag "https://d5izmuz0mcjzz.cloudfront.net/design_course/curriculum9.png" %>
+        <div>
+          <h4>09 マーケティング講座2</h4>
+          <ul>
+            <li>SNS戦略</li>
+            <li>アカウント設計</li>
+            <li>商品設計</li>
+            <li>マネタイズ戦略</li>
+            <li>Lステップ運用事例</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <h3>教材参考動画</h3>
+    <div class="movie_container">
+      <% @movies.each do |movie| %>
+        <div class="movie_innner">
+          <%= embed_youtube(movie.url) %>
+          <p>
+            <%= movie.title%>
+          </p>
+        </div>
+      <% end %>
+    </div>
+    <div class="cta-btn">
+      <%= render 'static_pages/stripe' %>
+    </div>
+  </section>
+  <section class="flow-wrapper wrapper">
+    <div class="gra-title">
+      <h2>FLow</h2>
+      <h5>講座の流れ</h5>
+    </div>
+    <div class="flow-flex">
+      <div class="flow-container">
+        <%= image_tag "https://d5izmuz0mcjzz.cloudfront.net/design_course/flow1.png" %>
+        <h5>01. 専用コミュニティに参加</h5>
+        <p>やんばるエキスパートはメンターによる学習サポート付き！Slackというチャットツールでやんばるエキスパート公式サポートのコミュニティに参加します。</p>
+      </div>
+      <div class="blue-arrow"> </div>
+      <div class="flow-container">
+        <%= image_tag "https://d5izmuz0mcjzz.cloudfront.net/design_course/flow2.png" %>
+        <h5>02. WEBデザイン学習スタート！</h5>
+        <p>準備ができたら講義をもとに学習開始！講義は動画中心なので、実際に手を動かしながらスキルアップを実感できます！</p>
+      </div>
+      <div class="blue-arrow"></div>
+      <div class="flow-container">
+        <%= image_tag "https://d5izmuz0mcjzz.cloudfront.net/design_course/flow3.png" %>
+        <h5>03. 詰まったらメンターに質問！</h5>
+        <p>分からないことがあったらメンターに質問してみましょう。ただ答えを教えるのではなく、自分で課題を解決する力が身につくように導きます！</p>
+      </div>
+      <div class="blue-arrow"></div>
+      <div class="flow-container">
+        <%= image_tag "https://d5izmuz0mcjzz.cloudfront.net/design_course/flow4.png" %>
+        <h5>04. プロによるデザイン添削</h5>
+        <p>課題で制作したデザインは、現役デザイナーによる添削を受けられます</p>
+      </div>
+      <div class="blue-arrow"></div>
+      <div class="flow-container">
+        <%= image_tag "https://d5izmuz0mcjzz.cloudfront.net/design_course/flow5.png" %>
+        <h5>05. 営業・案件獲得サポート</h5>
+        <p>課題をクリアしたら、実案件の獲得に向けた営業ノウハウを学びましょう。案件獲得向けてメンターがサポートします。</p>
+      </div>
+    </div>
+  </section>
+  <!-- 料金セクション -->
+  <section class="price-wrapper wrapper">
+    <div class="blue-circle">
+      <div class="gra-title">
+        <h2>Price</h2>
+        <h5>料金</h5>
+      </div>
+      <div class="white-frame">
+        <h4>WEBデザイン講座</h4>
+        <div class="accent-block"></div>
+        <h3 class="before-price">通常料金<span>150,000</span>円</h3>
+        <div class="after-price">
+          <%= image_tag "https://d5izmuz0mcjzz.cloudfront.net/design_course/cost-icon.png" %>
+          <h1>
+            <%= @price.to_s(:delimited) %>
+          </h1>
+        </div>
+        <ul>
+          <li>売上5万円稼ぐまで案件獲得サポート</li>
+          <li>無制限のカリキュラム閲覧権</li>
+          <li>メンターへ質問し放題</li>
+          <li>プロの添削付き</li>
+          <li>マーケティング講座付き</li>
+          <li>コンテンツ追加しても追加料金ゼロ</li>
+        </ul>
+      </div>
+      <div class="cta-btn">
+        <%= render 'static_pages/stripe' %>
+      </div>
+    </div>
+  </section>
+  <!-- 口コミ -->
+  <section class="voice-wrapper wrapper">
+    <div class="gra-title">
+      <h2>Voice</h2>
+      <h5>体験者の声</h5>
+    </div>
+    <div class="flex-wrapper">
+      <div class="flex-inner">
+        <%= image_tag "https://d5izmuz0mcjzz.cloudfront.net/design_course/ohshiro.png" , class: "person" %>
+        <h6 class="person-name">おおしろ</h6>
+        <div class="performance-inner">
+          <%= image_tag "https://d5izmuz0mcjzz.cloudfront.net/php/title-deco.png" %>
+          <h6>デザイン知識を得ることで<br>
+            日常が楽しくなる</h6>
         </div>
         <p>
-          きっと今よりちょっとだけ贅沢できる生活が手に入るのではないでしょうか？
+          <span>どんな悩みを抱えていましたか？</span>
+          会社に勤務していますと8時間は職場に居ないとお給料が貰えないのが当たり前です。
+          毎日ずっと忙しい訳ではないので勤務中の空き時間が非常に無駄に感じます。
+          定年までまだまだ年数がありますし、どうせ働くなら楽しくて夢中になれるお仕事がしたいと考えるようになりました。
+          昔からPC操作が好きで、PC1台あればどこでも働ける職種に憧れを抱いていました。
+          ですが、これが得意だ！と言える技術が無く、いつも自分に自信がありませんでした。
+          <span>他にどんなサービスと比較していましたか？</span>
+          webデザインはもちろん、ライティングやマーケティングのスクールはチェックしていました。
+          SNSに出てきた広告で他社の無料体験レッスンを何度か受けたことがあります。
+          無料でここまで教えてくれるなんて素敵！と感激したスクールもありました。
+          ですがどのスクールも受講料が高額。
+          本当に自分の強みになれるのか？仕事に繋がるのか？と自問自答しているうちに時間は経ち、諦めてしまうパターンばかりでした。
+          <span>なぜここのサービスを選びましたか？</span>
+          まず、破格の値段設定。
+          webデザインだけではなく他にも興味があった分野が全部詰まって、他社の半額以下。
+          それ以上と言っても過言ではない受講料に驚きでした。
+          更に心打たれたものが「月5万円稼げるまで無期限でサポートします」と堂々宣言していた事。
+          よっぽどの自信がないと「無期限でサポート」なんて言いきれないですし、学ぶ価値があるのではないかと自分の人生を託す気持ちで申し込みまで踏み切りました。
+          <span>人生にどんな変化がありましたか？</span>
+          なんとなく「イケてる」と思って見ていたデザインも「何故、そう思ったのか？」と考えるようになり、強弱・余白を付けることでどのような効果があるのか？デザインは感覚ではなく目的を明確化して設計する事が大切。
+          学習を始めてから深く意識するようになりました。
+          また、周りにデザインを学習していることを話すと、数名から制作の依頼が！始めて間もない段階で驚きでしたが、それだけデザイナーの需要が高い事が分かり、学習意欲も高まりました。
+          依頼に応じて制作したデザインはとても好評で、自分に大きな自信がつきました。
+          <span>もし利用していなかったらどんな人生でしたか？</span>
+          本講座と出会うことがなければきっと独学で学習を始めていたと思います。
+          検索すれば情報がありすぎて何から始めていのか分からない・・。モチベーションがもたない。行き詰って挫折している姿が想像出来ます。
+          同じ目標を持った生徒と切磋琢磨しながら学習に励む日々
+          。一週間前を振り返っても、自分の成長スピードが爆上がりしているのを感じます。
+          学習していることを公にすることによって周りからデザインしてほしい！と声かけて頂ける事もしばしば。
+          同時進行で案件に挑戦できる、困ったことがあればメンターに相談・アドバイスがもらえる。
+          ここまで手厚いサポートがあるスクールはここしかないと私は思います。なにより生活が楽しくなりました。本講座に感謝の気持ちでいっぱいです。
         </p>
-        <h4>
-          やんばるエキスパートなら、それが実現できます
-        </h4>
-        <p class="course-info">
-          デザイン経験ゼロの初心者を、デザインのスキル習得から案件獲得まで教え、<span>月5万稼げるまで無期限にサポートする</span>頭おかしい講座。<br>
-          <br>
-          やんばるエキスパートは、<span>"収入源の０→１"</span>という<br>
-          <span>一番しんどい部分</span>を徹底サポートします。
+      </div>
+      <div class="flex-inner">
+        <%= image_tag "https://d5izmuz0mcjzz.cloudfront.net/design_course/maru.png" , class: "person" %>
+        <h6 class="person-name">まる</h6>
+        <div class="performance-inner">
+          <%= image_tag "https://d5izmuz0mcjzz.cloudfront.net/php/title-deco.png" %>
+          <h6>やんばるエキスパートを<br>
+            受講した感想</h6>
+        </div>
+        <p>
+          <span>どんな悩みを抱えていましたか？</span>
+          悩みは２つありました。
+          1つ目は、
+          webデザイン勉強のモチベーションが保てないことです。
+          2つ目は、１人で問題を解決することに限界を感じたことです。
+          私は半年前に独学でwebデザインの勉強をしていました。
+          無料サイトで勉強をしていましたが、「ツールの操作方法」や「自分のデザインの良しあし」の悩みが一人では解決できずにいました。
+          これらのことで勉強につまずいてしまいモチベーションが保てず、３か月程度で勉強をやめてしまいました。
+          <span>他にどんなサービスと比較していましたか？</span>
+          地元のwebデザインスクール、オンラインwebデザインスクール、職業訓練校と比較していました。
+          地元のwebデザインスクール、オンラインwebデザインスクールは受講料が20万円～70万円程度と高すぎるので受講は難しいと判断しました。
+          職業訓練校は無料で受講はできます。しかし地元の職業訓練校ではwebデザインコースがなく、他県の職業訓練校に通うには、金銭面や通学時間、コロナの影響から難しいと判断しました。
+          <span>なぜここのサービスを選びましたか？</span>
+          理由は2つあります。
+          1つ目はコスパが良いからです。
+          やんばるエキスパートの受講料は5万円です。
+          やんばるエキスパートより安く学べるスクールは私が探した限りでは存在しませんでした。
+          また15万円稼げるまでサポートしていただけるので、15万稼いだら10万円得します。
+          2つ目は悪い口コミがなかったからです。
+          私は物を買う時に必ず口コミやレビューをみて買うかどうか判断します。
+          ぼったくり商品だと必ず悪い口コミがあります。
+          同じようにやんばるエキスパートもブログやツイッターを検索しましたが悪く言っている人がいなく、称賛する内容ばかりでした。
+          このことからやんばるエキスパートに対する信ぴょう性が高まりました。
+          <span>人生にどんな変化がありましたか？</span>
+          1番はデザインの楽しさを知れたことです。
+          独学では、目標までのプロセス、自身の成長度合いが分からず不安で、デザインが楽しいと思える余裕もありませんでした。
+          やんばるエキスパートは、目標までのプロセスが明確に示されています。
+          また課題のレビューをいただくことで自身の成長度合いも分かります。
+          成長を実感できるので、どんどんデザインに夢中になって勉強しています。
+          <span>もし利用していなかったらどんな人生でしたか？</span>
+          独学でダラダラと勉強をして、何も得られないまま普段の生活を送っていたと思います。
+          実際にやんばるエキスパートを受講するまでの3か月間はほとんど勉強していませんでした。
+          1年前は独学でプログラミングの勉強もしていたので、早くやんばるエキスパートに入ってサポートを受けて勉強すれば良かったなと後悔しています。
         </p>
-        <%= image_tag "https://d5izmuz0mcjzz.cloudfront.net/design_course/chara-good.png" , class: "chara-good" %>
-      </section>
-
-      <section class="intro-wrapper wrapper">
-        <h3><span>個人がスキルで稼ぐ</span>時代の到来！</h3>
-        <p>副業が解禁になり、より一層<span>”個人が稼ぐ力”</span>が求められる時代が時代になりました。</p>
-        <div class="circle-container">
-          <div class="circle">
-            <%= image_tag "https://d5izmuz0mcjzz.cloudfront.net/design_course/gray-rectangle.png" , class: "title-img"
-              %>
-              <h3>スキルで稼ぐ時代<br>
-                こんな悩みありませんか？</h3>
-              <div class="before-after">
-                <%= image_tag "https://d5izmuz0mcjzz.cloudfront.net/design_course/chara-bad-mono.png" ,
-                  class: "chara-img" %>
-                  <div class="before-after-p">
-                    <div>
-                      <%= image_tag "https://d5izmuz0mcjzz.cloudfront.net/design_course/bi-check-circle-fill.png" %>
-                        <p>個人で稼ぐスキルをどうやって身につけるかわからない...</p>
-                    </div>
-                    <div>
-                      <%= image_tag "https://d5izmuz0mcjzz.cloudfront.net/design_course/bi-check-circle-fill.png" %>
-                        <p>副業・スキマ時間で稼ぎたいけど、なにができるんだろうか...</p>
-                    </div>
-                    <div>
-                      <%= image_tag "https://d5izmuz0mcjzz.cloudfront.net/design_course/bi-check-circle-fill.png" %>
-                        <p>もっと自由な環境で働きたい</p>
-                    </div>
-                  </div>
-              </div>
-              <%= image_tag "https://d5izmuz0mcjzz.cloudfront.net/design_course/ora-arrow.png" , class: "ora-arrow" %>
-          </div>
-
-
-          <div class="circle after-circle">
-            <%= image_tag "https://d5izmuz0mcjzz.cloudfront.net/design_course/ora-rectangle.png" ,
-              class: "title-img sp-title" %>
-              <h3>そんな悩みは<br>
-                やんばるエキスパートで解決！</h3>
-              <div class="before-after">
-                <div class="before-after-p">
-                  <div>
-                    <%= image_tag "https://d5izmuz0mcjzz.cloudfront.net/design_course/blue-check-circle-fill.png" %>
-                      <p>副業やフリーランスなど選択肢が広がった！</p>
-                  </div>
-                  <div>
-                    <%= image_tag "https://d5izmuz0mcjzz.cloudfront.net/design_course/blue-check-circle-fill.png" %>
-                      <p>ストレスなく自由な環境で働けるようになった</p>
-                  </div>
-                  <div>
-                    <%= image_tag "https://d5izmuz0mcjzz.cloudfront.net/design_course/blue-check-circle-fill.png" %>
-                      <p>一生モノのスキルを身につけて、将来の不安がなくなった！</p>
-                  </div>
-                </div>
-                <%= image_tag "https://d5izmuz0mcjzz.cloudfront.net/design_course/chara-happy.png" , class: "chara-img"
-                  %>
-              </div>
+      </div>
+      <div class="flex-inner">
+        <%= image_tag "https://d5izmuz0mcjzz.cloudfront.net/design_course/nishiken.png" , class: "person" %>
+        <h6 class="person-name">にしけん</h6>
+        <div class="performance-inner">
+          <%= image_tag "https://d5izmuz0mcjzz.cloudfront.net/php/title-deco.png" %>
+          <h6>ひかえめに言って運命の<br>
+            出会いです
+          </h6>
+        </div>
+        <p>
+          <span>どんな悩みを抱えていましたか？</span>
+          本業で色々な環境の変化があり、それが原因で漠然と副業で稼ぎたいなとか
+          今の状況を変えたいなと思い2019年からHTML、CSSの勉強、ブログ立ち上げ、
+          YouTubeチャンネルの立ち上げとチャレンジしてきました。
+          ただ、
+          どのチャレンジでも成功体験を手にしておらず自分の状況を変えたいという
+          目標を達成しているとは到底言えない状態でした。
+          本業の状況に不満を持ったまま何も変わらない状態が続いていました。
+          webデザインに興味を持ったのはTwitterでノマド生活している人のツイートを
+          見てからです。
+          <span>他にどんなサービスと比較していましたか？</span>
+          HTML、CSSを学習していた頃はProgate、ドットインストールを
+          利用していました。
+          YouTubeは完全独学で2万円弱の有料noteを購入したぐらい。
+          webデザインの学習サービスとしてはやまもとりゅうけんさんの
+          人生逃げ切りサロンのwebデザイン講座の無料枠を受講したことがあります。
+          webデザインの教育サービスではそれ以外のサービスを検討したことも
+          受講したこともなかったです。
+          <span>なぜここのサービスを選びましたか？</span>
+          ちょうど人生逃げ切りサロンのwebデザイン講座の有料枠に進もうか悩んでいる時期に
+          かみざとさんのTwitterとLINEでやんばるエキスパートのwebデザイン講座の開設の
+          準備が進んでいるという情報を知りました。
+          やんばるエキスパートの教育コンセプトと内容、それとwebデザイン講座の圧倒的な
+          コストパフォーマンスの情報を見てこちらのサービスを選びました。
+          <span>人生にどんな変化がありましたか？</span>
+          webデザイン講座を受講開始してから１ヶ月ほど経った状態での感想ですが。
+          webデザイン講座受講前にチャレンジしていた物は基本、独学だったのでメンターに
+          自由に質問できたりアドバイスを貰える環境、他の受講生と情報を共有できる環境が
+          あるんだという事に気づけたというのがまず一つの大きな変化。
+          さらにやんばるエキスパートはwebデザイン講座の受講生でも他の講座の教材を自由に
+          見ることができたり、かみざとさんのオンライン勉強会も開催されたり、webデザイン以外の
+          知見も広げることができる環境があります。
+          学習の目標がwebデザインであったとしても、他の講座の知識を知ることで新たな気づきが
+          あったりします。
+          これらの学習環境を手に入れることができたというところが、独学でやっていた頃からの
+          大きな変化かなと感じています。
+          <span>もし利用していなかったらどんな人生でしたか？</span>
+          今でもネットやYouTubeで配信されているような無料の教材を使った独学を
+          続けていたんじゃないかと思います。
+          やんばるエキスパートのwebデザイン講座を受講することによる気付きは日々、
+          増えているので利用していなかったらそれらの気づきも一生ないままで独学を続けて
+          いたんじゃないかと思います。
+          もしかしたら利用してなくても独学でググりまくって、回り回って同等の知識を
+          手に入れられる事もあるかもしれないけど、それは大きく遠回りする事になり、
+          この講座を利用した時の最短の道で成長できる環境を知らないままの
+          もったいない人生になっていたかも。
+        </p>
+      </div>
+      <div class="flex-inner">
+        <%= image_tag "https://d5izmuz0mcjzz.cloudfront.net/design_course/hirohumi.png" , class: "person" %>
+        <h6 class="person-name">ひろふみ</h6>
+        <div class="performance-inner">
+          <%= image_tag "https://d5izmuz0mcjzz.cloudfront.net/php/title-deco.png" %>
+          <h6>アラフォー＆人見知りに<br>
+            勧めたい講座です</h6>
+        </div>
+        <p>
+          <span>どんな悩みを抱えていましたか？</span>
+          私は映像制作フリーランスとして活動している42歳、６児の父です。
+          今後クリエイティブスキルの幅を広めたいと考えてオンライン講座を色々と模索していましたが、これといった決定打がなく選定に迷っていました。
+          そんな中、約一ヶ月後くらいにかみざとさんの公式LINEでWebデザイン講座のサービスが開始されることを知り、概要を覗いてみました。
+          <span>他にどんなサービスと比較していましたか？</span>
+          出永紘己さん(＠idenagahiroki)のWebデザイン個別コンサルと、畑違いですがアフターエフェクトを学べるカズノコさん(@kazunokoblog)のMotion Renderです。
+          <span>なぜここのサービスを選びましたか？</span>
+          買い切り、低価格、自分のペースで進められる、月５万稼ぐまで無期限サポート、週１回のミーティング等の高コスパもさながら一番の決め手となったのは、Ruby講座？受講生あっこさん(@akko_marry
+          )のTwitterで紹介されていたslackスクショの内容です(一つの質問に対してメンターさんとなんと145回ものやりとり！）。
+          やんばるエキスパート講師陣のサポートの手厚さに感動したのを今でも覚えています。
+          きっと要領の悪い中年の私でも諦めずに継続すれば挫折しないはずだ！と確信、募集開始と同時に申し込みました。
+          受講して約二ヶ月経ちますが講座内容は丁寧でわかりやすく、他受講生の質問に対する回答や受講生のポートフォリオ等がslack内で共有されているので、そこから新たな知識が獲得できたりオンライン学習でもモチベーションを維持できます。
+          <span>人生にどんな変化がありましたか？</span>
+          思考がポジティブに変化しました。僕は人見知りでzoomに苦手意識があったのですが、デザイン講座の他に、かみざとさんのマーケティングやマインドの勉強会に参加させていただくことで克服できました。
+          殆どROM専だったTwitterも今では毎日情報発信できるようになり、色々な面で自走する力がついてきたと思います。顔出しも躊躇しなくなりました。
+          <span>もし利用していなかったらどんな人生でしたか？</span>
+          年齢や性格を盾にして限定的な範囲でしか行動せず、収入もそれに比例してたいして稼ぐこともできず人生の幸福度はそれほど高まっていなかったと思います。
+        </p>
+      </div>
+      <div class="flex-inner">
+        <%= image_tag "https://d5izmuz0mcjzz.cloudfront.net/design_course/masakichi.png" , class: "person" %>
+        <h6 class="person-name">まさきち</h6>
+        <div class="performance-inner">
+          <%= image_tag "https://d5izmuz0mcjzz.cloudfront.net/php/title-deco.png" %>
+          <h6>エンジニアでも<br>
+            デザインを学びたい!</h6>
+        </div>
+        <p>
+          <span>どんな悩みを抱えていましたか？</span>
+          自分の作ったWebサービスのページの見た目がイマイチで悩んでいました。
+          <span>他にどんなサービスと比較していましたか？</span>
+          他のオンラインデザインスクールやサロンと比較しました。
+          <span>なぜここのサービスを選びましたか？</span>
+          やんばるはプログラミングなども学べ、PHPコースも受講しているのですが、
+          メンターの対応がとても丁寧で、
+          学習のモチベーションを上げてくれます。
+          なのでこの場所でデザインも学びたいと思ったからです
+          <span>人生にどんな変化がありましたか？</span>
+          普段の生活でも広告や雑誌などのデザインを意識するようになり、
+          自分の中のデザインの引き出しがかなり増え、
+          どのデザインが素敵なのか見えてくるようになりました。
+          学んだ事を元にTwitterで図解を作成したところ、
+          高評価もいただけました。
+          <span>もし利用していなかったらどんな人生でしたか？</span>
+          やんばるエキスパートでデザインを学んでいなければ、
+          デザインの良し悪しがわからずに悩み続けていたと思います。
+        </p>
+      </div>
+    </div>
+  </section>
+  <section class="profile-wrapper wrapper">
+    <div class="gra-title">
+      <h2>Profile</h2>
+      <h5>代表・講師紹介</h5>
+    </div>
+    <div class="profile-container">
+      <div class="profile-inner">
+        <div>
+          <div class="profile">
+            <%= image_tag "https://d5izmuz0mcjzz.cloudfront.net/design_course/profile-img-k.png" %>
+            <h5>代表・開発者</h5>
+            <p>かみざと</p>
           </div>
         </div>
-        <div class="bottom-triangle"></div>
-      </section>
-
-      <section class="strongth-wrapper wrapper">
-        <h3>やんばるエキスパートが選ばれる<br>
-          <span>7</span>の強み
-        </h3>
-        <div class="strongth-container">
-          <div class="white-frame">
-            <h6 class="point-number"> 01</h6>
-            <%= image_tag "https://d5izmuz0mcjzz.cloudfront.net/design_course/strong-point1.png" %>
-              <h5>実案件を意識した<br>
-                カリキュラム</h5>
-              <p>やんばるエキスパートでは、学び終えた後を大事にしています。<br><br>
-
-                つまり、ただのスキル取得にならないよう<span>「Webデザインで仕事ができるようになる」</span>ことを最終目標にしています。<br>
-
-                だからこそ、実際の現場に近い形でカリキュラムを学べるよう設計しています。<br><br>
-
-                カリキュラム成果物は<span>そのままポートフォリオ</span>としてご利用頂けます。</p>
-          </div>
-          <div class="white-frame">
-            <h6 class="point-number"> 02</h6>
-            <%= image_tag "https://d5izmuz0mcjzz.cloudfront.net/design_course/strong-point2.png" %>
-              <h5>売上5万円稼げるまで<br>
-                無期限サポート</h5>
-              <p>大事なのはスキルをつけることではなく、その<span>スキルで稼ぐ</span>ことです。<br><br>
-
-                やんばるエキスパートでは実践的なカリキュラムに加え、<span>”売上5万円達成するまで無期限サポート”</span>することでWebデザイナーの一歩をフルサポートします。<br><br>
-
-                ※条件は課題修了後、案件獲得のために週30時間以上活動および週1回進捗報告いただける方です。</p>
-          </div>
-          <div class="white-frame">
-            <h6 class="point-number"> 03</h6>
-            <%= image_tag "https://d5izmuz0mcjzz.cloudfront.net/design_course/strong-point3.png" %>
-              <h5>初心者目線の<br>
-                挫折しない環境を提供ポート</h5>
-              <p><span>「せっかくスクールに通うなら、挫折してお金を無駄にしたくない」</span>、そうお考えの方は多いのではないでしょうか？<br><br>
-
-                やんばるエキスパートは、<span>毎週のミーティング</span>で、頻繁にコミュニケーションがとれます。<br><br>
-
-                日々生まれる学習の悩みを解消し、挫折の大きな原因である<span>「1人で勉強している」という孤独感を軽減</span>し、モチベーション維持に徹底サポートします。</p>
-          </div>
-          <div class="white-frame">
-            <h6 class="point-number"> 04</h6>
-            <%= image_tag "https://d5izmuz0mcjzz.cloudfront.net/design_course/strong-point4.png" %>
-              <h5>質問し放題！<br>
-                永久サポート</h5>
-              <p>やんばるエキスパートは、<span>メンターへ質問し放題かつ受講期間無期限</span>になっています。<br><br>
-
-                スキル取得より<span>”個人のスキルで稼ぐ一歩を踏み出してほしい”</span>という点を重視してるので、ひとりひとりの生活環境に合せたペースで学習できるように期限を設けておりません。
-              </p>
-          </div>
-          <div class="white-frame">
-            <h6 class="point-number"> 05</h6>
-            <%= image_tag "https://d5izmuz0mcjzz.cloudfront.net/design_course/strong-point5.png" %>
-              <h5>少人数制（20名限定）<br><br> </h5>
-              <p>本気でWebデザイナーを目指す方全員に一歩踏み出すために<span>120%のフルサポートできる体制</span>にすべく少人数制にしています。</p>
-          </div>
-          <div class="white-frame">
-            <h6 class="point-number"> 06</h6>
-            <%= image_tag "https://d5izmuz0mcjzz.cloudfront.net/design_course/strong-point6.png" %>
-              <h5>プロの添削で<br>
-                一気にレベルアップ！</h5>
-              <p>学習だけではなく、Webデザインの初心者がやってしまいがちなのがデザインを避けるために<span>現役デザイナーからの添削</span>が受けられます。<br><br>
-
-                自分では気づけない点を現役デザイナーだからこそ、案件獲得する目線での添削を受けることで、最短で成長できます！<br><br>
-
-                ※対象は、LP・コーポレート課題の添削になります。</p>
-          </div>
-          <div class="white-frame">
-            <h6 class="point-number"> 07</h6>
-            <%= image_tag "https://d5izmuz0mcjzz.cloudfront.net/design_course/strong-point7.png" %>
-              <h5>オンライン講座だから<br>
-                いつでも・どこでもOK！</h5>
-              <p><span>パソコン１台とネット環境</span>があれば世界中どこからでも受講いただけます。<br><br>
-
-                そもそもやんばるエキスパートは<span>沖縄発祥</span>です！地方にいながらでも稼げるように考えてます。なので、受講期間中から<span>リモートで働くことを想定した</span>リアルな環境を用意しております。
-              </p>
-          </div>
+        <div class="message">
+          <h4>デザイン × マーケティング最強ビジネススキルで人生に革命を</h4>
+          <p class="profile-text">はいさい、かみざとです！<br>
+            <br>
+            僕は現在、沖縄でのんびり暮らしながら、お金にも時間にも困らない余裕のある毎日を過ごしています。<br>
+            <br>
+            、、、ということを書くと順風満帆な人生を想像されると思いますが、実際は「マーケティングを意識したデザイン」に出会うまで、いまいちパッとしないビジネスライフを送ってました。<br>
+            <br>
+            <span>やっぱりデザインの威力って凄いんです。</span><br>
+            <br>
+            ここを軽視していた為に、僕は月商500万の成果を出すまでに6年もかかってしまいました。<br>
+            というのも、僕はこれまでエンジニア教育をやってきたのですが、自分の商品のランディングページを持っておらず、いつもブログで商品情報をまとめてたんです。<br>
+            <br>
+            <span>「カッコつけたデザインなんか無くても文章良ければ売れるんじゃ〜！！！」</span><br>
+            <br>
+            そんな考えでいたから、結果はまぁ、、、売れませんよね笑<br>
+            <br>
+            その時は月商100万いくのがやっと。「200万、300万になるにはどうすれば良いんだろう？」と悩む日々が続きました。<br>
+            <br>
+            そこに追い討ちをかけるようにコロナの襲来。そこを機にSNSのフォロワーもどんどん減り、売り上げも下がる一方。重なる時は重なります。<br>
+            <br>
+            <span>「もしかしたら自分はここが限界なのかもしれない」</span><br>
+            <br>
+            そう考えて落ち込んだりもしました。
+            でも、それからやっと自身の商品紹介ページを見直し、改めてデザインの重要性に目を向けてみたんです。<br>
+            <br>
+            <span>「自分の商品をデザインでもっとカッコよく見せたら売れるんじゃないか？そこに僕のマーケティング的な視点が加われば最強になるんじゃないか？」</span><br>
+            <br>
+            そう考え、僕はデザイナーさんに商品のランディングページを外注することになりました。
+            それから1ヶ月後、出来上がりを見て驚きます。<br>
+            <br>
+            <span>「こんなにわかりやすく僕の商品の魅力を伝えてくれるの！？文章だけの紹介と全然違うじゃん！」</span><br>
+            <br>
+            もうあまりにも伝わりやすさが違いすぎて、目ん玉が飛び出て地球一周しました。こんなに違いが出るとは思ってなかったんです。そりゃ自分で文章書いただけのブログ記事じゃ売れないわけだなと。<br>
+            <br>
+            <span>で、いざそのランディングページを使って販売を始めると、あっという間に月商300万、400万の人気サービスに成長しました。</span><br>
+            <br>
+            それが現在の「やんばるエキスパート」です。<br>
+            <br>
+            という感じで、やはり商品を売る為にデザインは必要不可欠です。もしマーケティング的な目線も持ち合わせたデザインが出来れば、それはビジネスにおいて最強の武器となるでしょう。<br>
+            <br>
+            だから、この講座を受講する皆さんも、マーケティングが出来るデザイナーになって頂けたら嬉しいなと考えています。デザイナーさんを育てる為の当講座に、マーケティングの動画教材を20本以上用意したのもその為です。<br>
+            <br>
+            ぜひ僕たちと一緒に、今のデザイナー界に革命を起こしていきましょう！
+          </p>
         </div>
-        <div class="bottom-triangle"></div>
-      </section>
-
-      <section class="comparison-wrapper wrapper">
-        <div class="comparison-title">
-          <%= image_tag "https://d5izmuz0mcjzz.cloudfront.net/design_course/chara-ok.png" %>
-            <h3><span>圧倒的なコンテンツ”</span>と指導で<span>フルサポート</span>する<br>
-              <span>コスパ最強の頭おかしい講座</span><br>
-              それがやんばるエキスパートです。
-            </h3>
+      </div>
+      <div class="profile-inner even">
+        <div class="profile">
+          <%= image_tag "https://d5izmuz0mcjzz.cloudfront.net/design_course/profile-img-y.png" %>
+          <h5>メンター・開発者</h5>
+          <p>ゆーすけ</p>
         </div>
-        <div class="gra-title">
-          <h2>Comparison</h2>
-          <h5>他社比較</h5>
+        <div class="message y-message">
+          <h4>時間・場所・関係「自分らしい」人生を!</h4>
+          <p class="profile-text"><span>webデザインを中心にフリーランスをしているゆーすけです。</span><br>
+            <br>
+            一度っきりの人生なんだから他人の敷いたレールではなく「自分らしく」生きたい！そう思って数年前に大学中退を決意しました。<br>
+            辛いこともありましたし体調を崩すこともありました。<br>
+            <br>
+            <span>しかし今では、時間も場所もとらわれない「自分らしい」自由な生活を謳歌しています。</span>
+            webデザインを頑張ろうって決意している方の中にも自由に生きたいって望む方も多いのではないでしょうか。<br>
+            でも時間や場所、人間関係に縛られない「自由」ってどうすれば手に入るか分からないんですよね。<br>
+            <br>
+            <span>でもそんな悩みをやんばるエキスパートは解消してくれます。</span>私自身も本講座を通してスキル面だけでなく、心の底で望んで入るものの挑戦できていない方のサポートをしていきたいと思い本講座に参画いたしました。
+          </p>
         </div>
-        <div class="comparison-container">
-          <div class="comparison-object index">
-            <p>料金</p>
-            <p>サポート期間</p>
-            <p>ツール費用</p>
-            <p>営業サポート</p>
-          </div>
-          <div class="comparison-object service main">
-            <h4 class="yanbaru">やんばる<br>エキスパート</h4>
-            <p>
-              <%= @price.to_s(:delimited) %>
-            </p>
-            <p>無期限</p>
-            <p>無料</p>
-            <p class="yanbaru-p">月5万円稼げるまで<br>
-              無期限サポート</p>
-          </div>
-          <div class="comparison-object service">
-            <h4>A社</h4>
-            <p>298,000</p>
-            <p>16週間</p>
-            <p>別途月5,680円</p>
-            <p>サポートなし</p>
-          </div>
-          <div class="comparison-object service">
-            <h4>B社</h4>
-            <p>723,000</p>
-            <p>45日間</p>
-            <p>別途月5,680円</p>
-            <p>サポートなし</p>
-          </div>
+      </div>
+    </div>
+  </section>
+  <section class="present-wrapper wrapper">
+    <div class="gra-title">
+      <h2>Present</h2>
+      <h5>特典</h5>
+    </div>
+    <div class="white-frame">
+      <div class="title-container">
+        <div class="present-number radius-left">
+          <%= image_tag "https://d5izmuz0mcjzz.cloudfront.net/design_course/support-icon.png" %>
+          <h5>特典1</h5>
         </div>
-      </section>
-
-      <section class="cta-wrapper wrapper">
-        <div class="cta-btn">
-          <%= render partial: 'static_pages/stripe' %>
-            <%= image_tag "https://d5izmuz0mcjzz.cloudfront.net/design_course/deco1.png" , class: "deco1" %>
-              <%= image_tag "https://d5izmuz0mcjzz.cloudfront.net/design_course/deco2.png" , class: "deco2" %>
-                <%= image_tag "https://d5izmuz0mcjzz.cloudfront.net/design_course/deco3.png" , class: "deco3" %>
-                  <%= image_tag "https://d5izmuz0mcjzz.cloudfront.net/design_course/deco4.png" , class: "deco4" %>
+        <h4 class="radius-right">専用チャットコミュニティへの参加権</h4>
+      </div>
+      <div class="title-container">
+        <%= image_tag "https://d5izmuz0mcjzz.cloudfront.net/design_course/support1.png" , class: "present-img" %>
+        <p>初心者から上級者まで色んなフェーズの方々と交流が持てます</p>
+      </div>
+    </div>
+    <div class="white-frame">
+      <div class="title-container n2">
+        <div class="present-number radius-right">
+          <%= image_tag "https://d5izmuz0mcjzz.cloudfront.net/design_course/support-icon.png" %>
+          <h5>特典2</h5>
         </div>
-      </section>
-
-      <section class="feature-wrapper wrapper">
-        <div class="gra-title">
-          <h2>Feature</h2>
-          <h5>他社との違い</h5>
+        <h4 class="radius-left">月収100万円も夢じゃない！<br class="sp-br">
+          お金を稼ぐ戦略</h4>
+      </div>
+      <div class="title-container n2">
+        <%= image_tag "https://d5izmuz0mcjzz.cloudfront.net/design_course/support2.png" , class: "present-img" %>
+        <p>単価の高いデザイナーになるために必要なお金を稼ぐノウハウを教えます</p>
+      </div>
+    </div>
+    <div class="white-frame">
+      <div class="title-container">
+        <div class="present-number radius-left">
+          <%= image_tag "https://d5izmuz0mcjzz.cloudfront.net/design_course/support-icon.png" %>
+          <h5>特典3</h5>
         </div>
-        <div class="features">
-          <div class="feature-inner">
-            <div class="feature-frame">
-              <%= image_tag "https://d5izmuz0mcjzz.cloudfront.net/design_course/difference1.png" %>
-                <h4>案件獲得サポート</h4>
-            </div>
-            <p><span>未経験から案件獲得したノウハウ</span>をまとめ、デザインスキル習得後の営業・案件獲得までを徹底サポートします。</p>
-          </div>
-          <h2>＋</h2>
-          <div class="feature-inner">
-            <div class="feature-frame ora">
-              <%= image_tag "https://d5izmuz0mcjzz.cloudfront.net/design_course/difference2.png" %>
-                <h4>マネタイズ戦略</h4>
-                <h5>（SNS+ビジネス構築戦略）</h5>
-            </div>
-            <p>代表かみざとの<span>6年間の経験と総額２００万円以上投資して得た知識</span>を過不足なく凝縮したコンテンツを提供。</p>
-          </div>
+        <h4 class="radius-right">やんばる限定！<br class="sp-br">
+          デザイン関連のお仕事紹介</h4>
+      </div>
+      <div class="title-container">
+        <%= image_tag "https://d5izmuz0mcjzz.cloudfront.net/design_course/support3.png" , class: "present-img" %>
+        <p>やんばるエキスパート内で依頼があったWebデザインのお仕事を受講生の方へ依頼する限定コミュニティへ招待します。
+          講座を完走して一定レベルになれたこの環境でお仕事を体験してみることも可能です。</p>
+      </div>
+    </div>
+    <div class="white-frame">
+      <div class="title-container n2">
+        <div class="present-number radius-right">
+          <%= image_tag "https://d5izmuz0mcjzz.cloudfront.net/design_course/support-icon.png" %>
+          <h5>特典4</h5>
         </div>
-      </section>
-
-      <section class="curriculum-wrapper wrapper">
-        <div class="gra-title">
-          <h2>Curriculum</h2>
-          <h5>講座の内容</h5>
+        <h4 class="radius-left">追加料金ゼロ！<br class="sp-br">
+          エンジニア講座も閲覧し放題</h4>
+      </div>
+      <div class="title-container n2">
+        <%= image_tag "https://d5izmuz0mcjzz.cloudfront.net/design_course/support4.png" , class: "present-img" %>
+        <p>Webデザイン講座を受けるとエンジニア講座とやんばるエキスパート内の講座が閲覧し放題になります。
+          さらに、今後追加予定のコンテンツも追加料金なしで見ることができます。</p>
+      </div>
+    </div>
+    <div class="white-frame">
+      <div class="title-container">
+        <div class="present-number radius-left">
+          <%= image_tag "https://d5izmuz0mcjzz.cloudfront.net/design_course/support-icon.png" %>
+          <h5>特典5</h5>
         </div>
-        <div class="sp-frame">
-
-          <div class="white-frame">
-            <%= image_tag "https://d5izmuz0mcjzz.cloudfront.net/design_course/curriculum1.png" %>
-              <div>
-                <h4>01 デザイン基礎知識</h4>
-                <ul>
-                  <li>デザインの四原則</li>
-                  <li>配色の基本</li>
-                  <li>フォントの基礎</li>
-                  <li>レイアウトの基礎</li>
-                  <li>コーディングの知識</li>
-                </ul>
-              </div>
-          </div>
-          <div class="white-frame">
-            <%= image_tag "https://d5izmuz0mcjzz.cloudfront.net/design_course/curriculum2.png" %>
-              <div>
-                <h4>02 ツールの基本操作</h4>
-                <ul>
-                  <li>Figmaの使い方</li>
-                  <li>Slackの使い方</li>
-                  <li>Webツール（素材サイト）</li>
-                  <li>Webツール（配色・フォント）</li>
-                </ul>
-              </div>
-          </div>
-          <div class="white-frame">
-            <%= image_tag "https://d5izmuz0mcjzz.cloudfront.net/design_course/curriculum3.png" %>
-              <div>
-                <h4>03 【実践】名刺制作</h4>
-                <ul>
-                  <li>Figma操作に慣れよう</li>
-                  <li>名刺を修正してみよう</li>
-                  <li>オリジナル名刺を作成しよう</li>
-                </ul>
-              </div>
-          </div>
-          <div class="white-frame">
-            <%= image_tag "https://d5izmuz0mcjzz.cloudfront.net/design_course/curriculum4.png" %>
-              <div>
-                <h4>04 【実践】バナー制作</h4>
-                <ul>
-                  <li>バナーを理解しよう</li>
-                  <li>バナーを制作しよう</li>
-                  <li>課題添削</li>
-                </ul>
-              </div>
-          </div>
-          <div class="white-frame">
-            <%= image_tag "https://d5izmuz0mcjzz.cloudfront.net/design_course/curriculum5.png" %>
-              <div>
-                <h4>05 【実践】LP制作</h4>
-                <ul>
-                  <li>LPとは何か？</li>
-                  <li>要件定義を確認しよう</li>
-                  <li>LP制作の流れ</li>
-                  <li>LPを制作しよう</li>
-                  <li>課題添削</li>
-                </ul>
-              </div>
-          </div>
-          <div class="white-frame">
-            <%= image_tag "https://d5izmuz0mcjzz.cloudfront.net/design_course/curriculum6.png" %>
-              <div>
-                <h4>06 【実践】コーポレート制作</h4>
-                <ul>
-                  <li>コーポレート制作</li>
-                  <li>要件定義を確認しよう</li>
-                  <li>コーポレート制作の流れ</li>
-                  <li>コーポレートを制作しよう</li>
-                  <li>課題添削</li>
-                </ul>
-              </div>
-          </div>
-          <div class="white-frame">
-            <%= image_tag "https://d5izmuz0mcjzz.cloudfront.net/design_course/curriculum7.png" %>
-              <div>
-                <h4>07 【実践編】案件獲得サポート</h4>
-                <ul>
-                  <li>案件獲得サポートについて</li>
-                  <li>営業先リスト</li>
-                  <li>営業提案の方法</li>
-                  <li>面談でのポイント</li>
-                  <li>ポートフォリオをつくろう</li>
-                </ul>
-              </div>
-          </div>
-          <div class="white-frame">
-            <%= image_tag "https://d5izmuz0mcjzz.cloudfront.net/design_course/curriculum8.png" %>
-              <div>
-                <h4>08 マーケティング講座</h4>
-                <ul>
-                  <li>売れるLPの作り方</li>
-                  <li>マーケティングの基礎</li>
-                  <li>ライティング</li>
-                  <li>集客戦略</li>
-                  <li>仕組み化</li>
-                </ul>
-              </div>
-          </div>
-          <div class="white-frame">
-            <%= image_tag "https://d5izmuz0mcjzz.cloudfront.net/design_course/curriculum9.png" %>
-              <div>
-                <h4>09 マーケティング講座2</h4>
-                <ul>
-                  <li>SNS戦略</li>
-                  <li>アカウント設計</li>
-                  <li>商品設計</li>
-                  <li>マネタイズ戦略</li>
-                  <li>Lステップ運用事例</li>
-                </ul>
-              </div>
-          </div>
-        </div>
-        <h3>教材参考動画</h3>
-        <div class="movie_container">
-          <% @movies.each do |movie| %>
-            <div class="movie_innner">
-              <%= embed_youtube(movie.url) %>
-                <p>
-                  <%= movie.title%>
-                </p>
-            </div>
-            <% end %>
-        </div>
-        <div class="cta-btn">
-          <%= render 'static_pages/stripe' %>
-        </div>
-      </section>
-
-      <section class="flow-wrapper wrapper">
-        <div class="gra-title">
-          <h2>FLow</h2>
-          <h5>講座の流れ</h5>
-        </div>
-
-        <div class="flow-flex">
-          <div class="flow-container">
-            <%= image_tag "https://d5izmuz0mcjzz.cloudfront.net/design_course/flow1.png" %>
-              <h5>01. 専用コミュニティに参加</h5>
-              <p>やんばるエキスパートはメンターによる学習サポート付き！Slackというチャットツールでやんばるエキスパート公式サポートのコミュニティに参加します。</p>
-          </div>
-          <div class="blue-arrow"> </div>
-          <div class="flow-container">
-            <%= image_tag "https://d5izmuz0mcjzz.cloudfront.net/design_course/flow2.png" %>
-              <h5>02. WEBデザイン学習スタート！</h5>
-              <p>準備ができたら講義をもとに学習開始！講義は動画中心なので、実際に手を動かしながらスキルアップを実感できます！</p>
-          </div>
-          <div class="blue-arrow"></div>
-          <div class="flow-container">
-            <%= image_tag "https://d5izmuz0mcjzz.cloudfront.net/design_course/flow3.png" %>
-              <h5>03. 詰まったらメンターに質問！</h5>
-              <p>分からないことがあったらメンターに質問してみましょう。ただ答えを教えるのではなく、自分で課題を解決する力が身につくように導きます！</p>
-          </div>
-          <div class="blue-arrow"></div>
-          <div class="flow-container">
-            <%= image_tag "https://d5izmuz0mcjzz.cloudfront.net/design_course/flow4.png" %>
-              <h5>04. プロによるデザイン添削</h5>
-              <p>課題で制作したデザインは、現役デザイナーによる添削を受けられます</p>
-          </div>
-          <div class="blue-arrow"></div>
-          <div class="flow-container">
-            <%= image_tag "https://d5izmuz0mcjzz.cloudfront.net/design_course/flow5.png" %>
-              <h5>05. 営業・案件獲得サポート</h5>
-              <p>課題をクリアしたら、実案件の獲得に向けた営業ノウハウを学びましょう。案件獲得向けてメンターがサポートします。</p>
-          </div>
-        </div>
-      </section>
-
-
-      <!-- 料金セクション -->
-      <section class="price-wrapper wrapper">
-        <div class="blue-circle">
-          <div class="gra-title">
-            <h2>Price</h2>
-            <h5>料金</h5>
-          </div>
-          <div class="white-frame">
-            <h4>WEBデザイン講座</h4>
-            <div class="accent-block"></div>
-            <h3 class="before-price">通常料金<span>150,000</span>円</h3>
-            <div class="after-price">
-              <%= image_tag "https://d5izmuz0mcjzz.cloudfront.net/design_course/cost-icon.png" %>
-                <h1>
-                  <%= @price.to_s(:delimited) %>
-                </h1>
-            </div>
-            <ul>
-              <li>売上5万円稼ぐまで案件獲得サポート</li>
-              <li>無制限のカリキュラム閲覧権</li>
-              <li>メンターへ質問し放題</li>
-              <li>プロの添削付き</li>
-              <li>マーケティング講座付き</li>
-              <li>コンテンツ追加しても追加料金ゼロ</li>
-            </ul>
-          </div>
-          <div class="cta-btn">
-            <%= render 'static_pages/stripe' %>
-          </div>
-        </div>
-      </section>
-
-      <!-- 口コミ -->
-      <section class="voice-wrapper wrapper">
-        <div class="gra-title">
-          <h2>Voice</h2>
-          <h5>体験者の声</h5>
-        </div>
-        <div class="flex-wrapper">
-          <div class="flex-inner">
-            <%= image_tag "design/ohshiro.png" , class: "person" %>
-              <h6 class="person-name">おおしろ</h6>
-              <div class="performance-inner">
-                <%= image_tag "https://d5izmuz0mcjzz.cloudfront.net/php/title-deco.png" %>
-                  <h6>デザイン知識を得ることで<br>日常が楽しくなる</h6>
-              </div>
-              <p>
-<span>どんな悩みを抱えていましたか？</span>
-会社に勤務していますと8時間は職場に居ないとお給料が貰えないのが当たり前です。
-
-毎日ずっと忙しい訳ではないので勤務中の空き時間が非常に無駄に感じます。
-定年までまだまだ年数がありますし、どうせ働くなら楽しくて夢中になれるお仕事がしたいと考えるようになりました。
-
-昔からPC操作が好きで、PC1台あればどこでも働ける職種に憧れを抱いていました。
-ですが、これが得意だ！と言える技術が無く、いつも自分に自信がありませんでした。
-
-
-<span>他にどんなサービスと比較していましたか？</span>
-webデザインはもちろん、ライティングやマーケティングのスクールはチェックしていました。
-SNSに出てきた広告で他社の無料体験レッスンを何度か受けたことがあります。
-無料でここまで教えてくれるなんて素敵！と感激したスクールもありました。
-
-ですがどのスクールも受講料が高額。
-
-本当に自分の強みになれるのか？仕事に繋がるのか？と自問自答しているうちに時間は経ち、諦めてしまうパターンばかりでした。
-
-
-<span>なぜここのサービスを選びましたか？</span>
-まず、破格の値段設定。
-
-webデザインだけではなく他にも興味があった分野が全部詰まって、他社の半額以下。
-それ以上と言っても過言ではない受講料に驚きでした。
-
-更に心打たれたものが「月5万円稼げるまで無期限でサポートします」と堂々宣言していた事。
-
-よっぽどの自信がないと「無期限でサポート」なんて言いきれないですし、学ぶ価値があるのではないかと自分の人生を託す気持ちで申し込みまで踏み切りました。
-
-
-<span>人生にどんな変化がありましたか？</span>
-なんとなく「イケてる」と思って見ていたデザインも「何故、そう思ったのか？」と考えるようになり、強弱・余白を付けることでどのような効果があるのか？デザインは感覚ではなく目的を明確化して設計する事が大切。
-
-学習を始めてから深く意識するようになりました。
-
-
-また、周りにデザインを学習していることを話すと、数名から制作の依頼が！始めて間もない段階で驚きでしたが、それだけデザイナーの需要が高い事が分かり、学習意欲も高まりました。
-依頼に応じて制作したデザインはとても好評で、自分に大きな自信がつきました。
-
-
-<span>もし利用していなかったらどんな人生でしたか？</span>
-本講座と出会うことがなければきっと独学で学習を始めていたと思います。
-
-検索すれば情報がありすぎて何から始めていのか分からない・・。モチベーションがもたない。行き詰って挫折している姿が想像出来ます。
-
-同じ目標を持った生徒と切磋琢磨しながら学習に励む日々
-
-。一週間前を振り返っても、自分の成長スピードが爆上がりしているのを感じます。
-学習していることを公にすることによって周りからデザインしてほしい！と声かけて頂ける事もしばしば。
-
-同時進行で案件に挑戦できる、困ったことがあればメンターに相談・アドバイスがもらえる。
-
-ここまで手厚いサポートがあるスクールはここしかないと私は思います。なにより生活が楽しくなりました。本講座に感謝の気持ちでいっぱいです。
-
-              </p>
-          </div>
-          <div class="flex-inner">
-            <%= image_tag "design/maru.png" , class: "person" %>
-              <h6 class="person-name">まる</h6>
-              <div class="performance-inner">
-                <%= image_tag "https://d5izmuz0mcjzz.cloudfront.net/php/title-deco.png" %>
-                  <h6>やんばるエキスパートを<br>受講した感想</h6>
-              </div>
-              <p>
-<span>どんな悩みを抱えていましたか？</span>
-悩みは２つありました。
-
-1つ目は、
-webデザイン勉強のモチベーションが保てないことです。
-
-2つ目は、１人で問題を解決することに限界を感じたことです。
-
-私は半年前に独学でwebデザインの勉強をしていました。
-無料サイトで勉強をしていましたが、「ツールの操作方法」や「自分のデザインの良しあし」の悩みが一人では解決できずにいました。
-
-これらのことで勉強につまずいてしまいモチベーションが保てず、３か月程度で勉強をやめてしまいました。
-
-
-<span>他にどんなサービスと比較していましたか？</span>
-地元のwebデザインスクール、オンラインwebデザインスクール、職業訓練校と比較していました。
-
-地元のwebデザインスクール、オンラインwebデザインスクールは受講料が20万円～70万円程度と高すぎるので受講は難しいと判断しました。
-
-職業訓練校は無料で受講はできます。しかし地元の職業訓練校ではwebデザインコースがなく、他県の職業訓練校に通うには、金銭面や通学時間、コロナの影響から難しいと判断しました。
-
-
-<span>なぜここのサービスを選びましたか？</span>
-理由は2つあります。
-
-1つ目はコスパが良いからです。
-やんばるエキスパートの受講料は5万円です。
-
-やんばるエキスパートより安く学べるスクールは私が探した限りでは存在しませんでした。
-また15万円稼げるまでサポートしていただけるので、15万稼いだら10万円得します。
-
-2つ目は悪い口コミがなかったからです。
-私は物を買う時に必ず口コミやレビューをみて買うかどうか判断します。
-ぼったくり商品だと必ず悪い口コミがあります。
-同じようにやんばるエキスパートもブログやツイッターを検索しましたが悪く言っている人がいなく、称賛する内容ばかりでした。
-
-このことからやんばるエキスパートに対する信ぴょう性が高まりました。
-
-
-<span>人生にどんな変化がありましたか？</span>
-1番はデザインの楽しさを知れたことです。
-
-独学では、目標までのプロセス、自身の成長度合いが分からず不安で、デザインが楽しいと思える余裕もありませんでした。
-
-やんばるエキスパートは、目標までのプロセスが明確に示されています。
-また課題のレビューをいただくことで自身の成長度合いも分かります。
-
-成長を実感できるので、どんどんデザインに夢中になって勉強しています。
-
-
-<span>もし利用していなかったらどんな人生でしたか？</span>
-独学でダラダラと勉強をして、何も得られないまま普段の生活を送っていたと思います。
-
-実際にやんばるエキスパートを受講するまでの3か月間はほとんど勉強していませんでした。
-
-1年前は独学でプログラミングの勉強もしていたので、早くやんばるエキスパートに入ってサポートを受けて勉強すれば良かったなと後悔しています。
-
-              </p>
-          </div>
-          <div class="flex-inner">
-            <%= image_tag "design/nishiken.png" , class: "person" %>
-              <h6 class="person-name">にしけん</h6>
-              <div class="performance-inner">
-                <%= image_tag "https://d5izmuz0mcjzz.cloudfront.net/php/title-deco.png" %>
-                  <h6>ひかえめに言って運命の<br>出会いです
-                  </h6>
-              </div>
-              <p>
-<span>どんな悩みを抱えていましたか？</span>
-本業で色々な環境の変化があり、それが原因で漠然と副業で稼ぎたいなとか
-今の状況を変えたいなと思い2019年からHTML、CSSの勉強、ブログ立ち上げ、
-YouTubeチャンネルの立ち上げとチャレンジしてきました。
-
-ただ、
-どのチャレンジでも成功体験を手にしておらず自分の状況を変えたいという
-目標を達成しているとは到底言えない状態でした。
-
-本業の状況に不満を持ったまま何も変わらない状態が続いていました。
-
-webデザインに興味を持ったのはTwitterでノマド生活している人のツイートを
-見てからです。
-
-
-<span>他にどんなサービスと比較していましたか？</span>
-HTML、CSSを学習していた頃はProgate、ドットインストールを
-利用していました。
-
-YouTubeは完全独学で2万円弱の有料noteを購入したぐらい。
-
-webデザインの学習サービスとしてはやまもとりゅうけんさんの
-人生逃げ切りサロンのwebデザイン講座の無料枠を受講したことがあります。
-
-webデザインの教育サービスではそれ以外のサービスを検討したことも
-受講したこともなかったです。
-
-
-<span>なぜここのサービスを選びましたか？</span>
-ちょうど人生逃げ切りサロンのwebデザイン講座の有料枠に進もうか悩んでいる時期に
-かみざとさんのTwitterとLINEでやんばるエキスパートのwebデザイン講座の開設の
-準備が進んでいるという情報を知りました。
-
-やんばるエキスパートの教育コンセプトと内容、それとwebデザイン講座の圧倒的な
-コストパフォーマンスの情報を見てこちらのサービスを選びました。
-
-<span>人生にどんな変化がありましたか？</span>
-webデザイン講座を受講開始してから１ヶ月ほど経った状態での感想ですが。
-
-webデザイン講座受講前にチャレンジしていた物は基本、独学だったのでメンターに
-自由に質問できたりアドバイスを貰える環境、他の受講生と情報を共有できる環境が
-あるんだという事に気づけたというのがまず一つの大きな変化。
-
-さらにやんばるエキスパートはwebデザイン講座の受講生でも他の講座の教材を自由に
-見ることができたり、かみざとさんのオンライン勉強会も開催されたり、webデザイン以外の
-知見も広げることができる環境があります。
-
-学習の目標がwebデザインであったとしても、他の講座の知識を知ることで新たな気づきが
-あったりします。
-
-これらの学習環境を手に入れることができたというところが、独学でやっていた頃からの
-大きな変化かなと感じています。
-
-
-<span>もし利用していなかったらどんな人生でしたか？</span>
-今でもネットやYouTubeで配信されているような無料の教材を使った独学を
-続けていたんじゃないかと思います。
-
-やんばるエキスパートのwebデザイン講座を受講することによる気付きは日々、
-増えているので利用していなかったらそれらの気づきも一生ないままで独学を続けて
-いたんじゃないかと思います。
-
-もしかしたら利用してなくても独学でググりまくって、回り回って同等の知識を
-手に入れられる事もあるかもしれないけど、それは大きく遠回りする事になり、
-この講座を利用した時の最短の道で成長できる環境を知らないままの
-もったいない人生になっていたかも。
-
-              </p>
-          </div>
-
-          <div class="flex-inner">
-            <%= image_tag "design/hirohumi.png" , class: "person" %>
-              <h6 class="person-name">ひろふみ</h6>
-              <div class="performance-inner">
-                <%= image_tag "https://d5izmuz0mcjzz.cloudfront.net/php/title-deco.png" %>
-                  <h6>アラフォー＆人見知りに<br>勧めたい講座です</h6>
-              </div>
-              <p>
-<span>どんな悩みを抱えていましたか？</span>
-私は映像制作フリーランスとして活動している42歳、６児の父です。
-
-今後クリエイティブスキルの幅を広めたいと考えてオンライン講座を色々と模索していましたが、これといった決定打がなく選定に迷っていました。
-
-そんな中、約一ヶ月後くらいにかみざとさんの公式LINEでWebデザイン講座のサービスが開始されることを知り、概要を覗いてみました。
-
-
-<span>他にどんなサービスと比較していましたか？</span>
-出永紘己さん(＠idenagahiroki)のWebデザイン個別コンサルと、畑違いですがアフターエフェクトを学べるカズノコさん(@kazunokoblog)のMotion Renderです。
-
-
-<span>なぜここのサービスを選びましたか？</span>
-買い切り、低価格、自分のペースで進められる、月５万稼ぐまで無期限サポート、週１回のミーティング等の高コスパもさながら一番の決め手となったのは、Ruby講座？受講生あっこさん(@akko_marry
-)のTwitterで紹介されていたslackスクショの内容です(一つの質問に対してメンターさんとなんと145回ものやりとり！）。
-
-やんばるエキスパート講師陣のサポートの手厚さに感動したのを今でも覚えています。
-
-きっと要領の悪い中年の私でも諦めずに継続すれば挫折しないはずだ！と確信、募集開始と同時に申し込みました。
-
-受講して約二ヶ月経ちますが講座内容は丁寧でわかりやすく、他受講生の質問に対する回答や受講生のポートフォリオ等がslack内で共有されているので、そこから新たな知識が獲得できたりオンライン学習でもモチベーションを維持できます。
-
-
-<span>人生にどんな変化がありましたか？</span>
-思考がポジティブに変化しました。僕は人見知りでzoomに苦手意識があったのですが、デザイン講座の他に、かみざとさんのマーケティングやマインドの勉強会に参加させていただくことで克服できました。
-
-殆どROM専だったTwitterも今では毎日情報発信できるようになり、色々な面で自走する力がついてきたと思います。顔出しも躊躇しなくなりました。
-
-
-<span>もし利用していなかったらどんな人生でしたか？</span>
-年齢や性格を盾にして限定的な範囲でしか行動せず、収入もそれに比例してたいして稼ぐこともできず人生の幸福度はそれほど高まっていなかったと思います。
-
-              </p>
-          </div>
-          <div class="flex-inner">
-            <%= image_tag "design/masakichi.png" , class: "person" %>
-              <h6 class="person-name">まさきち</h6>
-              <div class="performance-inner">
-                <%= image_tag "https://d5izmuz0mcjzz.cloudfront.net/php/title-deco.png" %>
-                  <h6>エンジニアでも<br>デザインを学びたい!</h6>
-              </div>
-              <p>
-<span>どんな悩みを抱えていましたか？</span>
-自分の作ったWebサービスのページの見た目がイマイチで悩んでいました。
-
-
-
-<span>他にどんなサービスと比較していましたか？</span>
-他のオンラインデザインスクールやサロンと比較しました。
-
-
-
-<span>なぜここのサービスを選びましたか？</span>
-やんばるはプログラミングなども学べ、PHPコースも受講しているのですが、
-
-メンターの対応がとても丁寧で、
-
-学習のモチベーションを上げてくれます。
-
-なのでこの場所でデザインも学びたいと思ったからです
-
-
-
-<span>人生にどんな変化がありましたか？</span>
-普段の生活でも広告や雑誌などのデザインを意識するようになり、
-
-自分の中のデザインの引き出しがかなり増え、
-
-どのデザインが素敵なのか見えてくるようになりました。
-
-学んだ事を元にTwitterで図解を作成したところ、
-
-高評価もいただけました。
-
-
-
-<span>もし利用していなかったらどんな人生でしたか？</span>
-やんばるエキスパートでデザインを学んでいなければ、
-
-デザインの良し悪しがわからずに悩み続けていたと思います。
-
-              </p>
-          </div>
-        </div>
-      </section>
-
-      <section class="profile-wrapper wrapper">
-        <div class="gra-title">
-          <h2>Profile</h2>
-          <h5>代表・講師紹介</h5>
-        </div>
-
-        <div class="profile-container">
-          <div class="profile-inner">
-            <div>
-              <div class="profile">
-                <%= image_tag "https://d5izmuz0mcjzz.cloudfront.net/design_course/profile-img-k.png" %>
-                  <h5>代表・開発者</h5>
-                  <p>かみざと</p>
-              </div>
-            </div>
-            <div class="message">
-
-              <h4>デザイン × マーケティング最強ビジネススキルで人生に革命を</h4>
-              <p class="profile-text">はいさい、かみざとです！<br><br>
-                僕は現在、沖縄でのんびり暮らしながら、お金にも時間にも困らない余裕のある毎日を過ごしています。<br><br>
-                、、、ということを書くと順風満帆な人生を想像されると思いますが、実際は「マーケティングを意識したデザイン」に出会うまで、いまいちパッとしないビジネスライフを送ってました。<br><br>
-                <span>やっぱりデザインの威力って凄いんです。</span><br><br>
-                ここを軽視していた為に、僕は月商500万の成果を出すまでに6年もかかってしまいました。<br>
-                というのも、僕はこれまでエンジニア教育をやってきたのですが、自分の商品のランディングページを持っておらず、いつもブログで商品情報をまとめてたんです。<br><br>
-                <span>「カッコつけたデザインなんか無くても文章良ければ売れるんじゃ〜！！！」</span><br><br>
-                そんな考えでいたから、結果はまぁ、、、売れませんよね笑<br><br>
-                その時は月商100万いくのがやっと。「200万、300万になるにはどうすれば良いんだろう？」と悩む日々が続きました。<br><br>
-                そこに追い討ちをかけるようにコロナの襲来。そこを機にSNSのフォロワーもどんどん減り、売り上げも下がる一方。重なる時は重なります。<br><br>
-                <span>「もしかしたら自分はここが限界なのかもしれない」</span><br><br>
-                そう考えて落ち込んだりもしました。
-                でも、それからやっと自身の商品紹介ページを見直し、改めてデザインの重要性に目を向けてみたんです。<br><br>
-                <span>「自分の商品をデザインでもっとカッコよく見せたら売れるんじゃないか？そこに僕のマーケティング的な視点が加われば最強になるんじゃないか？」</span><br><br>
-                そう考え、僕はデザイナーさんに商品のランディングページを外注することになりました。
-                それから1ヶ月後、出来上がりを見て驚きます。<br><br>
-                <span>「こんなにわかりやすく僕の商品の魅力を伝えてくれるの！？文章だけの紹介と全然違うじゃん！」</span><br><br>
-                もうあまりにも伝わりやすさが違いすぎて、目ん玉が飛び出て地球一周しました。こんなに違いが出るとは思ってなかったんです。そりゃ自分で文章書いただけのブログ記事じゃ売れないわけだなと。<br><br>
-                <span>で、いざそのランディングページを使って販売を始めると、あっという間に月商300万、400万の人気サービスに成長しました。</span><br><br>
-                それが現在の「やんばるエキスパート」です。<br><br>
-                という感じで、やはり商品を売る為にデザインは必要不可欠です。もしマーケティング的な目線も持ち合わせたデザインが出来れば、それはビジネスにおいて最強の武器となるでしょう。<br><br>
-                だから、この講座を受講する皆さんも、マーケティングが出来るデザイナーになって頂けたら嬉しいなと考えています。デザイナーさんを育てる為の当講座に、マーケティングの動画教材を20本以上用意したのもその為です。<br><br>
-                ぜひ僕たちと一緒に、今のデザイナー界に革命を起こしていきましょう！
-              </p>
-            </div>
-          </div>
-
-          <div class="profile-inner even">
-            <div class="profile">
-              <%= image_tag "https://d5izmuz0mcjzz.cloudfront.net/design_course/profile-img-y.png" %>
-                <h5>メンター・開発者</h5>
-                <p>ゆーすけ</p>
-            </div>
-            <div class="message y-message">
-              <h4>時間・場所・関係「自分らしい」人生を!</h4>
-              <p class="profile-text"><span>webデザインを中心にフリーランスをしているゆーすけです。</span><br><br>
-                一度っきりの人生なんだから他人の敷いたレールではなく「自分らしく」生きたい！そう思って数年前に大学中退を決意しました。<br>
-                辛いこともありましたし体調を崩すこともありました。<br><br>
-                <span>しかし今では、時間も場所もとらわれない「自分らしい」自由な生活を謳歌しています。</span>
-                webデザインを頑張ろうって決意している方の中にも自由に生きたいって望む方も多いのではないでしょうか。<br>でも時間や場所、人間関係に縛られない「自由」ってどうすれば手に入るか分からないんですよね。<br><br>
-                <span>でもそんな悩みをやんばるエキスパートは解消してくれます。</span>私自身も本講座を通してスキル面だけでなく、心の底で望んで入るものの挑戦できていない方のサポートをしていきたいと思い本講座に参画いたしました。
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="present-wrapper wrapper">
-        <div class="gra-title">
-          <h2>Present</h2>
-          <h5>特典</h5>
-        </div>
-        <div class="white-frame">
-          <div class="title-container">
-            <div class="present-number radius-left">
-              <%= image_tag "https://d5izmuz0mcjzz.cloudfront.net/design_course/support-icon.png" %>
-                <h5>特典1</h5>
-            </div>
-            <h4 class="radius-right">専用チャットコミュニティへの参加権</h4>
-          </div>
-          <div class="title-container">
-            <%= image_tag "https://d5izmuz0mcjzz.cloudfront.net/design_course/support1.png" , class: "present-img" %>
-              <p>初心者から上級者まで色んなフェーズの方々と交流が持てます</p>
-          </div>
-        </div>
-        <div class="white-frame">
-          <div class="title-container n2">
-            <div class="present-number radius-right">
-              <%= image_tag "https://d5izmuz0mcjzz.cloudfront.net/design_course/support-icon.png" %>
-                <h5>特典2</h5>
-            </div>
-            <h4 class="radius-left">月収100万円も夢じゃない！<br class="sp-br">お金を稼ぐ戦略</h4>
-          </div>
-          <div class="title-container n2">
-            <%= image_tag "https://d5izmuz0mcjzz.cloudfront.net/design_course/support2.png" , class: "present-img" %>
-              <p>単価の高いデザイナーになるために必要なお金を稼ぐノウハウを教えます</p>
-          </div>
-        </div>
-        <div class="white-frame">
-          <div class="title-container">
-            <div class="present-number radius-left">
-              <%= image_tag "https://d5izmuz0mcjzz.cloudfront.net/design_course/support-icon.png" %>
-                <h5>特典3</h5>
-            </div>
-            <h4 class="radius-right">やんばる限定！<br class="sp-br">デザイン関連のお仕事紹介</h4>
-          </div>
-          <div class="title-container">
-            <%= image_tag "https://d5izmuz0mcjzz.cloudfront.net/design_course/support3.png" , class: "present-img" %>
-              <p>やんばるエキスパート内で依頼があったWebデザインのお仕事を受講生の方へ依頼する限定コミュニティへ招待します。
-                講座を完走して一定レベルになれたこの環境でお仕事を体験してみることも可能です。</p>
-          </div>
-        </div>
-        <div class="white-frame">
-          <div class="title-container n2">
-            <div class="present-number radius-right">
-              <%= image_tag "https://d5izmuz0mcjzz.cloudfront.net/design_course/support-icon.png" %>
-                <h5>特典4</h5>
-            </div>
-            <h4 class="radius-left">追加料金ゼロ！<br class="sp-br">エンジニア講座も閲覧し放題</h4>
-          </div>
-          <div class="title-container n2">
-            <%= image_tag "https://d5izmuz0mcjzz.cloudfront.net/design_course/support4.png" , class: "present-img" %>
-              <p>Webデザイン講座を受けるとエンジニア講座とやんばるエキスパート内の講座が閲覧し放題になります。
-                さらに、今後追加予定のコンテンツも追加料金なしで見ることができます。</p>
-          </div>
-        </div>
-        <div class="white-frame">
-          <div class="title-container">
-            <div class="present-number radius-left">
-              <%= image_tag "https://d5izmuz0mcjzz.cloudfront.net/design_course/support-icon.png" %>
-                <h5>特典5</h5>
-            </div>
-            <h4 class="radius-right">コーディングの質問もOK！</h4>
-          </div>
-          <div class="title-container">
-            <%= image_tag "https://d5izmuz0mcjzz.cloudfront.net/design_course/support5.png" , class: "present-img" %>
-              <p>デザイナーにとってプログラミングの知識はある程度必要になってきます。やんばるエキスパートではデザイナーに必要なプログラミングの知識も質問し放題となっております。</p>
-          </div>
-        </div>
-      </section>
-
-      <!-- 質問関連制御 -->
-      <section class="faq-wrapper wrapper">
-        <div class="gra-title">
-          <h2>FAQ</h2>
-          <h5>よくある質問</h5>
-        </div>
-        <ul class="faq-list text-white">
-          <%= render partial: "faq" , collection: @faqs %>
-        </ul>
-      </section>
-
-      <!-- お問い合わせ -->
-      <section id="design_contact" class="contact-wrapper wrapper">
-        <div class="gra-title">
-          <h2>Contact</h2>
-          <h5>お問い合わせフォーム</h5>
-        </div>
-        <div class="white-frame">
-          <% if flash[:notice] %>
-            <p class="contact-flash">
-              <%= flash[:notice] %>
-            </p>
-            <% end %>
-              <%= form_with url: design_contact_path, local: true do |form| %>
-                <%= render 'submit_field' , form: form %>
-        </div>
-        <%= form.submit "送信する" , class: "submit_botton" %>
-          <% end %>
-      </section>
-
-      <section class="footer-wrapper wrapper">
-        <%= image_tag "https://d5izmuz0mcjzz.cloudfront.net/design_course/servise-name.png" %>
-      </section>
-    </section>
+        <h4 class="radius-right">コーディングの質問もOK！</h4>
+      </div>
+      <div class="title-container">
+        <%= image_tag "https://d5izmuz0mcjzz.cloudfront.net/design_course/support5.png" , class: "present-img" %>
+        <p>デザイナーにとってプログラミングの知識はある程度必要になってきます。やんばるエキスパートではデザイナーに必要なプログラミングの知識も質問し放題となっております。</p>
+      </div>
+    </div>
+  </section>
+  <!-- 質問関連制御 -->
+  <section class="faq-wrapper wrapper">
+    <div class="gra-title">
+      <h2>FAQ</h2>
+      <h5>よくある質問</h5>
+    </div>
+    <ul class="faq-list text-white">
+      <%= render partial: "faq" , collection: @faqs %>
+    </ul>
+  </section>
+  <!-- お問い合わせ -->
+  <section id="design_contact" class="contact-wrapper wrapper">
+    <div class="gra-title">
+      <h2>Contact</h2>
+      <h5>お問い合わせフォーム</h5>
+    </div>
+    <div class="white-frame">
+      <% if flash[:notice] %>
+        <p class="contact-flash">
+          <%= flash[:notice] %>
+        </p>
+      <% end %>
+      <%= form_with url: design_contact_path, local: true do |form| %>
+        <%= render 'submit_field' , form: form %>
+      </div>
+      <%= form.submit "送信する" , class: "submit_botton" %>
+    <% end %>
+  </section>
+  <section class="footer-wrapper wrapper">
+    <%= image_tag "https://d5izmuz0mcjzz.cloudfront.net/design_course/servise-name.png" %>
+  </section>
+</section>
