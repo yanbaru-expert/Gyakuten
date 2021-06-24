@@ -20,7 +20,7 @@ class Genre < ApplicationRecord
   FRONT = %w[html js ts react vue angular].freeze
   RUBY = %w[basic git ruby rails].freeze
   LIVE = %w[talk live].freeze
-  MONEY = %w[money_marketing money_lstep money_insta].freeze
+  MONEY = %w[money_marketing writing money_lstep money_insta].freeze
   DESIGN = %w[design_base design_matter design_usage design_task].freeze
   MARKETING = %w[mind].freeze
   IN_GENERAL = (MARKETING + MONEY + LIVE + ["invisible"]).freeze
