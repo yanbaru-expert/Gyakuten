@@ -142,7 +142,7 @@
     h4{
       color: $white-color;
     }
-    button{
+    button, a{
       display: block;
       width: fit-content;
       margin: 0 auto;
@@ -159,7 +159,7 @@
         z-index: 5;
         width: calc(100% -20px) !important;
         max-width: 450px;
-        font-size: 19px;
+        font-size: 17px;
         padding: 20px 20px;
       };
       &:hover{
@@ -171,12 +171,20 @@
         top: 5px;
       }
     }
+    .l-step{
+      background-color: #4CCE4C;
+      box-shadow: 0 5px 0 0 #205b20;
+        &:hover{
+        background-color: #62df62;
+        transition: .3s;
+      }
+    }
     h6{
       font-size: $subtitle-font-size;
       margin-top: 0;
       margin-bottom: 0;
       @include sp{
-        font-size: 18px;
+        font-size: 17px;
       };
     }
   }
