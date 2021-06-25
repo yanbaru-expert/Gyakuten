@@ -225,7 +225,7 @@
         }
   
       }
-      button{
+      button, a{
         width: 263px;
         height: 55px;
         margin-top: 16px;
@@ -234,7 +234,7 @@
         color: $main-color;
         font-size: 20px;
         font-weight: $strength-font;
-        line-height: 60px;
+        line-height: 55px;
         float: right;
         @include sp{
           height: 36px;
@@ -242,7 +242,7 @@
           margin-bottom: auto;
           margin-top: 10px;
           font-size: 12px;
-          line-height: 28px;
+          line-height: 40px;
         };
         &::after{
           content: "  >";

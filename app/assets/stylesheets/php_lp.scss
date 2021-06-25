@@ -203,7 +203,7 @@
           display: none;
         }
       }
-      button{
+      button, a{
         height: 100%;
         font-size: 1.5rem;
         padding: .875rem 2.75rem;
@@ -215,10 +215,19 @@
           transition: .3s;
         }
       }
+      .l-step{
+        background-color: #4CCE4C;
+        box-shadow: 0 5px 0 0 #205b20;
+        color: white;
+          &:hover{
+          background-color: #62df62;
+          transition: .3s;
+        }
+      }
       @include sp{
         height: 3.875rem;
         padding-left: 1rem;
-        button{
+        button, a{
           font-size: .875rem;
           padding: 10px 1rem;
         }
