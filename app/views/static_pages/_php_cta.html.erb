@@ -24,10 +24,15 @@
   </div>
   <!-- cta-container -->
   <div class="cta-btn">
-    <h3>＼ 5月末まで!! 8名限定／</h3>
-    <button class="cta-btn" role="link" type="button"><%= image_tag "https://d5izmuz0mcjzz.cloudfront.net/php/triangle.svg" %><span>無期限の転職サポート付き！</span>
-        PHP講座を申し込む
-    </button>
+    <% if deadline_judge %>
+    <h3>＼ <%= end_month_info %>末まで!! 8名限定／</h3>
+      <button class="cta-btn" role="link" type="button"><%= image_tag "https://d5izmuz0mcjzz.cloudfront.net/php/triangle.svg" %><span>無期限の転職サポート付き！</span>
+          PHP講座を申し込む
+      </button>
+    <% else %>
+      <h3>\次回<%= end_month_info %>24日から募集開始/</h3>
+      <a href="https://line.me/R/ti/p/%40fyp8311b" class="l-step cta-btn">LINEで先行情報を入手する</a>
+    <% end %>
   </div>
   <!-- cta-btn -->
 </section>

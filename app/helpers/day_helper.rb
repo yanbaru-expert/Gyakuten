@@ -5,6 +5,6 @@ module DayHelper
 
   def deadline_judge
     # 毎月24日以降にtrue
-    Date.current - Date.current.beginning_of_month >= 23
+    Date.current - Date.current.beginning_of_month >= 28
   end
 end

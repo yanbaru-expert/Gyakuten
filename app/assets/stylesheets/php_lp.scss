@@ -328,7 +328,7 @@
           font-size: 1rem;
         }
       }
-      button{
+      button, a{
         margin: 0 auto;
         padding: .75rem 6rem .9rem 6rem;
         line-height: 1.6rem;
@@ -352,6 +352,24 @@
           max-width: 400px;
           padding: .5rem 0;
           font-size: 1.375rem;
+        }
+      }
+      .l-step{
+        display: block;
+        margin: 0 auto;
+        font-size: 1.5rem;
+        padding-top: 1.5rem;
+        padding-bottom: 1.5rem;
+        background-color: #4CCE4C;
+        box-shadow: 0 5px 0 0 #205b20;
+        color: white;
+        &:hover{
+          background-color: #62df62;
+          transition: .3s;
+        }
+        @include sp{
+          font-size: 1.2rem;
+          font-weight: 600;
         }
       }
     }
