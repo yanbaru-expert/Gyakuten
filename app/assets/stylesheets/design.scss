@@ -142,7 +142,7 @@
     h4{
       color: $white-color;
     }
-    button{
+    button, a{
       display: block;
       width: fit-content;
       margin: 0 auto;
@@ -159,7 +159,7 @@
         z-index: 5;
         width: calc(100% -20px) !important;
         max-width: 450px;
-        font-size: 19px;
+        font-size: 17px;
         padding: 20px 20px;
       };
       &:hover{
@@ -171,12 +171,20 @@
         top: 5px;
       }
     }
+    .l-step{
+      background-color: #4CCE4C;
+      box-shadow: 0 5px 0 0 #205b20;
+        &:hover{
+        background-color: #62df62;
+        transition: .3s;
+      }
+    }
     h6{
       font-size: $subtitle-font-size;
       margin-top: 0;
       margin-bottom: 0;
       @include sp{
-        font-size: 18px;
+        font-size: 17px;
       };
     }
   }
@@ -217,7 +225,7 @@
         }
   
       }
-      button{
+      button, a{
         width: 263px;
         height: 55px;
         margin-top: 16px;
@@ -226,7 +234,7 @@
         color: $main-color;
         font-size: 20px;
         font-weight: $strength-font;
-        line-height: 60px;
+        line-height: 55px;
         float: right;
         @include sp{
           height: 36px;
@@ -234,7 +242,7 @@
           margin-bottom: auto;
           margin-top: 10px;
           font-size: 12px;
-          line-height: 28px;
+          line-height: 40px;
         };
         &::after{
           content: "  >";
@@ -1062,6 +1070,9 @@
               height: 50px;
               margin-top: 20px;
               margin-left: 45px;
+            }
+            @include sp{
+              height: 50px;
               margin-right: -30px;
             }
           }
@@ -1073,6 +1084,9 @@
             margin: 0;
             @include pc{
               font-size: 50px;
+            }
+            @include sp{
+              font-size: 42px;
             }
             &::after{
               content: "円(税込）";

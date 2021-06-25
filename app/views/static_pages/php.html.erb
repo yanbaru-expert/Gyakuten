@@ -11,7 +11,11 @@
   <header>
     <div class="header-wrapper wrapper">
       <%= image_tag "https://d5izmuz0mcjzz.cloudfront.net/php/header-logo.png" %>
-      <button class="cta-btn" role="link" type="button">PHP講座を申し込む</button>
+      <% if deadline_judge %>
+        <button class="cta-btn" role="link" type="button">PHP講座を申し込む</button>
+      <% else %>
+        <a href="https://line.me/R/ti/p/%40fyp8311b" class="l-step cta-btn">LINEに登録</a>
+      <% end %>
     </div>
   </header>
 <!--

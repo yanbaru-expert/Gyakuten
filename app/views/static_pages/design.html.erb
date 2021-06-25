@@ -6,9 +6,13 @@
   <header id="header">
     <div class="container">
       <%= image_tag "https://d5izmuz0mcjzz.cloudfront.net/design_course/servise-name.png" %>
+      <% if deadline_judge %>
       <button class="cta-btn" role="link" type="button">
         お申し込みはこちら
       </button>
+      <% else %>
+          <a href="https://line.me/R/ti/p/%40fyp8311b" class="l-step cta-btn">LINEに登録  </a>
+      <% end %>
     </div>
   </header>
   <!-- FV -->

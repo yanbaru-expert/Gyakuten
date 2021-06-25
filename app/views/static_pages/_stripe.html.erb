@@ -1,5 +1,10 @@
-<h6>\5月末まで!!20名限定/</h6>
-<button class="cta-btn" role="link" type="button">
-  webデザイン講座を申し込む
-</button>
-<div id="error-message"></div>
+<% if deadline_judge %>
+  <h6>\<%= end_month_info %>末まで!!20名限定/</h6>
+  <button class="cta-btn" role="link" type="button">
+    webデザイン講座を申し込む
+  </button>
+  <div id="error-message"></div>
+<% else %>
+  <h6>\次回<%= end_month_info %>24日から募集開始/</h6>
+  <a href="https://line.me/R/ti/p/%40fyp8311b" class="l-step cta-btn">LINEで先行情報を入手する</a>
+<% end %>
