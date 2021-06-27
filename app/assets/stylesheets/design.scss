@@ -109,8 +109,8 @@
     padding-top: 84px;
     padding-bottom: 168px;
     @include sp{
-      padding: 42px 20px 84px 20px;
-      width: calc(100% - 40px);
+      padding: 42px 16px 84px 16px;
+      width: calc(100% - 20px);
     };
   }
   .container{
@@ -1069,15 +1069,17 @@
             @include pc{
               height: 50px;
               margin-top: 20px;
-              margin-left: 45px;
+              margin-left: 25px;
             }
             @include sp{
               height: 50px;
               margin-right: -30px;
+              margin-left: 45px;
+              margin-top: 15px;
             }
           }
           h1{
-            font-size: 70px;
+            font-size: 60px;
             font-family: Roboto;
             height: 80px;
             line-height: 80px;
@@ -1086,24 +1088,32 @@
               font-size: 50px;
             }
             @include sp{
-              font-size: 42px;
+              font-size: 38px;
             }
             &::after{
               content: "円(税込）";
-              font-size: 20px;
+              font-size: 18px;
             }
           }
         }
         ul{
           list-style-image: url("https://d5izmuz0mcjzz.cloudfront.net/design_course/blue-check-circle-fill.png");
-          margin-left: 50px;
+          margin-left: 30px;
           text-indent: 20px;
           @include pc{
             text-indent: 10px;
+            margin-left: 50px;
           };
+          @include sp{
+            text-indent: 5px;
+            margin-left: 44px;
+          }
           li{
             text-align: left;
-            margin-top: 5px;
+            margin-top: 10px;
+            @include sp{
+              margin-left: -8pxpx;
+            }
           }
         }
       }
@@ -1129,8 +1139,8 @@
   // 口コミ
   .voice-wrapper{
     background-color: #F0F5FF;
-    padding-left: .5rem;
-    padding-right: .5rem;
+    padding-left: .2rem;
+    padding-right: .2rem;
     width: 100%;
     .flex-wrapper{
       display: flex;
@@ -1151,6 +1161,7 @@
         box-shadow: 2px 4px 7px 0 rgba($color: #244B56, $alpha: .2);
         @include sp{
           margin: 2rem auto;
+          width: calc(100% - 16px);
           max-width: none;
           padding-left: 0;
           padding-right: 0;
