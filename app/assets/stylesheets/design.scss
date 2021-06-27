@@ -109,10 +109,8 @@
     padding-top: 84px;
     padding-bottom: 168px;
     @include sp{
-      padding: 42px 20px 84px 20px;
-      padding-left: .3rem !important;
-      padding-right: .3rem !important;
-      width: calc(100% - 40px);
+      padding: 42px 16px 84px 16px;
+      width: calc(100% - 20px);
     };
   }
   .container{
@@ -1106,9 +1104,16 @@
             text-indent: 10px;
             margin-left: 50px;
           };
+          @include sp{
+            text-indent: 5px;
+            margin-left: 44px;
+          }
           li{
             text-align: left;
-            margin-top: 5px;
+            margin-top: 10px;
+            @include sp{
+              margin-left: -8pxpx;
+            }
           }
         }
       }
@@ -1134,8 +1139,8 @@
   // 口コミ
   .voice-wrapper{
     background-color: #F0F5FF;
-    padding-left: .5rem;
-    padding-right: .1rem;
+    padding-left: .2rem;
+    padding-right: .2rem;
     width: 100%;
     .flex-wrapper{
       display: flex;
