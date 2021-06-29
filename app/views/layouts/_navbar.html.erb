@@ -51,13 +51,12 @@
             デザイン
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <%= link_to "#{display_name('design_base')}/テキスト教材", texts_path(genre: "design_base"), class: "dropdown-item" %>
-            <%= link_to "#{display_name('design_base')}/動画教材", movies_path(genre: "design_base"), class: "dropdown-item#{add_disabled}" %>
-            <%= link_to "#{display_name('design_matter')}/テキスト教材", texts_path(genre: "design_matter"), class: "dropdown-item" %>
-            <%= link_to "#{display_name('design_matter')}/動画教材", movies_path(genre: "design_matter"), class: "dropdown-item#{add_disabled}" %>
-            <%= link_to display_name('design_usage'), movies_path(genre: "design_usage"), class: "dropdown-item#{add_disabled}" %>
-            <%= link_to "#{display_name('design_task')}/テキスト教材", texts_path(genre: "design_task"), class: "dropdown-item" %>
-            <%= link_to "#{display_name('design_task')}/動画教材", movies_path(genre: "design_task"), class: "dropdown-item#{add_disabled}" %>
+            <%= link_to "#{display_name('design_base')}", texts_path(genre: "design_base"), class: "dropdown-item" %>
+            <%= link_to "#{display_name('design_achievement')}", texts_path(genre: "design_achievement"), class: "dropdown-item" %>
+            <%= link_to "#{display_name('design_application')}", texts_path(genre: "design_application"), class: "dropdown-item" %>
+            <%= link_to display_name('design_marketing'), movies_path(genre: "design_marketing"), class: "dropdown-item#{add_disabled}" %>
+            <%= link_to "#{display_name('design_task')}", texts_path(genre: "design_task"), class: "dropdown-item" %>
+            <%= link_to "#{display_name('design_matter')}", texts_path(genre: "design_matter"), class: "dropdown-item" %>
           </div>
         </li>
         <li class="nav-item active dropdown">

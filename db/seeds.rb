@@ -3,6 +3,8 @@ require "import_csv"
 ImportCsv.execute(model: Genre)
 puts "ジャンルの初期データインポートに成功しました。"
 
+return unless Rails.env.development?
+
 ImportCsv.execute(model: Faq)
 puts "FAQの初期データインポートに成功しました。"
 ImportCsv.execute(model: MemoExample)
@@ -11,8 +13,6 @@ puts "メモの例の初期データインポートに成功しました。"
 ImportCsv.execute(model: DesignTaskCategory)
 ImportCsv.image_import(model: DesignTaskCategory)
 ImportCsv.execute(model: DesignTaskList)
-
-return unless Rails.env.development?
 
 email = "test@example.com".freeze
 admin_email = "admin@example.com".freeze
