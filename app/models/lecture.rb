@@ -11,4 +11,5 @@
 #  updated_at  :datetime         not null
 #
 class Lecture < ApplicationRecord
+  acts_as_list
 end
