@@ -517,16 +517,24 @@ $base-color: linear-gradient(to right, #353ada, #5a9dfb);
         .services-item {
           @include flexItem();
           width: 100%;
+          margin: 0 auto;
+          margin-bottom: 50px;
           max-width: 500px;
           position: relative;
 
           &:nth-child(3n) {
-            margin: 0 auto;
+            margin-bottom: 0;
+          }
+          // タブレット
+          @include mq-down(lg) {
           }
 
+          // スマホ
           @include mq-down(xs) {
-            @include flexItemSpaceSp();
+            width: 100%;
             min-width: 200px;
+            margin: 0 auto;
+            margin-bottom: 20px;
           }
 
           .service-link {
