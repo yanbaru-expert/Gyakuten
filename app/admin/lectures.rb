@@ -1,3 +1,3 @@
 ActiveAdmin.register Lecture do
-  permit_params :name, :lp_url, :description
+  permit_params :position, :name, :lp_url, :description
 end

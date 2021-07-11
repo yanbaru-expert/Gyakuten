@@ -3,9 +3,9 @@
 # Table name: lectures
 #
 #  id          :bigint           not null, primary key
-#  description :string
+#  description :string           not null
 #  lp_url      :string
-#  name        :string
+#  name        :string           not null
 #  position    :integer
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null

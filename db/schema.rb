@@ -95,9 +95,9 @@ ActiveRecord::Schema.define(version: 2021_07_06_080832) do
 
   create_table "lectures", force: :cascade do |t|
     t.integer "position"
-    t.string "name"
+    t.string "name", null: false
     t.string "lp_url"
-    t.string "description"
+    t.string "description", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

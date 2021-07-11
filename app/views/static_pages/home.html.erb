@@ -151,30 +151,16 @@
     </div>
     <div class="services-content">
       <div class="services-list">
-        <div class="services-item">
-          <a class="service-link" href="https://yanbaru-expert.com/" target="_blank"></a>
-          <h3 class="sub-title">
-            <span class="sub-title-inner">やんばる<br class="sp">
-              エキスパートRuby講座</span>
-          </h3>
-          <p class="service-item-text">サポートが意味不明に手厚いかなり頭おかしい講座です</p>
-        </div>
-        <div class="services-item">
-          <a class="service-link" href="https://yanbaru-expert.com/php" target="_blank"></a>
-          <h3 class="sub-title">
-            <span class="sub-title-inner">やんばる<br class="sp">
-              エキスパートPHP講座</span>
-          </h3>
-          <p class="service-item-text">エンジニア転職が成功するまでサポートする頭おかしい講座です</p>
-        </div>
-        <div class="services-item">
-          <a class="service-link" href="https://yanbaru-expert.com/design" target="_blank"></a>
-          <h3 class="sub-title">
-            <span class="sub-title-inner">やんばる<br class="sp">
-              エキスパートデザイン講座</span>
-          </h3>
-          <p class="service-item-text">月15万円稼げるまで無期限サポートする頭おかしい講座です</p>
-        </div>
+        <% @lectures.each do |lecture| %>
+          <div class="services-item">
+            <%= link_to "#{lecture.lp_url}" do %>
+              <h3 class="sub-title">
+                <span class="sub-title-inner"><%= lecture.name %></span>
+              </h3>
+              <p class="service-item-text"><%= lecture.description %></p>
+            <% end %>
+          </div>
+        <% end %>
       </div>
     </div>
   </section>
