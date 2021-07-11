@@ -153,12 +153,11 @@
       <div class="services-list">
         <% @lectures.each do |lecture| %>
           <div class="services-item">
-            <%= link_to "#{lecture.lp_url}" do %>
-              <h3 class="sub-title">
-                <span class="sub-title-inner"><%= lecture.name %></span>
-              </h3>
-              <p class="service-item-text"><%= lecture.description %></p>
-            <% end %>
+            <a class="service-link" href="<%= lecture.lp_url %>" target="_blank"></a>
+            <h3 class="sub-title">
+              <span class="sub-title-inner"><%= lecture.name %></span>
+            </h3>
+            <p class="service-item-text"><%= lecture.description %></p>
           </div>
         <% end %>
       </div>

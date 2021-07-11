@@ -522,9 +522,6 @@ $base-color: linear-gradient(to right, #353ada, #5a9dfb);
           max-width: 500px;
           position: relative;
 
-          &:nth-child(3n) {
-            margin-bottom: 0;
-          }
           // タブレット
           @include mq-down(lg) {
           }
