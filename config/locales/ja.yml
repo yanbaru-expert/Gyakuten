@@ -19,6 +19,7 @@ ja:
       word: 名言
       active_admin_comment:
       line: LINE
+      lecture: 講座
       money: 課金
       movie: 動画
       program: プログラム
@@ -55,6 +56,10 @@ ja:
         about: 言及
         words: 内容
       line:
+      lecture:
+        name: 表示名
+        lp_url: LP_URL
+        description: 説明文
       money:
       movie:
         desc: 説明

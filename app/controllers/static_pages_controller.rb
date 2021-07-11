@@ -2,6 +2,7 @@ class StaticPagesController < ApplicationController
   skip_before_action :authenticate_user!
   def home
     @faqs = Faq.where(genre: %w[always top]).order(position: :asc)
+    @lectures = Lecture.order(position: :asc)
   end
 
   def design

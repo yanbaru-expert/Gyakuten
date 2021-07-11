@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_08_072209) do
+ActiveRecord::Schema.define(version: 2021_07_06_080832) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -91,6 +91,15 @@ ActiveRecord::Schema.define(version: 2021_06_08_072209) do
     t.datetime "updated_at", null: false
     t.string "code_name"
     t.index ["code_name"], name: "index_genres_on_code_name", unique: true
+  end
+
+  create_table "lectures", force: :cascade do |t|
+    t.integer "position"
+    t.string "name", null: false
+    t.string "lp_url"
+    t.string "description", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "lines", force: :cascade do |t|

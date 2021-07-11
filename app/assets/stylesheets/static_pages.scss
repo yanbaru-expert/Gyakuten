@@ -1,5 +1,5 @@
-@import "bootstrap/functions";
-@import "bootstrap";
+@import 'bootstrap/functions';
+@import 'bootstrap';
 @import 'font-awesome-sprockets';
 @import 'font-awesome';
 @import 'base';
@@ -9,26 +9,26 @@
 -----------------------------------------------------------------*/
 // min-width
 $breakpoint-up: (
-        'xls': 'screen and (max-width: 376px)',
-        'xxs': 'screen and (min-width: 485px)',
-        'xs': 'screen and (min-width: 587px)',
-        'sm': 'screen and (min-width: 690px)',
-        'md': 'screen and (min-width: 767px)',
-        'lg': 'screen and (min-width: 965px)',
-        'xl': 'screen and (min-width: 1081px)',
-        'xxl': 'screen and (min-width: 1332px)',
+  'xls': 'screen and (max-width: 376px)',
+  'xxs': 'screen and (min-width: 485px)',
+  'xs': 'screen and (min-width: 587px)',
+  'sm': 'screen and (min-width: 690px)',
+  'md': 'screen and (min-width: 767px)',
+  'lg': 'screen and (min-width: 965px)',
+  'xl': 'screen and (min-width: 1081px)',
+  'xxl': 'screen and (min-width: 1332px)',
 ) !default;
 
 // max-width
 $breakpoint-down: (
-        'xls': 'screen and (max-width: 377px)',
-        'xxs': 'screen and (max-width: 484px)',
-        'xs': 'screen and (max-width: 586px)',
-        'sm': 'screen and (max-width: 689px)',
-        'md': 'screen and (max-width: 766px)',
-        'lg': 'screen and (max-width: 964px)',
-        'xl': 'screen and (max-width: 1080px)',
-        'xxl': 'screen and (max-width: 1331px)',
+  'xls': 'screen and (max-width: 377px)',
+  'xxs': 'screen and (max-width: 484px)',
+  'xs': 'screen and (max-width: 586px)',
+  'sm': 'screen and (max-width: 689px)',
+  'md': 'screen and (max-width: 766px)',
+  'lg': 'screen and (max-width: 964px)',
+  'xl': 'screen and (max-width: 1080px)',
+  'xxl': 'screen and (max-width: 1331px)',
 ) !default;
 
 @mixin mq-up($breakpoint: md) {
@@ -44,7 +44,7 @@ $breakpoint-down: (
 }
 
 // カラー
-$base-color: linear-gradient(to right, #353ADA, #5A9DFB);
+$base-color: linear-gradient(to right, #353ada, #5a9dfb);
 
 // flexの中央寄せ
 @mixin flexCentering($justify: center, $align: center) {
@@ -96,7 +96,7 @@ $base-color: linear-gradient(to right, #353ADA, #5A9DFB);
 // 各セクションタイトル
 // タイトル下部線
 @mixin titlelUnderline($height: 10px, $background: $base-color) {
-  content: "";
+  content: '';
   display: block;
   border-radius: 10px;
   margin: 10px auto;
@@ -219,7 +219,7 @@ $base-color: linear-gradient(to right, #353ADA, #5A9DFB);
     @include mq-up() {
       &::after {
         position: absolute;
-        content: "";
+        content: '';
         display: block;
         top: 0;
         right: 0;
@@ -340,14 +340,12 @@ $base-color: linear-gradient(to right, #353ADA, #5A9DFB);
         left: 5%;
       }
     }
-
   }
 
   /* ----------------------------------------------------------------
     about
   -----------------------------------------------------------------*/
   #about {
-
     .about-list {
       display: flex;
       justify-content: space-around;
@@ -421,7 +419,6 @@ $base-color: linear-gradient(to right, #353ADA, #5A9DFB);
     teachinglist
   -----------------------------------------------------------------*/
   #teachinglist {
-
     .teachinglist-content {
       max-width: 1140px;
       min-width: 45vh;
@@ -457,12 +454,10 @@ $base-color: linear-gradient(to right, #353ADA, #5A9DFB);
     word-break: keep-all;
   }
 
-
   /* ----------------------------------------------------------------
     features
   -----------------------------------------------------------------*/
   #features {
-
     .features-content {
       max-width: 1140px;
       margin: 20px;
@@ -478,7 +473,7 @@ $base-color: linear-gradient(to right, #353ADA, #5A9DFB);
   }
 
   .features-item {
-    @include flexItem(#fff, $base-color,);
+    @include flexItem(#fff, $base-color);
 
     &:nth-child(3n) {
       margin-right: 0;
@@ -510,9 +505,8 @@ $base-color: linear-gradient(to right, #353ADA, #5A9DFB);
   services
   -----------------------------------------------------------------*/
   #services {
-
     .services-content {
-      max-width: 960px;
+      max-width: 1140px;
       margin: 20px;
 
       .services-list {
@@ -523,17 +517,21 @@ $base-color: linear-gradient(to right, #353ADA, #5A9DFB);
         .services-item {
           @include flexItem();
           width: 100%;
-          max-width: 500px;
           margin: 0 auto;
+          margin-bottom: 50px;
+          max-width: 500px;
           position: relative;
 
-          &:nth-child(2n) {
-            margin-right: 0;
+          // タブレット
+          @include mq-down(lg) {
           }
 
+          // スマホ
           @include mq-down(xs) {
-            @include flexItemSpaceSp();
+            width: 100%;
             min-width: 200px;
+            margin: 0 auto;
+            margin-bottom: 20px;
           }
 
           .service-link {
@@ -704,7 +702,6 @@ $base-color: linear-gradient(to right, #353ADA, #5A9DFB);
         }
       }
     }
-
   }
 
   /* ----------------------------------------------------------------
@@ -745,7 +742,7 @@ $base-color: linear-gradient(to right, #353ADA, #5A9DFB);
     padding: 30px 0 10px 40px;
 
     &::after {
-      content: "";
+      content: '';
       position: absolute;
       top: 38%;
       right: 40px;
@@ -797,7 +794,7 @@ $base-color: linear-gradient(to right, #353ADA, #5A9DFB);
       padding: 20px 5px 20px 40px;
 
       &::before {
-        content: "";
+        content: '';
         display: block;
         height: 3px;
         position: absolute;
