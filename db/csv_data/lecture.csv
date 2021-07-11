@@ -1,4 +1,4 @@
-id,position,name,description
-1,1,やんばるエキスパートRuby,サポートが意味不明に手厚いかなり頭おかしい講座です
-2,2,やんばるエキスパートPHP,エンジニア転職が成功するまでサポートする頭おかしい講座です
-3,3,やんばるエキスパートデザイン講座,月15万円稼げるまで無期限サポートする頭おかしい講座です
+id,position,name,lp_url,description
+1,1,やんばるエキスパートRuby,https://www.yanbaru-code.com/,サポートが意味不明に手厚いかなり頭おかしい講座です
+2,2,やんばるエキスパートPHP,https://www.yanbaru-code.com/php,エンジニア転職が成功するまでサポートする頭おかしい講座です
+3,3,やんばるエキスパートデザイン講座,https://www.yanbaru-code.com/design,月15万円稼げるまで無期限サポートする頭おかしい講座です

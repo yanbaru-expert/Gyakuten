@@ -1,8 +1,9 @@
 require "import_csv"
 
 ImportCsv.execute(model: Genre)
-ImportCsv.execute(model: Lecture)
 puts "ジャンルの初期データインポートに成功しました。"
+ImportCsv.execute(model: Lecture)
+puts "講座の初期データインポートに成功しました。"
 
 return unless Rails.env.development?
 
