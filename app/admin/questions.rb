@@ -21,7 +21,7 @@ ActiveAdmin.register Question do
   end
 
   form do |f|
-    f.object.position ||= Question.maximum(:position) || 0 + 1
+    f.object.position ||= (Question.maximum(:position) || 0) + 1
     f.semantic_errors
     f.inputs do
       input :position
